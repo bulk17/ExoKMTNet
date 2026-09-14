@@ -60,7 +60,7 @@
   var bdCount = rows.filter(function (r) { return r._type === "bd" || r._type === "bdplanet"; }).length;
   var years = rows.map(function (r) { return r.pub_year; }).filter(Boolean);
   var latestYear = years.length ? Math.max.apply(null, years) : "-";
-  var matched = rows.filter(function (r) { return r.nasa_matched; }).length;
+  var matched = rows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
 
   setText("statTotal", total);
   setText("statFfp", ffpCount);

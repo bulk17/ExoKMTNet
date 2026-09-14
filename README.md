@@ -21,17 +21,23 @@ server) — no build step required.
    telescope/facility, release date) from a NASA Exoplanet Archive CSV
    export (PSCompPars table, filtered to `discoverymethod = Microlensing`)
    by matching planet name.
-4. **`scripts/build_site_data.py`** — regenerates `assets/data/planets.js`
-   from `data/kmtnet_planets.json` after either of the above.
+4. **`scripts/merge_exoplaneteu.py`** — tops up whatever fields are still
+   blank after the NASA merge from an
+   [exoplanet.eu](https://exoplanet.eu/) catalog export (all
+   `detection_type = Microlensing` rows), matching by name and alternate
+   names. Never overwrites a value the NASA merge already filled in.
+5. **`scripts/build_site_data.py`** — regenerates `assets/data/planets.js`
+   from `data/kmtnet_planets.json` after any of the above.
 
 ```bash
 pip install numbers-parser
 python scripts/parse_numbers.py path/to/source.numbers
 python scripts/merge_nasa.py data/raw/nasa_pscomppars.csv
+python scripts/merge_exoplaneteu.py data/raw/exoplanet_eu_catalog.csv
 python scripts/build_site_data.py
 ```
 
-Entries not yet matched to a NASA Archive record show `TBD` for physical
+Entries not yet matched to either source show `TBD` for physical
 parameters rather than being hidden.
 
 ## Notes on the source data

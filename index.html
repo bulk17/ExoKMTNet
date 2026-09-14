@@ -38,7 +38,7 @@
       <div class="stat-card"><div class="num" id="statBd">—</div><div class="label">Brown-dwarf candidates</div></div>
       <div class="stat-card"><div class="num" id="statFfp">—</div><div class="label">Free-floating candidates</div></div>
       <div class="stat-card"><div class="num" id="statYear">—</div><div class="label">Latest publication year</div></div>
-      <div class="stat-card"><div class="num" id="statMatched">—</div><div class="label">Matched to NASA Archive</div></div>
+      <div class="stat-card"><div class="num" id="statMatched">—</div><div class="label">Have physical parameters</div></div>
     </div>
   </section>
 
@@ -98,13 +98,16 @@
       accordingly rather than omitted.
     </p>
     <p>
-      Physical parameters (mass, semi-major axis, host-star mass, system distance, RA/Dec, and
-      discovery telescope/facility) are merged in from a
+      Physical parameters (mass, semi-major axis, host-star mass, system distance, and RA/Dec)
+      are merged in by matching planet name, first from a
       <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&amp;config=PS" target="_blank" rel="noopener">NASA Exoplanet Archive</a>
-      export by matching planet name. Brown-dwarf-only entries are generally absent from the
-      archive (which catalogs confirmed planets, not brown dwarfs) and several of the most
-      recent 2025–2026 announcements haven't been added to the archive yet — both show
-      <code>TBD</code> for these columns rather than being hidden.
+      export, then topped up from an
+      <a href="https://exoplanet.eu/" target="_blank" rel="noopener">exoplanet.eu</a>
+      catalog export for anything the NASA pass left blank — exoplanet.eu tends to carry more
+      and newer microlensing entries. Brown-dwarf-only entries are generally absent from both
+      (they catalog confirmed planets, not brown dwarfs) and a handful of the very latest
+      announcements haven't been added to either yet — both show <code>TBD</code> for these
+      columns rather than being hidden.
     </p>
     <p>
       This is a fan-maintained catalog, not an official KMTNet or NASA product. Discovery
