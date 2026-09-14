@@ -107,6 +107,18 @@
       var ffpH = (d.ffp / maxVal) * innerH;
       var yBase = H - padB;
 
+      var group = el("g", { class: "year-group" });
+      group.style.cursor = "pointer";
+      group.addEventListener("click", function () { openYearModal(y); });
+      var titleEl = document.createElementNS(svgns, "title");
+      titleEl.textContent = "View " + d.total + " planets from " + y;
+      group.appendChild(titleEl);
+
+      group.appendChild(el("rect", {
+        class: "bar-hit",
+        x: x, y: padT, width: barW, height: innerH,
+      }));
+
       var segs = [
         { h: planetH, cls: "bar" },
         { h: bdH, cls: "bar bd" },
@@ -115,7 +127,7 @@
       segs.forEach(function (s) {
         if (s.h <= 0) return;
         yBase -= s.h;
-        svg.appendChild(el("rect", {
+        group.appendChild(el("rect", {
           class: s.cls,
           x: x + barW * 0.12,
           y: yBase,
@@ -124,6 +136,8 @@
           rx: 1.5,
         }));
       });
+
+      svg.appendChild(group);
 
       if (i % 1 === 0) {
         var t = el("text", { x: x + barW / 2, y: H - 6, "text-anchor": "middle" });
@@ -448,6 +462,65 @@
 
   onCardActivate(ffpCard, function () { applyTypeFilter("ffp"); });
   onCardActivate(totalCard, function () { applyTypeFilter("all"); });
+
+  // ---------------- Year-bar popup ----------------
+  var yearOverlay = document.getElementById("yearOverlay");
+  var yearModal = document.getElementById("yearModal");
+  var yearModalClose = document.getElementById("yearModalClose");
+  var yearModalTitle = document.getElementById("yearModalTitle");
+  var yearModalSubtitle = document.getElementById("yearModalSubtitle");
+  var yearThead = document.querySelector("#yearTable thead tr");
+  var yearTbody = document.querySelector("#yearTable tbody");
+
+  function openYearModal(year) {
+    var yearRows = rows.filter(function (r) { return r.pub_year === year; });
+    yearRows.sort(function (a, b) { return a.seq - b.seq; });
+    var bdCount = yearRows.filter(function (r) { return r._type === "bdplanet"; }).length;
+
+    yearModalTitle.textContent = "Planets Announced in " + year;
+    yearModalSubtitle.textContent = yearRows.length + " " + (yearRows.length === 1 ? "entry" : "entries") + " (BD/Planet: " + bdCount + "개)";
+
+    yearThead.innerHTML = COLUMNS.map(function (col) {
+      return (
+        '<th class="' + (col.unit ? "has-unit" : "") + '">' +
+        '<span class="col-label">' + escapeHtml(col.label) + "</span>" +
+        (col.unit ? '<span class="col-unit">(' + escapeHtml(col.unit) + ")</span>" : "") +
+        "</th>"
+      );
+    }).join("");
+
+    yearTbody.innerHTML = yearRows.map(function (r) {
+      return (
+        '<tr data-id="' + r._id + '">' +
+        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c) + "</td>"; }).join("") +
+        "</tr>"
+      );
+    }).join("");
+
+    yearOverlay.classList.add("open");
+    yearModal.classList.add("open");
+  }
+
+  function closeYearModal() {
+    yearOverlay.classList.remove("open");
+    yearModal.classList.remove("open");
+  }
+
+  yearOverlay.addEventListener("click", closeYearModal);
+  yearModalClose.addEventListener("click", closeYearModal);
+  yearTbody.addEventListener("click", function (e) {
+    var tr = e.target.closest("tr[data-id]");
+    if (!tr) return;
+    var id = Number(tr.getAttribute("data-id"));
+    var row = rows.find(function (r) { return r._id === id; });
+    if (row) {
+      closeYearModal();
+      openDrawer(row);
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeYearModal();
+  });
 
   render();
 })();

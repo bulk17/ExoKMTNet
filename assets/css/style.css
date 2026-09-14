@@ -293,6 +293,8 @@ a { color: var(--link); }
 #yearChart .bar.ffp { fill: var(--ffp); }
 #yearChart text { fill: var(--text-dim); font-size: 9.5px; font-family: var(--font-mono); }
 #yearChart .axis-line { stroke: var(--border); stroke-width: 1; }
+#yearChart .bar-hit { fill: transparent; }
+#yearChart .year-group:hover .bar-hit { fill: color-mix(in srgb, var(--text) 8%, transparent); }
 
 .legend {
   display: flex;
@@ -525,6 +527,57 @@ table.data tbody tr:last-child td { border-bottom: none; }
 
 .stat-card-clickable { cursor: pointer; }
 .stat-card-clickable:hover { border-color: var(--accent); }
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.97);
+  width: min(480px, calc(100vw - 32px));
+  max-height: 82vh;
+  overflow-y: auto;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  padding: 22px;
+  color: var(--text);
+  z-index: 41;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+.modal.modal-wide { width: min(1120px, calc(100vw - 32px)); }
+
+.modal h2 {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  margin: 0 0 2px;
+  padding-right: 30px;
+}
+
+.modal-subtitle {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 0 0 16px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal .table-scroll { box-shadow: none; }
 
 
 /* ---------- About / footer ---------- */
