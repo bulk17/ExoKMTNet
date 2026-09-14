@@ -153,7 +153,7 @@
     type: "all",
     massMax: "all",
     sortKey: "seq",
-    sortDir: 1,
+    sortDir: -1,
     page: 1,
     pageSize: 50,
   };
@@ -200,7 +200,10 @@
     return n.toFixed(digits);
   }
 
-  function cellHtml(row, col) {
+  function cellHtml(row, col, rank) {
+    if (col.key === "seq") {
+      return rank != null ? String(rank) : String(row.seq);
+    }
     if (col.key === "name") {
       return (
         '<div class="name-cell"><strong>' + escapeHtml(row.name) + "</strong>" +
@@ -317,10 +320,11 @@
     currentPageRows = pageRows;
 
     renderHead();
-    tbody.innerHTML = pageRows.map(function (r) {
+    tbody.innerHTML = pageRows.map(function (r, i) {
+      var rank = start + i + 1;
       return (
         '<tr data-id="' + r._id + '">' +
-        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c) + "</td>"; }).join("") +
+        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c, rank) + "</td>"; }).join("") +
         "</tr>"
       );
     }).join("");
@@ -474,7 +478,7 @@
 
   function openYearModal(year) {
     var yearRows = rows.filter(function (r) { return r.pub_year === year; });
-    yearRows.sort(function (a, b) { return a.seq - b.seq; });
+    yearRows.sort(function (a, b) { return b.seq - a.seq; });
     var bdCount = yearRows.filter(function (r) { return r._type === "bdplanet"; }).length;
 
     yearModalTitle.textContent = "Planets Announced in " + year;
@@ -489,10 +493,10 @@
       );
     }).join("");
 
-    yearTbody.innerHTML = yearRows.map(function (r) {
+    yearTbody.innerHTML = yearRows.map(function (r, i) {
       return (
         '<tr data-id="' + r._id + '">' +
-        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c) + "</td>"; }).join("") +
+        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
         "</tr>"
       );
     }).join("");
