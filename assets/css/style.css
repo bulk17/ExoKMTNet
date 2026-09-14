@@ -328,9 +328,10 @@ a { color: var(--link); }
 
 .controls .count {
   margin-left: auto;
-  color: var(--text-dim);
+  color: #d3d7ef;
   font-size: 13px;
   white-space: nowrap;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .btn {
@@ -438,8 +439,9 @@ table.data tbody tr:last-child td { border-bottom: none; }
   gap: 10px;
   justify-content: flex-end;
   margin-top: 12px;
-  color: var(--text-dim);
+  color: #d3d7ef;
   font-size: 13px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 /* ---------- Detail drawer ---------- */
