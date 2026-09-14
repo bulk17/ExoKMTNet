@@ -5,8 +5,8 @@
      are alpha colors rather than solid ones. Light/dark toggle changes how
      opaque/tinted the glass is, not the backdrop itself. */
   --bg: transparent;
-  --bg-elev: rgba(255, 255, 255, 0.82);
-  --bg-elev-2: rgba(255, 255, 255, 0.55);
+  --bg-elev: rgba(255, 255, 255, 0.96);
+  --bg-elev-2: rgba(255, 255, 255, 0.88);
   --text: #14161f;
   --text-dim: #4c5170;
   --border: rgba(20, 22, 31, 0.12);
