@@ -1,13 +1,20 @@
 """Merge a NASA Exoplanet Archive CSV export into data/kmtnet_planets.json.
 
-Download the CSV from the Planetary Systems Composite Parameters (PSCompPars)
-table, filtered to discoverymethod = Microlensing, with (at least) these
-columns: pl_name, hostname, disc_year, disc_facility, disc_telescope,
-discoverymethod, pl_bmassj, pl_orbsmax, st_mass, sy_dist, ra, dec,
-releasedate.
+Expected CSV columns (as exported from the archive's table UI):
+    planet_name, discovery_year, discovery_facility,
+    planet_mass_jupiter_mass, planet_mass_earth_mass,
+    orbit_semi_major_axis_au, stellar_mass_solar, ra_deg, dec_deg, distance_pc
+
+`discovery_facility` is used for both the "facility" and "telescope" display
+fields since the archive doesn't separate them for microlensing discoveries
+(the facility IS the survey/telescope, e.g. "KMTNet", "OGLE", "MOA").
+
+Note: brown-dwarf candidate entries in the KMTNet source list are generally
+absent from the NASA Exoplanet Archive (which tracks confirmed planets, not
+brown dwarfs) and will legitimately stay unmatched/TBD.
 
 Usage:
-    python scripts/merge_nasa.py data/raw/nasa_pscomppars.csv
+    python scripts/merge_nasa.py data/raw/nasa_exoplanets_20260914.csv
     python scripts/build_site_data.py   # regenerate assets/data/planets.js
 """
 import csv
@@ -15,28 +22,55 @@ import json
 import re
 import sys
 
-FIELDS = [
-    "disc_year", "disc_facility", "disc_telescope", "discoverymethod",
-    "pl_bmassj", "pl_orbsmax", "st_mass", "sy_dist", "ra", "dec", "releasedate",
-]
-
 
 def normalize(name):
-    return re.sub(r"\s+", " ", name.strip().lower())
+    """Fix up common typos/inconsistencies between the two source spreadsheets
+    (missing hyphens, stray colons, extra/missing spaces) before comparing."""
+    n = name.strip().lower()
+    n = n.replace("(", " ").replace(")", " ")  # "(AB)" -> " AB "
+    n = n.replace(":", "-")  # "2018:blg" -> "2018-blg"
+    n = re.sub(r"(\d{4})blg", r"\1-blg", n)  # "2018blg" -> "2018-blg"
+    n = re.sub(r"-\s+", "-", n)  # "blg- 0448l" -> "blg-0448l"
+    n = re.sub(r"(\d)l([a-h])$", r"\1l \2", n)  # "0736lb" -> "0736l b"
+    n = re.sub(r"\s+", " ", n)
+    return n.strip()
+
+
+def canon(name):
+    """Collapse the optional trailing lens-designator 'L' (present in some
+    entries, absent in others, e.g. 'KMT-...-1820 b' vs 'KMT-...-1820L b')
+    so both sides of the match agree regardless of which source includes it."""
+    n = normalize(name)
+    tokens = n.split(" ")
+    letter = None
+    if tokens and re.fullmatch(r"[a-h]", tokens[-1]):
+        letter = tokens.pop()
+    host = " ".join(tokens)
+    if host.endswith("l"):
+        host = host[:-1]
+    return host + (" " + letter if letter else "")
 
 
 def load_nasa_csv(path):
     by_name = {}
     with open(path, newline="", encoding="utf-8-sig") as f:
-        # NASA TAP CSV exports sometimes prepend '#'-commented metadata lines
         lines = [ln for ln in f if not ln.startswith("#")]
     reader = csv.DictReader(lines)
     for row in reader:
-        name = row.get("pl_name")
+        name = row.get("planet_name")
         if not name:
             continue
-        by_name[normalize(name)] = row
+        by_name[canon(name)] = row
     return by_name
+
+
+def to_float(v):
+    if v is None or v == "":
+        return None
+    try:
+        return float(v)
+    except ValueError:
+        return None
 
 
 def main(csv_path):
@@ -48,25 +82,21 @@ def main(csv_path):
     matched = 0
     unmatched = []
     for entry in data:
-        key = normalize(entry["name"])
-        row = nasa.get(key)
-        if not row:
-            # retry without a trailing space/letter-case quirks
-            key2 = normalize(entry["name"].replace("  ", " "))
-            row = nasa.get(key2)
+        row = nasa.get(canon(entry["name"]))
         if row:
             matched += 1
             entry["nasa_matched"] = True
-            for field in FIELDS:
-                val = row.get(field, "")
-                if val in ("", None):
-                    continue
-                if field in ("disc_year", "pl_bmassj", "pl_orbsmax", "st_mass", "sy_dist", "ra", "dec"):
-                    try:
-                        val = float(val)
-                    except ValueError:
-                        pass
-                entry[field] = val
+            entry["disc_year"] = to_float(row.get("discovery_year"))
+            entry["disc_facility"] = row.get("discovery_facility") or None
+            entry["disc_telescope"] = row.get("discovery_facility") or None
+            entry["pl_bmassj"] = to_float(row.get("planet_mass_jupiter_mass"))
+            entry["pl_bmasse"] = to_float(row.get("planet_mass_earth_mass"))
+            entry["pl_orbsmax"] = to_float(row.get("orbit_semi_major_axis_au"))
+            entry["st_mass"] = to_float(row.get("stellar_mass_solar"))
+            entry["ra"] = to_float(row.get("ra_deg"))
+            entry["dec"] = to_float(row.get("dec_deg"))
+            entry["sy_dist"] = to_float(row.get("distance_pc"))
+            entry["discoverymethod"] = "Microlensing"
         else:
             unmatched.append(entry["name"])
 

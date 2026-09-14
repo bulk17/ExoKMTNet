@@ -179,6 +179,15 @@
     return digits === undefined ? n.toLocaleString() : n.toFixed(digits);
   }
 
+  // More decimals for small values so e.g. 0.0042 doesn't round to "0.00".
+  function fmtAdaptive(v) {
+    if (v === null || v === undefined || v === "" || isNaN(v)) return null;
+    var n = Number(v);
+    var abs = Math.abs(n);
+    var digits = abs < 0.01 ? 4 : abs < 0.1 ? 3 : 2;
+    return n.toFixed(digits);
+  }
+
   function cellHtml(row, col) {
     if (col.key === "name") {
       return (
@@ -194,9 +203,9 @@
         ? '<a href="' + escapeAttr(row.ads_link) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">ADS ↗</a>'
         : '<span class="na">—</span>';
     }
-    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, 2);
-    if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, 2);
-    if (col.key === "st_mass") return numOrNA(row.st_mass, 2);
+    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj);
+    if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax);
+    if (col.key === "st_mass") return numOrNA(row.st_mass);
     if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0);
     if (col.key === "disc_telescope") return row.disc_telescope ? escapeHtml(row.disc_telescope) : '<span class="na">TBD</span>';
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
@@ -205,7 +214,7 @@
   }
 
   function numOrNA(v, digits) {
-    var f = fmtNum(v, digits);
+    var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
     return f === null ? '<span class="na">TBD</span>' : f;
   }
 
@@ -367,9 +376,10 @@
       field("Discovery method", row.discoverymethod || "Microlensing") +
       field("Telescope", row.disc_telescope) +
       field("Facility", row.disc_facility) +
-      field("Mass (M_Jup)", fmtNum(row.pl_bmassj, 2)) +
-      field("Semi-major axis (au)", fmtNum(row.pl_orbsmax, 2)) +
-      field("Host star mass (M_sun)", fmtNum(row.st_mass, 2)) +
+      field("Mass (M_Jup)", fmtAdaptive(row.pl_bmassj)) +
+      field("Mass (M_Earth)", fmtNum(row.pl_bmasse, 1)) +
+      field("Semi-major axis (au)", fmtAdaptive(row.pl_orbsmax)) +
+      field("Host star mass (M_sun)", fmtAdaptive(row.st_mass)) +
       field("Distance (pc)", fmtNum(row.sy_dist, 0)) +
       field("RA", row.ra != null ? fmtNum(row.ra, 5) : null) +
       field("Dec", row.dec != null ? fmtNum(row.dec, 5) : null) +
