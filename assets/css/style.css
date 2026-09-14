@@ -153,7 +153,7 @@ a { color: var(--link); }
 .institution-bar {
   background: #ffffff;
   border-radius: var(--radius) var(--radius) 0 0;
-  padding: 4px 18px;
+  padding: 2px 18px;
   display: flex;
   align-items: center;
   margin-top: 12px;
