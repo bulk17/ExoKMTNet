@@ -7,15 +7,13 @@
 
   function classify(row) {
     if (row.is_ffp) return "ffp";
-    if (row.type_note === "BD/Planet") return "bdplanet";
-    if (row.type_note === "BD") return "bd";
+    if (row.type_note === "BD/Planet" || row.type_note === "BD") return "bdplanet";
     if (row.pl_bmassj != null && row.pl_bmassj > BD_PLANET_MASS_CUTOFF) return "bdplanet";
     return "planet";
   }
 
   var TYPE_LABEL = {
     planet: "Planet",
-    bd: "Brown Dwarf",
     bdplanet: "BD/Planet",
     ffp: "Free-floating",
   };
@@ -60,7 +58,7 @@
 
   var total = rows.length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
-  var bdCount = rows.filter(function (r) { return r._type === "bd" || r._type === "bdplanet"; }).length;
+  var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
   var years = rows.map(function (r) { return r.pub_year; }).filter(Boolean);
   var latestYear = years.length ? Math.max.apply(null, years) : "-";
   var matched = rows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
@@ -81,7 +79,7 @@
       if (!y) return;
       byYear[y] = byYear[y] || { total: 0, bd: 0, ffp: 0 };
       byYear[y].total++;
-      if (r._type === "bd" || r._type === "bdplanet") byYear[y].bd++;
+      if (r._type === "bdplanet") byYear[y].bd++;
       if (r._type === "ffp") byYear[y].ffp++;
     });
     var yearsSorted = Object.keys(byYear).map(Number).sort(function (a, b) { return a - b; });

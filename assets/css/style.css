@@ -15,7 +15,6 @@
   --accent-soft: #fbe6cf;
   --link: #1d6fbf;
   --planet: #1d6fbf;
-  --bd: #b23a48;
   --bdplanet: #8a5a2b;
   --ffp: #5b3fa0;
   --row-hover: rgba(0, 0, 0, 0.04);
@@ -37,7 +36,6 @@
     --accent-soft: #3a2a14;
     --link: #6fb3f2;
     --planet: #6fb3f2;
-    --bd: #f08a97;
     --bdplanet: #e0b070;
     --ffp: #b79cf0;
     --row-hover: rgba(255, 255, 255, 0.06);
@@ -56,7 +54,6 @@
   --accent-soft: #3a2a14;
   --link: #6fb3f2;
   --planet: #6fb3f2;
-  --bd: #f08a97;
   --bdplanet: #e0b070;
   --ffp: #b79cf0;
   --row-hover: rgba(255, 255, 255, 0.06);
@@ -433,7 +430,6 @@ table.data tbody tr:last-child td { border-bottom: none; }
   border: 1px solid transparent;
 }
 .pill.planet { color: var(--planet); background: color-mix(in srgb, var(--planet) 14%, transparent); border-color: color-mix(in srgb, var(--planet) 35%, transparent); }
-.pill.bd { color: var(--bd); background: color-mix(in srgb, var(--bd) 14%, transparent); border-color: color-mix(in srgb, var(--bd) 35%, transparent); }
 .pill.bdplanet { color: var(--bdplanet); background: color-mix(in srgb, var(--bdplanet) 16%, transparent); border-color: color-mix(in srgb, var(--bdplanet) 35%, transparent); }
 .pill.ffp { color: var(--ffp); background: color-mix(in srgb, var(--ffp) 16%, transparent); border-color: color-mix(in srgb, var(--ffp) 35%, transparent); }
 
