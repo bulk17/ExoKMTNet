@@ -58,14 +58,12 @@
 
   var total = rows.length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
-  var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
   var years = rows.map(function (r) { return r.pub_year; }).filter(Boolean);
   var latestYear = years.length ? Math.max.apply(null, years) : "-";
   var matched = rows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
 
   setText("statTotal", total);
   setText("statFfp", ffpCount);
-  setText("statBd", bdCount);
   setText("statYear", latestYear);
   setText("statMatched", matched + " / " + total);
 
@@ -419,8 +417,64 @@
   }
   overlay.addEventListener("click", closeDrawer);
   drawerClose.addEventListener("click", closeDrawer);
+
+  // ---------------- Free-floating planet list popup ----------------
+  var ffpCard = document.getElementById("ffpCard");
+  var ffpOverlay = document.getElementById("ffpOverlay");
+  var ffpModal = document.getElementById("ffpModal");
+  var ffpModalClose = document.getElementById("ffpModalClose");
+  var ffpList = document.getElementById("ffpList");
+
+  function openFfpModal() {
+    var ffpRows = rows.filter(function (r) { return r._type === "ffp"; });
+    ffpRows.sort(function (a, b) {
+      var ay = a.pub_year || 0, by = b.pub_year || 0;
+      if (ay !== by) return by - ay; // most recent first
+      return String(a.name).localeCompare(String(b.name));
+    });
+    ffpList.innerHTML = ffpRows.map(function (r, i) {
+      return (
+        '<li data-id="' + r._id + '">' +
+        '<span class="rank">' + (i + 1) + "</span>" +
+        '<span class="ffp-name">' + escapeHtml(r.name) + "</span>" +
+        '<span class="ffp-year">' + (r.pub_year || "—") + "</span>" +
+        "</li>"
+      );
+    }).join("");
+    ffpOverlay.classList.add("open");
+    ffpModal.classList.add("open");
+  }
+
+  function closeFfpModal() {
+    ffpOverlay.classList.remove("open");
+    ffpModal.classList.remove("open");
+  }
+
+  ffpCard.addEventListener("click", openFfpModal);
+  ffpCard.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openFfpModal();
+    }
+  });
+  ffpOverlay.addEventListener("click", closeFfpModal);
+  ffpModalClose.addEventListener("click", closeFfpModal);
+  ffpList.addEventListener("click", function (e) {
+    var li = e.target.closest("li[data-id]");
+    if (!li) return;
+    var id = Number(li.getAttribute("data-id"));
+    var row = rows.find(function (r) { return r._id === id; });
+    if (row) {
+      closeFfpModal();
+      openDrawer(row);
+    }
+  });
+
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeDrawer();
+    if (e.key === "Escape") {
+      closeDrawer();
+      closeFfpModal();
+    }
   });
 
   render();

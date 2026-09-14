@@ -42,8 +42,7 @@
     </p>
     <div class="stat-grid">
       <div class="stat-card"><div class="num" id="statTotal">—</div><div class="label">Total entries</div></div>
-      <div class="stat-card"><div class="num" id="statBd">—</div><div class="label">Brown-dwarf candidates</div></div>
-      <div class="stat-card"><div class="num" id="statFfp">—</div><div class="label">Free-floating candidates</div></div>
+      <div class="stat-card stat-card-clickable" id="ffpCard" role="button" tabindex="0" aria-haspopup="dialog"><div class="num" id="statFfp">—</div><div class="label">Free-floating candidates ↗</div></div>
       <div class="stat-card"><div class="num" id="statYear">—</div><div class="label">Latest publication year</div></div>
       <div class="stat-card"><div class="num" id="statMatched">—</div><div class="label">Have physical parameters</div></div>
     </div>
@@ -135,6 +134,14 @@
   <button class="close" id="drawerClose" aria-label="Close">✕</button>
   <div id="drawerBody"></div>
 </aside>
+
+<div class="overlay" id="ffpOverlay"></div>
+<div class="modal" id="ffpModal" role="dialog" aria-modal="true" aria-label="Free-floating planet candidates">
+  <button class="close" id="ffpModalClose" aria-label="Close">✕</button>
+  <h2>Free-floating Planet Candidates</h2>
+  <p class="modal-subtitle">Sorted by most recently announced first</p>
+  <ol id="ffpList"></ol>
+</div>
 
 <script src="assets/data/planets.js"></script>
 <script src="assets/js/app.js"></script>
