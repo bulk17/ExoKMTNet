@@ -149,7 +149,7 @@
 
   var COLUMNS = [
     { key: "seq", label: "#", numeric: true },
-    { key: "name", label: "Planet / Host" },
+    { key: "name", label: "Planet Name" },
     { key: "_type", label: "Type" },
     { key: "pub_year", label: "Year", numeric: true },
     { key: "pl_bmassj", label: "Mass", unit: "M_J", numeric: true },
