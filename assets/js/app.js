@@ -3,10 +3,13 @@
 
   var RAW = window.KMTNET_PLANETS || [];
 
+  var BD_PLANET_MASS_CUTOFF = 30; // M_Jup — above this, treat as BD/planet-boundary regardless of source notes
+
   function classify(row) {
     if (row.is_ffp) return "ffp";
     if (row.type_note === "BD/Planet") return "bdplanet";
     if (row.type_note === "BD") return "bd";
+    if (row.pl_bmassj != null && row.pl_bmassj > BD_PLANET_MASS_CUTOFF) return "bdplanet";
     return "planet";
   }
 
