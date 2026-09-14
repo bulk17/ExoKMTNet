@@ -151,7 +151,6 @@
     { key: "seq", label: "#", numeric: true },
     { key: "name", label: "Planet Name" },
     { key: "_type", label: "Type" },
-    { key: "pub_year", label: "Year", numeric: true },
     { key: "pl_bmassj", label: "Mass", unit: "M_J", numeric: true },
     { key: "pl_bmasse", label: "Mass", unit: "M_E", numeric: true },
     { key: "pl_orbsmax", label: "a", unit: "au", numeric: true },
@@ -159,6 +158,7 @@
     { key: "sy_dist", label: "Dist", unit: "pc", numeric: true },
     { key: "ra", label: "RA" },
     { key: "dec", label: "Dec" },
+    { key: "pub_year", label: "Year", numeric: true },
     { key: "ads_link", label: "Publication" },
   ];
 
