@@ -380,6 +380,8 @@ table.data thead th .col-unit {
   margin-top: 1px;
 }
 
+table.data thead th.has-unit { text-align: center; }
+
 table.data tbody td {
   padding: 8px 10px;
   border-bottom: 1px solid var(--border);

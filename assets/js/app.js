@@ -272,9 +272,10 @@
         labelSpan.appendChild(arrow);
       }
       if (col.unit) {
+        th.classList.add("has-unit");
         var unitSpan = document.createElement("span");
         unitSpan.className = "col-unit";
-        unitSpan.textContent = col.unit;
+        unitSpan.textContent = "(" + col.unit + ")";
         th.appendChild(unitSpan);
       }
       th.addEventListener("click", function () {
