@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KMTNet Exoplanet Archive</title>
+<meta name="description" content="A browsable catalog of exoplanets discovered by the Korea Microlensing Telescope Network (KMTNet), modeled after the NASA Exoplanet Archive." />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        KMTNet Exoplanet Archive
+        <small>Korea Microlensing Telescope Network</small>
+      </div>
+    </div>
+    <nav>
+      <a href="#table">Table</a>
+      <a href="#chart">Statistics</a>
+      <a href="#about">About</a>
+      <button class="theme-toggle" id="themeToggle" type="button">🌓 Theme</button>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <h1>Exoplanets discovered by microlensing with KMTNet</h1>
+    <p>
+      A community-built catalog of planets, brown-dwarf candidates and free-floating planet
+      candidates announced from KMTNet (Korea Microlensing Telescope Network) survey data,
+      cross-referenced with the
+      <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener">NASA Exoplanet Archive</a>.
+    </p>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="num" id="statTotal">—</div><div class="label">Total entries</div></div>
+      <div class="stat-card"><div class="num" id="statBd">—</div><div class="label">Brown-dwarf candidates</div></div>
+      <div class="stat-card"><div class="num" id="statFfp">—</div><div class="label">Free-floating candidates</div></div>
+      <div class="stat-card"><div class="num" id="statYear">—</div><div class="label">Latest publication year</div></div>
+      <div class="stat-card"><div class="num" id="statMatched">—</div><div class="label">Matched to NASA Archive</div></div>
+    </div>
+  </section>
+
+  <section class="chart-card" id="chart">
+    <h2>Announcements per year</h2>
+    <svg id="yearChart" viewBox="0 0 1100 220" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
+    <div class="legend">
+      <span><i style="background:var(--planet)"></i>Planet</span>
+      <span><i style="background:var(--bdplanet)"></i>Brown dwarf / planet boundary</span>
+      <span><i style="background:var(--ffp)"></i>Free-floating candidate</span>
+    </div>
+  </section>
+
+  <section id="table">
+    <div class="controls">
+      <input type="search" id="searchInput" placeholder="Search name, host, or paper title…" aria-label="Search" />
+      <select id="typeSelect" aria-label="Filter by type">
+        <option value="all">All types</option>
+        <option value="planet">Planet</option>
+        <option value="bd">Brown dwarf</option>
+        <option value="bdplanet">BD / Planet boundary</option>
+        <option value="ffp">Free-floating</option>
+      </select>
+      <select id="pageSizeSelect" aria-label="Rows per page">
+        <option value="25">25 / page</option>
+        <option value="50" selected>50 / page</option>
+        <option value="100">100 / page</option>
+        <option value="all">Show all</option>
+      </select>
+      <button class="btn" id="exportCsv" type="button">⭳ Export CSV</button>
+      <span class="count" id="resultCount"></span>
+    </div>
+
+    <div class="table-scroll">
+      <table class="data" id="dataTable">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <span id="pagerInfo"></span>
+      <button class="btn" id="prevPage" type="button">◀ Prev</button>
+      <button class="btn" id="nextPage" type="button">Next ▶</button>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About this catalog</h2>
+    <p>
+      The base list (name, discovery publication, and publication year) was compiled from a
+      spreadsheet of KMTNet microlensing planet announcements, cross-checked against
+      <a href="https://exoplanet.eu/" target="_blank" rel="noopener">exoplanet.eu</a> as of
+      2026-06-25. "Type" reflects the classification noted alongside each entry in the source
+      spreadsheet (Planet / Brown dwarf / BD-planet boundary / Free-floating candidate); several
+      objects near the planet–brown-dwarf boundary have disputed masses and are marked
+      accordingly rather than omitted.
+    </p>
+    <p>
+      Physical parameters (mass, semi-major axis, host-star mass, system distance, RA/Dec,
+      discovery telescope/facility, and release date) are merged in from the
+      <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&amp;config=PSCompPars" target="_blank" rel="noopener">NASA Exoplanet Archive — Planetary Systems Composite Parameters</a>
+      table by matching planet name. Entries not yet matched show <code>TBD</code> in those columns.
+    </p>
+    <p>
+      This is a fan-maintained catalog, not an official KMTNet or NASA product. Discovery
+      papers are linked via NASA ADS. Data last rebuilt: <span id="buildDate"></span>.
+    </p>
+  </section>
+
+  <footer>KMTNet Exoplanet Archive · data sourced from KMTNet publications, exoplanet.eu, and the NASA Exoplanet Archive</footer>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <button class="close" id="drawerClose" aria-label="Close">✕</button>
+  <div id="drawerBody"></div>
+</aside>
+
+<script src="assets/data/planets.js"></script>
+<script src="assets/js/app.js"></script>
+<script>document.getElementById("buildDate").textContent = new Date(document.lastModified).toISOString().slice(0,10);</script>
+</body>
+</html>
