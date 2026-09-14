@@ -157,7 +157,6 @@
     { key: "pl_orbsmax", label: "a", unit: "au", numeric: true },
     { key: "st_mass", label: "M_star", unit: "M_sun", numeric: true },
     { key: "sy_dist", label: "Dist", unit: "pc", numeric: true },
-    { key: "disc_telescope", label: "Telescope" },
     { key: "ra", label: "RA" },
     { key: "dec", label: "Dec" },
     { key: "ads_link", label: "Publication" },
@@ -209,7 +208,6 @@
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax);
     if (col.key === "st_mass") return numOrNA(row.st_mass);
     if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0);
-    if (col.key === "disc_telescope") return row.disc_telescope ? escapeHtml(row.disc_telescope) : '<span class="na">TBD</span>';
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
     var v = row[col.key];
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
