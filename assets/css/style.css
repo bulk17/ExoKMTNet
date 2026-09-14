@@ -160,18 +160,24 @@ a { color: var(--link); }
 
 .brand {
   display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-title {
+  display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 23px;
   letter-spacing: 0.2px;
   color: #ffffff;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .brand .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px var(--accent-soft);
@@ -181,8 +187,9 @@ a { color: var(--link); }
 .brand small {
   display: block;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 13px;
   color: #b9bfdd;
+  margin-left: 22px;
 }
 
 .topbar nav {
