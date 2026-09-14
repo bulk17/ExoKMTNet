@@ -141,6 +141,7 @@
   var state = {
     q: "",
     type: "all",
+    massMax: "all",
     sortKey: "seq",
     sortDir: 1,
     page: 1,
@@ -168,6 +169,7 @@
   var pagerInfo = document.getElementById("pagerInfo");
   var searchInput = document.getElementById("searchInput");
   var typeSelect = document.getElementById("typeSelect");
+  var massSelect = document.getElementById("massSelect");
   var pageSizeSelect = document.getElementById("pageSizeSelect");
   var prevBtn = document.getElementById("prevPage");
   var nextBtn = document.getElementById("nextPage");
@@ -229,6 +231,9 @@
     var q = state.q.trim().toLowerCase();
     return rows.filter(function (r) {
       if (state.type !== "all" && r._type !== state.type) return false;
+      if (state.massMax !== "all") {
+        if (r.pl_bmassj == null || r.pl_bmassj > Number(state.massMax)) return false;
+      }
       if (!q) return true;
       return (
         (r.name && r.name.toLowerCase().indexOf(q) !== -1) ||
@@ -332,6 +337,11 @@
   });
   typeSelect.addEventListener("change", function () {
     state.type = typeSelect.value;
+    state.page = 1;
+    render();
+  });
+  massSelect.addEventListener("change", function () {
+    state.massMax = massSelect.value;
     state.page = 1;
     render();
   });
