@@ -203,12 +203,10 @@ a { color: var(--link); }
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-.brand .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+.brand-emblem {
+  height: 28px;
+  width: auto;
+  display: block;
   flex: none;
 }
 
