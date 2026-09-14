@@ -58,13 +58,10 @@
 
   var total = rows.length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
-  var years = rows.map(function (r) { return r.pub_year; }).filter(Boolean);
-  var latestYear = years.length ? Math.max.apply(null, years) : "-";
   var matched = rows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
 
   setText("statTotal", total);
   setText("statFfp", ffpCount);
-  setText("statYear", latestYear);
   setText("statMatched", matched + " / " + total);
 
   // ---------------- Chart: discoveries per year ----------------
