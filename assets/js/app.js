@@ -84,7 +84,7 @@
     var yearsSorted = Object.keys(byYear).map(Number).sort(function (a, b) { return a - b; });
     if (!yearsSorted.length) return;
 
-    var W = 1100, H = 220, padL = 32, padB = 22, padT = 10, padR = 8;
+    var W = 1100, H = 154, padL = 32, padB = 22, padT = 10, padR = 8;
     var innerW = W - padL - padR;
     var innerH = H - padT - padB;
     var maxVal = Math.max.apply(null, yearsSorted.map(function (y) { return byYear[y].total; }));
