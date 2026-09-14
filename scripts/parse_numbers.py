@@ -73,7 +73,7 @@ def extract(path):
         name = str(name).strip()
         title = title.strip() if title else None
         is_host_only = bool(pub_year_raw and "(Host star)" in str(pub_year_raw))
-        is_ffp = bool(title and re.search(r"free[- ]floating", title, re.IGNORECASE))
+        is_ffp = bool(title and re.search(r"free[- ]floating|rogue planet", title, re.IGNORECASE))
         type_note, mass_note = classify_notes(notes)
         pub_year = parse_pub_year(pub_year_raw, ads_link)
 
