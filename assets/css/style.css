@@ -148,20 +148,22 @@ a { color: var(--link); }
 }
 
 /* ---------- Institution bar ---------- */
-/* A plain white strip above the main header, like the Caltech/IPAC/NASA
-   logo bar above NASA Exoplanet Archive's own nav. */
+/* A small logo chip sized to the logo itself (not a full-width strip),
+   like the Caltech/IPAC/NASA logos above NASA Exoplanet Archive's nav —
+   just scaled down to a badge rather than a banner. */
 .institution-bar {
-  background: #ffffff;
-  border-radius: var(--radius) var(--radius) 0 0;
-  padding: 0 18px;
-  display: flex;
+  background: #eaf2fb;
+  border-radius: 999px;
+  padding: 6px 16px;
+  display: inline-flex;
+  width: fit-content;
   align-items: center;
   margin-top: 12px;
   line-height: 0;
 }
 
 .kasi-logo {
-  height: 26px;
+  height: 34px;
   width: auto;
   display: block;
 }
