@@ -167,12 +167,18 @@ a { color: var(--link); }
 .brand-title {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-weight: 700;
   font-size: 30px;
   letter-spacing: 0.2px;
   color: #ffffff;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.brand-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .brand-emblem {
