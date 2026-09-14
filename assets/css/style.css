@@ -147,34 +147,6 @@ a { color: var(--link); }
   -webkit-backdrop-filter: var(--glass-blur);
 }
 
-/* ---------- Institution bar ---------- */
-/* A small logo chip sized to the logo itself (not a full-width strip),
-   like the Caltech/IPAC/NASA logos above NASA Exoplanet Archive's nav —
-   just scaled down to a badge rather than a banner. */
-.institution-bar {
-  background: #eaf2fb;
-  border-radius: 999px;
-  padding: 6px 16px;
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  margin-top: 12px;
-  line-height: 0;
-}
-
-.kasi-logo {
-  height: 29px;
-  width: auto;
-  display: block;
-}
-
-.kasi-fallback {
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.03em;
-  color: #14161f;
-}
-
 /* ---------- Top bar ---------- */
 .topbar {
   display: flex;
@@ -195,16 +167,16 @@ a { color: var(--link); }
 .brand-title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 30px;
   letter-spacing: 0.2px;
   color: #ffffff;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .brand-emblem {
-  height: 28px;
+  height: 40px;
   width: auto;
   display: block;
   flex: none;
