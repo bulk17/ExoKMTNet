@@ -152,10 +152,11 @@
     { key: "name", label: "Planet / Host" },
     { key: "_type", label: "Type" },
     { key: "pub_year", label: "Year", numeric: true },
-    { key: "pl_bmassj", label: "Mass (M_J)", numeric: true },
-    { key: "pl_orbsmax", label: "a (au)", numeric: true },
-    { key: "st_mass", label: "M_star (M_sun)", numeric: true },
-    { key: "sy_dist", label: "Dist (pc)", numeric: true },
+    { key: "pl_bmassj", label: "Mass", unit: "M_J", numeric: true },
+    { key: "pl_bmasse", label: "Mass", unit: "M_E", numeric: true },
+    { key: "pl_orbsmax", label: "a", unit: "au", numeric: true },
+    { key: "st_mass", label: "M_star", unit: "M_sun", numeric: true },
+    { key: "sy_dist", label: "Dist", unit: "pc", numeric: true },
     { key: "disc_telescope", label: "Telescope" },
     { key: "ra", label: "RA" },
     { key: "dec", label: "Dec" },
@@ -204,6 +205,7 @@
         : '<span class="na">—</span>';
     }
     if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj);
+    if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1);
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax);
     if (col.key === "st_mass") return numOrNA(row.st_mass);
     if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0);
@@ -258,13 +260,22 @@
     thead.innerHTML = "";
     COLUMNS.forEach(function (col) {
       var th = document.createElement("th");
-      th.textContent = col.label;
+      var labelSpan = document.createElement("span");
+      labelSpan.className = "col-label";
+      labelSpan.textContent = col.label;
+      th.appendChild(labelSpan);
       if (col.key === state.sortKey) {
         th.classList.add("sorted");
         var arrow = document.createElement("span");
         arrow.className = "arrow";
         arrow.textContent = state.sortDir === 1 ? "▲" : "▼";
-        th.appendChild(arrow);
+        labelSpan.appendChild(arrow);
+      }
+      if (col.unit) {
+        var unitSpan = document.createElement("span");
+        unitSpan.className = "col-unit";
+        unitSpan.textContent = col.unit;
+        th.appendChild(unitSpan);
       }
       th.addEventListener("click", function () {
         if (state.sortKey === col.key) {
@@ -335,10 +346,10 @@
 
   exportBtn.addEventListener("click", function () {
     var filtered = getSorted(getFiltered());
-    var header = ["name", "host_guess", "type", "pub_year", "pl_bmassj", "pl_orbsmax", "st_mass", "sy_dist", "disc_telescope", "ra", "dec", "ads_link"];
+    var header = ["name", "host_guess", "type", "pub_year", "pl_bmassj", "pl_bmasse", "pl_orbsmax", "st_mass", "sy_dist", "disc_telescope", "ra", "dec", "ads_link"];
     var lines = [header.join(",")];
     filtered.forEach(function (r) {
-      var vals = [r.name, r.host_guess, TYPE_LABEL[r._type], r.pub_year, r.pl_bmassj, r.pl_orbsmax, r.st_mass, r.sy_dist, r.disc_telescope, r.ra, r.dec, r.ads_link];
+      var vals = [r.name, r.host_guess, TYPE_LABEL[r._type], r.pub_year, r.pl_bmassj, r.pl_bmasse, r.pl_orbsmax, r.st_mass, r.sy_dist, r.disc_telescope, r.ra, r.dec, r.ads_link];
       lines.push(vals.map(function (v) {
         v = v === null || v === undefined ? "" : String(v);
         return '"' + v.replace(/"/g, '""') + '"';
