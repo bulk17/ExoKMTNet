@@ -133,7 +133,7 @@ body::after {
 a { color: var(--link); }
 
 .wrap {
-  max-width: 1440px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
