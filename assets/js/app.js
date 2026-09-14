@@ -141,7 +141,7 @@
 
       if (i % 1 === 0) {
         var t = el("text", { x: x + barW / 2, y: H - 6, "text-anchor": "middle" });
-        t.textContent = String(y).slice(2);
+        t.textContent = String(y);
         svg.appendChild(t);
       }
     });
