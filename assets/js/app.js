@@ -56,26 +56,26 @@
     if (el) el.textContent = val;
   }
 
-  var total = rows.length;
+  var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
+  var total = nonFfpRows.length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
-  var matched = rows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
+  var matched = nonFfpRows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
 
   setText("statTotal", total);
   setText("statFfp", ffpCount);
   setText("statMatched", matched + " / " + total);
 
-  // ---------------- Chart: discoveries per year ----------------
+  // ---------------- Chart: discoveries per year (free-floating candidates excluded; see #ffpCard) ----------------
   (function renderChart() {
     var svg = document.getElementById("yearChart");
     if (!svg) return;
     var byYear = {};
-    rows.forEach(function (r) {
+    nonFfpRows.forEach(function (r) {
       var y = r.pub_year;
       if (!y) return;
-      byYear[y] = byYear[y] || { total: 0, bd: 0, ffp: 0 };
+      byYear[y] = byYear[y] || { total: 0, bd: 0 };
       byYear[y].total++;
       if (r._type === "bdplanet") byYear[y].bd++;
-      if (r._type === "ffp") byYear[y].ffp++;
     });
     var yearsSorted = Object.keys(byYear).map(Number).sort(function (a, b) { return a - b; });
     if (!yearsSorted.length) return;
@@ -102,9 +102,8 @@
     yearsSorted.forEach(function (y, i) {
       var d = byYear[y];
       var x = padL + i * barW;
-      var planetH = ((d.total - d.bd - d.ffp) / maxVal) * innerH;
+      var planetH = ((d.total - d.bd) / maxVal) * innerH;
       var bdH = (d.bd / maxVal) * innerH;
-      var ffpH = (d.ffp / maxVal) * innerH;
       var yBase = H - padB;
 
       var group = el("g", { class: "year-group" });
@@ -122,7 +121,6 @@
       var segs = [
         { h: planetH, cls: "bar" },
         { h: bdH, cls: "bar bd" },
-        { h: ffpH, cls: "bar ffp" },
       ];
       segs.forEach(function (s) {
         if (s.h <= 0) return;
@@ -481,7 +479,7 @@
   var yearTbody = document.querySelector("#yearTable tbody");
 
   function openYearModal(year) {
-    var yearRows = rows.filter(function (r) { return r.pub_year === year; });
+    var yearRows = rows.filter(function (r) { return r.pub_year === year && r._type !== "ffp"; });
     yearRows.sort(function (a, b) { return b.seq - a.seq; });
     var bdCount = yearRows.filter(function (r) { return r._type === "bdplanet"; }).length;
 

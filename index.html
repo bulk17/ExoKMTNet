@@ -50,11 +50,11 @@
 
   <section class="chart-card" id="chart">
     <h2>Announcements per year</h2>
+    <p class="chart-note">Free-floating candidates are excluded from these counts — see the “Free-floating candidates” figure above.</p>
     <svg id="yearChart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
     <div class="legend">
       <span><i style="background:var(--planet)"></i>Planet</span>
       <span><i style="background:var(--bdplanet)"></i>Brown dwarf / planet boundary</span>
-      <span><i style="background:var(--ffp)"></i>Free-floating candidate</span>
     </div>
   </section>
 
@@ -119,6 +119,15 @@
       (they catalog confirmed planets, not brown dwarfs) and a handful of the very latest
       announcements haven't been added to either yet — both show <code>TBD</code> for these
       columns rather than being hidden.
+    </p>
+    <p>
+      Free-floating planet (FFP) candidates are kept as a separate category and excluded from
+      the "Total entries" count and the "Announcements per year" chart. The
+      <a href="https://www.iau.org/public/themes/pluto/" target="_blank" rel="noopener">IAU definition of a planet</a>
+      requires it to orbit a star — an FFP has no bound host star by construction, so strictly
+      speaking it does not meet that definition. These are therefore listed as planet
+      candidates, not confirmed planets; their count is shown separately in the
+      "Free-floating candidates" figure above.
     </p>
     <p>
       This is a fan-maintained catalog, not an official KMTNet or NASA product. Discovery
