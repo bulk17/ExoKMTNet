@@ -601,6 +601,8 @@ table.data tbody tr:last-child td { border-bottom: none; }
   -webkit-backdrop-filter: var(--glass-blur);
 }
 .about h2 { color: var(--text); font-size: 15px; margin-top: 0; }
+.about h3 { color: var(--text); font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.04em; margin: 20px 0 8px; }
+.about h3:first-of-type { margin-top: 4px; }
 .about code { font-family: var(--font-mono); background: var(--bg-elev-2); padding: 1px 5px; border-radius: 4px; }
 
 footer {
