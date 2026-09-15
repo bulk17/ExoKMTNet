@@ -588,8 +588,7 @@ table.data tbody tr:last-child td { border-bottom: none; }
 
 /* ---------- About / footer ---------- */
 .about {
-  margin: 40px auto 0;
-  max-width: 760px;
+  margin-top: 40px;
   padding: 20px 24px;
   color: var(--text-dim);
   font-size: 13px;
