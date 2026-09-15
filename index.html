@@ -54,7 +54,7 @@
     <svg id="yearChart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
     <div class="legend">
       <span><i style="background:var(--planet)"></i>Planet</span>
-      <span><i style="background:var(--bdplanet)"></i>Brown dwarf / planet boundary</span>
+      <span><i style="background:var(--bdplanet)"></i>Brown Dwarf (BD)</span>
     </div>
   </section>
 
@@ -64,7 +64,7 @@
       <select id="typeSelect" aria-label="Filter by type">
         <option value="all">All types</option>
         <option value="planet">Planet</option>
-        <option value="bdplanet">BD / Planet boundary</option>
+        <option value="bdplanet">Brown Dwarf (BD)</option>
         <option value="ffp">Free-floating</option>
       </select>
       <select id="massSelect" aria-label="Filter by mass cutoff">
@@ -106,9 +106,16 @@
       this upper bound is based on the mass–density–radius distribution, which shows a clear
       separation between giant planets and stars around 60 M_Jup (Hatzes &amp; Rauer, 2015).
       Two other mass limits are commonly used elsewhere in the literature: 13 M_Jup, based on
-      the deuterium-burning limit, and 30 M_Jup, based on planet-formation scenarios — this
-      catalog uses that 30 M_Jup line as its own working boundary between "Planet" and
-      "BD/Planet boundary" entries (see below).
+      the deuterium-burning limit, and 30 M_Jup, based on planet-formation scenarios.
+    </p>
+    <p>
+      This catalog uses that 30 M_Jup line as its own working boundary between "Planet" and
+      "Brown Dwarf (BD)" entries (see below), following the
+      <a href="https://exoplanetarchive.ipac.caltech.edu/docs/exoplanet_criteria.html" target="_blank" rel="noopener">NASA Exoplanet Archive's</a>
+      own inclusion criterion: an object qualifies for its planet tables if its mass (or
+      minimum mass) is estimated at 30 M_Jup or below and it is associated with a host star.
+      Objects above 30 M_Jup are therefore classified as "Brown Dwarf (BD)" here, rather than
+      as planets, to match that same practical cutoff.
     </p>
     <h3>Data sources</h3>
     <p>
@@ -116,10 +123,9 @@
       spreadsheet of KMTNet microlensing planet announcements, cross-checked against
       <a href="https://exoplanet.eu/" target="_blank" rel="noopener">exoplanet.eu</a> as of
       2026-06-25. "Type" starts from the classification noted alongside each entry in the source
-      spreadsheet (Planet / Free-floating candidate / Brown dwarf or BD-planet boundary), and
-      also reclassifies anything with a matched mass above 30 M_Jup as "BD/Planet" regardless of
-      its original note — this catalog treats "Brown dwarf" and "BD/Planet boundary" as one
-      category, since 30 M_Jup is its working planet/brown-dwarf cutoff.
+      spreadsheet (Planet / Free-floating candidate / Brown Dwarf), and also reclassifies
+      anything with a matched mass above 30 M_Jup as "Brown Dwarf (BD)" regardless of its
+      original note.
     </p>
     <p>
       Physical parameters (mass, semi-major axis, host-star mass, system distance, and RA/Dec)

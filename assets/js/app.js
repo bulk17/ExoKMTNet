@@ -14,7 +14,7 @@
 
   var TYPE_LABEL = {
     planet: "Planet",
-    bdplanet: "BD/Planet",
+    bdplanet: "Brown Dwarf (BD)",
     ffp: "Free-floating",
   };
 
@@ -484,7 +484,7 @@
     var bdCount = yearRows.filter(function (r) { return r._type === "bdplanet"; }).length;
 
     yearModalTitle.textContent = "Planets Announced in " + year;
-    yearModalSubtitle.textContent = yearRows.length + " " + (yearRows.length === 1 ? "entry" : "entries") + " (BD/Planet: " + bdCount + "개)";
+    yearModalSubtitle.textContent = yearRows.length + " " + (yearRows.length === 1 ? "entry" : "entries") + " (Brown Dwarf (BD): " + bdCount + "개)";
 
     yearThead.innerHTML = COLUMNS.map(function (col) {
       return (
