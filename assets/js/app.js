@@ -80,7 +80,7 @@
     var yearsSorted = Object.keys(byYear).map(Number).sort(function (a, b) { return a - b; });
     if (!yearsSorted.length) return;
 
-    var W = 1100, H = 154, padL = 32, padB = 22, padT = 10, padR = 8;
+    var W = 1100, H = 154, padL = 32, padB = 22, padT = 20, padR = 8;
     var innerW = W - padL - padR;
     var innerH = H - padT - padB;
     var maxVal = Math.max.apply(null, yearsSorted.map(function (y) { return byYear[y].total; }));
@@ -138,6 +138,10 @@
       });
 
       svg.appendChild(group);
+
+      var countLabel = el("text", { class: "bar-label", x: x + barW / 2, y: yBase - 4, "text-anchor": "middle" });
+      countLabel.textContent = String(d.total);
+      svg.appendChild(countLabel);
 
       if (i % 1 === 0) {
         var t = el("text", { x: x + barW / 2, y: H - 6, "text-anchor": "middle" });

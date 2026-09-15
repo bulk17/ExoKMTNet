@@ -292,6 +292,7 @@ a { color: var(--link); }
 #yearChart .bar.bd { fill: var(--bdplanet); }
 #yearChart .bar.ffp { fill: var(--ffp); }
 #yearChart text { fill: var(--text-dim); font-size: 9.5px; font-family: var(--font-mono); }
+#yearChart .bar-label { fill: var(--text); font-size: 9.5px; font-weight: 600; pointer-events: none; }
 #yearChart .axis-line { stroke: var(--border); stroke-width: 1; }
 #yearChart .bar-hit { fill: transparent; }
 #yearChart .year-group:hover .bar-hit { fill: color-mix(in srgb, var(--text) 8%, transparent); }
