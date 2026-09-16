@@ -443,7 +443,17 @@ table.data tbody tr:last-child td { border-bottom: none; }
 
 .na { color: var(--text-dim); opacity: 0.6; }
 
-.has-err { text-decoration: underline dotted var(--text-dim); text-underline-offset: 2px; cursor: help; }
+.err-stack {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.62em;
+  line-height: 1.05;
+  color: var(--text-dim);
+  margin-left: 3px;
+  vertical-align: middle;
+  cursor: help;
+}
 
 .pager {
   display: flex;

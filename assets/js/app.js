@@ -239,18 +239,24 @@
   function numOrNA(v, digits, err1, err2) {
     var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
     if (f === null) return '<span class="na">TBD</span>';
-    var err = errText(err1, err2, digits);
-    return err ? '<span class="has-err" title="' + escapeAttr(err) + '">' + f + "</span>" : f;
+    var parts = errParts(err1, err2, digits);
+    if (!parts) return f;
+    return (
+      f +
+      '<span class="err-stack" title="+' + escapeAttr(parts.hi) + " / " + escapeAttr(parts.lo) + '">' +
+      "<span>+" + parts.hi + "</span><span>" + parts.lo + "</span>" +
+      "</span>"
+    );
   }
 
-  // Formats asymmetric +upper/-lower error bars, e.g. "+0.80 / -0.60".
+  // hi/lo formatted magnitudes for the "+upper / lower" asymmetric error bar.
   // err1 is stored positive (upper bound), err2 negative (lower bound).
-  function errText(err1, err2, digits) {
+  function errParts(err1, err2, digits) {
     if (err1 == null || err2 == null) return null;
     var fmt = function (v) { return digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits); };
     var hi = fmt(err1), lo = fmt(err2);
     if (hi === null || lo === null) return null;
-    return "+" + hi + " / " + lo;
+    return { hi: hi, lo: lo };
   }
 
   function escapeHtml(s) {
@@ -423,12 +429,12 @@
     return "<dt>" + label + "</dt><dd>" + (value === null || value === undefined || value === "" ? '<span class="na">—</span>' : value) + "</dd>";
   }
 
-  // Value plus its "(+hi / lo)" error range, when both bounds are known.
+  // Value plus its "(+hi / -lo)" error range, when both bounds are known.
   function withErr(v, digits, err1, err2) {
     var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
     if (f === null) return null;
-    var err = errText(err1, err2, digits);
-    return err ? f + " (" + err + ")" : f;
+    var parts = errParts(err1, err2, digits);
+    return parts ? f + " (+" + parts.hi + " / " + parts.lo + ")" : f;
   }
 
   function openDrawer(row) {
