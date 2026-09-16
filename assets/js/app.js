@@ -412,7 +412,9 @@
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
-    a.download = "kmtnet_exoplanets.csv";
+    var today = new Date();
+    var stamp = today.getFullYear() + String(today.getMonth() + 1).padStart(2, "0") + String(today.getDate()).padStart(2, "0");
+    a.download = "kmtnet_exoplanets_" + stamp + ".csv";
     document.body.appendChild(a);
     a.click();
     a.remove();
