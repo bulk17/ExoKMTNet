@@ -226,8 +226,8 @@
         ? '<a href="' + escapeAttr(row.ads_link) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">ADS ↗</a>'
         : '<span class="na">—</span>';
     }
-    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj);
-    if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1);
+    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2);
+    if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2);
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax);
     if (col.key === "st_mass") return numOrNA(row.st_mass);
     if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0);
@@ -236,9 +236,21 @@
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
   }
 
-  function numOrNA(v, digits) {
+  function numOrNA(v, digits, err1, err2) {
     var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
-    return f === null ? '<span class="na">TBD</span>' : f;
+    if (f === null) return '<span class="na">TBD</span>';
+    var err = errText(err1, err2, digits);
+    return err ? '<span class="has-err" title="' + escapeAttr(err) + '">' + f + "</span>" : f;
+  }
+
+  // Formats asymmetric +upper/-lower error bars, e.g. "+0.80 / -0.60".
+  // err1 is stored positive (upper bound), err2 negative (lower bound).
+  function errText(err1, err2, digits) {
+    if (err1 == null || err2 == null) return null;
+    var fmt = function (v) { return digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits); };
+    var hi = fmt(err1), lo = fmt(err2);
+    if (hi === null || lo === null) return null;
+    return "+" + hi + " / " + lo;
   }
 
   function escapeHtml(s) {
@@ -411,6 +423,14 @@
     return "<dt>" + label + "</dt><dd>" + (value === null || value === undefined || value === "" ? '<span class="na">—</span>' : value) + "</dd>";
   }
 
+  // Value plus its "(+hi / lo)" error range, when both bounds are known.
+  function withErr(v, digits, err1, err2) {
+    var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
+    if (f === null) return null;
+    var err = errText(err1, err2, digits);
+    return err ? f + " (" + err + ")" : f;
+  }
+
   function openDrawer(row) {
     var html =
       "<h2>" + escapeHtml(row.name) + "</h2>" +
@@ -422,8 +442,8 @@
       field("Discovery method", row.discoverymethod || "Microlensing") +
       field("Telescope", row.disc_telescope) +
       field("Facility", row.disc_facility) +
-      field("Mass (M_Jup)", fmtAdaptive(row.pl_bmassj)) +
-      field("Mass (M_Earth)", fmtNum(row.pl_bmasse, 1)) +
+      field("Mass (M_Jup)", withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2)) +
+      field("Mass (M_Earth)", withErr(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2)) +
       field("Semi-major axis (au)", fmtAdaptive(row.pl_orbsmax)) +
       field("Host star mass (M_sun)", fmtAdaptive(row.st_mass)) +
       field("Distance (pc)", fmtNum(row.sy_dist, 0)) +

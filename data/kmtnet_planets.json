@@ -22,7 +22,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1100.0
+    "pl_bmasse": 1100.0,
+    "pl_bmassj_err1": 3.7,
+    "pl_bmassj_err2": -1.6,
+    "pl_bmasse_err1": 1200.0,
+    "pl_bmasse_err2": -510.0
   },
   {
     "seq": 2,
@@ -47,7 +51,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 230.0
+    "pl_bmasse": 230.0,
+    "pl_bmassj_err1": 0.65,
+    "pl_bmassj_err2": -0.07,
+    "pl_bmasse_err1": 210.0,
+    "pl_bmasse_err2": -20.0
   },
   {
     "seq": 3,
@@ -98,7 +106,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1.43
+    "pl_bmasse": 1.43,
+    "pl_bmassj_err1": 0.0014,
+    "pl_bmassj_err2": -0.001,
+    "pl_bmasse_err1": 0.45,
+    "pl_bmasse_err2": -0.32
   },
   {
     "seq": 5,
@@ -171,7 +183,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1300.0
+    "pl_bmasse": 1300.0,
+    "pl_bmassj_err1": 6.5,
+    "pl_bmassj_err2": -2.5,
+    "pl_bmasse_err1": 2100.0,
+    "pl_bmasse_err2": -790.0
   },
   {
     "seq": 8,
@@ -196,7 +212,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1330.0
+    "pl_bmasse": 1330.0,
+    "pl_bmassj_err1": 3.19,
+    "pl_bmassj_err2": -2.43,
+    "pl_bmasse_err1": 1010.0,
+    "pl_bmasse_err2": -772.0
   },
   {
     "seq": 9,
@@ -247,7 +267,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4253.0
+    "pl_bmasse": 4253.0,
+    "pl_bmassj_err1": 0.88,
+    "pl_bmassj_err2": -0.82,
+    "pl_bmasse_err1": 280.0,
+    "pl_bmasse_err2": -260.0
   },
   {
     "seq": 11,
@@ -272,7 +296,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3.269
+    "pl_bmasse": 3.269,
+    "pl_bmassj_err1": 0.01211,
+    "pl_bmassj_err2": -0.00634,
+    "pl_bmasse_err1": 3.849,
+    "pl_bmasse_err2": -2.015
   },
   {
     "seq": 12,
@@ -297,7 +325,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4.43
+    "pl_bmasse": 4.43,
+    "pl_bmassj_err1": 0.00078659,
+    "pl_bmassj_err2": -0.00078659,
+    "pl_bmasse_err1": 0.25,
+    "pl_bmasse_err2": -0.25
   },
   {
     "seq": 13,
@@ -346,7 +378,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 127.0
+    "pl_bmasse": 127.0,
+    "pl_bmassj_err1": 0.637,
+    "pl_bmassj_err2": -0.257,
+    "pl_bmasse_err1": 202.0,
+    "pl_bmasse_err2": -82.0
   },
   {
     "seq": 15,
@@ -371,7 +407,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3813.940884
+    "pl_bmasse": 3813.940884,
+    "pl_bmassj_err1": 0.6,
+    "pl_bmassj_err2": -0.6,
+    "pl_bmasse_err1": 190.6970442,
+    "pl_bmasse_err2": -190.6970442
   },
   {
     "seq": 16,
@@ -420,7 +460,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 240.0
+    "pl_bmasse": 240.0,
+    "pl_bmassj_err1": 1.26,
+    "pl_bmassj_err2": -0.4,
+    "pl_bmasse_err1": 400.0,
+    "pl_bmasse_err2": -130.0
   },
   {
     "seq": 18,
@@ -469,7 +513,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 9.0
+    "pl_bmasse": 9.0,
+    "pl_bmassj_err1": 0.028,
+    "pl_bmassj_err2": -0.014,
+    "pl_bmasse_err1": 9.0,
+    "pl_bmasse_err2": -4.5
   },
   {
     "seq": 20,
@@ -495,7 +543,11 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
     "pl_bmasse": 505.0,
-    "eu_matched": true
+    "eu_matched": true,
+    "pl_bmassj_err1": 0.35,
+    "pl_bmassj_err2": -0.26,
+    "pl_bmasse_err1": 110.0,
+    "pl_bmasse_err2": -83.0
   },
   {
     "seq": 21,
@@ -544,7 +596,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 33.7
+    "pl_bmasse": 33.7,
+    "pl_bmassj_err1": 0.406,
+    "pl_bmassj_err2": -0.073,
+    "pl_bmasse_err1": 129.0,
+    "pl_bmasse_err2": -23.2
   },
   {
     "seq": 23,
@@ -569,7 +625,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1450.0
+    "pl_bmasse": 1450.0,
+    "pl_bmassj_err1": 5.03,
+    "pl_bmassj_err2": -2.14,
+    "pl_bmasse_err1": 1600.0,
+    "pl_bmasse_err2": -680.0
   },
   {
     "seq": 24,
@@ -618,7 +678,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4923.0
+    "pl_bmasse": 4923.0,
+    "pl_bmassj_err1": 24.99,
+    "pl_bmassj_err2": -8.58,
+    "pl_bmasse_err1": 7943.0,
+    "pl_bmasse_err2": -2730.0
   },
   {
     "seq": 26,
@@ -643,7 +707,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2200.0
+    "pl_bmasse": 2200.0,
+    "pl_bmassj_err1": 5.2,
+    "pl_bmassj_err2": -4.3,
+    "pl_bmasse_err1": 1700.0,
+    "pl_bmasse_err2": -1400.0
   },
   {
     "seq": 27,
@@ -668,7 +736,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 200.0
+    "pl_bmasse": 200.0,
+    "pl_bmassj_err1": 1.16,
+    "pl_bmassj_err2": -0.33,
+    "pl_bmasse_err1": 369.0,
+    "pl_bmasse_err2": -100.0
   },
   {
     "seq": 28,
@@ -693,7 +765,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 5700.0
+    "pl_bmasse": 5700.0,
+    "pl_bmassj_err1": 20.0,
+    "pl_bmassj_err2": -11.0,
+    "pl_bmasse_err1": 6000.0,
+    "pl_bmasse_err2": -3500.0
   },
   {
     "seq": 29,
@@ -718,7 +794,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1043.0
+    "pl_bmasse": 1043.0,
+    "pl_bmassj_err1": 3.468,
+    "pl_bmassj_err2": -1.835,
+    "pl_bmasse_err1": 1102.0,
+    "pl_bmasse_err2": -583.0
   },
   {
     "seq": 30,
@@ -743,7 +823,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 34.0
+    "pl_bmasse": 34.0,
+    "pl_bmassj_err1": 0.05,
+    "pl_bmassj_err2": -0.04,
+    "pl_bmasse_err1": 15.0,
+    "pl_bmasse_err2": -12.0
   },
   {
     "seq": 31,
@@ -840,7 +924,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 140.0
+    "pl_bmasse": 140.0,
+    "pl_bmassj_err1": 0.21,
+    "pl_bmassj_err2": -0.17,
+    "pl_bmasse_err1": 67.0,
+    "pl_bmasse_err2": -54.0
   },
   {
     "seq": 35,
@@ -889,7 +977,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 640.0
+    "pl_bmasse": 640.0,
+    "pl_bmassj_err1": 2.0,
+    "pl_bmassj_err2": -1.1,
+    "pl_bmasse_err1": 640.0,
+    "pl_bmasse_err2": -350.0
   },
   {
     "seq": 37,
@@ -914,7 +1006,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 230.0
+    "pl_bmasse": 230.0,
+    "pl_bmassj_err1": 0.8,
+    "pl_bmassj_err2": -0.42,
+    "pl_bmasse_err1": 250.0,
+    "pl_bmasse_err2": -130.0
   },
   {
     "seq": 38,
@@ -939,7 +1035,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 17.9
+    "pl_bmasse": 17.9,
+    "pl_bmassj_err1": 0.03,
+    "pl_bmassj_err2": -0.028,
+    "pl_bmasse_err1": 9.6,
+    "pl_bmasse_err2": -8.8
   },
   {
     "seq": 39,
@@ -964,7 +1064,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 13.93
+    "pl_bmasse": 13.93,
+    "pl_bmassj_err1": 0.00491,
+    "pl_bmassj_err2": -0.00491,
+    "pl_bmasse_err1": 1.56,
+    "pl_bmasse_err2": -1.56
   },
   {
     "seq": 40,
@@ -989,7 +1093,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1500.0
+    "pl_bmasse": 1500.0,
+    "pl_bmassj_err1": 0.6,
+    "pl_bmassj_err2": -0.6,
+    "pl_bmasse_err1": 200.0,
+    "pl_bmasse_err2": -200.0
   },
   {
     "seq": 41,
@@ -1014,7 +1122,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 570.0
+    "pl_bmasse": 570.0,
+    "pl_bmassj_err1": 3.4,
+    "pl_bmassj_err2": -1.1,
+    "pl_bmasse_err1": 1100.0,
+    "pl_bmasse_err2": -350.0
   },
   {
     "seq": 42,
@@ -1039,7 +1151,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 890.0
+    "pl_bmasse": 890.0,
+    "pl_bmassj_err1": 5.1,
+    "pl_bmassj_err2": -1.7,
+    "pl_bmasse_err1": 1600.0,
+    "pl_bmasse_err2": -540.0
   },
   {
     "seq": 43,
@@ -1064,7 +1180,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 111.0
+    "pl_bmasse": 111.0,
+    "pl_bmassj_err1": 0.132,
+    "pl_bmassj_err2": -0.087,
+    "pl_bmasse_err1": 42.0,
+    "pl_bmasse_err2": -28.0
   },
   {
     "seq": 44,
@@ -1089,7 +1209,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 7.59
+    "pl_bmasse": 7.59,
+    "pl_bmassj_err1": 0.0024,
+    "pl_bmassj_err2": -0.0022,
+    "pl_bmasse_err1": 0.75,
+    "pl_bmasse_err2": -0.69
   },
   {
     "seq": 45,
@@ -1114,7 +1238,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1400.0
+    "pl_bmasse": 1400.0,
+    "pl_bmassj_err1": 3.04,
+    "pl_bmassj_err2": -2.0,
+    "pl_bmasse_err1": 966.0,
+    "pl_bmasse_err2": -636.0
   },
   {
     "seq": 46,
@@ -1139,7 +1267,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1400.0
+    "pl_bmasse": 1400.0,
+    "pl_bmassj_err1": 0.9,
+    "pl_bmassj_err2": -0.67,
+    "pl_bmasse_err1": 290.0,
+    "pl_bmasse_err2": -210.0
   },
   {
     "seq": 47,
@@ -1164,7 +1296,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 700.0
+    "pl_bmasse": 700.0,
+    "pl_bmassj_err1": 1.9,
+    "pl_bmassj_err2": -1.1,
+    "pl_bmasse_err1": 600.0,
+    "pl_bmasse_err2": -350.0
   },
   {
     "seq": 48,
@@ -1189,7 +1325,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 138.0
+    "pl_bmasse": 138.0,
+    "pl_bmassj_err1": 0.674,
+    "pl_bmassj_err2": -0.251,
+    "pl_bmasse_err1": 214.0,
+    "pl_bmasse_err2": -80.0
   },
   {
     "seq": 49,
@@ -1215,7 +1355,11 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
     "pl_bmasse": 250.0,
-    "eu_matched": true
+    "eu_matched": true,
+    "pl_bmassj_err1": 1.3,
+    "pl_bmassj_err2": -0.39,
+    "pl_bmasse_err1": 413.0,
+    "pl_bmasse_err2": -120.0
   },
   {
     "seq": 50,
@@ -1264,7 +1408,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3.96
+    "pl_bmasse": 3.96,
+    "pl_bmassj_err1": 0.0185,
+    "pl_bmassj_err2": -0.0084,
+    "pl_bmasse_err1": 5.88,
+    "pl_bmasse_err2": -2.66
   },
   {
     "seq": 52,
@@ -1290,7 +1438,11 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
     "pl_bmasse": 200.0,
-    "eu_matched": true
+    "eu_matched": true,
+    "pl_bmassj_err1": 0.76,
+    "pl_bmassj_err2": -0.35,
+    "pl_bmasse_err1": 240.0,
+    "pl_bmasse_err2": -110.0
   },
   {
     "seq": 53,
@@ -1341,7 +1493,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 130.0
+    "pl_bmasse": 130.0,
+    "pl_bmassj_err1": 0.05,
+    "pl_bmassj_err2": -0.05,
+    "pl_bmasse_err1": 20.0,
+    "pl_bmasse_err2": -20.0
   },
   {
     "seq": 55,
@@ -1366,7 +1522,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 397.0
+    "pl_bmasse": 397.0,
+    "pl_bmassj_err1": 1.04,
+    "pl_bmassj_err2": -0.73,
+    "pl_bmasse_err1": 331.0,
+    "pl_bmasse_err2": -230.0
   },
   {
     "seq": 56,
@@ -1391,7 +1551,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 210.0
+    "pl_bmasse": 210.0,
+    "pl_bmassj_err1": 0.41,
+    "pl_bmassj_err2": -0.21,
+    "pl_bmasse_err1": 130.0,
+    "pl_bmasse_err2": -67.0
   },
   {
     "seq": 57,
@@ -1416,7 +1580,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 60.0
+    "pl_bmasse": 60.0,
+    "pl_bmassj_err1": 0.28,
+    "pl_bmassj_err2": -0.1,
+    "pl_bmasse_err1": 89.0,
+    "pl_bmasse_err2": -32.0
   },
   {
     "seq": 58,
@@ -1441,7 +1609,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6.228
+    "pl_bmasse": 6.228,
+    "pl_bmassj_err1": 0.00284745,
+    "pl_bmassj_err2": -0.00277194,
+    "pl_bmasse_err1": 0.905,
+    "pl_bmasse_err2": -0.881
   },
   {
     "seq": 59,
@@ -1466,7 +1638,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1250.0
+    "pl_bmasse": 1250.0,
+    "pl_bmassj_err1": 3.16,
+    "pl_bmassj_err2": -2.17,
+    "pl_bmasse_err1": 1000.0,
+    "pl_bmasse_err2": -690.0
   },
   {
     "seq": 60,
@@ -1491,7 +1667,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 836.0
+    "pl_bmasse": 836.0,
+    "pl_bmassj_err1": 1.18,
+    "pl_bmassj_err2": -1.23,
+    "pl_bmasse_err1": 375.0,
+    "pl_bmasse_err2": -391.0
   },
   {
     "seq": 61,
@@ -1516,7 +1696,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 160.0
+    "pl_bmasse": 160.0,
+    "pl_bmassj_err1": 0.21,
+    "pl_bmassj_err2": -0.21,
+    "pl_bmasse_err1": 67.0,
+    "pl_bmasse_err2": -67.0
   },
   {
     "seq": 62,
@@ -1541,7 +1725,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3585.0
+    "pl_bmasse": 3585.0,
+    "pl_bmassj_err1": 8.73,
+    "pl_bmassj_err2": -3.38,
+    "pl_bmasse_err1": 2770.0,
+    "pl_bmasse_err2": -1070.0
   },
   {
     "seq": 63,
@@ -1590,7 +1778,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 10.28
+    "pl_bmasse": 10.28,
+    "pl_bmassj_err1": 0.0184,
+    "pl_bmassj_err2": -0.0166,
+    "pl_bmasse_err1": 5.84,
+    "pl_bmasse_err2": -5.28
   },
   {
     "seq": 65,
@@ -1615,7 +1807,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1760.0
+    "pl_bmasse": 1760.0,
+    "pl_bmassj_err1": 3.62,
+    "pl_bmassj_err2": -2.87,
+    "pl_bmasse_err1": 1150.0,
+    "pl_bmasse_err2": -912.0
   },
   {
     "seq": 66,
@@ -1664,7 +1860,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 240.0
+    "pl_bmasse": 240.0,
+    "pl_bmassj_err1": 0.77,
+    "pl_bmassj_err2": -0.53,
+    "pl_bmasse_err1": 240.0,
+    "pl_bmasse_err2": -170.0
   },
   {
     "seq": 68,
@@ -1689,7 +1889,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6.059
+    "pl_bmasse": 6.059,
+    "pl_bmassj_err1": 0.02583155,
+    "pl_bmassj_err2": -0.01044903,
+    "pl_bmasse_err1": 8.21,
+    "pl_bmasse_err2": -3.321
   },
   {
     "seq": 69,
@@ -1714,7 +1918,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 101.70509024
+    "pl_bmasse": 101.70509024,
+    "pl_bmassj_err1": 0.34,
+    "pl_bmassj_err2": -0.17,
+    "pl_bmasse_err1": 108.06165838,
+    "pl_bmasse_err2": -54.03082919
   },
   {
     "seq": 70,
@@ -1739,7 +1947,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 425.89006538
+    "pl_bmasse": 425.89006538,
+    "pl_bmassj_err1": 0.82,
+    "pl_bmassj_err2": -0.7,
+    "pl_bmasse_err1": 260.61929374,
+    "pl_bmasse_err2": -222.4798849
   },
   {
     "seq": 71,
@@ -1764,7 +1976,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 813.64072192
+    "pl_bmasse": 813.64072192,
+    "pl_bmassj_err1": 1.13,
+    "pl_bmassj_err2": -1.16,
+    "pl_bmasse_err1": 359.14609991,
+    "pl_bmasse_err2": -368.68095212
   },
   {
     "seq": 72,
@@ -1789,7 +2005,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 705.57906354
+    "pl_bmasse": 705.57906354,
+    "pl_bmassj_err1": 1.34,
+    "pl_bmassj_err2": -1.21,
+    "pl_bmasse_err1": 425.89006538,
+    "pl_bmasse_err2": -384.57237247
   },
   {
     "seq": 73,
@@ -1814,7 +2034,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 346.43296363
+    "pl_bmasse": 346.43296363,
+    "pl_bmassj_err1": 0.64,
+    "pl_bmassj_err2": -0.6,
+    "pl_bmasse_err1": 203.41018048,
+    "pl_bmasse_err2": -190.6970442
   },
   {
     "seq": 74,
@@ -1839,7 +2063,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4513.1633794
+    "pl_bmasse": 4513.1633794,
+    "pl_bmassj_err1": 9.9,
+    "pl_bmassj_err2": -7.5,
+    "pl_bmasse_err1": 3146.5012293,
+    "pl_bmasse_err2": -2383.7130525
   },
   {
     "seq": 75,
@@ -1888,7 +2116,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2447.2787339
+    "pl_bmasse": 2447.2787339,
+    "pl_bmassj_err1": 11.34,
+    "pl_bmassj_err2": -3.9,
+    "pl_bmasse_err1": 3604.17413538,
+    "pl_bmasse_err2": -1239.5307873
   },
   {
     "seq": 77,
@@ -1913,7 +2145,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 77.86795971
+    "pl_bmasse": 77.86795971,
+    "pl_bmassj_err1": 0.339,
+    "pl_bmassj_err2": -0.135,
+    "pl_bmasse_err1": 107.74382997,
+    "pl_bmasse_err2": -42.90683494
   },
   {
     "seq": 78,
@@ -1938,7 +2174,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 8.4
+    "pl_bmasse": 8.4,
+    "pl_bmassj_err1": 0.02485618,
+    "pl_bmassj_err2": -0.01478785,
+    "pl_bmasse_err1": 7.9,
+    "pl_bmasse_err2": -4.7
   },
   {
     "seq": 79,
@@ -1963,7 +2203,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 245.0457018
+    "pl_bmasse": 245.0457018,
+    "pl_bmassj_err1": 1.183,
+    "pl_bmassj_err2": -0.401,
+    "pl_bmasse_err1": 375.99100548,
+    "pl_bmasse_err2": -127.44919121
   },
   {
     "seq": 80,
@@ -1988,7 +2232,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2.48
+    "pl_bmasse": 2.48,
+    "pl_bmassj_err1": 0.00374416,
+    "pl_bmassj_err2": -0.00308342,
+    "pl_bmasse_err1": 1.19,
+    "pl_bmasse_err2": -0.98
   },
   {
     "seq": 81,
@@ -2013,7 +2261,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 664.26137063
+    "pl_bmasse": 664.26137063,
+    "pl_bmassj_err1": 1.68,
+    "pl_bmassj_err2": -1.26,
+    "pl_bmasse_err1": 533.95172376,
+    "pl_bmasse_err2": -400.46379282
   },
   {
     "seq": 82,
@@ -2038,7 +2290,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 959.84178914
+    "pl_bmasse": 959.84178914,
+    "pl_bmassj_err1": 2.43,
+    "pl_bmassj_err2": -1.81,
+    "pl_bmasse_err1": 772.32302901,
+    "pl_bmasse_err2": -575.26941667
   },
   {
     "seq": 83,
@@ -2063,7 +2319,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1976.89269154
+    "pl_bmasse": 1976.89269154,
+    "pl_bmassj_err1": 3.8,
+    "pl_bmassj_err2": -3.67,
+    "pl_bmasse_err1": 1207.7479466,
+    "pl_bmasse_err2": -1166.43025369
   },
   {
     "seq": 84,
@@ -2088,7 +2348,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2034.1018048
+    "pl_bmasse": 2034.1018048,
+    "pl_bmassj_err1": 2.64,
+    "pl_bmassj_err2": -2.78,
+    "pl_bmasse_err1": 839.06699448,
+    "pl_bmasse_err2": -883.56297146
   },
   {
     "seq": 85,
@@ -2113,7 +2377,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 162.09248757
+    "pl_bmasse": 162.09248757,
+    "pl_bmassj_err1": 0.51,
+    "pl_bmassj_err2": -0.23,
+    "pl_bmasse_err1": 162.09248757,
+    "pl_bmasse_err2": -73.10053361
   },
   {
     "seq": 86,
@@ -2138,7 +2406,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1.87
+    "pl_bmasse": 1.87,
+    "pl_bmassj_err1": 0.00084952,
+    "pl_bmassj_err2": -0.00050342,
+    "pl_bmasse_err1": 0.27,
+    "pl_bmasse_err2": -0.16
   },
   {
     "seq": 87,
@@ -2163,7 +2435,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 8581.366989
+    "pl_bmasse": 8581.366989,
+    "pl_bmassj_err1": 4.0,
+    "pl_bmassj_err2": -3.1,
+    "pl_bmasse_err1": 1271.313628,
+    "pl_bmasse_err2": -985.2680617
   },
   {
     "seq": 88,
@@ -2188,7 +2464,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2.5
+    "pl_bmasse": 2.5,
+    "pl_bmassj_err1": 0.00188781,
+    "pl_bmassj_err2": -0.00188781,
+    "pl_bmasse_err1": 0.6,
+    "pl_bmasse_err2": -0.6
   },
   {
     "seq": 89,
@@ -2213,7 +2493,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6.4
+    "pl_bmasse": 6.4,
+    "pl_bmassj_err1": 0.01730494,
+    "pl_bmassj_err2": -0.00880979,
+    "pl_bmasse_err1": 5.5,
+    "pl_bmasse_err2": -2.8
   },
   {
     "seq": 90,
@@ -2238,7 +2522,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 9.2
+    "pl_bmasse": 9.2,
+    "pl_bmassj_err1": 0.01573176,
+    "pl_bmassj_err2": -0.01290004,
+    "pl_bmasse_err1": 5.0,
+    "pl_bmasse_err2": -4.1
   },
   {
     "seq": 91,
@@ -2263,7 +2551,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 16.3
+    "pl_bmasse": 16.3,
+    "pl_bmassj_err1": 0.03775622,
+    "pl_bmassj_err2": -0.02674399,
+    "pl_bmasse_err1": 12.0,
+    "pl_bmasse_err2": -8.5
   },
   {
     "seq": 92,
@@ -2288,7 +2580,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 20.1
+    "pl_bmasse": 20.1,
+    "pl_bmassj_err1": 0.05160017,
+    "pl_bmassj_err2": -0.03366596,
+    "pl_bmasse_err1": 16.4,
+    "pl_bmasse_err2": -10.7
   },
   {
     "seq": 93,
@@ -2313,7 +2609,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6.4
+    "pl_bmasse": 6.4,
+    "pl_bmassj_err1": 0.01636103,
+    "pl_bmassj_err2": -0.0116415,
+    "pl_bmasse_err1": 5.2,
+    "pl_bmasse_err2": -3.7
   },
   {
     "seq": 94,
@@ -2338,7 +2638,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 37.1
+    "pl_bmasse": 37.1,
+    "pl_bmassj_err1": 0.07897343,
+    "pl_bmassj_err2": -0.06135386,
+    "pl_bmasse_err1": 25.1,
+    "pl_bmasse_err2": -19.5
   },
   {
     "seq": 95,
@@ -2363,7 +2667,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 15.5
+    "pl_bmasse": 15.5,
+    "pl_bmassj_err1": 0.05978069,
+    "pl_bmassj_err2": -0.03051961,
+    "pl_bmasse_err1": 19.0,
+    "pl_bmasse_err2": -9.7
   },
   {
     "seq": 96,
@@ -2388,7 +2696,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2.81
+    "pl_bmasse": 2.81,
+    "pl_bmassj_err1": 0.00339806,
+    "pl_bmassj_err2": -0.00311489,
+    "pl_bmasse_err1": 1.08,
+    "pl_bmasse_err2": -0.99
   },
   {
     "seq": 97,
@@ -2413,7 +2725,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1090.15143601
+    "pl_bmasse": 1090.15143601,
+    "pl_bmassj_err1": 1.83,
+    "pl_bmassj_err2": -1.17,
+    "pl_bmasse_err1": 581.62598481,
+    "pl_bmasse_err2": -371.85923619
   },
   {
     "seq": 98,
@@ -2438,7 +2754,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3248.20631954
+    "pl_bmasse": 3248.20631954,
+    "pl_bmassj_err1": 5.46,
+    "pl_bmassj_err2": -3.5,
+    "pl_bmasse_err1": 1735.34310222,
+    "pl_bmasse_err2": -1112.3994245
   },
   {
     "seq": 99,
@@ -2463,7 +2783,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 5.56
+    "pl_bmasse": 5.56,
+    "pl_bmassj_err1": 0.01208199,
+    "pl_bmassj_err2": -0.00893564,
+    "pl_bmasse_err1": 3.84,
+    "pl_bmasse_err2": -2.84
   },
   {
     "seq": 100,
@@ -2514,7 +2838,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 69.92224954
+    "pl_bmasse": 69.92224954,
+    "pl_bmassj_err1": 0.31,
+    "pl_bmassj_err2": -0.12,
+    "pl_bmasse_err1": 98.52680617,
+    "pl_bmasse_err2": -38.13940884
   },
   {
     "seq": 102,
@@ -2539,7 +2867,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 79.45710175
+    "pl_bmasse": 79.45710175,
+    "pl_bmassj_err1": 0.35,
+    "pl_bmassj_err2": -0.13,
+    "pl_bmasse_err1": 111.23994245,
+    "pl_bmasse_err2": -41.31769291
   },
   {
     "seq": 103,
@@ -2564,7 +2896,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 225.65816897
+    "pl_bmasse": 225.65816897,
+    "pl_bmassj_err1": 0.12,
+    "pl_bmassj_err2": -0.12,
+    "pl_bmasse_err1": 38.13940884,
+    "pl_bmasse_err2": -38.13940884
   },
   {
     "seq": 104,
@@ -2589,7 +2925,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 60.38739733
+    "pl_bmasse": 60.38739733,
+    "pl_bmassj_err1": 0.21,
+    "pl_bmassj_err2": -0.11,
+    "pl_bmasse_err1": 66.74396547,
+    "pl_bmasse_err2": -34.96112477
   },
   {
     "seq": 105,
@@ -2614,7 +2954,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1287.20504835
+    "pl_bmasse": 1287.20504835,
+    "pl_bmassj_err1": 1.73,
+    "pl_bmassj_err2": -1.85,
+    "pl_bmasse_err1": 549.84314411,
+    "pl_bmasse_err2": -587.98255295
   },
   {
     "seq": 106,
@@ -2639,7 +2983,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 88.99195396
+    "pl_bmasse": 88.99195396,
+    "pl_bmassj_err1": 0.29,
+    "pl_bmassj_err2": -0.18,
+    "pl_bmasse_err1": 92.17023803,
+    "pl_bmasse_err2": -57.20911326
   },
   {
     "seq": 107,
@@ -2664,7 +3012,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 232.01473711
+    "pl_bmasse": 232.01473711,
+    "pl_bmassj_err1": 0.5,
+    "pl_bmassj_err2": -0.4,
+    "pl_bmasse_err1": 158.9142035,
+    "pl_bmasse_err2": -127.1313628
   },
   {
     "seq": 108,
@@ -2689,7 +3041,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 82.63538582
+    "pl_bmasse": 82.63538582,
+    "pl_bmassj_err1": 0.22,
+    "pl_bmassj_err2": -0.11,
+    "pl_bmasse_err1": 69.92224954,
+    "pl_bmasse_err2": -34.96112477
   },
   {
     "seq": 109,
@@ -2714,7 +3070,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 66.74396547
+    "pl_bmasse": 66.74396547,
+    "pl_bmassj_err1": 0.12,
+    "pl_bmassj_err2": -0.11,
+    "pl_bmasse_err1": 38.13940884,
+    "pl_bmasse_err2": -34.96112477
   },
   {
     "seq": 110,
@@ -2765,7 +3125,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1036.12060682
+    "pl_bmasse": 1036.12060682,
+    "pl_bmassj_err1": 0.83,
+    "pl_bmassj_err2": -0.58,
+    "pl_bmasse_err1": 263.79757781,
+    "pl_bmasse_err2": -184.34047606
   },
   {
     "seq": 112,
@@ -2790,7 +3154,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 14.62010672
+    "pl_bmasse": 14.62010672,
+    "pl_bmassj_err1": 0.037,
+    "pl_bmassj_err2": -0.025,
+    "pl_bmasse_err1": 11.75965106,
+    "pl_bmasse_err2": -7.94571018
   },
   {
     "seq": 113,
@@ -2815,7 +3183,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 31.7828407
+    "pl_bmasse": 31.7828407,
+    "pl_bmassj_err1": 0.13,
+    "pl_bmassj_err2": -0.07,
+    "pl_bmasse_err1": 41.31769291,
+    "pl_bmasse_err2": -22.24798849
   },
   {
     "seq": 114,
@@ -2840,7 +3212,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 120.77479466
+    "pl_bmasse": 120.77479466,
+    "pl_bmassj_err1": 0.22,
+    "pl_bmassj_err2": -0.2,
+    "pl_bmasse_err1": 69.92224954,
+    "pl_bmasse_err2": -63.5656814
   },
   {
     "seq": 115,
@@ -2865,7 +3241,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 38.13940884
+    "pl_bmasse": 38.13940884,
+    "pl_bmassj_err1": 0.2,
+    "pl_bmassj_err2": -0.07,
+    "pl_bmasse_err1": 63.5656814,
+    "pl_bmasse_err2": -22.24798849
   },
   {
     "seq": 116,
@@ -2968,7 +3348,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 282.86728223
+    "pl_bmasse": 282.86728223,
+    "pl_bmassj_err1": 0.36,
+    "pl_bmassj_err2": -0.31,
+    "pl_bmasse_err1": 114.41822652,
+    "pl_bmasse_err2": -98.52680617
   },
   {
     "seq": 120,
@@ -2993,7 +3377,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 17.79839079
+    "pl_bmasse": 17.79839079,
+    "pl_bmassj_err1": 0.033,
+    "pl_bmassj_err2": -0.031,
+    "pl_bmasse_err1": 10.48833743,
+    "pl_bmasse_err2": -9.85268062
   },
   {
     "seq": 121,
@@ -3018,7 +3406,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 63.5656814
+    "pl_bmasse": 63.5656814,
+    "pl_bmassj_err1": 0.16,
+    "pl_bmassj_err2": -0.13,
+    "pl_bmasse_err1": 50.85254512,
+    "pl_bmasse_err2": -41.31769291
   },
   {
     "seq": 122,
@@ -3044,7 +3436,11 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
     "pl_bmasse": 301.93698665,
-    "eu_matched": true
+    "eu_matched": true,
+    "pl_bmassj_err1": 0.75,
+    "pl_bmassj_err2": -0.44,
+    "pl_bmasse_err1": 238.37130525,
+    "pl_bmasse_err2": -139.84449908
   },
   {
     "seq": 123,
@@ -3069,7 +3465,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 308.29355479
+    "pl_bmasse": 308.29355479,
+    "pl_bmassj_err1": 1.78,
+    "pl_bmassj_err2": -0.56,
+    "pl_bmasse_err1": 565.73456446,
+    "pl_bmasse_err2": -177.98390792
   },
   {
     "seq": 124,
@@ -3142,7 +3542,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 5720.911326
+    "pl_bmasse": 5720.911326,
+    "pl_bmassj_err1": 3.0,
+    "pl_bmassj_err2": -2.0,
+    "pl_bmasse_err1": 953.485221,
+    "pl_bmasse_err2": -635.656814
   },
   {
     "seq": 127,
@@ -3193,7 +3597,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 11.2
+    "pl_bmasse": 11.2,
+    "pl_bmassj_err1": 0.01730494,
+    "pl_bmassj_err2": -0.01415858,
+    "pl_bmasse_err1": 5.5,
+    "pl_bmasse_err2": -4.5
   },
   {
     "seq": 129,
@@ -3218,7 +3626,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 46.0
+    "pl_bmasse": 46.0,
+    "pl_bmassj_err1": 0.09439056,
+    "pl_bmassj_err2": -0.07236609,
+    "pl_bmasse_err1": 30.0,
+    "pl_bmasse_err2": -23.0
   },
   {
     "seq": 130,
@@ -3243,7 +3655,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1166.43025369
+    "pl_bmasse": 1166.43025369,
+    "pl_bmassj_err1": 2.17,
+    "pl_bmassj_err2": -2.07,
+    "pl_bmasse_err1": 689.68764319,
+    "pl_bmasse_err2": -657.90480249
   },
   {
     "seq": 131,
@@ -3268,7 +3684,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1452.47581999
+    "pl_bmasse": 1452.47581999,
+    "pl_bmassj_err1": 3.74,
+    "pl_bmassj_err2": -2.06,
+    "pl_bmasse_err1": 1188.67824218,
+    "pl_bmasse_err2": -654.72651842
   },
   {
     "seq": 132,
@@ -3397,7 +3817,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 143.02278315
+    "pl_bmasse": 143.02278315,
+    "pl_bmassj_err1": 0.4,
+    "pl_bmassj_err2": -0.25,
+    "pl_bmasse_err1": 127.1313628,
+    "pl_bmasse_err2": -79.45710175
   },
   {
     "seq": 137,
@@ -3422,7 +3846,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 19.05
+    "pl_bmasse": 19.05,
+    "pl_bmassj_err1": 0.06424851,
+    "pl_bmassj_err2": -0.03190401,
+    "pl_bmasse_err1": 20.42,
+    "pl_bmasse_err2": -10.14
   },
   {
     "seq": 138,
@@ -3447,7 +3875,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 61.27
+    "pl_bmasse": 61.27,
+    "pl_bmassj_err1": 0.1128911,
+    "pl_bmassj_err2": -0.1128911,
+    "pl_bmasse_err1": 35.88,
+    "pl_bmasse_err2": -35.88
   },
   {
     "seq": 139,
@@ -3472,7 +3904,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4.55
+    "pl_bmasse": 4.55,
+    "pl_bmassj_err1": 0.00726807,
+    "pl_bmassj_err2": -0.00726807,
+    "pl_bmasse_err1": 2.31,
+    "pl_bmasse_err2": -2.31
   },
   {
     "seq": 140,
@@ -3497,7 +3933,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 460.85119015
+    "pl_bmasse": 460.85119015,
+    "pl_bmassj_err1": 1.23,
+    "pl_bmassj_err2": -0.88,
+    "pl_bmasse_err1": 390.92894061,
+    "pl_bmasse_err2": -279.68899816
   },
   {
     "seq": 141,
@@ -3522,7 +3962,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 73.10053361
+    "pl_bmasse": 73.10053361,
+    "pl_bmassj_err1": 0.32,
+    "pl_bmassj_err2": -0.12,
+    "pl_bmasse_err1": 101.70509024,
+    "pl_bmasse_err2": -38.13940884
   },
   {
     "seq": 142,
@@ -3547,7 +3991,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 670.61793877
+    "pl_bmasse": 670.61793877,
+    "pl_bmassj_err1": 2.09,
+    "pl_bmassj_err2": -1.04,
+    "pl_bmasse_err1": 664.26137063,
+    "pl_bmasse_err2": -330.54154328
   },
   {
     "seq": 143,
@@ -3572,7 +4020,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 365.50266805
+    "pl_bmasse": 365.50266805,
+    "pl_bmassj_err1": 0.73,
+    "pl_bmassj_err2": -0.63,
+    "pl_bmasse_err1": 232.01473711,
+    "pl_bmasse_err2": -200.23189641
   },
   {
     "seq": 144,
@@ -3597,7 +4049,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 44.49597698
+    "pl_bmasse": 44.49597698,
+    "pl_bmassj_err1": 0.07,
+    "pl_bmassj_err2": -0.06,
+    "pl_bmasse_err1": 22.24798849,
+    "pl_bmasse_err2": -19.06970442
   },
   {
     "seq": 145,
@@ -3622,7 +4078,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 289.22385037
+    "pl_bmasse": 289.22385037,
+    "pl_bmassj_err1": 0.66,
+    "pl_bmassj_err2": -0.52,
+    "pl_bmasse_err1": 209.76674862,
+    "pl_bmasse_err2": -165.27077164
   },
   {
     "seq": 146,
@@ -3647,7 +4107,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1754.41280664
+    "pl_bmasse": 1754.41280664,
+    "pl_bmassj_err1": 3.12,
+    "pl_bmassj_err2": -2.4,
+    "pl_bmasse_err1": 991.62462984,
+    "pl_bmasse_err2": -762.7881768
   },
   {
     "seq": 147,
@@ -3672,7 +4136,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 34.96112477
+    "pl_bmasse": 34.96112477,
+    "pl_bmassj_err1": 0.05,
+    "pl_bmassj_err2": -0.04,
+    "pl_bmasse_err1": 15.89142035,
+    "pl_bmasse_err2": -12.71313628
   },
   {
     "seq": 148,
@@ -3697,7 +4165,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 22.24798849
+    "pl_bmasse": 22.24798849,
+    "pl_bmassj_err1": 0.1,
+    "pl_bmassj_err2": -0.04,
+    "pl_bmasse_err1": 31.7828407,
+    "pl_bmasse_err2": -12.71313628
   },
   {
     "seq": 149,
@@ -3748,7 +4220,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 38.19
+    "pl_bmasse": 38.19,
+    "pl_bmassj_err1": 0.06456314,
+    "pl_bmassj_err2": -0.03851135,
+    "pl_bmasse_err1": 20.52,
+    "pl_bmasse_err2": -12.24
   },
   {
     "seq": 151,
@@ -3773,7 +4249,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 400.46379282
+    "pl_bmasse": 400.46379282,
+    "pl_bmassj_err1": 1.01,
+    "pl_bmassj_err2": -0.66,
+    "pl_bmasse_err1": 321.00669107,
+    "pl_bmasse_err2": -209.76674862
   },
   {
     "seq": 152,
@@ -3798,7 +4278,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 413.1769291
+    "pl_bmasse": 413.1769291,
+    "pl_bmassj_err1": 0.68,
+    "pl_bmassj_err2": -0.68,
+    "pl_bmasse_err1": 216.12331676,
+    "pl_bmasse_err2": -216.12331676
   },
   {
     "seq": 153,
@@ -3823,7 +4307,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 286.0455663
+    "pl_bmasse": 286.0455663,
+    "pl_bmassj_err1": 0.42,
+    "pl_bmassj_err2": -0.24,
+    "pl_bmasse_err1": 133.48793094,
+    "pl_bmasse_err2": -76.27881768
   },
   {
     "seq": 154,
@@ -3848,7 +4336,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2.32
+    "pl_bmasse": 2.32,
+    "pl_bmassj_err1": 0.02337739,
+    "pl_bmassj_err2": -0.00490831,
+    "pl_bmasse_err1": 7.43,
+    "pl_bmasse_err2": -1.56
   },
   {
     "seq": 155,
@@ -3873,7 +4365,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 5.59
+    "pl_bmasse": 5.59,
+    "pl_bmassj_err1": 0.01123248,
+    "pl_bmassj_err2": -0.00890418,
+    "pl_bmasse_err1": 3.57,
+    "pl_bmasse_err2": -2.83
   },
   {
     "seq": 156,
@@ -3898,7 +4394,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4.08
+    "pl_bmasse": 4.08,
+    "pl_bmassj_err1": 0.00811759,
+    "pl_bmassj_err2": -0.00654441,
+    "pl_bmasse_err1": 2.58,
+    "pl_bmasse_err2": -2.08
   },
   {
     "seq": 157,
@@ -3923,7 +4423,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3.54
+    "pl_bmasse": 3.54,
+    "pl_bmassj_err1": 0.00613539,
+    "pl_bmassj_err2": -0.00512855,
+    "pl_bmasse_err1": 1.95,
+    "pl_bmasse_err2": -1.63
   },
   {
     "seq": 158,
@@ -3948,7 +4452,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 5.19
+    "pl_bmasse": 5.19,
+    "pl_bmassj_err1": 0.01695884,
+    "pl_bmassj_err2": -0.00880979,
+    "pl_bmasse_err1": 5.39,
+    "pl_bmasse_err2": -2.8
   },
   {
     "seq": 159,
@@ -3973,7 +4481,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 5.27
+    "pl_bmasse": 5.27,
+    "pl_bmassj_err1": 0.01481932,
+    "pl_bmassj_err2": -0.00855808,
+    "pl_bmasse_err1": 4.71,
+    "pl_bmasse_err2": -2.72
   },
   {
     "seq": 160,
@@ -3998,7 +4510,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4.67
+    "pl_bmasse": 4.67,
+    "pl_bmassj_err1": 0.00490831,
+    "pl_bmassj_err2": -0.00503416,
+    "pl_bmasse_err1": 1.56,
+    "pl_bmasse_err2": -1.6
   },
   {
     "seq": 161,
@@ -4023,7 +4539,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 46.0
+    "pl_bmasse": 46.0,
+    "pl_bmassj_err1": 0.13214678,
+    "pl_bmassj_err2": -0.07551244,
+    "pl_bmasse_err1": 42.0,
+    "pl_bmasse_err2": -24.0
   },
   {
     "seq": 162,
@@ -4048,7 +4568,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 349.6112477
+    "pl_bmasse": 349.6112477,
+    "pl_bmassj_err1": 0.09,
+    "pl_bmassj_err2": -0.09,
+    "pl_bmasse_err1": 28.60455663,
+    "pl_bmasse_err2": -28.60455663
   },
   {
     "seq": 163,
@@ -4073,7 +4597,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 575.26941667
+    "pl_bmasse": 575.26941667,
+    "pl_bmassj_err1": 0.96,
+    "pl_bmassj_err2": -0.96,
+    "pl_bmasse_err1": 305.11527072,
+    "pl_bmasse_err2": -305.11527072
   },
   {
     "seq": 164,
@@ -4098,7 +4626,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2262.93825784
+    "pl_bmasse": 2262.93825784,
+    "pl_bmassj_err1": 1.47,
+    "pl_bmassj_err2": -1.47,
+    "pl_bmasse_err1": 467.20775829,
+    "pl_bmasse_err2": -467.20775829
   },
   {
     "seq": 165,
@@ -4123,7 +4655,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1061.54687938
+    "pl_bmasse": 1061.54687938,
+    "pl_bmassj_err1": 1.9,
+    "pl_bmassj_err2": -1.9,
+    "pl_bmasse_err1": 603.8739733,
+    "pl_bmasse_err2": -603.8739733
   },
   {
     "seq": 166,
@@ -4148,7 +4684,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 340.07639549
+    "pl_bmasse": 340.07639549,
+    "pl_bmassj_err1": 1.15,
+    "pl_bmassj_err2": -0.68,
+    "pl_bmasse_err1": 365.50266805,
+    "pl_bmasse_err2": -216.12331676
   },
   {
     "seq": 167,
@@ -4173,7 +4713,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 82.63538582
+    "pl_bmasse": 82.63538582,
+    "pl_bmassj_err1": 0.13,
+    "pl_bmassj_err2": -0.11,
+    "pl_bmasse_err1": 41.31769291,
+    "pl_bmasse_err2": -34.96112477
   },
   {
     "seq": 168,
@@ -4198,7 +4742,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 98.52680617
+    "pl_bmasse": 98.52680617,
+    "pl_bmassj_err1": 0.46,
+    "pl_bmassj_err2": -0.16,
+    "pl_bmasse_err1": 146.20106722,
+    "pl_bmasse_err2": -50.85254512
   },
   {
     "seq": 169,
@@ -4223,7 +4771,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 368.68095212
+    "pl_bmasse": 368.68095212,
+    "pl_bmassj_err1": 0.77,
+    "pl_bmassj_err2": -0.77,
+    "pl_bmasse_err1": 244.72787339,
+    "pl_bmasse_err2": -244.72787339
   },
   {
     "seq": 170,
@@ -4248,7 +4800,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 29.87587026
+    "pl_bmasse": 29.87587026,
+    "pl_bmassj_err1": 0.05,
+    "pl_bmassj_err2": -0.05,
+    "pl_bmasse_err1": 15.89142035,
+    "pl_bmasse_err2": -15.89142035
   },
   {
     "seq": 171,
@@ -4273,7 +4829,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 4.83
+    "pl_bmasse": 4.83,
+    "pl_bmassj_err1": 0.00453075,
+    "pl_bmassj_err2": -0.00453075,
+    "pl_bmasse_err1": 1.44,
+    "pl_bmasse_err2": -1.44
   },
   {
     "seq": 172,
@@ -4298,7 +4858,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 15.4
+    "pl_bmasse": 15.4,
+    "pl_bmassj_err1": 0.03020498,
+    "pl_bmassj_err2": -0.023283,
+    "pl_bmasse_err1": 9.6,
+    "pl_bmasse_err2": -7.4
   },
   {
     "seq": 173,
@@ -4323,7 +4887,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 9217.023803
+    "pl_bmasse": 9217.023803,
+    "pl_bmassj_err1": 39.0,
+    "pl_bmassj_err2": -19.0,
+    "pl_bmasse_err1": 12395.307873,
+    "pl_bmasse_err2": -6038.739733
   },
   {
     "seq": 174,
@@ -4348,7 +4916,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6038.739733
+    "pl_bmasse": 6038.739733,
+    "pl_bmassj_err1": 8.0,
+    "pl_bmassj_err2": -7.0,
+    "pl_bmasse_err1": 2542.627256,
+    "pl_bmasse_err2": -2224.798849
   },
   {
     "seq": 175,
@@ -4373,7 +4945,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6674.396547
+    "pl_bmasse": 6674.396547,
+    "pl_bmassj_err1": 23.0,
+    "pl_bmassj_err2": -13.0,
+    "pl_bmasse_err1": 7310.053361,
+    "pl_bmasse_err2": -4131.769291
   },
   {
     "seq": 176,
@@ -4398,7 +4974,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 279.68899816
+    "pl_bmasse": 279.68899816,
+    "pl_bmassj_err1": 0.38,
+    "pl_bmassj_err2": -0.36,
+    "pl_bmasse_err1": 120.77479466,
+    "pl_bmasse_err2": -114.41822652
   },
   {
     "seq": 177,
@@ -4707,7 +5287,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6674.396547
+    "pl_bmasse": 6674.396547,
+    "pl_bmassj_err1": 29.0,
+    "pl_bmassj_err2": -12.0,
+    "pl_bmasse_err1": 9217.023803,
+    "pl_bmasse_err2": -3813.940884
   },
   {
     "seq": 189,
@@ -4732,7 +5316,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 467.20775829
+    "pl_bmasse": 467.20775829,
+    "pl_bmassj_err1": 0.65,
+    "pl_bmassj_err2": -0.77,
+    "pl_bmasse_err1": 206.58846455,
+    "pl_bmasse_err2": -244.72787339
   },
   {
     "seq": 190,
@@ -4757,7 +5345,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 555.24622703
+    "pl_bmasse": 555.24622703,
+    "pl_bmassj_err1": 0.527,
+    "pl_bmassj_err2": -0.507,
+    "pl_bmasse_err1": 167.49557049,
+    "pl_bmasse_err2": -161.13900235
   },
   {
     "seq": 191,
@@ -4808,7 +5400,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 127.1313628
+    "pl_bmasse": 127.1313628,
+    "pl_bmassj_err1": 0.31,
+    "pl_bmassj_err2": -0.25,
+    "pl_bmasse_err1": 98.52680617,
+    "pl_bmasse_err2": -79.45710175
   },
   {
     "seq": 193,
@@ -4833,7 +5429,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 39.41072247
+    "pl_bmasse": 39.41072247,
+    "pl_bmassj_err1": 0.092,
+    "pl_bmassj_err2": -0.067,
+    "pl_bmasse_err1": 29.24021344,
+    "pl_bmasse_err2": -21.29450327
   },
   {
     "seq": 194,
@@ -4858,7 +5458,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 38.77506565
+    "pl_bmasse": 38.77506565,
+    "pl_bmassj_err1": 0.068,
+    "pl_bmassj_err2": -0.068,
+    "pl_bmasse_err1": 21.61233168,
+    "pl_bmasse_err2": -21.61233168
   },
   {
     "seq": 195,
@@ -4883,7 +5487,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 13.03096469
+    "pl_bmasse": 13.03096469,
+    "pl_bmassj_err1": 0.02,
+    "pl_bmassj_err2": -0.021,
+    "pl_bmasse_err1": 6.35656814,
+    "pl_bmasse_err2": -6.67439655
   },
   {
     "seq": 196,
@@ -4908,7 +5516,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 200.23189641
+    "pl_bmasse": 200.23189641,
+    "pl_bmassj_err1": 0.71,
+    "pl_bmassj_err2": -0.34,
+    "pl_bmasse_err1": 225.65816897,
+    "pl_bmasse_err2": -108.06165838
   },
   {
     "seq": 197,
@@ -4933,7 +5545,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 343.25467956
+    "pl_bmasse": 343.25467956,
+    "pl_bmassj_err1": 1.53,
+    "pl_bmassj_err2": -0.58,
+    "pl_bmasse_err1": 486.27746271,
+    "pl_bmasse_err2": -184.34047606
   },
   {
     "seq": 198,
@@ -4958,7 +5574,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 514.88201934
+    "pl_bmasse": 514.88201934,
+    "pl_bmassj_err1": 1.64,
+    "pl_bmassj_err2": -0.94,
+    "pl_bmasse_err1": 521.23858748,
+    "pl_bmasse_err2": -298.75870258
   },
   {
     "seq": 199,
@@ -4983,7 +5603,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1207.7479466
+    "pl_bmasse": 1207.7479466,
+    "pl_bmassj_err1": 2.49,
+    "pl_bmassj_err2": -1.99,
+    "pl_bmasse_err1": 791.39273343,
+    "pl_bmasse_err2": -632.47852993
   },
   {
     "seq": 200,
@@ -5008,7 +5632,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1875.1876013
+    "pl_bmasse": 1875.1876013,
+    "pl_bmassj_err1": 2.2,
+    "pl_bmassj_err2": -2.2,
+    "pl_bmasse_err1": 699.2224954,
+    "pl_bmasse_err2": -699.2224954
   },
   {
     "seq": 201,
@@ -5081,7 +5709,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 15.6
+    "pl_bmasse": 15.6,
+    "pl_bmassj_err1": 0.04341966,
+    "pl_bmassj_err2": -0.02926107,
+    "pl_bmasse_err1": 13.8,
+    "pl_bmasse_err2": -9.3
   },
   {
     "seq": 204,
@@ -5132,7 +5764,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 13.6
+    "pl_bmasse": 13.6,
+    "pl_bmassj_err1": 0.02611472,
+    "pl_bmassj_err2": -0.02170983,
+    "pl_bmasse_err1": 8.3,
+    "pl_bmasse_err2": -6.9
   },
   {
     "seq": 206,
@@ -5157,7 +5793,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 823.17557413
+    "pl_bmasse": 823.17557413,
+    "pl_bmassj_err1": 1.46,
+    "pl_bmassj_err2": -1.46,
+    "pl_bmasse_err1": 464.02947422,
+    "pl_bmasse_err2": -464.02947422
   },
   {
     "seq": 207,
@@ -5182,7 +5822,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 14.93793513
+    "pl_bmasse": 14.93793513,
+    "pl_bmassj_err1": 0.021,
+    "pl_bmassj_err2": -0.021,
+    "pl_bmasse_err1": 6.67439655,
+    "pl_bmasse_err2": -6.67439655
   },
   {
     "seq": 208,
@@ -5207,7 +5851,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 301.93698665
+    "pl_bmasse": 301.93698665,
+    "pl_bmassj_err1": 0.41,
+    "pl_bmassj_err2": -0.41,
+    "pl_bmasse_err1": 130.30964687,
+    "pl_bmasse_err2": -130.30964687
   },
   {
     "seq": 209,
@@ -5232,7 +5880,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 120.77479466
+    "pl_bmasse": 120.77479466,
+    "pl_bmassj_err1": 0.3,
+    "pl_bmassj_err2": -0.3,
+    "pl_bmasse_err1": 95.3485221,
+    "pl_bmasse_err2": -95.3485221
   },
   {
     "seq": 210,
@@ -5359,7 +6011,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2.63
+    "pl_bmasse": 2.63,
+    "pl_bmassj_err1": 0.00132147,
+    "pl_bmassj_err2": -0.00213952,
+    "pl_bmasse_err1": 0.42,
+    "pl_bmasse_err2": -0.68
   },
   {
     "seq": 215,
@@ -5384,7 +6040,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6.39
+    "pl_bmasse": 6.39,
+    "pl_bmassj_err1": 0.02454154,
+    "pl_bmassj_err2": -0.00972223,
+    "pl_bmasse_err1": 7.8,
+    "pl_bmasse_err2": -3.09
   },
   {
     "seq": 216,
@@ -5409,7 +6069,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 23.5
+    "pl_bmasse": 23.5,
+    "pl_bmassj_err1": 0.04719528,
+    "pl_bmassj_err2": -0.03775622,
+    "pl_bmasse_err1": 15.0,
+    "pl_bmasse_err2": -12.0
   },
   {
     "seq": 217,
@@ -5434,7 +6098,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 75.8
+    "pl_bmasse": 75.8,
+    "pl_bmassj_err1": 0.17147618,
+    "pl_bmassj_err2": -0.13497849,
+    "pl_bmasse_err1": 54.5,
+    "pl_bmasse_err2": -42.9
   },
   {
     "seq": 218,
@@ -5459,7 +6127,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 171.0
+    "pl_bmasse": 171.0,
+    "pl_bmassj_err1": 0.43105021,
+    "pl_bmassj_err2": -0.27687896,
+    "pl_bmasse_err1": 137.0,
+    "pl_bmasse_err2": -88.0
   },
   {
     "seq": 219,
@@ -5484,7 +6156,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 163.04597279
+    "pl_bmasse": 163.04597279,
+    "pl_bmassj_err1": 0.41,
+    "pl_bmassj_err2": -0.275,
+    "pl_bmasse_err1": 130.30964687,
+    "pl_bmasse_err2": -87.40281192
   },
   {
     "seq": 220,
@@ -5583,7 +6259,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6038.739733
+    "pl_bmasse": 6038.739733,
+    "pl_bmassj_err1": 27.0,
+    "pl_bmassj_err2": -10.0,
+    "pl_bmasse_err1": 8581.366989,
+    "pl_bmasse_err2": -3178.28407
   },
   {
     "seq": 224,
@@ -5684,7 +6364,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6356.56814
+    "pl_bmasse": 6356.56814,
+    "pl_bmassj_err1": 30.0,
+    "pl_bmassj_err2": -10.0,
+    "pl_bmasse_err1": 9534.85221,
+    "pl_bmasse_err2": -3178.28407
   },
   {
     "seq": 228,
@@ -5709,7 +6393,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 7.75
+    "pl_bmasse": 7.75,
+    "pl_bmassj_err1": 0.03785061,
+    "pl_bmassj_err2": -0.01271126,
+    "pl_bmasse_err1": 12.03,
+    "pl_bmasse_err2": -4.04
   },
   {
     "seq": 229,
@@ -5758,7 +6446,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 83.7
+    "pl_bmasse": 83.7,
+    "pl_bmassj_err1": 0.16820397,
+    "pl_bmassj_err2": -0.1439456,
+    "pl_bmasse_err1": 53.46,
+    "pl_bmasse_err2": -45.75
   },
   {
     "seq": 231,
@@ -5783,7 +6475,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 16.35
+    "pl_bmasse": 16.35,
+    "pl_bmassj_err1": 0.03086571,
+    "pl_bmassj_err2": -0.02655521,
+    "pl_bmasse_err1": 9.81,
+    "pl_bmasse_err2": -8.44
   },
   {
     "seq": 232,
@@ -5808,7 +6504,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1.32
+    "pl_bmasse": 1.32,
+    "pl_bmassj_err1": 0.00286318,
+    "pl_bmassj_err2": -0.00210806,
+    "pl_bmasse_err1": 0.91,
+    "pl_bmasse_err2": -0.67
   },
   {
     "seq": 233,
@@ -5833,7 +6533,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 381.3940884
+    "pl_bmasse": 381.3940884,
+    "pl_bmassj_err1": 1.2,
+    "pl_bmassj_err2": -0.6,
+    "pl_bmasse_err1": 381.3940884,
+    "pl_bmasse_err2": -190.6970442
   },
   {
     "seq": 234,
@@ -5858,7 +6562,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 21.0
+    "pl_bmasse": 21.0,
+    "pl_bmassj_err1": 0.04090257,
+    "pl_bmassj_err2": -0.03146352,
+    "pl_bmasse_err1": 13.0,
+    "pl_bmasse_err2": -10.0
   },
   {
     "seq": 235,
@@ -5883,7 +6591,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2809.60311788
+    "pl_bmasse": 2809.60311788,
+    "pl_bmassj_err1": 8.29,
+    "pl_bmassj_err2": -4.91,
+    "pl_bmasse_err1": 2634.79749403,
+    "pl_bmasse_err2": -1560.53747837
   },
   {
     "seq": 236,
@@ -5908,7 +6620,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 549.84314411
+    "pl_bmasse": 549.84314411,
+    "pl_bmassj_err1": 0.95,
+    "pl_bmassj_err2": -0.89,
+    "pl_bmasse_err1": 301.93698665,
+    "pl_bmasse_err2": -282.86728223
   },
   {
     "seq": 237,
@@ -5933,7 +6649,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 279.68899816
+    "pl_bmasse": 279.68899816,
+    "pl_bmassj_err1": 0.46,
+    "pl_bmassj_err2": -0.45,
+    "pl_bmasse_err1": 146.20106722,
+    "pl_bmasse_err2": -143.02278315
   },
   {
     "seq": 238,
@@ -5958,7 +6678,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 254.2627256
+    "pl_bmasse": 254.2627256,
+    "pl_bmassj_err1": 0.38,
+    "pl_bmassj_err2": -0.38,
+    "pl_bmasse_err1": 120.77479466,
+    "pl_bmasse_err2": -120.77479466
   },
   {
     "seq": 239,
@@ -5983,7 +6707,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1141.00398113
+    "pl_bmasse": 1141.00398113,
+    "pl_bmassj_err1": 2.0,
+    "pl_bmassj_err2": -1.67,
+    "pl_bmasse_err1": 635.656814,
+    "pl_bmasse_err2": -530.77343969
   },
   {
     "seq": 240,
@@ -6008,7 +6736,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 839.06699448
+    "pl_bmasse": 839.06699448,
+    "pl_bmassj_err1": 1.57,
+    "pl_bmassj_err2": -1.16,
+    "pl_bmasse_err1": 498.99059899,
+    "pl_bmasse_err2": -368.68095212
   },
   {
     "seq": 241,
@@ -6033,7 +6765,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 8657.64580668
+    "pl_bmasse": 8657.64580668,
+    "pl_bmassj_err1": 39.81,
+    "pl_bmassj_err2": -13.62,
+    "pl_bmasse_err1": 12652.74888267,
+    "pl_bmasse_err2": -4328.82290334
   },
   {
     "seq": 242,
@@ -6059,7 +6795,11 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
     "pl_bmasse": 17.3,
-    "eu_matched": true
+    "eu_matched": true,
+    "pl_bmassj_err1": 0.08023197,
+    "pl_bmassj_err2": -0.0276879,
+    "pl_bmasse_err1": 25.5,
+    "pl_bmasse_err2": -8.8
   },
   {
     "seq": 243,
@@ -6084,7 +6824,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1086.97315194
+    "pl_bmasse": 1086.97315194,
+    "pl_bmassj_err1": 1.21,
+    "pl_bmassj_err2": -0.89,
+    "pl_bmasse_err1": 384.57237247,
+    "pl_bmasse_err2": -282.86728223
   },
   {
     "seq": 244,
@@ -6109,7 +6853,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 17.79839079
+    "pl_bmasse": 17.79839079,
+    "pl_bmassj_err1": 0.064,
+    "pl_bmassj_err2": -0.033,
+    "pl_bmasse_err1": 20.34101805,
+    "pl_bmasse_err2": -10.48833743
   },
   {
     "seq": 245,
@@ -6134,7 +6882,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1900.61387386
+    "pl_bmasse": 1900.61387386,
+    "pl_bmassj_err1": 4.36,
+    "pl_bmassj_err2": -3.11,
+    "pl_bmasse_err1": 1385.73185452,
+    "pl_bmasse_err2": -988.44634577
   },
   {
     "seq": 246,
@@ -6159,7 +6911,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 6.99222495
+    "pl_bmasse": 6.99222495,
+    "pl_bmassj_err1": 0.012,
+    "pl_bmassj_err2": -0.013,
+    "pl_bmasse_err1": 3.81394088,
+    "pl_bmasse_err2": -4.13176929
   },
   {
     "seq": 247,
@@ -6184,7 +6940,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 13.98444991
+    "pl_bmasse": 13.98444991,
+    "pl_bmassj_err1": 0.076,
+    "pl_bmassj_err2": -0.024,
+    "pl_bmasse_err1": 24.15495893,
+    "pl_bmasse_err2": -7.62788177
   },
   {
     "seq": 248,
@@ -6209,7 +6969,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 19.06970442
+    "pl_bmasse": 19.06970442,
+    "pl_bmassj_err1": 0.066,
+    "pl_bmassj_err2": -0.036,
+    "pl_bmasse_err1": 20.97667486,
+    "pl_bmasse_err2": -11.44182265
   },
   {
     "seq": 249,
@@ -6334,7 +7098,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 114.41822652
+    "pl_bmasse": 114.41822652,
+    "pl_bmassj_err1": 0.3,
+    "pl_bmassj_err2": -0.21,
+    "pl_bmasse_err1": 95.3485221,
+    "pl_bmasse_err2": -66.74396547
   },
   {
     "seq": 254,
@@ -6359,7 +7127,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 241.54958932
+    "pl_bmasse": 241.54958932,
+    "pl_bmassj_err1": 1.03,
+    "pl_bmassj_err2": -0.39,
+    "pl_bmasse_err1": 327.36325921,
+    "pl_bmasse_err2": -123.95307873
   },
   {
     "seq": 255,
@@ -6384,7 +7156,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3769.44490702
+    "pl_bmasse": 3769.44490702,
+    "pl_bmassj_err1": 6.56,
+    "pl_bmassj_err2": -6.54,
+    "pl_bmasse_err1": 2084.95434992,
+    "pl_bmasse_err2": -2078.59778178
   },
   {
     "seq": 256,
@@ -6409,7 +7185,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 336.89811142
+    "pl_bmasse": 336.89811142,
+    "pl_bmassj_err1": 0.53,
+    "pl_bmassj_err2": -0.55,
+    "pl_bmasse_err1": 168.44905571,
+    "pl_bmasse_err2": -174.80562385
   },
   {
     "seq": 257,
@@ -6434,7 +7214,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1395.26670673
+    "pl_bmasse": 1395.26670673,
+    "pl_bmassj_err1": 3.07,
+    "pl_bmassj_err2": -2.46,
+    "pl_bmasse_err1": 975.73320949,
+    "pl_bmasse_err2": -781.85788122
   },
   {
     "seq": 258,
@@ -6531,7 +7315,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 3902.93283796
+    "pl_bmasse": 3902.93283796,
+    "pl_bmassj_err1": 7.37,
+    "pl_bmassj_err2": -5.43,
+    "pl_bmasse_err1": 2342.39535959,
+    "pl_bmasse_err2": -1725.80825001
   },
   {
     "seq": 262,
@@ -6556,7 +7344,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 940.77208472
+    "pl_bmasse": 940.77208472,
+    "pl_bmassj_err1": 1.71,
+    "pl_bmassj_err2": -1.53,
+    "pl_bmasse_err1": 543.48657597,
+    "pl_bmasse_err2": -486.27746271
   },
   {
     "seq": 263,
@@ -6581,7 +7373,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 1032.94232275
+    "pl_bmasse": 1032.94232275,
+    "pl_bmassj_err1": 2.59,
+    "pl_bmassj_err2": -2.03,
+    "pl_bmasse_err1": 823.17557413,
+    "pl_bmasse_err2": -645.19166621
   },
   {
     "seq": 264,
@@ -6606,7 +7402,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 2469.52672239
+    "pl_bmasse": 2469.52672239,
+    "pl_bmassj_err1": 4.08,
+    "pl_bmassj_err2": -4.04,
+    "pl_bmasse_err1": 1296.73990056,
+    "pl_bmasse_err2": -1284.02676428
   },
   {
     "seq": 265,
@@ -6631,7 +7431,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 42.32
+    "pl_bmasse": 42.32,
+    "pl_bmassj_err1": 0.12780481,
+    "pl_bmassj_err2": -0.06943999,
+    "pl_bmasse_err1": 40.62,
+    "pl_bmasse_err2": -22.07
   },
   {
     "seq": 266,
@@ -6656,7 +7460,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 88.99195396
+    "pl_bmasse": 88.99195396,
+    "pl_bmassj_err1": 0.15,
+    "pl_bmassj_err2": -0.16,
+    "pl_bmasse_err1": 47.67426105,
+    "pl_bmasse_err2": -50.85254512
   },
   {
     "seq": 267,
@@ -6681,7 +7489,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 155.73591943
+    "pl_bmasse": 155.73591943,
+    "pl_bmassj_err1": 0.17,
+    "pl_bmassj_err2": -0.17,
+    "pl_bmasse_err1": 54.03082919,
+    "pl_bmasse_err2": -54.03082919
   },
   {
     "seq": 268,
@@ -6706,7 +7518,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 50.85254512
+    "pl_bmasse": 50.85254512,
+    "pl_bmassj_err1": 0.24,
+    "pl_bmassj_err2": -0.09,
+    "pl_bmasse_err1": 76.27881768,
+    "pl_bmasse_err2": -28.60455663
   },
   {
     "seq": 269,
@@ -6731,7 +7547,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "pl_bmasse": 187.51876013
+    "pl_bmasse": 187.51876013,
+    "pl_bmassj_err1": 0.85,
+    "pl_bmassj_err2": -0.34,
+    "pl_bmasse_err1": 270.15414595,
+    "pl_bmasse_err2": -108.06165838
   },
   {
     "seq": 270,
@@ -7079,7 +7899,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "eu_matched": false
+    "eu_matched": false,
+    "pl_bmassj_err1": 0.34,
+    "pl_bmassj_err2": -0.12,
+    "pl_bmasse_err1": 108.06165838,
+    "pl_bmasse_err2": -38.13940884
   },
   {
     "seq": 284,
@@ -7105,7 +7929,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "eu_matched": false
+    "eu_matched": false,
+    "pl_bmassj_err1": 5.23,
+    "pl_bmassj_err2": -1.26,
+    "pl_bmasse_err1": 1662.24256861,
+    "pl_bmasse_err2": -400.46379282
   },
   {
     "seq": 285,
@@ -7131,7 +7959,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "eu_matched": false
+    "eu_matched": false,
+    "pl_bmassj_err1": 0.69,
+    "pl_bmassj_err2": -0.66,
+    "pl_bmasse_err1": 219.30160083,
+    "pl_bmasse_err2": -209.76674862
   },
   {
     "seq": 286,
@@ -7157,7 +7989,11 @@
     "releasedate": null,
     "discoverymethod": "Microlensing",
     "nasa_matched": true,
-    "eu_matched": false
+    "eu_matched": false,
+    "pl_bmassj_err1": 1.23,
+    "pl_bmassj_err2": -1.25,
+    "pl_bmasse_err1": 390.92894061,
+    "pl_bmasse_err2": -397.28550875
   },
   {
     "seq": 287,
