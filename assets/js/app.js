@@ -66,6 +66,11 @@
   setText("statFfp", ffpCount);
   setText("statMatched", matched + " / " + total);
 
+  if (window.KMTNET_LIST_UPDATED) {
+    var parts = window.KMTNET_LIST_UPDATED.split("-");
+    setText("statUpdated", parts[0] + "." + Number(parts[1]) + "." + Number(parts[2]));
+  }
+
   // ---------------- Chart: discoveries per year (free-floating candidates excluded; see #ffpCard) ----------------
   (function renderChart() {
     var svg = document.getElementById("yearChart");
