@@ -58,10 +58,11 @@
 
   var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
   var total = nonFfpRows.length;
+  var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
   var matched = nonFfpRows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
 
-  setText("statTotal", total);
+  setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
   setText("statMatched", matched + " / " + total);
 
@@ -153,7 +154,7 @@
   var state = {
     q: "",
     type: "all",
-    massMax: "all",
+    massMax: "30",
     sortKey: "seq",
     sortDir: -1,
     page: 1,
@@ -246,8 +247,12 @@
     var q = state.q.trim().toLowerCase();
     return rows.filter(function (r) {
       if (state.type !== "all" && r._type !== state.type) return false;
-      if (state.massMax !== "all") {
-        if (r.pl_bmassj == null || r.pl_bmassj > Number(state.massMax)) return false;
+      if (state.massMax === "30") {
+        // Same cutoff classify() already uses — anything not typed "planet" is above it
+        // (or forced above it by the source note) regardless of a known numeric mass.
+        if (r._type !== "planet") return false;
+      } else if (state.massMax === "13") {
+        if (r._type !== "planet" || r.pl_bmassj == null || r.pl_bmassj > 13) return false;
       }
       if (!q) return true;
       return (
@@ -444,14 +449,15 @@
   var totalCard = document.getElementById("totalCard");
   var tableSection = document.getElementById("table");
 
-  function applyTypeFilter(type) {
+  function applyTypeFilter(type, massMax) {
+    massMax = massMax || "all";
     state.q = "";
     state.type = type;
-    state.massMax = "all";
+    state.massMax = massMax;
     state.page = 1;
     searchInput.value = "";
     typeSelect.value = type;
-    massSelect.value = "all";
+    massSelect.value = massMax;
     render();
     tableSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -466,8 +472,8 @@
     });
   }
 
-  onCardActivate(ffpCard, function () { applyTypeFilter("ffp"); });
-  onCardActivate(totalCard, function () { applyTypeFilter("all"); });
+  onCardActivate(ffpCard, function () { applyTypeFilter("ffp", "all"); });
+  onCardActivate(totalCard, function () { applyTypeFilter("all", "30"); });
 
   // ---------------- Year-bar popup ----------------
   var yearOverlay = document.getElementById("yearOverlay");
