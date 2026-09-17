@@ -598,6 +598,38 @@ table.data tbody tr:last-child td { border-bottom: none; }
 .modal .table-scroll { box-shadow: none; }
 
 
+/* ---------- Inline "all events" section ---------- */
+.all-events-section {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+.all-events-section[hidden] { display: none; }
+.all-events-section .section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.all-events-section h2 {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  margin: 0;
+}
+.all-events-section .close {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+}
+
 /* ---------- About / footer ---------- */
 .about {
   margin-top: 40px;

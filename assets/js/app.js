@@ -593,17 +593,16 @@
     if (e.key === "Escape") closeYearModal();
   });
 
-  // ---------------- All-events popup ----------------
+  // ---------------- All-events inline section ----------------
   var allEventsCard = document.getElementById("allEventsCard");
-  var allEventsOverlay = document.getElementById("allEventsOverlay");
-  var allEventsModal = document.getElementById("allEventsModal");
+  var allEventsSection = document.getElementById("allEventsSection");
   var allEventsModalClose = document.getElementById("allEventsModalClose");
   var allEventsModalSubtitle = document.getElementById("allEventsModalSubtitle");
   var allEventsThead = document.querySelector("#allEventsTable thead tr");
   var allEventsTbody = document.querySelector("#allEventsTable tbody");
   var allEventsSorted = [];
 
-  function openAllEventsModal() {
+  function openAllEventsSection() {
     allEventsSorted = allEventsRows.slice().sort(function (a, b) {
       var ay = a.pub_year || 0, by = b.pub_year || 0;
       if (by !== ay) return by - ay;
@@ -634,30 +633,27 @@
       );
     }).join("");
 
-    allEventsOverlay.classList.add("open");
-    allEventsModal.classList.add("open");
+    allEventsSection.hidden = false;
+    allEventsSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function closeAllEventsModal() {
-    allEventsOverlay.classList.remove("open");
-    allEventsModal.classList.remove("open");
+  function closeAllEventsSection() {
+    allEventsSection.hidden = true;
   }
 
-  onCardActivate(allEventsCard, openAllEventsModal);
-  allEventsOverlay.addEventListener("click", closeAllEventsModal);
-  allEventsModalClose.addEventListener("click", closeAllEventsModal);
+  onCardActivate(allEventsCard, openAllEventsSection);
+  allEventsModalClose.addEventListener("click", closeAllEventsSection);
   allEventsTbody.addEventListener("click", function (e) {
     var tr = e.target.closest("tr[data-idx]");
     if (!tr) return;
     var idx = Number(tr.getAttribute("data-idx"));
     var row = allEventsSorted[idx];
     if (row) {
-      closeAllEventsModal();
       openDrawer(row);
     }
   });
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeAllEventsModal();
+    if (e.key === "Escape" && !allEventsSection.hidden) closeAllEventsSection();
   });
 
   render();

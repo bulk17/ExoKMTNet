@@ -96,6 +96,20 @@
     </div>
   </section>
 
+  <section class="all-events-section" id="allEventsSection" hidden>
+    <div class="section-header-row">
+      <h2 id="allEventsModalTitle">All Microlensing Planetary Events</h2>
+      <button class="close" id="allEventsModalClose" aria-label="Close">✕</button>
+    </div>
+    <p class="modal-subtitle" id="allEventsModalSubtitle"></p>
+    <div class="table-scroll">
+      <table class="data" id="allEventsTable">
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="about" id="about">
     <h3>Exoplanet criteria</h3>
     <p>
@@ -146,19 +160,6 @@
   <p class="modal-subtitle" id="yearModalSubtitle"></p>
   <div class="table-scroll">
     <table class="data" id="yearTable">
-      <thead><tr></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-</div>
-
-<div class="overlay" id="allEventsOverlay"></div>
-<div class="modal modal-wide" id="allEventsModal" role="dialog" aria-modal="true" aria-labelledby="allEventsModalTitle">
-  <button class="close" id="allEventsModalClose" aria-label="Close">✕</button>
-  <h2 id="allEventsModalTitle">All Microlensing Planetary Events</h2>
-  <p class="modal-subtitle" id="allEventsModalSubtitle"></p>
-  <div class="table-scroll">
-    <table class="data" id="allEventsTable">
       <thead><tr></tr></thead>
       <tbody></tbody>
     </table>
