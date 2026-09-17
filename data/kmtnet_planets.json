@@ -6376,7 +6376,9 @@
     "pl_orbsmax_err1": 0.32,
     "pl_orbsmax_err2": -0.36,
     "sy_dist_err1": 1050.0,
-    "sy_dist_err2": -1170.0
+    "sy_dist_err2": -1170.0,
+    "pl_bmasse_err1": 13.98,
+    "pl_bmasse_err2": -5.72
   },
   {
     "seq": 221,
