@@ -627,7 +627,7 @@
     "sy_dist_err2": -1000.0
   },
   {
-    "seq": 23,
+    "seq": 22,
     "name": "KMT-2016-BLG-1820L b",
     "host_guess": "KMT-2016-BLG-1820L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2018AJ....156..208J/abstract",
@@ -656,7 +656,7 @@
     "pl_bmasse_err2": -680.0
   },
   {
-    "seq": 24,
+    "seq": 23,
     "name": "KMT-2016-BLG-1820L",
     "host_guess": "KMT-2016-BLG-1820L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2018AJ....156..208J/abstract",
@@ -687,7 +687,7 @@
     "sy_dist_err2": -1280.0
   },
   {
-    "seq": 25,
+    "seq": 24,
     "name": "KMT-2016-BLG-2142L b",
     "host_guess": "KMT-2016-BLG-2142L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2018AJ....156..208J/abstract",
@@ -716,7 +716,7 @@
     "pl_bmasse_err2": -2730.0
   },
   {
-    "seq": 26,
+    "seq": 25,
     "name": "KMT-2016-BLG-1397L b",
     "host_guess": "KMT-2016-BLG-1397L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2018AJ....156..236Z/abstract",
@@ -745,7 +745,7 @@
     "pl_bmasse_err2": -1400.0
   },
   {
-    "seq": 27,
+    "seq": 26,
     "name": "MOA-2016-BLG-319L b",
     "host_guess": "MOA-2016-BLG-319L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2018AJ....156..226H/abstract",
@@ -774,7 +774,7 @@
     "pl_bmasse_err2": -100.0
   },
   {
-    "seq": 28,
+    "seq": 27,
     "name": "KMT-2016-BLG-0212L b",
     "host_guess": "KMT-2016-BLG-0212L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2018JKAS...51..197H/abstract",
@@ -803,7 +803,7 @@
     "pl_bmasse_err2": -3500.0
   },
   {
-    "seq": 29,
+    "seq": 28,
     "name": "KMT-2016-BLG-1107L b",
     "host_guess": "KMT-2016-BLG-1107L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157...23H/abstract",
@@ -832,7 +832,7 @@
     "pl_bmasse_err2": -583.0
   },
   {
-    "seq": 30,
+    "seq": 29,
     "name": "KMT-2017-BLG-0165L b",
     "host_guess": "KMT-2017-BLG-0165L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157...72J/abstract",
@@ -861,7 +861,7 @@
     "pl_bmasse_err2": -12.0
   },
   {
-    "seq": 31,
+    "seq": 30,
     "name": "MOA-2016-BLG-231L b",
     "host_guess": "MOA-2016-BLG-231L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019ApJ...871..179C/abstract",
@@ -894,7 +894,7 @@
     "sy_dist_err2": -500.0
   },
   {
-    "seq": 32,
+    "seq": 31,
     "name": "MOA-2016-BLG-231L",
     "host_guess": "MOA-2016-BLG-231L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019ApJ...871..179C/abstract",
@@ -925,7 +925,7 @@
     "sy_dist_err2": -500.0
   },
   {
-    "seq": 33,
+    "seq": 32,
     "name": "OGLE-2017-BLG-0560",
     "host_guess": "OGLE-2017-BLG-0560",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019A%26A...622A.201M/abstract",
@@ -949,7 +949,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 34,
+    "seq": 33,
     "name": "OGLE-2016-BLG-1067L b",
     "host_guess": "OGLE-2016-BLG-1067L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..121C/abstract",
@@ -978,7 +978,7 @@
     "pl_bmasse_err2": -54.0
   },
   {
-    "seq": 35,
+    "seq": 34,
     "name": "OGLE-2017-BLG-0896L",
     "host_guess": "OGLE-2017-BLG-0896L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..106S/abstract",
@@ -1007,7 +1007,7 @@
     "sy_dist_err2": -110.0
   },
   {
-    "seq": 36,
+    "seq": 35,
     "name": "KMT-2017-BLG-1038L b",
     "host_guess": "KMT-2017-BLG-1038L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..146S/abstract",
@@ -1036,7 +1036,7 @@
     "pl_bmasse_err2": -350.0
   },
   {
-    "seq": 37,
+    "seq": 36,
     "name": "KMT-2017-BLG-1146L b",
     "host_guess": "KMT-2017-BLG-1146L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..146S/abstract",
@@ -1065,7 +1065,7 @@
     "pl_bmasse_err2": -130.0
   },
   {
-    "seq": 38,
+    "seq": 37,
     "name": "OGLE-2015-BLG-1670L b",
     "host_guess": "OGLE-2015-BLG-1670L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....157..232R/abstract",
@@ -1094,7 +1094,7 @@
     "pl_bmasse_err2": -8.8
   },
   {
-    "seq": 39,
+    "seq": 38,
     "name": "OGLE-2018-BLG-0596L b",
     "host_guess": "OGLE-2018-BLG-0596L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....158...28J/abstract",
@@ -1123,7 +1123,7 @@
     "pl_bmasse_err2": -1.56
   },
   {
-    "seq": 40,
+    "seq": 39,
     "name": "OGLE-2018-BLG-0740L b",
     "host_guess": "OGLE-2018-BLG-0740L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....158..102H/abstract",
@@ -1152,7 +1152,7 @@
     "pl_bmasse_err2": -200.0
   },
   {
-    "seq": 41,
+    "seq": 40,
     "name": "OGLE-2018BLG-1011L b",
     "host_guess": "OGLE-2018BLG-1011L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....158..114H/abstract",
@@ -1181,7 +1181,7 @@
     "pl_bmasse_err2": -350.0
   },
   {
-    "seq": 42,
+    "seq": 41,
     "name": "OGLE-2018BLG-1011L c",
     "host_guess": "OGLE-2018BLG-1011L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....158..114H/abstract",
@@ -1210,7 +1210,7 @@
     "pl_bmasse_err2": -540.0
   },
   {
-    "seq": 43,
+    "seq": 42,
     "name": "KMT-2018-BLG-1990L b",
     "host_guess": "KMT-2018-BLG-1990L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2019AJ....158..151R/abstract",
@@ -1239,7 +1239,7 @@
     "pl_bmasse_err2": -28.0
   },
   {
-    "seq": 44,
+    "seq": 43,
     "name": "KMT-2018-BLG-0029L b",
     "host_guess": "KMT-2018-BLG-0029L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020JKAS...53....9G/abstract",
@@ -1268,7 +1268,7 @@
     "pl_bmasse_err2": -0.69
   },
   {
-    "seq": 45,
+    "seq": 44,
     "name": "OGLE-2018-BLG-1700L b",
     "host_guess": "OGLE-2018-BLG-1700L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159...48H/abstract",
@@ -1297,7 +1297,7 @@
     "pl_bmasse_err2": -636.0
   },
   {
-    "seq": 46,
+    "seq": 45,
     "name": "KMT-2018-BLG-1292L b",
     "host_guess": "KMT-2018-BLG-1292L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159...58R/abstract",
@@ -1326,7 +1326,7 @@
     "pl_bmasse_err2": -210.0
   },
   {
-    "seq": 47,
+    "seq": 46,
     "name": "KMT-2016-BLG-1836L b",
     "host_guess": "KMT-2016-BLG-1836L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159...98Y/abstract",
@@ -1355,7 +1355,7 @@
     "pl_bmasse_err2": -350.0
   },
   {
-    "seq": 48,
+    "seq": 47,
     "name": "OGLE-2015-BLG-1771L b",
     "host_guess": "OGLE-2015-BLG-1771L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159..116Z/abstract",
@@ -1384,7 +1384,7 @@
     "pl_bmasse_err2": -80.0
   },
   {
-    "seq": 49,
+    "seq": 48,
     "name": "OGLE-2016-BLG-1227L b",
     "host_guess": "OGLE-2016-BLG-1227L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159...91H/abstract",
@@ -1414,7 +1414,7 @@
     "pl_bmasse_err2": -120.0
   },
   {
-    "seq": 50,
+    "seq": 49,
     "name": "OGLE-2019-BLG-0551",
     "host_guess": "OGLE-2019-BLG-0551",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159..262M/abstract",
@@ -1438,7 +1438,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 51,
+    "seq": 50,
     "name": "OGLE-2018-BLG-0677L b",
     "host_guess": "OGLE-2018-BLG-0677L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....159..256H/abstract",
@@ -1467,7 +1467,7 @@
     "pl_bmasse_err2": -2.66
   },
   {
-    "seq": 52,
+    "seq": 51,
     "name": "KMT-2019-BLG-1953L b",
     "host_guess": "KMT-2019-BLG-1953L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160...17H/abstract",
@@ -1497,7 +1497,7 @@
     "pl_bmasse_err2": -110.0
   },
   {
-    "seq": 53,
+    "seq": 52,
     "name": "KMT-2019-BLG-1953L c",
     "host_guess": "KMT-2019-BLG-1953L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160...17H/abstract",
@@ -1523,7 +1523,7 @@
     "eu_matched": true
   },
   {
-    "seq": 54,
+    "seq": 53,
     "name": "OGLE-2017-BLG-0406L b",
     "host_guess": "OGLE-2017-BLG-0406L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160...74H/abstract",
@@ -1552,7 +1552,7 @@
     "pl_bmasse_err2": -20.0
   },
   {
-    "seq": 55,
+    "seq": 54,
     "name": "KMT-2019-BLG-1339L b",
     "host_guess": "KMT-2019-BLG-1339L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160...64H/abstract",
@@ -1581,7 +1581,7 @@
     "pl_bmasse_err2": -230.0
   },
   {
-    "seq": 56,
+    "seq": 55,
     "name": "OGLE-2018-BLG-1269L b",
     "host_guess": "OGLE-2018-BLG-1269L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160..148J/abstract",
@@ -1610,7 +1610,7 @@
     "pl_bmasse_err2": -67.0
   },
   {
-    "seq": 57,
+    "seq": 56,
     "name": "KMT-2018-BLG-0748L b",
     "host_guess": "KMT-2018-BLG-0748L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020A%26A...641A.105H/abstract",
@@ -1639,7 +1639,7 @@
     "pl_bmasse_err2": -32.0
   },
   {
-    "seq": 58,
+    "seq": 57,
     "name": "OGLE-2018-BLG-0532L b",
     "host_guess": "OGLE-2018-BLG-0532L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160..183R/abstract",
@@ -1668,7 +1668,7 @@
     "pl_bmasse_err2": -0.881
   },
   {
-    "seq": 59,
+    "seq": 58,
     "name": "KMT-2016-BLG-2364L b",
     "host_guess": "KMT-2016-BLG-2364L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020A%26A...642A.110H/abstract",
@@ -1697,7 +1697,7 @@
     "pl_bmasse_err2": -690.0
   },
   {
-    "seq": 60,
+    "seq": 59,
     "name": "KMT-2016-BLG-2397L b",
     "host_guess": "KMT-2016-BLG-2397L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020A%26A...642A.110H/abstract",
@@ -1726,7 +1726,7 @@
     "pl_bmasse_err2": -391.0
   },
   {
-    "seq": 61,
+    "seq": 60,
     "name": "OGLE-2017-BLG-0604L b",
     "host_guess": "OGLE-2017-BLG-0604L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020A%26A...642A.110H/abstract",
@@ -1755,7 +1755,7 @@
     "pl_bmasse_err2": -67.0
   },
   {
-    "seq": 62,
+    "seq": 61,
     "name": "OGLE-2017-BLG-1375L b",
     "host_guess": "OGLE-2017-BLG-1375L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020A%26A...642A.110H/abstract",
@@ -1784,7 +1784,7 @@
     "pl_bmasse_err2": -1070.0
   },
   {
-    "seq": 63,
+    "seq": 62,
     "name": "OGLE-2016-BLG-1928",
     "host_guess": "OGLE-2016-BLG-1928",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020ApJ...903L..11M/abstract",
@@ -1808,7 +1808,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 64,
+    "seq": 63,
     "name": "KMT-2019-BLG-0842L b",
     "host_guess": "KMT-2019-BLG-0842L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020AJ....160..255J/abstract",
@@ -1837,7 +1837,7 @@
     "pl_bmasse_err2": -5.28
   },
   {
-    "seq": 65,
+    "seq": 64,
     "name": "OGLE-2017-BLG-1049L b",
     "host_guess": "OGLE-2017-BLG-1049L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2020JKAS...53..161K/abstract",
@@ -1866,7 +1866,7 @@
     "pl_bmasse_err2": -912.0
   },
   {
-    "seq": 66,
+    "seq": 65,
     "name": "KMT-2017-BLG-2820",
     "host_guess": "KMT-2017-BLG-2820",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....161..126R/abstract",
@@ -1890,7 +1890,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 67,
+    "seq": 66,
     "name": "OGLE-2018-BLG-1428L b",
     "host_guess": "OGLE-2018-BLG-1428L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.503.2706K/abstract",
@@ -1919,7 +1919,7 @@
     "pl_bmasse_err2": -170.0
   },
   {
-    "seq": 68,
+    "seq": 67,
     "name": "KMT-2018-BLG-1025L b",
     "host_guess": "KMT-2018-BLG-1025L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...649A..90H/abstract",
@@ -1948,7 +1948,7 @@
     "pl_bmasse_err2": -3.321
   },
   {
-    "seq": 69,
+    "seq": 68,
     "name": "OGLE-2018-BLG-0567L b",
     "host_guess": "OGLE-2018-BLG-0567L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....161..293J/abstract",
@@ -1977,7 +1977,7 @@
     "pl_bmasse_err2": -54.03082919
   },
   {
-    "seq": 70,
+    "seq": 69,
     "name": "OGLE-2018-BLG-0962L b",
     "host_guess": "OGLE-2018-BLG-0962L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....161..293J/abstract",
@@ -2006,7 +2006,7 @@
     "pl_bmasse_err2": -222.4798849
   },
   {
-    "seq": 71,
+    "seq": 70,
     "name": "KMT-2019-BLG-1715L b",
     "host_guess": "KMT-2019-BLG-1715L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....161..270H/abstract",
@@ -2035,7 +2035,7 @@
     "pl_bmasse_err2": -368.68095212
   },
   {
-    "seq": 72,
+    "seq": 71,
     "name": "KMT-2018-BLG-1976L b",
     "host_guess": "KMT-2018-BLG-1976L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..89H/abstract",
@@ -2064,7 +2064,7 @@
     "pl_bmasse_err2": -384.57237247
   },
   {
-    "seq": 73,
+    "seq": 72,
     "name": "KMT-2018-BLG-1996L b",
     "host_guess": "KMT-2018-BLG-1996L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..89H/abstract",
@@ -2093,7 +2093,7 @@
     "pl_bmasse_err2": -190.6970442
   },
   {
-    "seq": 74,
+    "seq": 73,
     "name": "OGLE-2019-BLG-0954L b",
     "host_guess": "OGLE-2019-BLG-0954L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...650A..89H/abstract",
@@ -2122,7 +2122,7 @@
     "pl_bmasse_err2": -2383.7130525
   },
   {
-    "seq": 75,
+    "seq": 74,
     "name": "KMT-2019-BLG-2073",
     "host_guess": "KMT-2019-BLG-2073",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162...15K/abstract",
@@ -2146,7 +2146,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 76,
+    "seq": 75,
     "name": "KMT-2019-BLG-0371L b",
     "host_guess": "KMT-2019-BLG-0371L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162...17K/abstract",
@@ -2175,7 +2175,7 @@
     "pl_bmasse_err2": -1239.5307873
   },
   {
-    "seq": 77,
+    "seq": 76,
     "name": "KMT-2018-BLG-1743L b",
     "host_guess": "KMT-2018-BLG-1743L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...652A.145H/abstract",
@@ -2204,7 +2204,7 @@
     "pl_bmasse_err2": -42.90683494
   },
   {
-    "seq": 78,
+    "seq": 77,
     "name": "OGLE-2018-BLG-1185L b",
     "host_guess": "OGLE-2018-BLG-1185L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162...77K/abstract",
@@ -2233,7 +2233,7 @@
     "pl_bmasse_err2": -4.7
   },
   {
-    "seq": 79,
+    "seq": 78,
     "name": "KMT-2016-BLG-2605L b",
     "host_guess": "KMT-2016-BLG-2605L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162...96R/abstract",
@@ -2262,7 +2262,7 @@
     "pl_bmasse_err2": -127.44919121
   },
   {
-    "seq": 80,
+    "seq": 79,
     "name": "OGLE-2019-BLG-1053L b",
     "host_guess": "OGLE-2019-BLG-1053L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162..163Z/abstract",
@@ -2291,7 +2291,7 @@
     "pl_bmasse_err2": -0.98
   },
   {
-    "seq": 81,
+    "seq": 80,
     "name": "KMT-2017-BLG-2509L b",
     "host_guess": "KMT-2017-BLG-2509L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...655A..21H/abstract",
@@ -2320,7 +2320,7 @@
     "pl_bmasse_err2": -400.46379282
   },
   {
-    "seq": 82,
+    "seq": 81,
     "name": "OGLE-2017-BLG-1099L b",
     "host_guess": "OGLE-2017-BLG-1099L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...655A..21H/abstract",
@@ -2349,7 +2349,7 @@
     "pl_bmasse_err2": -575.26941667
   },
   {
-    "seq": 83,
+    "seq": 82,
     "name": "OGLE-2019-BLG-0299L b",
     "host_guess": "OGLE-2019-BLG-0299L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...655A..21H/abstract",
@@ -2378,7 +2378,7 @@
     "pl_bmasse_err2": -1166.43025369
   },
   {
-    "seq": 84,
+    "seq": 83,
     "name": "KMT-2021-BLG-0322L b",
     "host_guess": "KMT-2021-BLG-0322L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021A%26A...655A..24H/abstract",
@@ -2411,7 +2411,7 @@
     "sy_dist_err2": -1100.0
   },
   {
-    "seq": 85,
+    "seq": 84,
     "name": "OGLE-2019-BLG-0304L b",
     "host_guess": "OGLE-2019-BLG-0304L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162..203H/abstract",
@@ -2440,7 +2440,7 @@
     "pl_bmasse_err2": -73.10053361
   },
   {
-    "seq": 86,
+    "seq": 85,
     "name": "KMT-2020-BLG-0414L b",
     "host_guess": "KMT-2020-BLG-0414L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021RAA....21..239Z/abstract",
@@ -2469,7 +2469,7 @@
     "pl_bmasse_err2": -0.16
   },
   {
-    "seq": 87,
+    "seq": 86,
     "name": "KMT-2020-BLG-0414L c",
     "host_guess": "KMT-2020-BLG-0414L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021RAA....21..239Z/abstract",
@@ -2498,7 +2498,7 @@
     "pl_bmasse_err2": -985.2680617
   },
   {
-    "seq": 88,
+    "seq": 87,
     "name": "OGLE-2019-BLG-0960L b",
     "host_guess": "OGLE-2019-BLG-0960L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2021AJ....162..180Y/abstract",
@@ -2527,7 +2527,7 @@
     "pl_bmasse_err2": -0.6
   },
   {
-    "seq": 89,
+    "seq": 88,
     "name": "OGLE-2018-BLG-0383L b",
     "host_guess": "OGLE-2018-BLG-0383L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.510.1778W/abstract",
@@ -2556,7 +2556,7 @@
     "pl_bmasse_err2": -2.8
   },
   {
-    "seq": 90,
+    "seq": 89,
     "name": "KMT-2019-BLG-0253L b",
     "host_guess": "KMT-2019-BLG-0253L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract",
@@ -2585,7 +2585,7 @@
     "pl_bmasse_err2": -4.1
   },
   {
-    "seq": 91,
+    "seq": 90,
     "name": "OGLE-2018-BLG-0506L b",
     "host_guess": "OGLE-2018-BLG-0506L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract",
@@ -2614,7 +2614,7 @@
     "pl_bmasse_err2": -8.5
   },
   {
-    "seq": 92,
+    "seq": 91,
     "name": "OGLE-2018-BLG-0516L b",
     "host_guess": "OGLE-2018-BLG-0516L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract",
@@ -2643,7 +2643,7 @@
     "pl_bmasse_err2": -10.7
   },
   {
-    "seq": 93,
+    "seq": 92,
     "name": "OGLE-2018-BLG-0977L b",
     "host_guess": "OGLE-2018-BLG-0977L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract",
@@ -2672,7 +2672,7 @@
     "pl_bmasse_err2": -3.7
   },
   {
-    "seq": 94,
+    "seq": 93,
     "name": "OGLE-2019-BLG-1492L b",
     "host_guess": "OGLE-2019-BLG-1492L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract",
@@ -2701,7 +2701,7 @@
     "pl_bmasse_err2": -19.5
   },
   {
-    "seq": 95,
+    "seq": 94,
     "name": "KMT-2019-BLG-0953L b",
     "host_guess": "KMT-2019-BLG-0953L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....163...43H/abstract",
@@ -2730,7 +2730,7 @@
     "pl_bmasse_err2": -9.7
   },
   {
-    "seq": 96,
+    "seq": 95,
     "name": "KMT-2021-BLG-0912L b",
     "host_guess": "KMT-2021-BLG-0912L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...658A..94H/abstract",
@@ -2759,7 +2759,7 @@
     "pl_bmasse_err2": -0.99
   },
   {
-    "seq": 97,
+    "seq": 96,
     "name": "OGLE-2019-BLG-0468L b",
     "host_guess": "OGLE-2019-BLG-0468L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...658A..93H/abstract",
@@ -2788,7 +2788,7 @@
     "pl_bmasse_err2": -371.85923619
   },
   {
-    "seq": 98,
+    "seq": 97,
     "name": "OGLE-2019-BLG-0468L c",
     "host_guess": "OGLE-2019-BLG-0468L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...658A..93H/abstract",
@@ -2817,7 +2817,7 @@
     "pl_bmasse_err2": -1112.3994245
   },
   {
-    "seq": 99,
+    "seq": 98,
     "name": "KMT-2018-BLG-1988L b",
     "host_guess": "KMT-2018-BLG-1988L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...658A..62H/abstract",
@@ -2846,7 +2846,7 @@
     "pl_bmasse_err2": -2.84
   },
   {
-    "seq": 100,
+    "seq": 99,
     "name": "OGLE-2018-BLG-0271L b",
     "host_guess": "OGLE-2018-BLG-0271L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.510.1778W/abstract",
@@ -2872,7 +2872,7 @@
     "eu_matched": true
   },
   {
-    "seq": 101,
+    "seq": 100,
     "name": "KMT-2021-BLG-1077L b",
     "host_guess": "KMT-2021-BLG-1077L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...662A..70H/abstract",
@@ -2901,7 +2901,7 @@
     "pl_bmasse_err2": -38.13940884
   },
   {
-    "seq": 102,
+    "seq": 101,
     "name": "KMT-2021-BLG-1077L c",
     "host_guess": "KMT-2021-BLG-1077L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...662A..70H/abstract",
@@ -2930,7 +2930,7 @@
     "pl_bmasse_err2": -41.31769291
   },
   {
-    "seq": 103,
+    "seq": 102,
     "name": "OGLE-2016-BLG-1093L b",
     "host_guess": "OGLE-2016-BLG-1093L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220104312S/abstract",
@@ -2959,7 +2959,7 @@
     "pl_bmasse_err2": -38.13940884
   },
   {
-    "seq": 104,
+    "seq": 103,
     "name": "KMT-2019-BLG-1042L b",
     "host_guess": "KMT-2019-BLG-1042L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515..928Z/abstract",
@@ -2988,7 +2988,7 @@
     "pl_bmasse_err2": -34.96112477
   },
   {
-    "seq": 105,
+    "seq": 104,
     "name": "KMT-2019-BLG-1552L b",
     "host_guess": "KMT-2019-BLG-1552L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515..928Z/abstract",
@@ -3017,7 +3017,7 @@
     "pl_bmasse_err2": -587.98255295
   },
   {
-    "seq": 106,
+    "seq": 105,
     "name": "KMT-2019-BLG-2974L b",
     "host_guess": "KMT-2019-BLG-2974L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.515..928Z/abstract",
@@ -3046,7 +3046,7 @@
     "pl_bmasse_err2": -57.20911326
   },
   {
-    "seq": 107,
+    "seq": 106,
     "name": "KMT-2021-BLG-1898L b",
     "host_guess": "KMT-2021-BLG-1898L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...663A.145H/abstract",
@@ -3075,7 +3075,7 @@
     "pl_bmasse_err2": -127.1313628
   },
   {
-    "seq": 108,
+    "seq": 107,
     "name": "OGLE-2018-BLG-0799L b",
     "host_guess": "OGLE-2018-BLG-0799L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.514.5952Z/abstract",
@@ -3104,7 +3104,7 @@
     "pl_bmasse_err2": -34.96112477
   },
   {
-    "seq": 109,
+    "seq": 108,
     "name": "KMT-2021-BLG-0240L b",
     "host_guess": "KMT-2021-BLG-0240L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220411383H/abstract",
@@ -3133,7 +3133,7 @@
     "pl_bmasse_err2": -34.96112477
   },
   {
-    "seq": 110,
+    "seq": 109,
     "name": "KMT-2021-BLG-0240L c",
     "host_guess": "KMT-2021-BLG-0240L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220411383H/abstract",
@@ -3159,7 +3159,7 @@
     "eu_matched": true
   },
   {
-    "seq": 111,
+    "seq": 110,
     "name": "OGLE-2019-BLG-0362L b",
     "host_guess": "OGLE-2019-BLG-0362L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220804230C/abstract",
@@ -3188,7 +3188,7 @@
     "pl_bmasse_err2": -184.34047606
   },
   {
-    "seq": 112,
+    "seq": 111,
     "name": "OGLE-2017-BLG-1691L b",
     "host_guess": "OGLE-2017-BLG-1691L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..33H/abstract",
@@ -3217,7 +3217,7 @@
     "pl_bmasse_err2": -7.94571018
   },
   {
-    "seq": 113,
+    "seq": 112,
     "name": "KMT-2021-BLG-0320L b",
     "host_guess": "KMT-2021-BLG-0320L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..33H/abstract",
@@ -3246,7 +3246,7 @@
     "pl_bmasse_err2": -22.24798849
   },
   {
-    "seq": 114,
+    "seq": 113,
     "name": "KMT-2021-BLG-1303L b",
     "host_guess": "KMT-2021-BLG-1303L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..33H/abstract",
@@ -3275,7 +3275,7 @@
     "pl_bmasse_err2": -63.5656814
   },
   {
-    "seq": 115,
+    "seq": 114,
     "name": "KMT-2021-BLG-1554L b",
     "host_guess": "KMT-2021-BLG-1554L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..33H/abstract",
@@ -3304,7 +3304,7 @@
     "pl_bmasse_err2": -22.24798849
   },
   {
-    "seq": 116,
+    "seq": 115,
     "name": "KMT-2018-BLG-2004L b",
     "host_guess": "KMT-2018-BLG-2004L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3330,7 +3330,7 @@
     "eu_matched": true
   },
   {
-    "seq": 117,
+    "seq": 116,
     "name": "KMT-2018-BLG-2718L b",
     "host_guess": "KMT-2018-BLG-2718L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3356,7 +3356,7 @@
     "eu_matched": true
   },
   {
-    "seq": 118,
+    "seq": 117,
     "name": "OGLE-2018-BLG-1544L b",
     "host_guess": "OGLE-2018-BLG-1544L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3382,7 +3382,7 @@
     "eu_matched": true
   },
   {
-    "seq": 119,
+    "seq": 118,
     "name": "OGLE-2018-BLG-0932L b",
     "host_guess": "OGLE-2018-BLG-0932L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3411,7 +3411,7 @@
     "pl_bmasse_err2": -98.52680617
   },
   {
-    "seq": 120,
+    "seq": 119,
     "name": "OGLE-2018-BLG-1126L b",
     "host_guess": "OGLE-2018-BLG-1126L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3440,7 +3440,7 @@
     "pl_bmasse_err2": -9.85268062
   },
   {
-    "seq": 121,
+    "seq": 120,
     "name": "OGLE-2018-BLG-1212L b",
     "host_guess": "OGLE-2018-BLG-1212L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3469,7 +3469,7 @@
     "pl_bmasse_err2": -41.31769291
   },
   {
-    "seq": 122,
+    "seq": 121,
     "name": "OGLE-2018-BLG-1367L b",
     "host_guess": "OGLE-2018-BLG-1367L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3499,7 +3499,7 @@
     "pl_bmasse_err2": -139.84449908
   },
   {
-    "seq": 123,
+    "seq": 122,
     "name": "OGLE-2018-BLG-1647L b",
     "host_guess": "OGLE-2018-BLG-1647L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...664A..13G/abstract",
@@ -3528,7 +3528,7 @@
     "pl_bmasse_err2": -177.98390792
   },
   {
-    "seq": 124,
+    "seq": 123,
     "name": "OGLE-2017-BLG-1038L b",
     "host_guess": "OGLE-2017-BLG-1038L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..102M/abstract",
@@ -3561,7 +3561,7 @@
     "sy_dist_err2": -110.0
   },
   {
-    "seq": 125,
+    "seq": 124,
     "name": "OGLE-2017-BLG-1038L",
     "host_guess": "OGLE-2017-BLG-1038L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..102M/abstract",
@@ -3592,7 +3592,7 @@
     "sy_dist_err2": -110.0
   },
   {
-    "seq": 126,
+    "seq": 125,
     "name": "MOA-2019-BLG-008L b",
     "host_guess": "MOA-2019-BLG-008L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164...75B/abstract",
@@ -3621,7 +3621,7 @@
     "pl_bmasse_err2": -635.656814
   },
   {
-    "seq": 127,
+    "seq": 126,
     "name": "OGLE-2019-BLG-1470L AB c",
     "host_guess": "OGLE-2019-BLG-1470L AB",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220405606K/abstract",
@@ -3647,7 +3647,7 @@
     "eu_matched": true
   },
   {
-    "seq": 128,
+    "seq": 127,
     "name": "KMT-2021-BLG-0171L b",
     "host_guess": "KMT-2021-BLG-0171L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.tmp.1872Y/abstract",
@@ -3676,7 +3676,7 @@
     "pl_bmasse_err2": -4.5
   },
   {
-    "seq": 129,
+    "seq": 128,
     "name": "KMT-2021-BLG-1689L b",
     "host_guess": "KMT-2021-BLG-1689L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022MNRAS.tmp.1872Y/abstract",
@@ -3705,7 +3705,7 @@
     "pl_bmasse_err2": -23.0
   },
   {
-    "seq": 130,
+    "seq": 129,
     "name": "KMT-2017-BLG-0673L b",
     "host_guess": "KMT-2017-BLG-0673L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...666A.132H/abstract",
@@ -3734,7 +3734,7 @@
     "pl_bmasse_err2": -657.90480249
   },
   {
-    "seq": 131,
+    "seq": 130,
     "name": "KMT-2019-BLG-0414L b",
     "host_guess": "KMT-2019-BLG-0414L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...666A.132H/abstract",
@@ -3763,7 +3763,7 @@
     "pl_bmasse_err2": -654.72651842
   },
   {
-    "seq": 132,
+    "seq": 131,
     "name": "OGLE-2016-BLG-0890L b",
     "host_guess": "OGLE-2016-BLG-0890L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...667A..64H/abstract",
@@ -3789,7 +3789,7 @@
     "eu_matched": true
   },
   {
-    "seq": 133,
+    "seq": 132,
     "name": "OGLE-2018-BLG-0360L b",
     "host_guess": "OGLE-2018-BLG-0360L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...667A..64H/abstract",
@@ -3815,7 +3815,7 @@
     "eu_matched": true
   },
   {
-    "seq": 134,
+    "seq": 133,
     "name": "OGLE-2018-BLG-1489L b",
     "host_guess": "OGLE-2018-BLG-1489L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...667A..64H/abstract",
@@ -3841,7 +3841,7 @@
     "eu_matched": true
   },
   {
-    "seq": 135,
+    "seq": 134,
     "name": "OGLE-2017-BLG-0614L b",
     "host_guess": "OGLE-2017-BLG-0614L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022A%26A...667A..64H/abstract",
@@ -3867,7 +3867,7 @@
     "eu_matched": true
   },
   {
-    "seq": 136,
+    "seq": 135,
     "name": "KMT-2021-BLG-0748L b",
     "host_guess": "KMT-2021-BLG-0748L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220203022R/abstract",
@@ -3896,7 +3896,7 @@
     "pl_bmasse_err2": -79.45710175
   },
   {
-    "seq": 137,
+    "seq": 136,
     "name": "KMT-2021-BLG-1253L b",
     "host_guess": "KMT-2021-BLG-1253L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220203022R/abstract",
@@ -3925,7 +3925,7 @@
     "pl_bmasse_err2": -10.14
   },
   {
-    "seq": 138,
+    "seq": 137,
     "name": "KMT-2021-BLG-1372L b",
     "host_guess": "KMT-2021-BLG-1372L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220203022R/abstract",
@@ -3954,7 +3954,7 @@
     "pl_bmasse_err2": -35.88
   },
   {
-    "seq": 139,
+    "seq": 138,
     "name": "KMT-2021-BLG-1391L b",
     "host_guess": "KMT-2021-BLG-1391L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022arXiv220203022R/abstract",
@@ -3983,7 +3983,7 @@
     "pl_bmasse_err2": -2.31
   },
   {
-    "seq": 140,
+    "seq": 139,
     "name": "KMT-2018-BLG-0030L b",
     "host_guess": "KMT-2018-BLG-0030L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract",
@@ -4012,7 +4012,7 @@
     "pl_bmasse_err2": -279.68899816
   },
   {
-    "seq": 141,
+    "seq": 140,
     "name": "KMT-2018-BLG-0087L b",
     "host_guess": "KMT-2018-BLG-0087L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract",
@@ -4041,7 +4041,7 @@
     "pl_bmasse_err2": -38.13940884
   },
   {
-    "seq": 142,
+    "seq": 141,
     "name": "KMT-2018-BLG-0247L b",
     "host_guess": "KMT-2018-BLG-0247L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract",
@@ -4070,7 +4070,7 @@
     "pl_bmasse_err2": -330.54154328
   },
   {
-    "seq": 143,
+    "seq": 142,
     "name": "KMT-2018-BLG-2602L b",
     "host_guess": "KMT-2018-BLG-2602L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract",
@@ -4099,7 +4099,7 @@
     "pl_bmasse_err2": -200.23189641
   },
   {
-    "seq": 144,
+    "seq": 143,
     "name": "OGLE-2018-BLG-0298L b",
     "host_guess": "OGLE-2018-BLG-0298L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract",
@@ -4128,7 +4128,7 @@
     "pl_bmasse_err2": -19.06970442
   },
   {
-    "seq": 145,
+    "seq": 144,
     "name": "OGLE-2018-BLG-1119L b",
     "host_guess": "OGLE-2018-BLG-1119L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2022AJ....164..262J/abstract",
@@ -4157,7 +4157,7 @@
     "pl_bmasse_err2": -165.27077164
   },
   {
-    "seq": 146,
+    "seq": 145,
     "name": "KMT-2021-BLG-0119L b",
     "host_guess": "KMT-2021-BLG-0119L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165....8S/abstract",
@@ -4186,7 +4186,7 @@
     "pl_bmasse_err2": -762.7881768
   },
   {
-    "seq": 147,
+    "seq": 146,
     "name": "KMT-2021-BLG-0192L b",
     "host_guess": "KMT-2021-BLG-0192L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165....8S/abstract",
@@ -4215,7 +4215,7 @@
     "pl_bmasse_err2": -12.71313628
   },
   {
-    "seq": 148,
+    "seq": 147,
     "name": "KMT-2021-BLG-2294L b",
     "host_guess": "KMT-2021-BLG-2294L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165....8S/abstract",
@@ -4244,7 +4244,7 @@
     "pl_bmasse_err2": -12.71313628
   },
   {
-    "seq": 149,
+    "seq": 148,
     "name": "KMT-2018-BLG-2119L b",
     "host_guess": "KMT-2018-BLG-2119L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...670A.172H/abstract",
@@ -4270,7 +4270,7 @@
     "eu_matched": true
   },
   {
-    "seq": 150,
+    "seq": 149,
     "name": "KMT-2021-BLG-0712L b",
     "host_guess": "KMT-2021-BLG-0712L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165...83R/abstract",
@@ -4299,7 +4299,7 @@
     "pl_bmasse_err2": -12.24
   },
   {
-    "seq": 151,
+    "seq": 150,
     "name": "KMT-2021-BLG-0909L b",
     "host_guess": "KMT-2021-BLG-0909L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165...83R/abstract",
@@ -4328,7 +4328,7 @@
     "pl_bmasse_err2": -209.76674862
   },
   {
-    "seq": 152,
+    "seq": 151,
     "name": "KMT-2021-BLG-1105L b",
     "host_guess": "KMT-2021-BLG-1105L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165...83R/abstract",
@@ -4357,7 +4357,7 @@
     "pl_bmasse_err2": -216.12331676
   },
   {
-    "seq": 153,
+    "seq": 152,
     "name": "KMT-2021-BLG-2478L b",
     "host_guess": "KMT-2021-BLG-2478L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165...83R/abstract",
@@ -4386,7 +4386,7 @@
     "pl_bmasse_err2": -76.27881768
   },
   {
-    "seq": 154,
+    "seq": 153,
     "name": "KMT-2016-BLG-1105L b",
     "host_guess": "KMT-2016-BLG-1105L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4415,7 +4415,7 @@
     "pl_bmasse_err2": -1.56
   },
   {
-    "seq": 155,
+    "seq": 154,
     "name": "KMT-2017-BLG-0428L b",
     "host_guess": "KMT-2017-BLG-0428L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4444,7 +4444,7 @@
     "pl_bmasse_err2": -2.83
   },
   {
-    "seq": 156,
+    "seq": 155,
     "name": "KMT-2019-BLG-1367L b",
     "host_guess": "KMT-2019-BLG-1367L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4473,7 +4473,7 @@
     "pl_bmasse_err2": -2.08
   },
   {
-    "seq": 157,
+    "seq": 156,
     "name": "KMT-2017-BLG-1194L b",
     "host_guess": "KMT-2017-BLG-1194L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4502,7 +4502,7 @@
     "pl_bmasse_err2": -1.63
   },
   {
-    "seq": 158,
+    "seq": 157,
     "name": "KMT-2017-BLG-1003L b",
     "host_guess": "KMT-2017-BLG-1003L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4531,7 +4531,7 @@
     "pl_bmasse_err2": -2.8
   },
   {
-    "seq": 159,
+    "seq": 158,
     "name": "OGLE-2017-BLG-1806L b",
     "host_guess": "OGLE-2017-BLG-1806L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4560,7 +4560,7 @@
     "pl_bmasse_err2": -2.72
   },
   {
-    "seq": 160,
+    "seq": 159,
     "name": "KMT-2019-BLG-1806L b",
     "host_guess": "KMT-2019-BLG-1806L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..103Z/abstract",
@@ -4589,7 +4589,7 @@
     "pl_bmasse_err2": -1.6
   },
   {
-    "seq": 161,
+    "seq": 160,
     "name": "MOA-2020-BLG-208L b",
     "host_guess": "MOA-2020-BLG-208L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..175O/abstract",
@@ -4618,7 +4618,7 @@
     "pl_bmasse_err2": -24.0
   },
   {
-    "seq": 162,
+    "seq": 161,
     "name": "K2-2016-BLG-0005L b",
     "host_guess": "K2-2016-BLG-0005L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.520.6350S/abstract",
@@ -4647,7 +4647,7 @@
     "pl_bmasse_err2": -28.60455663
   },
   {
-    "seq": 163,
+    "seq": 162,
     "name": "KMT-2019-BLG-0298L b",
     "host_guess": "KMT-2019-BLG-0298L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..226J/abstract",
@@ -4676,7 +4676,7 @@
     "pl_bmasse_err2": -305.11527072
   },
   {
-    "seq": 164,
+    "seq": 163,
     "name": "OGLE-2019-BLG-0249L b",
     "host_guess": "OGLE-2019-BLG-0249L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..226J/abstract",
@@ -4705,7 +4705,7 @@
     "pl_bmasse_err2": -467.20775829
   },
   {
-    "seq": 165,
+    "seq": 164,
     "name": "OGLE-2019-BLG-0679L b",
     "host_guess": "OGLE-2019-BLG-0679L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..226J/abstract",
@@ -4734,7 +4734,7 @@
     "pl_bmasse_err2": -603.8739733
   },
   {
-    "seq": 166,
+    "seq": 165,
     "name": "KMT-2021-BLG-2010L b",
     "host_guess": "KMT-2021-BLG-2010L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...674A..90H/abstract",
@@ -4763,7 +4763,7 @@
     "pl_bmasse_err2": -216.12331676
   },
   {
-    "seq": 167,
+    "seq": 166,
     "name": "KMT-2022-BLG-0371L b",
     "host_guess": "KMT-2022-BLG-0371L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...674A..90H/abstract",
@@ -4792,7 +4792,7 @@
     "pl_bmasse_err2": -34.96112477
   },
   {
-    "seq": 168,
+    "seq": 167,
     "name": "KMT-2022-BLG-1013L b",
     "host_guess": "KMT-2022-BLG-1013L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...674A..90H/abstract",
@@ -4821,7 +4821,7 @@
     "pl_bmasse_err2": -50.85254512
   },
   {
-    "seq": 169,
+    "seq": 168,
     "name": "KMT-2019-BLG-2783L b",
     "host_guess": "KMT-2019-BLG-2783L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..226J/abstract",
@@ -4850,7 +4850,7 @@
     "pl_bmasse_err2": -244.72787339
   },
   {
-    "seq": 170,
+    "seq": 169,
     "name": "KMT-2019-BLG-1216L b",
     "host_guess": "KMT-2019-BLG-1216L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....165..226J/abstract",
@@ -4879,7 +4879,7 @@
     "pl_bmasse_err2": -15.89142035
   },
   {
-    "seq": 171,
+    "seq": 170,
     "name": "MOA-2022-BLG-249L b",
     "host_guess": "MOA-2022-BLG-249L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...674A..89H/abstract",
@@ -4908,7 +4908,7 @@
     "pl_bmasse_err2": -1.44
   },
   {
-    "seq": 172,
+    "seq": 171,
     "name": "KMT-2022-BLG-0440L b",
     "host_guess": "KMT-2022-BLG-0440L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023MNRAS.522.6055Z/abstract",
@@ -4937,7 +4937,7 @@
     "pl_bmasse_err2": -7.4
   },
   {
-    "seq": 173,
+    "seq": 172,
     "name": "KMT-2018-BLG-0885L b",
     "host_guess": "KMT-2018-BLG-0885L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...675A..71H/abstract",
@@ -4966,7 +4966,7 @@
     "pl_bmasse_err2": -6038.739733
   },
   {
-    "seq": 174,
+    "seq": 173,
     "name": "KMT-2019-BLG-0297L b",
     "host_guess": "KMT-2019-BLG-0297L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...675A..71H/abstract",
@@ -4995,7 +4995,7 @@
     "pl_bmasse_err2": -2224.798849
   },
   {
-    "seq": 175,
+    "seq": 174,
     "name": "KMT-2019-BLG-0335L b",
     "host_guess": "KMT-2019-BLG-0335L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...675A..71H/abstract",
@@ -5024,7 +5024,7 @@
     "pl_bmasse_err2": -4131.769291
   },
   {
-    "seq": 176,
+    "seq": 175,
     "name": "KMT-2021-BLG-1150L b",
     "host_guess": "KMT-2021-BLG-1150L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...675A..36H/abstract",
@@ -5053,7 +5053,7 @@
     "pl_bmasse_err2": -114.41822652
   },
   {
-    "seq": 177,
+    "seq": 176,
     "name": "KMT-2022-BLG-0475L b",
     "host_guess": "KMT-2022-BLG-0475L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...676A..97H/abstract",
@@ -5079,7 +5079,7 @@
     "eu_matched": true
   },
   {
-    "seq": 178,
+    "seq": 177,
     "name": "KMT-2022-BLG-1480L b",
     "host_guess": "KMT-2022-BLG-1480L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...676A..97H/abstract",
@@ -5105,7 +5105,7 @@
     "eu_matched": true
   },
   {
-    "seq": 179,
+    "seq": 178,
     "name": "KMT-2016-BLG-0625L b",
     "host_guess": "KMT-2016-BLG-0625L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..104S/abstract",
@@ -5139,7 +5139,7 @@
     "sy_dist_err2": -710.0
   },
   {
-    "seq": 180,
+    "seq": 179,
     "name": "KMT-2016-BLG-1751L b",
     "host_guess": "KMT-2016-BLG-1751L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..104S/abstract",
@@ -5173,7 +5173,7 @@
     "sy_dist_err2": -1170.0
   },
   {
-    "seq": 181,
+    "seq": 180,
     "name": "MOA-2016-BLG-532L b",
     "host_guess": "MOA-2016-BLG-532L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..104S/abstract",
@@ -5207,7 +5207,7 @@
     "sy_dist_err2": -740.0
   },
   {
-    "seq": 182,
+    "seq": 181,
     "name": "OGLE-2016-BLG-1635L b",
     "host_guess": "OGLE-2016-BLG-1635L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..104S/abstract",
@@ -5241,7 +5241,7 @@
     "sy_dist_err2": -1390.0
   },
   {
-    "seq": 183,
+    "seq": 182,
     "name": "OGLE-2016-BLG-1850L b",
     "host_guess": "OGLE-2016-BLG-1850L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..104S/abstract",
@@ -5275,7 +5275,7 @@
     "sy_dist_err2": -670.0
   },
   {
-    "seq": 184,
+    "seq": 183,
     "name": "OGLE-2019-BLG-0825L b",
     "host_guess": "OGLE-2019-BLG-0825L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..116S/abstract",
@@ -5301,7 +5301,7 @@
     "eu_matched": true
   },
   {
-    "seq": 185,
+    "seq": 184,
     "name": "KMT-2021-BLG-0588L b",
     "host_guess": "KMT-2021-BLG-0588L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.190H/abstract",
@@ -5327,7 +5327,7 @@
     "eu_matched": true
   },
   {
-    "seq": 186,
+    "seq": 185,
     "name": "KMT-2021-BLG-1110L b",
     "host_guess": "KMT-2021-BLG-1110L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.190H/abstract",
@@ -5361,7 +5361,7 @@
     "sy_dist_err2": -1520.0
   },
   {
-    "seq": 187,
+    "seq": 186,
     "name": "KMT-2021-BLG-1643L b",
     "host_guess": "KMT-2021-BLG-1643L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.190H/abstract",
@@ -5394,7 +5394,7 @@
     "sy_dist_err2": -770.0
   },
   {
-    "seq": 188,
+    "seq": 187,
     "name": "KMT-2021-BLG-1770L b",
     "host_guess": "KMT-2021-BLG-1770L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.190H/abstract",
@@ -5423,7 +5423,7 @@
     "pl_bmasse_err2": -3813.940884
   },
   {
-    "seq": 189,
+    "seq": 188,
     "name": "KMT-2021-BLG-1547L b",
     "host_guess": "KMT-2021-BLG-1547L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.101H/abstract",
@@ -5452,7 +5452,7 @@
     "pl_bmasse_err2": -244.72787339
   },
   {
-    "seq": 190,
+    "seq": 189,
     "name": "OGLE-2019-BLG-1180L b",
     "host_guess": "OGLE-2019-BLG-1180L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023AJ....166..253C/abstract",
@@ -5481,7 +5481,7 @@
     "pl_bmasse_err2": -161.13900235
   },
   {
-    "seq": 191,
+    "seq": 190,
     "name": "MOA-2019-BLG-421L b",
     "host_guess": "MOA-2019-BLG-421L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024MNRAS.528...11Y/abstract",
@@ -5507,7 +5507,7 @@
     "eu_matched": true
   },
   {
-    "seq": 192,
+    "seq": 191,
     "name": "MOA-2022-BLG-563L b",
     "host_guess": "MOA-2022-BLG-563L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...683A.115H/abstract",
@@ -5536,7 +5536,7 @@
     "pl_bmasse_err2": -79.45710175
   },
   {
-    "seq": 193,
+    "seq": 192,
     "name": "KMT-2023-BLG-0469L b",
     "host_guess": "KMT-2023-BLG-0469L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...683A.115H/abstract",
@@ -5565,7 +5565,7 @@
     "pl_bmasse_err2": -21.29450327
   },
   {
-    "seq": 194,
+    "seq": 193,
     "name": "KMT-2023-BLG-0735L b",
     "host_guess": "KMT-2023-BLG-0735L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...683A.115H/abstract",
@@ -5594,7 +5594,7 @@
     "pl_bmasse_err2": -21.61233168
   },
   {
-    "seq": 195,
+    "seq": 194,
     "name": "KMT-2023-BLG-0416L b",
     "host_guess": "KMT-2023-BLG-0416L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...683A.187H/abstract",
@@ -5623,7 +5623,7 @@
     "pl_bmasse_err2": -6.67439655
   },
   {
-    "seq": 196,
+    "seq": 195,
     "name": "KMT-2023-BLG-1454L b",
     "host_guess": "KMT-2023-BLG-1454L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...683A.187H/abstract",
@@ -5652,7 +5652,7 @@
     "pl_bmasse_err2": -108.06165838
   },
   {
-    "seq": 197,
+    "seq": 196,
     "name": "KMT-2023-BLG-1642L b",
     "host_guess": "KMT-2023-BLG-1642L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...683A.187H/abstract",
@@ -5681,7 +5681,7 @@
     "pl_bmasse_err2": -184.34047606
   },
   {
-    "seq": 198,
+    "seq": 197,
     "name": "OGLE-2017-BLG-0640L b",
     "host_guess": "OGLE-2017-BLG-0640L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....167...88R/abstract",
@@ -5710,7 +5710,7 @@
     "pl_bmasse_err2": -298.75870258
   },
   {
-    "seq": 199,
+    "seq": 198,
     "name": "OGLE-2017-BLG-1237L b",
     "host_guess": "OGLE-2017-BLG-1237L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....167...88R/abstract",
@@ -5739,7 +5739,7 @@
     "pl_bmasse_err2": -632.47852993
   },
   {
-    "seq": 200,
+    "seq": 199,
     "name": "OGLE-2017-BLG-1275L b",
     "host_guess": "OGLE-2017-BLG-1275L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....167...88R/abstract",
@@ -5768,7 +5768,7 @@
     "pl_bmasse_err2": -699.2224954
   },
   {
-    "seq": 201,
+    "seq": 200,
     "name": "OGLE-2017-BLG-1777L b",
     "host_guess": "OGLE-2017-BLG-1777L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....167...88R/abstract",
@@ -5801,7 +5801,7 @@
     "sy_dist_err2": -820.0
   },
   {
-    "seq": 202,
+    "seq": 201,
     "name": "OGLE-2017-BLG-1777L",
     "host_guess": "OGLE-2017-BLG-1777L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....167...88R/abstract",
@@ -5832,7 +5832,7 @@
     "sy_dist_err2": -820.0
   },
   {
-    "seq": 203,
+    "seq": 202,
     "name": "OGLE-2017-BLG-0448L b",
     "host_guess": "OGLE-2017-BLG-0448L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....167..162Z/abstract",
@@ -5861,7 +5861,7 @@
     "pl_bmasse_err2": -9.3
   },
   {
-    "seq": 204,
+    "seq": 203,
     "name": "OGLE-2023-BLG-0836L b",
     "host_guess": "OGLE-2023-BLG-0836L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...685A..16H/abstract",
@@ -5887,7 +5887,7 @@
     "eu_matched": true
   },
   {
-    "seq": 205,
+    "seq": 204,
     "name": "KMT-2023-BLG-1431L b",
     "host_guess": "KMT-2023-BLG-1431L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2023arXiv231113097B/abstract",
@@ -5916,7 +5916,7 @@
     "pl_bmasse_err2": -6.9
   },
   {
-    "seq": 206,
+    "seq": 205,
     "name": "OGLE-2016-BLG-1800L b",
     "host_guess": "OGLE-2016-BLG-1800L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024arXiv240104256S/abstract",
@@ -5945,7 +5945,7 @@
     "pl_bmasse_err2": -464.02947422
   },
   {
-    "seq": 207,
+    "seq": 206,
     "name": "MOA-2016-BLG-526L b",
     "host_guess": "MOA-2016-BLG-526L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024arXiv240104256S/abstract",
@@ -5974,7 +5974,7 @@
     "pl_bmasse_err2": -6.67439655
   },
   {
-    "seq": 208,
+    "seq": 207,
     "name": "KMT-2016-BLG-2321L b",
     "host_guess": "KMT-2016-BLG-2321L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024arXiv240104256S/abstract",
@@ -6003,7 +6003,7 @@
     "pl_bmasse_err2": -130.30964687
   },
   {
-    "seq": 209,
+    "seq": 208,
     "name": "OGLE-2016-BLG-1598L b",
     "host_guess": "OGLE-2016-BLG-1598L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024arXiv240104256S/abstract",
@@ -6032,7 +6032,7 @@
     "pl_bmasse_err2": -95.3485221
   },
   {
-    "seq": 210,
+    "seq": 209,
     "name": "KMT-2022-BLG-1852L b",
     "host_guess": "KMT-2022-BLG-1852L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.225H/abstract",
@@ -6058,7 +6058,7 @@
     "eu_matched": true
   },
   {
-    "seq": 211,
+    "seq": 210,
     "name": "KMT-2022-BLG-1787L b",
     "host_guess": "KMT-2022-BLG-1787L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.225H/abstract",
@@ -6084,7 +6084,7 @@
     "eu_matched": true
   },
   {
-    "seq": 212,
+    "seq": 211,
     "name": "KMT-2022-BLG-0732L b",
     "host_guess": "KMT-2022-BLG-0732L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.225H/abstract",
@@ -6110,7 +6110,7 @@
     "eu_matched": true
   },
   {
-    "seq": 213,
+    "seq": 212,
     "name": "KMT-2020-BLG-0757L b",
     "host_guess": "KMT-2020-BLG-0757L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.225H/abstract",
@@ -6143,7 +6143,7 @@
     "sy_dist_err2": -1300.0
   },
   {
-    "seq": 214,
+    "seq": 213,
     "name": "KMT-2023-BLG-1866L b",
     "host_guess": "KMT-2023-BLG-1866L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...687A.241H/abstract",
@@ -6172,7 +6172,7 @@
     "pl_bmasse_err2": -0.68
   },
   {
-    "seq": 215,
+    "seq": 214,
     "name": "KMT-2017-BLG-0849L b",
     "host_guess": "KMT-2017-BLG-0849L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....168...49G/abstract",
@@ -6201,7 +6201,7 @@
     "pl_bmasse_err2": -3.09
   },
   {
-    "seq": 216,
+    "seq": 215,
     "name": "KMT-2017-BLG-1057L b",
     "host_guess": "KMT-2017-BLG-1057L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....168...49G/abstract",
@@ -6230,7 +6230,7 @@
     "pl_bmasse_err2": -12.0
   },
   {
-    "seq": 217,
+    "seq": 216,
     "name": "OGLE-2017-BLG-0364L b",
     "host_guess": "OGLE-2017-BLG-0364L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....168...49G/abstract",
@@ -6259,7 +6259,7 @@
     "pl_bmasse_err2": -42.9
   },
   {
-    "seq": 218,
+    "seq": 217,
     "name": "KMT-2017-BLG-2331L b",
     "host_guess": "KMT-2017-BLG-2331L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....168...49G/abstract",
@@ -6288,7 +6288,7 @@
     "pl_bmasse_err2": -88.0
   },
   {
-    "seq": 219,
+    "seq": 218,
     "name": "KMT-2022-BLG-0303L b",
     "host_guess": "KMT-2022-BLG-0303L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...689A.209H/abstract",
@@ -6317,7 +6317,7 @@
     "pl_bmasse_err2": -87.40281192
   },
   {
-    "seq": 220,
+    "seq": 219,
     "name": "KMT-2021-BLG-2609L b",
     "host_guess": "KMT-2021-BLG-2609L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...689A.209H/abstract",
@@ -6352,7 +6352,7 @@
     "pl_bmasse_err2": -5.72
   },
   {
-    "seq": 221,
+    "seq": 220,
     "name": "KMT-2022-BLG-2669",
     "host_guess": "KMT-2022-BLG-2669",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....168..152J/abstract",
@@ -6376,7 +6376,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 222,
+    "seq": 221,
     "name": "KMT-2022-BLG-0412L b",
     "host_guess": "KMT-2022-BLG-0412L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.237H/abstract",
@@ -6402,7 +6402,7 @@
     "eu_matched": true
   },
   {
-    "seq": 223,
+    "seq": 222,
     "name": "KMT-2022-BLG-2286L b",
     "host_guess": "KMT-2022-BLG-2286L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.237H/abstract",
@@ -6431,7 +6431,7 @@
     "pl_bmasse_err2": -3178.28407
   },
   {
-    "seq": 224,
+    "seq": 223,
     "name": "KMT-2023-BLG-0201L b",
     "host_guess": "KMT-2023-BLG-0201L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.237H/abstract",
@@ -6457,7 +6457,7 @@
     "eu_matched": true
   },
   {
-    "seq": 225,
+    "seq": 224,
     "name": "KMT-2023-BLG-0601L b",
     "host_guess": "KMT-2023-BLG-0601L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.237H/abstract",
@@ -6483,7 +6483,7 @@
     "eu_matched": true
   },
   {
-    "seq": 226,
+    "seq": 225,
     "name": "KMT-2023-BLG-1684L b",
     "host_guess": "KMT-2023-BLG-1684L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.237H/abstract",
@@ -6516,7 +6516,7 @@
     "sy_dist_err2": -1800.0
   },
   {
-    "seq": 227,
+    "seq": 226,
     "name": "KMT-2023-BLG-1743L b",
     "host_guess": "KMT-2023-BLG-1743L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...691A.237H/abstract",
@@ -6545,7 +6545,7 @@
     "pl_bmasse_err2": -3178.28407
   },
   {
-    "seq": 228,
+    "seq": 227,
     "name": "KMT-2024-BLG-1044L b",
     "host_guess": "KMT-2024-BLG-1044L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024A%26A...692A.106H/abstract",
@@ -6574,7 +6574,7 @@
     "pl_bmasse_err2": -4.04
   },
   {
-    "seq": 229,
+    "seq": 228,
     "name": "MOA-2022-BLG-0033L b",
     "host_guess": "MOA-2022-BLG-0033L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...694A..90H/abstract",
@@ -6609,7 +6609,7 @@
     "sy_dist_err2": -640.0
   },
   {
-    "seq": 230,
+    "seq": 229,
     "name": "KMT-2023-BLG-0119L b",
     "host_guess": "KMT-2023-BLG-0119L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...694A..90H/abstract",
@@ -6638,7 +6638,7 @@
     "pl_bmasse_err2": -45.75
   },
   {
-    "seq": 231,
+    "seq": 230,
     "name": "KMT-2023-BLG-1896L b",
     "host_guess": "KMT-2023-BLG-1896L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...694A..90H/abstract",
@@ -6667,7 +6667,7 @@
     "pl_bmasse_err2": -8.44
   },
   {
-    "seq": 232,
+    "seq": 231,
     "name": "OGLE-2016-BLG-0007L b",
     "host_guess": "OGLE-2016-BLG-0007L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025Sci...388..400Z/abstract",
@@ -6696,7 +6696,7 @@
     "pl_bmasse_err2": -0.67
   },
   {
-    "seq": 233,
+    "seq": 232,
     "name": "KMT-2019-BLG-0578L b",
     "host_guess": "KMT-2019-BLG-0578L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AJ....169..295Y/abstract",
@@ -6725,7 +6725,7 @@
     "pl_bmasse_err2": -190.6970442
   },
   {
-    "seq": 234,
+    "seq": 233,
     "name": "KMT-2021-BLG-0736L b",
     "host_guess": "KMT-2021-BLG-0736L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AJ....169..295Y/abstract",
@@ -6754,7 +6754,7 @@
     "pl_bmasse_err2": -10.0
   },
   {
-    "seq": 235,
+    "seq": 234,
     "name": "KMT-2017-BLG-2197L b",
     "host_guess": "KMT-2017-BLG-2197L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AJ....169..288H/abstract",
@@ -6783,7 +6783,7 @@
     "pl_bmasse_err2": -1560.53747837
   },
   {
-    "seq": 236,
+    "seq": 235,
     "name": "KMT-2022-BLG-1790L b",
     "host_guess": "KMT-2022-BLG-1790L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AJ....169..288H/abstract",
@@ -6812,7 +6812,7 @@
     "pl_bmasse_err2": -282.86728223
   },
   {
-    "seq": 237,
+    "seq": 236,
     "name": "KMT-2022-BLG-2076L b",
     "host_guess": "KMT-2022-BLG-2076L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AJ....169..288H/abstract",
@@ -6841,7 +6841,7 @@
     "pl_bmasse_err2": -143.02278315
   },
   {
-    "seq": 238,
+    "seq": 237,
     "name": "KMT-2023-BLG-2209L b",
     "host_guess": "KMT-2023-BLG-2209L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AJ....169..288H/abstract",
@@ -6870,7 +6870,7 @@
     "pl_bmasse_err2": -120.77479466
   },
   {
-    "seq": 239,
+    "seq": 238,
     "name": "MOA-2022-BLG-091L b",
     "host_guess": "MOA-2022-BLG-091L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...699A..91H/abstract",
@@ -6899,7 +6899,7 @@
     "pl_bmasse_err2": -530.77343969
   },
   {
-    "seq": 240,
+    "seq": 239,
     "name": "KMT-2024-BLG-1209L b",
     "host_guess": "KMT-2024-BLG-1209L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...699A..91H/abstract",
@@ -6928,7 +6928,7 @@
     "pl_bmasse_err2": -368.68095212
   },
   {
-    "seq": 241,
+    "seq": 240,
     "name": "KMT-2024-BLG-0404L b",
     "host_guess": "KMT-2024-BLG-0404L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...700A.181H/abstract",
@@ -6957,7 +6957,7 @@
     "pl_bmasse_err2": -4328.82290334
   },
   {
-    "seq": 242,
+    "seq": 241,
     "name": "KMT-2024-BLG-0404L c",
     "host_guess": "KMT-2024-BLG-0404L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...700A.181H/abstract",
@@ -6987,7 +6987,7 @@
     "pl_bmasse_err2": -8.8
   },
   {
-    "seq": 243,
+    "seq": 242,
     "name": "KMT-2023-BLG-0548L b",
     "host_guess": "KMT-2023-BLG-0548L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025arXiv250905522H/abstract",
@@ -7016,7 +7016,7 @@
     "pl_bmasse_err2": -282.86728223
   },
   {
-    "seq": 244,
+    "seq": 243,
     "name": "KMT-2023-BLG-0830L b",
     "host_guess": "KMT-2023-BLG-0830L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...702A.152H/abstract",
@@ -7045,7 +7045,7 @@
     "pl_bmasse_err2": -10.48833743
   },
   {
-    "seq": 245,
+    "seq": 244,
     "name": "KMT-2023-BLG-0949L b",
     "host_guess": "KMT-2023-BLG-0949L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...702A.152H/abstract",
@@ -7074,7 +7074,7 @@
     "pl_bmasse_err2": -988.44634577
   },
   {
-    "seq": 246,
+    "seq": 245,
     "name": "KMT-2024-BLG-2059L b",
     "host_guess": "KMT-2024-BLG-2059L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...702A.152H/abstract",
@@ -7103,7 +7103,7 @@
     "pl_bmasse_err2": -4.13176929
   },
   {
-    "seq": 247,
+    "seq": 246,
     "name": "KMT-2024-BLG-2242L b",
     "host_guess": "KMT-2024-BLG-2242L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...702A.152H/abstract",
@@ -7132,7 +7132,7 @@
     "pl_bmasse_err2": -7.62788177
   },
   {
-    "seq": 248,
+    "seq": 247,
     "name": "KMT-2024-BLG-1281L b",
     "host_guess": "KMT-2024-BLG-1281L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025A%26A...702A.152H/abstract",
@@ -7161,7 +7161,7 @@
     "pl_bmasse_err2": -11.44182265
   },
   {
-    "seq": 249,
+    "seq": 248,
     "name": "KMT-2024-BLG-0816L b",
     "host_guess": "KMT-2024-BLG-0816L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AcA....75..279P/abstract",
@@ -7185,7 +7185,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 250,
+    "seq": 249,
     "name": "KMT-2023-BLG-2019L b",
     "host_guess": "KMT-2023-BLG-2019L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025arXiv251023933H/abstract",
@@ -7211,7 +7211,7 @@
     "eu_matched": true
   },
   {
-    "seq": 251,
+    "seq": 250,
     "name": "MOA-2024-BLG-181L b",
     "host_guess": "MOA-2024-BLG-181L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025arXiv251023933H/abstract",
@@ -7235,6 +7235,35 @@
     "nasa_matched": false,
     "pl_bmasse": 14937.92,
     "eu_matched": true
+  },
+  {
+    "seq": 251,
+    "name": "KMT-2024-BLG-1005L b",
+    "host_guess": "KMT-2024-BLG-1005L",
+    "ads_link": "https://ui.adsabs.harvard.edu/abs/2025arXiv251023933H/abstract",
+    "title": "Six binary brown dwarf candidates identified by microlensing",
+    "pub_year": 2025,
+    "is_host_only_row": false,
+    "is_ffp": false,
+    "type_note": null,
+    "mass_note": "Han et al. 2025 (A&A 704, A236); one of six candidate binary-brown-dwarf lenses in the paper, but classified here as Planet per the 21 M_Jup central value (below the 30 M_Jup cutoff), matching the NASA Exoplanet Archive; central value from NASA Exoplanet Archive quick match (full paper PDF not reachable from this session)",
+    "pl_bmassj": 21.0,
+    "st_mass": 0.055,
+    "pl_orbsmax": 0.78,
+    "sy_dist": 6950.0,
+    "disc_year": 2025,
+    "disc_facility": "KMTNet",
+    "disc_telescope": "KMTNet",
+    "ra": 269.8055833,
+    "dec": -28.7557806,
+    "releasedate": null,
+    "discoverymethod": "Microlensing",
+    "nasa_matched": true,
+    "pl_bmassj_err1": 22.0,
+    "pl_bmassj_err2": -12.0,
+    "pl_bmasse": 6674.396547,
+    "pl_bmasse_err1": 6992.224954,
+    "pl_bmasse_err2": -3813.940884
   },
   {
     "seq": 252,
@@ -7291,6 +7320,35 @@
   },
   {
     "seq": 254,
+    "name": "KMT-2022-BLG-1818L b",
+    "host_guess": "KMT-2022-BLG-1818L",
+    "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171...41L/abstract",
+    "title": "KMT-2022-BLG-1818Lb,c: A Cold Super-Jupiter with a Saturn Sibling",
+    "pub_year": 2026,
+    "is_host_only_row": false,
+    "is_ffp": false,
+    "type_note": null,
+    "mass_note": "Companion b of the same 2-planet system as the already-catalogued KMT-2022-BLG-1818L c; central value from NASA Exoplanet Archive quick match, paper (Lee et al. 2026, AJ 171, 41) via user-supplied spreadsheet ADS link",
+    "pl_bmassj": 4.0,
+    "st_mass": 0.79,
+    "pl_orbsmax": 2.6,
+    "sy_dist": 5300.0,
+    "disc_year": 2026,
+    "disc_facility": "KMTNet",
+    "disc_telescope": "KMTNet",
+    "ra": 270.798625,
+    "dec": -27.4811111,
+    "releasedate": null,
+    "discoverymethod": "Microlensing",
+    "nasa_matched": true,
+    "pl_bmassj_err1": 1.24,
+    "pl_bmassj_err2": -2.0,
+    "pl_bmasse": 1271.313628,
+    "pl_bmasse_err1": 394.10722468,
+    "pl_bmasse_err2": -635.656814
+  },
+  {
+    "seq": 255,
     "name": "KMT-2024-BLG-0176L b",
     "host_guess": "KMT-2024-BLG-0176L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138a4401H/abstract",
@@ -7319,7 +7377,7 @@
     "pl_bmasse_err2": -123.95307873
   },
   {
-    "seq": 255,
+    "seq": 256,
     "name": "KMT-2024-BLG-0349L b",
     "host_guess": "KMT-2024-BLG-0349L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138a4401H/abstract",
@@ -7348,7 +7406,7 @@
     "pl_bmasse_err2": -2078.59778178
   },
   {
-    "seq": 256,
+    "seq": 257,
     "name": "KMT-2024-BLG-1870L b",
     "host_guess": "KMT-2024-BLG-1870L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138a4401H/abstract",
@@ -7377,7 +7435,7 @@
     "pl_bmasse_err2": -174.80562385
   },
   {
-    "seq": 257,
+    "seq": 258,
     "name": "KMT-2024-BLG-2087L b",
     "host_guess": "KMT-2024-BLG-2087L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138a4401H/abstract",
@@ -7406,7 +7464,7 @@
     "pl_bmasse_err2": -781.85788122
   },
   {
-    "seq": 258,
+    "seq": 259,
     "name": "OGLE-2023-BLG-0524",
     "host_guess": "OGLE-2023-BLG-0524",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026A%26A...706A.110K/abstract",
@@ -7430,7 +7488,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 259,
+    "seq": 260,
     "name": "KMT-2022-BLG-0954L b",
     "host_guess": "KMT-2022-BLG-0954L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f1893Z/abstract",
@@ -7465,7 +7523,7 @@
     "pl_bmassj_err2": -0.0108
   },
   {
-    "seq": 260,
+    "seq": 261,
     "name": "KMT-2024-BLG-0697L b",
     "host_guess": "KMT-2024-BLG-0697L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026MNRAS.545f1893Z/abstract",
@@ -7498,7 +7556,7 @@
     "sy_dist_err2": -900.0
   },
   {
-    "seq": 261,
+    "seq": 262,
     "name": "KMT-2020-BLG-0202L b",
     "host_guess": "KMT-2020-BLG-0202L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138b4401H/abstract",
@@ -7527,7 +7585,7 @@
     "pl_bmasse_err2": -1725.80825001
   },
   {
-    "seq": 262,
+    "seq": 263,
     "name": "KMT-2022-BLG-1551L b",
     "host_guess": "KMT-2022-BLG-1551L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138b4401H/abstract",
@@ -7556,7 +7614,7 @@
     "pl_bmasse_err2": -486.27746271
   },
   {
-    "seq": 263,
+    "seq": 264,
     "name": "KMT-2023-BLG-0466L b",
     "host_guess": "KMT-2023-BLG-0466L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138b4401H/abstract",
@@ -7585,7 +7643,7 @@
     "pl_bmasse_err2": -645.19166621
   },
   {
-    "seq": 264,
+    "seq": 265,
     "name": "KMT-2025-BLG-0121L b",
     "host_guess": "KMT-2025-BLG-0121L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138b4401H/abstract",
@@ -7614,7 +7672,7 @@
     "pl_bmasse_err2": -1284.02676428
   },
   {
-    "seq": 265,
+    "seq": 266,
     "name": "KMT-2025-BLG-1616L b",
     "host_guess": "KMT-2025-BLG-1616L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..151Y/abstract",
@@ -7643,7 +7701,7 @@
     "pl_bmasse_err2": -22.07
   },
   {
-    "seq": 266,
+    "seq": 267,
     "name": "KMT-2016-BLG-1337L b",
     "host_guess": "KMT-2016-BLG-1337L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138c4401H/abstract",
@@ -7672,7 +7730,7 @@
     "pl_bmasse_err2": -50.85254512
   },
   {
-    "seq": 267,
+    "seq": 268,
     "name": "KMT-2021-BLG-0852L b",
     "host_guess": "KMT-2021-BLG-0852L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138c4402H/abstract",
@@ -7701,7 +7759,7 @@
     "pl_bmasse_err2": -54.03082919
   },
   {
-    "seq": 268,
+    "seq": 269,
     "name": "KMT-2024-BLG-2005L b",
     "host_guess": "KMT-2024-BLG-2005L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138c4402H/abstract",
@@ -7730,7 +7788,7 @@
     "pl_bmasse_err2": -28.60455663
   },
   {
-    "seq": 269,
+    "seq": 270,
     "name": "KMT-2025-BLG-0481L b",
     "host_guess": "KMT-2025-BLG-0481L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138c4402H/abstract",
@@ -7759,7 +7817,7 @@
     "pl_bmasse_err2": -108.06165838
   },
   {
-    "seq": 270,
+    "seq": 271,
     "name": "KMT-2024-BLG-3237",
     "host_guess": "KMT-2024-BLG-3237",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..243I/abstract",
@@ -7783,7 +7841,7 @@
     "nasa_matched": false
   },
   {
-    "seq": 271,
+    "seq": 272,
     "name": "KMT-2023-BLG-0164L b",
     "host_guess": "KMT-2023-BLG-0164L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..266R/abstract",
@@ -7809,7 +7867,7 @@
     "eu_matched": true
   },
   {
-    "seq": 272,
+    "seq": 273,
     "name": "KMT-2023-BLG-1286L b",
     "host_guess": "KMT-2023-BLG-1286L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..266R/abstract",
@@ -7835,7 +7893,7 @@
     "eu_matched": true
   },
   {
-    "seq": 273,
+    "seq": 274,
     "name": "KMT-2023-BLG-1746L b",
     "host_guess": "KMT-2023-BLG-1746L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..266R/abstract",
@@ -7861,7 +7919,7 @@
     "eu_matched": true
   },
   {
-    "seq": 274,
+    "seq": 275,
     "name": "KMT-2023-BLG-1246L b",
     "host_guess": "KMT-2023-BLG-1246L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..339H/abstract",
@@ -7894,7 +7952,7 @@
     "sy_dist_err2": -1430.0
   },
   {
-    "seq": 275,
+    "seq": 276,
     "name": "OGLE-2023-BLG-0079L b",
     "host_guess": "OGLE-2023-BLG-0079L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..339H/abstract",
@@ -7927,7 +7985,7 @@
     "sy_dist_err2": -1820.0
   },
   {
-    "seq": 276,
+    "seq": 277,
     "name": "KMT-2024-BLG-0897L b",
     "host_guess": "KMT-2024-BLG-0897L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..339H/abstract",
@@ -7960,7 +8018,7 @@
     "sy_dist_err2": -1130.0
   },
   {
-    "seq": 277,
+    "seq": 278,
     "name": "KMT-2025-BLG-2427L b",
     "host_guess": "KMT-2025-BLG-2427L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..339H/abstract",
@@ -7993,7 +8051,7 @@
     "sy_dist_err2": -1070.0
   },
   {
-    "seq": 278,
+    "seq": 279,
     "name": "KMT-2023-BLG-1592L b",
     "host_guess": "KMT-2023-BLG-1592L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..352L/abstract",
@@ -8026,7 +8084,7 @@
     "sy_dist_err2": -2200.0
   },
   {
-    "seq": 279,
+    "seq": 280,
     "name": "OGLE-2023-BLG-0766L b",
     "host_guess": "OGLE-2023-BLG-0766L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..352L/abstract",
@@ -8059,7 +8117,7 @@
     "sy_dist_err2": -1100.0
   },
   {
-    "seq": 280,
+    "seq": 281,
     "name": "KMT-2023-BLG-0332L b",
     "host_guess": "KMT-2023-BLG-0332L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171..352L/abstract",
@@ -8092,7 +8150,7 @@
     "sy_dist_err2": -2800.0
   },
   {
-    "seq": 281,
+    "seq": 282,
     "name": "KMT-2025-BLG-0811L b",
     "host_guess": "KMT-2025-BLG-0811L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae7d2a",
@@ -8118,7 +8176,7 @@
     "eu_matched": true
   },
   {
-    "seq": 282,
+    "seq": 283,
     "name": "KMT-2025-BLG-0912L b",
     "host_guess": "KMT-2025-BLG-0912L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae7d2a",
@@ -8144,7 +8202,7 @@
     "eu_matched": true
   },
   {
-    "seq": 283,
+    "seq": 284,
     "name": "OGLE-2016-BLG-0261L b",
     "host_guess": "OGLE-2016-BLG-0261L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae875c",
@@ -8174,7 +8232,7 @@
     "pl_bmasse_err2": -38.13940884
   },
   {
-    "seq": 284,
+    "seq": 285,
     "name": "KMT-2025-BLG-0026L b",
     "host_guess": "KMT-2025-BLG-0026L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae875c",
@@ -8204,7 +8262,7 @@
     "pl_bmasse_err2": -400.46379282
   },
   {
-    "seq": 285,
+    "seq": 286,
     "name": "KMT-2025-BLG-0030L b",
     "host_guess": "KMT-2025-BLG-0030L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae875c",
@@ -8234,7 +8292,7 @@
     "pl_bmasse_err2": -209.76674862
   },
   {
-    "seq": 286,
+    "seq": 287,
     "name": "KMT-2025-BLG-2272L b",
     "host_guess": "KMT-2025-BLG-2272L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae875c",
@@ -8264,7 +8322,7 @@
     "pl_bmasse_err2": -397.28550875
   },
   {
-    "seq": 287,
+    "seq": 288,
     "name": "KMT-2023-BLG-0084L b",
     "host_guess": "KMT-2023-BLG-0084L",
     "ads_link": "https://doi.org/10.1088/1538-3873/ae9987",
@@ -8290,7 +8348,7 @@
     "eu_matched": true
   },
   {
-    "seq": 288,
+    "seq": 289,
     "name": "KMT-2023-BLG-1118L b",
     "host_guess": "KMT-2023-BLG-1118L",
     "ads_link": "https://doi.org/10.1088/1538-3873/ae9987",
@@ -8316,7 +8374,7 @@
     "eu_matched": true
   },
   {
-    "seq": 289,
+    "seq": 290,
     "name": "KMT-2023-BLG-1810L b",
     "host_guess": "KMT-2023-BLG-1810L",
     "ads_link": "https://doi.org/10.1088/1538-3873/ae9987",
@@ -8342,7 +8400,7 @@
     "eu_matched": true
   },
   {
-    "seq": 290,
+    "seq": 291,
     "name": "KMT-2021-BLG-0424L b",
     "host_guess": "KMT-2021-BLG-0424L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8368,7 +8426,7 @@
     "eu_matched": true
   },
   {
-    "seq": 291,
+    "seq": 292,
     "name": "KMT-2021-BLG-0457L b",
     "host_guess": "KMT-2021-BLG-0457L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8394,7 +8452,7 @@
     "eu_matched": true
   },
   {
-    "seq": 292,
+    "seq": 293,
     "name": "KMT-2021-BLG-0690L b",
     "host_guess": "KMT-2021-BLG-0690L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8420,7 +8478,7 @@
     "eu_matched": true
   },
   {
-    "seq": 293,
+    "seq": 294,
     "name": "KMT-2021-BLG-1063L b",
     "host_guess": "KMT-2021-BLG-1063L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8446,7 +8504,7 @@
     "eu_matched": true
   },
   {
-    "seq": 294,
+    "seq": 295,
     "name": "KMT-2021-BLG-2213L b",
     "host_guess": "KMT-2021-BLG-2213L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8472,7 +8530,7 @@
     "eu_matched": true
   },
   {
-    "seq": 295,
+    "seq": 296,
     "name": "KMT-2021-BLG-3290L b",
     "host_guess": "KMT-2021-BLG-3290L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8498,7 +8556,7 @@
     "eu_matched": true
   },
   {
-    "seq": 296,
+    "seq": 297,
     "name": "KMT-2021-BLG-1691L b",
     "host_guess": "KMT-2021-BLG-1691L",
     "ads_link": "https://doi.org/10.3847/1538-3881/ae9864",
@@ -8524,7 +8582,7 @@
     "eu_matched": false
   },
   {
-    "seq": 297,
+    "seq": 298,
     "name": "KMT-2025-BLG-1392L b",
     "host_guess": "KMT-2025-BLG-1392L",
     "ads_link": "https://arxiv.org/abs/2603.01735",
@@ -8550,7 +8608,7 @@
     "eu_matched": false
   },
   {
-    "seq": 298,
+    "seq": 299,
     "name": "KMT-2025-BLG-1314L b",
     "host_guess": "KMT-2025-BLG-1314L",
     "ads_link": "https://arxiv.org/abs/2603.01735",
@@ -8576,65 +8634,7 @@
     "eu_matched": false
   },
   {
-    "seq": 299,
-    "name": "KMT-2024-BLG-1005L b",
-    "host_guess": "KMT-2024-BLG-1005L",
-    "ads_link": "https://ui.adsabs.harvard.edu/abs/2025arXiv251023933H/abstract",
-    "title": "Six binary brown dwarf candidates identified by microlensing",
-    "pub_year": 2025,
-    "is_host_only_row": false,
-    "is_ffp": false,
-    "type_note": null,
-    "mass_note": "Han et al. 2025 (A&A 704, A236); one of six candidate binary-brown-dwarf lenses in the paper, but classified here as Planet per the 21 M_Jup central value (below the 30 M_Jup cutoff), matching the NASA Exoplanet Archive; central value from NASA Exoplanet Archive quick match (full paper PDF not reachable from this session)",
-    "pl_bmassj": 21.0,
-    "st_mass": 0.055,
-    "pl_orbsmax": 0.78,
-    "sy_dist": 6950.0,
-    "disc_year": 2025,
-    "disc_facility": "KMTNet",
-    "disc_telescope": "KMTNet",
-    "ra": 269.8055833,
-    "dec": -28.7557806,
-    "releasedate": null,
-    "discoverymethod": "Microlensing",
-    "nasa_matched": true,
-    "pl_bmassj_err1": 22.0,
-    "pl_bmassj_err2": -12.0,
-    "pl_bmasse": 6674.396547,
-    "pl_bmasse_err1": 6992.224954,
-    "pl_bmasse_err2": -3813.940884
-  },
-  {
     "seq": 300,
-    "name": "KMT-2022-BLG-1818L b",
-    "host_guess": "KMT-2022-BLG-1818L",
-    "ads_link": "https://ui.adsabs.harvard.edu/abs/2026AJ....171...41L/abstract",
-    "title": "KMT-2022-BLG-1818Lb,c: A Cold Super-Jupiter with a Saturn Sibling",
-    "pub_year": 2026,
-    "is_host_only_row": false,
-    "is_ffp": false,
-    "type_note": null,
-    "mass_note": "Companion b of the same 2-planet system as the already-catalogued KMT-2022-BLG-1818L c; central value from NASA Exoplanet Archive quick match, paper (Lee et al. 2026, AJ 171, 41) via user-supplied spreadsheet ADS link",
-    "pl_bmassj": 4.0,
-    "st_mass": 0.79,
-    "pl_orbsmax": 2.6,
-    "sy_dist": 5300.0,
-    "disc_year": 2026,
-    "disc_facility": "KMTNet",
-    "disc_telescope": "KMTNet",
-    "ra": 270.798625,
-    "dec": -27.4811111,
-    "releasedate": null,
-    "discoverymethod": "Microlensing",
-    "nasa_matched": true,
-    "pl_bmassj_err1": 1.24,
-    "pl_bmassj_err2": -2.0,
-    "pl_bmasse": 1271.313628,
-    "pl_bmasse_err1": 394.10722468,
-    "pl_bmasse_err2": -635.656814
-  },
-  {
-    "seq": 301,
     "name": "KMT-2025-BLG-0975L b",
     "host_guess": "KMT-2025-BLG-0975L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138h4401H/abstract",
@@ -8663,7 +8663,7 @@
     "pl_bmasse_err2": -16.04
   },
   {
-    "seq": 302,
+    "seq": 301,
     "name": "KMT-2025-BLG-1160L b",
     "host_guess": "KMT-2025-BLG-1160L",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2026PASP..138h4401H/abstract",
