@@ -25,6 +25,16 @@
     });
   });
 
+  // Non-KMTNet microlensing planets (NASA Exoplanet Archive), shown only in the
+  // "All microlensing events" popup — kept out of `rows` so the main table,
+  // stats and year chart stay scoped to the KMTNet catalog.
+  var OTHER_RAW = window.OTHER_MICROLENSING_EVENTS || [];
+  var allEventsRows = rows.concat(
+    OTHER_RAW.map(function (r, i) {
+      return Object.assign({}, r, { _id: "other-" + i, _type: classify(r) });
+    })
+  );
+
   // ---------------- Theme ----------------
   var themeToggle = document.getElementById("themeToggle");
   function applyTheme(t) {
@@ -57,14 +67,12 @@
   }
 
   var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
-  var total = nonFfpRows.length;
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
-  var matched = nonFfpRows.filter(function (r) { return r.pl_bmassj != null; }).length;
 
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
-  setText("statMatched", matched + " / " + total);
+  setText("statAllEvents", allEventsRows.length);
 
   if (window.KMTNET_LIST_UPDATED) {
     var parts = window.KMTNET_LIST_UPDATED.split("-");
@@ -583,6 +591,73 @@
   });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeYearModal();
+  });
+
+  // ---------------- All-events popup ----------------
+  var allEventsCard = document.getElementById("allEventsCard");
+  var allEventsOverlay = document.getElementById("allEventsOverlay");
+  var allEventsModal = document.getElementById("allEventsModal");
+  var allEventsModalClose = document.getElementById("allEventsModalClose");
+  var allEventsModalSubtitle = document.getElementById("allEventsModalSubtitle");
+  var allEventsThead = document.querySelector("#allEventsTable thead tr");
+  var allEventsTbody = document.querySelector("#allEventsTable tbody");
+  var allEventsSorted = [];
+
+  function openAllEventsModal() {
+    allEventsSorted = allEventsRows.slice().sort(function (a, b) {
+      var ay = a.pub_year || 0, by = b.pub_year || 0;
+      if (by !== ay) return by - ay;
+      return String(a.name).localeCompare(String(b.name));
+    });
+    var bdCount = allEventsSorted.filter(function (r) { return r._type === "bdplanet"; }).length;
+    var ffpCount2 = allEventsSorted.filter(function (r) { return r._type === "ffp"; }).length;
+
+    allEventsModalSubtitle.textContent =
+      allEventsSorted.length + " entries total — KMTNet catalog: " + rows.length +
+      ", other surveys (NASA Exoplanet Archive): " + OTHER_RAW.length +
+      " (Planet/BD: " + bdCount + ", Free-floating: " + ffpCount2 + ")";
+
+    allEventsThead.innerHTML = COLUMNS.map(function (col) {
+      return (
+        '<th class="' + (col.unit ? "has-unit" : "") + '">' +
+        '<span class="col-label">' + escapeHtml(col.label) + "</span>" +
+        (col.unit ? '<span class="col-unit">(' + escapeHtml(col.unit) + ")</span>" : "") +
+        "</th>"
+      );
+    }).join("");
+
+    allEventsTbody.innerHTML = allEventsSorted.map(function (r, i) {
+      return (
+        '<tr data-idx="' + i + '">' +
+        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
+        "</tr>"
+      );
+    }).join("");
+
+    allEventsOverlay.classList.add("open");
+    allEventsModal.classList.add("open");
+  }
+
+  function closeAllEventsModal() {
+    allEventsOverlay.classList.remove("open");
+    allEventsModal.classList.remove("open");
+  }
+
+  onCardActivate(allEventsCard, openAllEventsModal);
+  allEventsOverlay.addEventListener("click", closeAllEventsModal);
+  allEventsModalClose.addEventListener("click", closeAllEventsModal);
+  allEventsTbody.addEventListener("click", function (e) {
+    var tr = e.target.closest("tr[data-idx]");
+    if (!tr) return;
+    var idx = Number(tr.getAttribute("data-idx"));
+    var row = allEventsSorted[idx];
+    if (row) {
+      closeAllEventsModal();
+      openDrawer(row);
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAllEventsModal();
   });
 
   render();

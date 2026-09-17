@@ -44,7 +44,7 @@
       <div class="stat-card stat-card-clickable" id="totalCard" role="button" tabindex="0"><div class="num" id="statTotal">—</div><div class="label">Total entries</div></div>
       <div class="stat-card stat-card-clickable" id="ffpCard" role="button" tabindex="0"><div class="num" id="statFfp">—</div><div class="label">Free-floating candidates</div></div>
       <div class="stat-card"><div class="num" id="statUpdated">—</div><div class="label">List last updated</div></div>
-      <div class="stat-card"><div class="num" id="statMatched">—</div><div class="label">Have physical parameters</div></div>
+      <div class="stat-card stat-card-clickable" id="allEventsCard" role="button" tabindex="0"><div class="num" id="statAllEvents">—</div><div class="label">All microlensing events</div></div>
     </div>
   </section>
 
@@ -146,6 +146,19 @@
   <p class="modal-subtitle" id="yearModalSubtitle"></p>
   <div class="table-scroll">
     <table class="data" id="yearTable">
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="overlay" id="allEventsOverlay"></div>
+<div class="modal modal-wide" id="allEventsModal" role="dialog" aria-modal="true" aria-labelledby="allEventsModalTitle">
+  <button class="close" id="allEventsModalClose" aria-label="Close">✕</button>
+  <h2 id="allEventsModalTitle">All Microlensing Planetary Events</h2>
+  <p class="modal-subtitle" id="allEventsModalSubtitle"></p>
+  <div class="table-scroll">
+    <table class="data" id="allEventsTable">
       <thead><tr></tr></thead>
       <tbody></tbody>
     </table>
