@@ -60,7 +60,7 @@
   var total = nonFfpRows.length;
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
-  var matched = nonFfpRows.filter(function (r) { return r.nasa_matched || r.eu_matched; }).length;
+  var matched = nonFfpRows.filter(function (r) { return r.pl_bmassj != null; }).length;
 
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
