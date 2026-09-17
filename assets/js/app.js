@@ -228,9 +228,9 @@
     }
     if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2);
     if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2);
-    if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax);
-    if (col.key === "st_mass") return numOrNA(row.st_mass);
-    if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0);
+    if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2);
+    if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2);
+    if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2);
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
     var v = row[col.key];
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
@@ -452,9 +452,9 @@
       field("Facility", row.disc_facility) +
       field("Mass (M_Jup)", withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2)) +
       field("Mass (M_Earth)", withErr(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2)) +
-      field("Semi-major axis (au)", fmtAdaptive(row.pl_orbsmax)) +
-      field("Host star mass (M_sun)", fmtAdaptive(row.st_mass)) +
-      field("Distance (pc)", fmtNum(row.sy_dist, 0)) +
+      field("Semi-major axis (au)", withErr(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2)) +
+      field("Host star mass (M_sun)", withErr(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2)) +
+      field("Distance (pc)", withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)) +
       field("RA", row.ra != null ? fmtNum(row.ra, 5) : null) +
       field("Dec", row.dec != null ? fmtNum(row.dec, 5) : null) +
       field("Release date", row.releasedate) +
