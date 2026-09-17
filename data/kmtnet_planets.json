@@ -67,7 +67,7 @@
     "is_host_only_row": false,
     "is_ffp": false,
     "type_note": null,
-    "mass_note": "Host mass and distance were not measured in Mroz & Han (2017) -- only a lower limit DL >~ 1.7 kpc is given, pending AO/HST follow-up",
+    "mass_note": "Mroz & Han (2017) measure only the mass ratio q=0.0117; Mplanet[M_Jup] = 12.2 x (M_host/M_sun), so 12.2 M_Jup is an upper limit assuming a Sun-mass host -- true mass is lower for the more typical sub-solar host expected for a microlensing lens. Host mass and distance were not measured (only DL >~ 1.7 kpc), pending AO/HST follow-up",
     "pl_bmassj": 12.2,
     "st_mass": null,
     "pl_orbsmax": null,
