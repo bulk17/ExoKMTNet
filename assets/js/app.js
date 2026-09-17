@@ -168,6 +168,7 @@
     q: "",
     type: "all",
     massMax: "30",
+    scope: "kmtnet", // "kmtnet" (default catalog) or "all" (+ non-KMTNet NASA Exoplanet Archive events)
     sortKey: "seq",
     sortDir: -1,
     page: 1,
@@ -277,7 +278,8 @@
 
   function getFiltered() {
     var q = state.q.trim().toLowerCase();
-    return rows.filter(function (r) {
+    var base = state.scope === "all" ? allEventsRows : rows;
+    return base.filter(function (r) {
       if (state.type !== "all" && r._type !== state.type) return false;
       if (state.massMax === "30") {
         // Same cutoff classify() already uses — anything not typed "planet" is above it
@@ -368,7 +370,8 @@
       );
     }).join("");
 
-    countEl.textContent = filtered.length + " of " + rows.length + " entries";
+    var scopeTotal = state.scope === "all" ? allEventsRows.length : rows.length;
+    countEl.textContent = filtered.length + " of " + scopeTotal + " entries";
     pagerInfo.textContent =
       (sorted.length === 0 ? 0 : start + 1) + "–" + Math.min(start + pageSize, sorted.length) + " / " + sorted.length + " · page " + state.page + "/" + pageCount;
     prevBtn.disabled = state.page <= 1;
@@ -378,8 +381,8 @@
   tbody.addEventListener("click", function (e) {
     var tr = e.target.closest("tr[data-id]");
     if (!tr) return;
-    var id = Number(tr.getAttribute("data-id"));
-    var row = rows.find(function (r) { return r._id === id; });
+    var id = tr.getAttribute("data-id");
+    var row = currentPageRows.find(function (r) { return String(r._id) === id; });
     if (row) openDrawer(row);
   });
 
@@ -508,15 +511,18 @@
   var totalCard = document.getElementById("totalCard");
   var tableSection = document.getElementById("table");
 
-  function applyTypeFilter(type, massMax) {
+  function applyTypeFilter(type, massMax, scope) {
     massMax = massMax || "all";
+    scope = scope || "kmtnet";
     state.q = "";
     state.type = type;
     state.massMax = massMax;
+    state.scope = scope;
     state.page = 1;
     searchInput.value = "";
     typeSelect.value = type;
     massSelect.value = massMax;
+    scopeNote.hidden = scope !== "all";
     render();
     tableSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -593,68 +599,14 @@
     if (e.key === "Escape") closeYearModal();
   });
 
-  // ---------------- All-events inline section ----------------
+  // ---------------- "All microlensing events" scope toggle ----------------
+  // Switches the main table itself (search/filter/export and all) between the
+  // KMTNet-only catalog and the full combined list, the same way the
+  // Total-entries/FFP cards switch its type+mass filters.
   var allEventsCard = document.getElementById("allEventsCard");
-  var allEventsSection = document.getElementById("allEventsSection");
-  var allEventsModalClose = document.getElementById("allEventsModalClose");
-  var allEventsModalSubtitle = document.getElementById("allEventsModalSubtitle");
-  var allEventsThead = document.querySelector("#allEventsTable thead tr");
-  var allEventsTbody = document.querySelector("#allEventsTable tbody");
-  var allEventsSorted = [];
+  var scopeNote = document.getElementById("scopeNote");
 
-  function openAllEventsSection() {
-    allEventsSorted = allEventsRows.slice().sort(function (a, b) {
-      var ay = a.pub_year || 0, by = b.pub_year || 0;
-      if (by !== ay) return by - ay;
-      return String(a.name).localeCompare(String(b.name));
-    });
-    var bdCount = allEventsSorted.filter(function (r) { return r._type === "bdplanet"; }).length;
-    var ffpCount2 = allEventsSorted.filter(function (r) { return r._type === "ffp"; }).length;
-
-    allEventsModalSubtitle.textContent =
-      allEventsSorted.length + " entries total — KMTNet catalog: " + rows.length +
-      ", other surveys (NASA Exoplanet Archive): " + OTHER_RAW.length +
-      " (Planet/BD: " + bdCount + ", Free-floating: " + ffpCount2 + ")";
-
-    allEventsThead.innerHTML = COLUMNS.map(function (col) {
-      return (
-        '<th class="' + (col.unit ? "has-unit" : "") + '">' +
-        '<span class="col-label">' + escapeHtml(col.label) + "</span>" +
-        (col.unit ? '<span class="col-unit">(' + escapeHtml(col.unit) + ")</span>" : "") +
-        "</th>"
-      );
-    }).join("");
-
-    allEventsTbody.innerHTML = allEventsSorted.map(function (r, i) {
-      return (
-        '<tr data-idx="' + i + '">' +
-        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
-        "</tr>"
-      );
-    }).join("");
-
-    allEventsSection.hidden = false;
-    allEventsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  function closeAllEventsSection() {
-    allEventsSection.hidden = true;
-  }
-
-  onCardActivate(allEventsCard, openAllEventsSection);
-  allEventsModalClose.addEventListener("click", closeAllEventsSection);
-  allEventsTbody.addEventListener("click", function (e) {
-    var tr = e.target.closest("tr[data-idx]");
-    if (!tr) return;
-    var idx = Number(tr.getAttribute("data-idx"));
-    var row = allEventsSorted[idx];
-    if (row) {
-      openDrawer(row);
-    }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !allEventsSection.hidden) closeAllEventsSection();
-  });
+  onCardActivate(allEventsCard, function () { applyTypeFilter("all", "all", "all"); });
 
   render();
 })();

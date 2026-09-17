@@ -59,6 +59,7 @@
   </section>
 
   <section id="table">
+    <p class="scope-note" id="scopeNote" hidden>Showing all microlensing planetary events, including non-KMTNet discoveries from the NASA Exoplanet Archive. Click “Total entries” or “Free-floating candidates” above to return to the KMTNet-only catalog.</p>
     <div class="controls">
       <input type="search" id="searchInput" placeholder="Search name, host, or paper title…" aria-label="Search" />
       <select id="typeSelect" aria-label="Filter by type">
@@ -93,20 +94,6 @@
       <span id="pagerInfo"></span>
       <button class="btn" id="prevPage" type="button">◀ Prev</button>
       <button class="btn" id="nextPage" type="button">Next ▶</button>
-    </div>
-  </section>
-
-  <section class="all-events-section" id="allEventsSection" hidden>
-    <div class="section-header-row">
-      <h2 id="allEventsModalTitle">All Microlensing Planetary Events</h2>
-      <button class="close" id="allEventsModalClose" aria-label="Close">✕</button>
-    </div>
-    <p class="modal-subtitle" id="allEventsModalSubtitle"></p>
-    <div class="table-scroll">
-      <table class="data" id="allEventsTable">
-        <thead><tr></tr></thead>
-        <tbody></tbody>
-      </table>
     </div>
   </section>
 
