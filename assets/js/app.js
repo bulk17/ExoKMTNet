@@ -69,9 +69,11 @@
   var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
+  var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
 
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
+  setText("statBd", bdCount);
   setText("statAllEvents", allEventsRows.length);
 
   if (window.KMTNET_LIST_UPDATED) {
@@ -509,6 +511,7 @@
   // ---------------- Stat-card shortcuts ----------------
   var ffpCard = document.getElementById("ffpCard");
   var totalCard = document.getElementById("totalCard");
+  var bdCard = document.getElementById("bdCard");
   var tableSection = document.getElementById("table");
 
   function applyTypeFilter(type, massMax, scope) {
@@ -539,6 +542,7 @@
 
   onCardActivate(ffpCard, function () { applyTypeFilter("ffp", "all"); });
   onCardActivate(totalCard, function () { applyTypeFilter("all", "30"); });
+  onCardActivate(bdCard, function () { applyTypeFilter("bdplanet", "all"); });
 
   // ---------------- Year-bar popup ----------------
   var yearOverlay = document.getElementById("yearOverlay");
