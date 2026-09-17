@@ -7,7 +7,9 @@
 
   function classify(row) {
     if (row.is_ffp) return "ffp";
-    if (row.type_note === "BD/Planet" || row.type_note === "BD") return "bdplanet";
+    // type_note only forces BD for host-only rows (a lens star's own mass, never "a planet"
+    // by mass cutoff) — companion/planet rows classify purely by the numeric mass cutoff.
+    if (row.is_host_only_row && (row.type_note === "BD/Planet" || row.type_note === "BD")) return "bdplanet";
     if (row.pl_bmassj != null && row.pl_bmassj > BD_PLANET_MASS_CUTOFF) return "bdplanet";
     return "planet";
   }
