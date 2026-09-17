@@ -82,7 +82,10 @@
     "nasa_matched": false,
     "pl_bmasse": 3877.5,
     "eu_matched": true,
-    "pl_bmassj_upper_limit": true
+    "pl_bmassj_upper_limit": true,
+    "pl_orbsmax_unmeasurable": true,
+    "st_mass_unmeasurable": true,
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 4,

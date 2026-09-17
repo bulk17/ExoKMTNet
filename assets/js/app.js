@@ -228,17 +228,17 @@
     }
     if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit);
     if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit);
-    if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2);
-    if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2);
-    if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2);
+    if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2, false, row.pl_orbsmax_unmeasurable);
+    if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2, false, row.st_mass_unmeasurable);
+    if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2, false, row.sy_dist_unmeasurable);
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
     var v = row[col.key];
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
   }
 
-  function numOrNA(v, digits, err1, err2, isLimit) {
+  function numOrNA(v, digits, err1, err2, isLimit, unmeasurable) {
     var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
-    if (f === null) return '<span class="na">TBD</span>';
+    if (f === null) return unmeasurable ? '<span class="na">—</span>' : '<span class="na">TBD</span>';
     if (isLimit) f = "≲" + f;
     var parts = errParts(err1, err2, digits);
     if (!parts) return f;
