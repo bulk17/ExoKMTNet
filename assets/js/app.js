@@ -400,10 +400,26 @@
 
   exportBtn.addEventListener("click", function () {
     var filtered = getSorted(getFiltered());
-    var header = ["name", "host_guess", "type", "pub_year", "pl_bmassj", "pl_bmasse", "pl_orbsmax", "st_mass", "sy_dist", "disc_telescope", "ra", "dec", "ads_link"];
+    var header = [
+      "name", "host_guess", "type", "pub_year",
+      "pl_bmassj", "pl_bmassj_err1", "pl_bmassj_err2",
+      "pl_bmasse", "pl_bmasse_err1", "pl_bmasse_err2",
+      "pl_orbsmax", "pl_orbsmax_err1", "pl_orbsmax_err2",
+      "st_mass", "st_mass_err1", "st_mass_err2",
+      "sy_dist", "sy_dist_err1", "sy_dist_err2",
+      "disc_telescope", "ra", "dec", "ads_link",
+    ];
     var lines = [header.join(",")];
     filtered.forEach(function (r) {
-      var vals = [r.name, r.host_guess, TYPE_LABEL[r._type], r.pub_year, r.pl_bmassj, r.pl_bmasse, r.pl_orbsmax, r.st_mass, r.sy_dist, r.disc_telescope, r.ra, r.dec, r.ads_link];
+      var vals = [
+        r.name, r.host_guess, TYPE_LABEL[r._type], r.pub_year,
+        r.pl_bmassj, r.pl_bmassj_err1, r.pl_bmassj_err2,
+        r.pl_bmasse, r.pl_bmasse_err1, r.pl_bmasse_err2,
+        r.pl_orbsmax, r.pl_orbsmax_err1, r.pl_orbsmax_err2,
+        r.st_mass, r.st_mass_err1, r.st_mass_err2,
+        r.sy_dist, r.sy_dist_err1, r.sy_dist_err2,
+        r.disc_telescope, r.ra, r.dec, r.ads_link,
+      ];
       lines.push(vals.map(function (v) {
         v = v === null || v === undefined ? "" : String(v);
         return '"' + v.replace(/"/g, '""') + '"';
