@@ -69,6 +69,7 @@
   }
 
   var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
+  var allEventsNonFfp = allEventsRows.filter(function (r) { return r._type !== "ffp"; });
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
   var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
@@ -76,7 +77,7 @@
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
   setText("statBd", bdCount);
-  setText("statAllEvents", allEventsRows.length);
+  setText("statAllEvents", allEventsNonFfp.length);
 
   if (window.KMTNET_LIST_UPDATED) {
     var parts = window.KMTNET_LIST_UPDATED.split("-");
