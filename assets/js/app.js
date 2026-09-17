@@ -226,8 +226,8 @@
         ? '<a href="' + escapeAttr(row.ads_link) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">ADS ↗</a>'
         : '<span class="na">—</span>';
     }
-    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2);
-    if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2);
+    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit);
+    if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit);
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2);
     if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2);
     if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2);
@@ -236,9 +236,10 @@
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
   }
 
-  function numOrNA(v, digits, err1, err2) {
+  function numOrNA(v, digits, err1, err2, isLimit) {
     var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
     if (f === null) return '<span class="na">TBD</span>';
+    if (isLimit) f = "≲" + f;
     var parts = errParts(err1, err2, digits);
     if (!parts) return f;
     return (
@@ -432,9 +433,10 @@
   }
 
   // Value plus its "(+hi / -lo)" error range, when both bounds are known.
-  function withErr(v, digits, err1, err2) {
+  function withErr(v, digits, err1, err2, isLimit) {
     var f = digits === undefined ? fmtAdaptive(v) : fmtNum(v, digits);
     if (f === null) return null;
+    if (isLimit) f = "≲" + f;
     var parts = errParts(err1, err2, digits);
     return parts ? f + " (+" + parts.hi + " / " + parts.lo + ")" : f;
   }
@@ -450,8 +452,8 @@
       field("Discovery method", row.discoverymethod || "Microlensing") +
       field("Telescope", row.disc_telescope) +
       field("Facility", row.disc_facility) +
-      field("Mass (M_Jup)", withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2)) +
-      field("Mass (M_Earth)", withErr(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2)) +
+      field("Mass (M_Jup)", withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit)) +
+      field("Mass (M_Earth)", withErr(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit)) +
       field("Semi-major axis (au)", withErr(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2)) +
       field("Host star mass (M_sun)", withErr(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2)) +
       field("Distance (pc)", withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)) +
