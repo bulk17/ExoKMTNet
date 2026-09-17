@@ -1,6 +1,6 @@
 [
   {
-    "seq": 304,
+    "seq": 303,
     "name": "OGLE-2003-BLG-235L b",
     "host_guess": "OGLE-2003-BLG-235L",
     "ads_link": null,
@@ -29,7 +29,7 @@
     "pl_bmasse_err2": -200.0
   },
   {
-    "seq": 305,
+    "seq": 304,
     "name": "OGLE-2005-BLG-071L b",
     "host_guess": "OGLE-2005-BLG-071L",
     "ads_link": null,
@@ -58,7 +58,7 @@
     "pl_bmasse_err2": -100.0
   },
   {
-    "seq": 306,
+    "seq": 305,
     "name": "OGLE-2005-BLG-390L b",
     "host_guess": "OGLE-2005-BLG-390L",
     "ads_link": null,
@@ -87,7 +87,7 @@
     "pl_bmasse_err2": -2.7
   },
   {
-    "seq": 307,
+    "seq": 306,
     "name": "OGLE-2005-BLG-169L b",
     "host_guess": "OGLE-2005-BLG-169L",
     "ads_link": null,
@@ -116,7 +116,7 @@
     "pl_bmasse_err2": -0.9
   },
   {
-    "seq": 308,
+    "seq": 307,
     "name": "MOA-2007-BLG-192L b",
     "host_guess": "MOA-2007-BLG-192L",
     "ads_link": null,
@@ -145,7 +145,7 @@
     "pl_bmasse_err2": -8.03
   },
   {
-    "seq": 309,
+    "seq": 308,
     "name": "MOA-2007-BLG-400L b",
     "host_guess": "MOA-2007-BLG-400L",
     "ads_link": null,
@@ -174,7 +174,7 @@
     "pl_bmasse_err2": -82.63538582
   },
   {
-    "seq": 310,
+    "seq": 309,
     "name": "OGLE-2006-BLG-109L b",
     "host_guess": "OGLE-2006-BLG-109L",
     "ads_link": null,
@@ -203,7 +203,7 @@
     "pl_bmasse_err2": -19.0
   },
   {
-    "seq": 311,
+    "seq": 310,
     "name": "OGLE-2006-BLG-109L c",
     "host_guess": "OGLE-2006-BLG-109L",
     "ads_link": null,
@@ -232,7 +232,7 @@
     "pl_bmasse_err2": -7.0
   },
   {
-    "seq": 312,
+    "seq": 311,
     "name": "MOA-2008-BLG-310L b",
     "host_guess": "MOA-2008-BLG-310L",
     "ads_link": null,
@@ -261,7 +261,7 @@
     "pl_bmasse_err2": -17.0
   },
   {
-    "seq": 313,
+    "seq": 312,
     "name": "OGLE-2007-BLG-368L b",
     "host_guess": "OGLE-2007-BLG-368L",
     "ads_link": null,
@@ -290,7 +290,7 @@
     "pl_bmasse_err2": -8.0
   },
   {
-    "seq": 314,
+    "seq": 313,
     "name": "MOA-2009-BLG-319L b",
     "host_guess": "MOA-2009-BLG-319L",
     "ads_link": null,
@@ -319,7 +319,7 @@
     "pl_bmasse_err2": -6.2
   },
   {
-    "seq": 315,
+    "seq": 314,
     "name": "MOA-2009-BLG-387L b",
     "host_guess": "MOA-2009-BLG-387L",
     "ads_link": null,
@@ -348,7 +348,7 @@
     "pl_bmasse_err2": -510.0
   },
   {
-    "seq": 316,
+    "seq": 315,
     "name": "MOA-2009-BLG-266L b",
     "host_guess": "MOA-2009-BLG-266L",
     "ads_link": null,
@@ -377,7 +377,7 @@
     "pl_bmasse_err2": -1.7
   },
   {
-    "seq": 317,
+    "seq": 316,
     "name": "MOA-2010-BLG-073L b",
     "host_guess": "MOA-2010-BLG-073L",
     "ads_link": null,
@@ -406,7 +406,7 @@
     "pl_bmasse_err2": -640.0
   },
   {
-    "seq": 318,
+    "seq": 317,
     "name": "MOA-2010-BLG-477L b",
     "host_guess": "MOA-2010-BLG-477L",
     "ads_link": null,
@@ -435,7 +435,7 @@
     "pl_bmasse_err2": -100.0
   },
   {
-    "seq": 319,
+    "seq": 318,
     "name": "MOA-2011-BLG-293L b",
     "host_guess": "MOA-2011-BLG-293L",
     "ads_link": null,
@@ -464,7 +464,7 @@
     "pl_bmasse_err2": -100.0
   },
   {
-    "seq": 320,
+    "seq": 319,
     "name": "MOA-bin-1L b",
     "host_guess": "MOA-bin-1L",
     "ads_link": null,
@@ -493,7 +493,7 @@
     "pl_bmasse_err2": -670.0
   },
   {
-    "seq": 321,
+    "seq": 320,
     "name": "OGLE-2011-BLG-0251L b",
     "host_guess": "OGLE-2011-BLG-0251L",
     "ads_link": null,
@@ -522,7 +522,7 @@
     "pl_bmasse_err2": -67.0
   },
   {
-    "seq": 322,
+    "seq": 321,
     "name": "OGLE-2012-BLG-0026L b",
     "host_guess": "OGLE-2012-BLG-0026L",
     "ads_link": null,
@@ -551,7 +551,7 @@
     "pl_bmasse_err2": -2.6
   },
   {
-    "seq": 323,
+    "seq": 322,
     "name": "OGLE-2012-BLG-0026L c",
     "host_guess": "OGLE-2012-BLG-0026L",
     "ads_link": null,
@@ -580,7 +580,7 @@
     "pl_bmasse_err2": -20.0
   },
   {
-    "seq": 324,
+    "seq": 323,
     "name": "MOA-2008-BLG-379L b",
     "host_guess": "MOA-2008-BLG-379L",
     "ads_link": null,
@@ -609,7 +609,7 @@
     "pl_bmasse_err2": -600.0
   },
   {
-    "seq": 325,
+    "seq": 324,
     "name": "MOA-2010-BLG-328L b",
     "host_guess": "MOA-2010-BLG-328L",
     "ads_link": null,
@@ -638,7 +638,7 @@
     "pl_bmasse_err2": -2.2
   },
   {
-    "seq": 326,
+    "seq": 325,
     "name": "MOA-2011-BLG-322L b",
     "host_guess": "MOA-2011-BLG-322L",
     "ads_link": null,
@@ -667,7 +667,7 @@
     "pl_bmasse_err2": -1800.0
   },
   {
-    "seq": 327,
+    "seq": 326,
     "name": "OGLE-2012-BLG-0358L b",
     "host_guess": "OGLE-2012-BLG-0358L",
     "ads_link": null,
@@ -696,7 +696,7 @@
     "pl_bmasse_err2": -60.0
   },
   {
-    "seq": 328,
+    "seq": 327,
     "name": "OGLE-2012-BLG-0406L b",
     "host_guess": "OGLE-2012-BLG-0406L",
     "ads_link": null,
@@ -725,7 +725,7 @@
     "pl_bmasse_err2": -140.0
   },
   {
-    "seq": 329,
+    "seq": 328,
     "name": "MOA-2011-BLG-262L b",
     "host_guess": "MOA-2011-BLG-262L",
     "ads_link": null,
@@ -754,7 +754,7 @@
     "pl_bmasse_err2": -10.0
   },
   {
-    "seq": 330,
+    "seq": 329,
     "name": "MOA-2013-BLG-220L b",
     "host_guess": "MOA-2013-BLG-220L",
     "ads_link": null,
@@ -783,7 +783,7 @@
     "pl_bmasse_err2": -54.0
   },
   {
-    "seq": 331,
+    "seq": 330,
     "name": "OGLE-2008-BLG-092L b",
     "host_guess": "OGLE-2008-BLG-092L",
     "ads_link": null,
@@ -812,7 +812,7 @@
     "pl_bmasse_err2": null
   },
   {
-    "seq": 332,
+    "seq": 331,
     "name": "OGLE-2008-BLG-355L b",
     "host_guess": "OGLE-2008-BLG-355L",
     "ads_link": null,
@@ -841,7 +841,7 @@
     "pl_bmasse_err2": -700.0
   },
   {
-    "seq": 333,
+    "seq": 332,
     "name": "OGLE-2013-BLG-0102L b",
     "host_guess": "OGLE-2013-BLG-0102L",
     "ads_link": null,
@@ -870,7 +870,7 @@
     "pl_bmasse_err2": -600.0
   },
   {
-    "seq": 334,
+    "seq": 333,
     "name": "OGLE-2013-BLG-0341L B b",
     "host_guess": "OGLE-2013-BLG-0341L B",
     "ads_link": null,
@@ -899,7 +899,7 @@
     "pl_bmasse_err2": -0.18
   },
   {
-    "seq": 335,
+    "seq": 334,
     "name": "MOA-2010-BLG-353L b",
     "host_guess": "MOA-2010-BLG-353L",
     "ads_link": null,
@@ -928,7 +928,7 @@
     "pl_bmasse_err2": -51.0
   },
   {
-    "seq": 336,
+    "seq": 335,
     "name": "OGLE-2011-BLG-0265L b",
     "host_guess": "OGLE-2011-BLG-0265L",
     "ads_link": null,
@@ -957,7 +957,7 @@
     "pl_bmasse_err2": -57.0
   },
   {
-    "seq": 337,
+    "seq": 336,
     "name": "OGLE-2012-BLG-0563L b",
     "host_guess": "OGLE-2012-BLG-0563L",
     "ads_link": null,
@@ -986,7 +986,7 @@
     "pl_bmasse_err2": -73.0
   },
   {
-    "seq": 338,
+    "seq": 337,
     "name": "OGLE-2014-BLG-0124L b",
     "host_guess": "OGLE-2014-BLG-0124L",
     "ads_link": null,
@@ -1015,7 +1015,7 @@
     "pl_bmasse_err2": -13.98444991
   },
   {
-    "seq": 339,
+    "seq": 338,
     "name": "MOA-2011-BLG-028L b",
     "host_guess": "MOA-2011-BLG-028L",
     "ads_link": null,
@@ -1044,7 +1044,7 @@
     "pl_bmasse_err2": -12.0
   },
   {
-    "seq": 340,
+    "seq": 339,
     "name": "MOA-2013-BLG-605L b",
     "host_guess": "MOA-2013-BLG-605L",
     "ads_link": null,
@@ -1073,7 +1073,7 @@
     "pl_bmasse_err2": -0.3
   },
   {
-    "seq": 341,
+    "seq": 340,
     "name": "OGLE-2007-BLG-349L AB c",
     "host_guess": "OGLE-2007-BLG-349L AB",
     "ads_link": null,
@@ -1102,7 +1102,7 @@
     "pl_bmasse_err2": -13.0
   },
   {
-    "seq": 342,
+    "seq": 341,
     "name": "OGLE-2012-BLG-0724L b",
     "host_guess": "OGLE-2012-BLG-0724L",
     "ads_link": null,
@@ -1131,7 +1131,7 @@
     "pl_bmasse_err2": -83.0
   },
   {
-    "seq": 343,
+    "seq": 342,
     "name": "OGLE-2012-BLG-0950L b",
     "host_guess": "OGLE-2012-BLG-0950L",
     "ads_link": null,
@@ -1160,7 +1160,7 @@
     "pl_bmasse_err2": -6.0
   },
   {
-    "seq": 344,
+    "seq": 343,
     "name": "OGLE-2014-BLG-0676L b",
     "host_guess": "OGLE-2014-BLG-0676L",
     "ads_link": null,
@@ -1189,7 +1189,7 @@
     "pl_bmasse_err2": -200.23189641
   },
   {
-    "seq": 345,
+    "seq": 344,
     "name": "OGLE-2014-BLG-1760L b",
     "host_guess": "OGLE-2014-BLG-1760L",
     "ads_link": null,
@@ -1218,7 +1218,7 @@
     "pl_bmasse_err2": -37.18592362
   },
   {
-    "seq": 346,
+    "seq": 345,
     "name": "OGLE-2015-BLG-0966L b",
     "host_guess": "OGLE-2015-BLG-0966L",
     "ads_link": null,
@@ -1247,7 +1247,7 @@
     "pl_bmasse_err2": -2.0
   },
   {
-    "seq": 347,
+    "seq": 346,
     "name": "MOA-2012-BLG-006L b",
     "host_guess": "MOA-2012-BLG-006L",
     "ads_link": null,
@@ -1276,7 +1276,7 @@
     "pl_bmasse_err2": -1200.0
   },
   {
-    "seq": 348,
+    "seq": 347,
     "name": "MOA-2012-BLG-505L b",
     "host_guess": "MOA-2012-BLG-505L",
     "ads_link": null,
@@ -1305,7 +1305,7 @@
     "pl_bmasse_err2": -3.51
   },
   {
-    "seq": 349,
+    "seq": 348,
     "name": "MOA-2016-BLG-227L b",
     "host_guess": "MOA-2016-BLG-227L",
     "ads_link": null,
@@ -1334,7 +1334,7 @@
     "pl_bmasse_err2": -480.0
   },
   {
-    "seq": 350,
+    "seq": 349,
     "name": "OGLE-2013-BLG-0132L b",
     "host_guess": "OGLE-2013-BLG-0132L",
     "ads_link": null,
@@ -1363,7 +1363,7 @@
     "pl_bmasse_err2": -41.0
   },
   {
-    "seq": 351,
+    "seq": 350,
     "name": "OGLE-2013-BLG-1721L b",
     "host_guess": "OGLE-2013-BLG-1721L",
     "ads_link": null,
@@ -1392,7 +1392,7 @@
     "pl_bmasse_err2": -99.0
   },
   {
-    "seq": 352,
+    "seq": 351,
     "name": "OGLE-2013-BLG-1761L b",
     "host_guess": "OGLE-2013-BLG-1761L",
     "ads_link": null,
@@ -1421,7 +1421,7 @@
     "pl_bmasse_err2": -480.0
   },
   {
-    "seq": 353,
+    "seq": 352,
     "name": "MOA-2010-BLG-117L b",
     "host_guess": "MOA-2010-BLG-117L",
     "ads_link": null,
@@ -1450,7 +1450,7 @@
     "pl_bmasse_err2": -32.0
   },
   {
-    "seq": 354,
+    "seq": 353,
     "name": "MOA-2011-BLG-291L b",
     "host_guess": "MOA-2011-BLG-291L",
     "ads_link": null,
@@ -1479,7 +1479,7 @@
     "pl_bmasse_err2": -12.0
   },
   {
-    "seq": 355,
+    "seq": 354,
     "name": "OGLE-2011-BLG-0173L b",
     "host_guess": "OGLE-2011-BLG-0173L",
     "ads_link": null,
@@ -1508,7 +1508,7 @@
     "pl_bmasse_err2": -35.0
   },
   {
-    "seq": 356,
+    "seq": 355,
     "name": "OGLE-2014-BLG-1722L b",
     "host_guess": "OGLE-2014-BLG-1722L",
     "ads_link": null,
@@ -1537,7 +1537,7 @@
     "pl_bmasse_err2": -33.1
   },
   {
-    "seq": 357,
+    "seq": 356,
     "name": "OGLE-2014-BLG-1722L c",
     "host_guess": "OGLE-2014-BLG-1722L",
     "ads_link": null,
@@ -1566,7 +1566,7 @@
     "pl_bmasse_err2": -51.2
   },
   {
-    "seq": 358,
+    "seq": 357,
     "name": "TCP J05074264+2447555 b",
     "host_guess": "TCP J05074264+2447555",
     "ads_link": null,
@@ -1595,7 +1595,7 @@
     "pl_bmasse_err2": -2.0
   },
   {
-    "seq": 359,
+    "seq": 358,
     "name": "UKIRT-2017-BLG-001L b",
     "host_guess": "UKIRT-2017-BLG-001L",
     "ads_link": null,
@@ -1624,7 +1624,7 @@
     "pl_bmasse_err2": -140.0
   },
   {
-    "seq": 360,
+    "seq": 359,
     "name": "MOA-bin-29 b",
     "host_guess": "MOA-bin-29",
     "ads_link": null,
@@ -1653,7 +1653,7 @@
     "pl_bmasse_err2": -120.0
   },
   {
-    "seq": 361,
+    "seq": 360,
     "name": "OGLE-2013-BLG-0911L b",
     "host_guess": "OGLE-2013-BLG-0911L",
     "ads_link": null,
@@ -1682,7 +1682,7 @@
     "pl_bmasse_err2": -537.0
   },
   {
-    "seq": 362,
+    "seq": 361,
     "name": "OGLE-2015-BLG-1649L b",
     "host_guess": "OGLE-2015-BLG-1649L",
     "ads_link": null,
@@ -1711,7 +1711,7 @@
     "pl_bmasse_err2": -442.0
   },
   {
-    "seq": 363,
+    "seq": 362,
     "name": "OGLE-2006-BLG-284L A b",
     "host_guess": "OGLE-2006-BLG-284L A",
     "ads_link": null,
@@ -1740,7 +1740,7 @@
     "pl_bmasse_err2": -82.0
   },
   {
-    "seq": 364,
+    "seq": 363,
     "name": "OGLE-2012-BLG-0838L b",
     "host_guess": "OGLE-2012-BLG-0838L",
     "ads_link": null,
@@ -1769,7 +1769,7 @@
     "pl_bmasse_err2": -260.0
   },
   {
-    "seq": 365,
+    "seq": 364,
     "name": "MOA-2020-BLG-135L b",
     "host_guess": "MOA-2020-BLG-135L",
     "ads_link": null,
@@ -1798,7 +1798,7 @@
     "pl_bmasse_err2": -6.9
   },
   {
-    "seq": 366,
+    "seq": 365,
     "name": "OGLE-2014-BLG-0319L b",
     "host_guess": "OGLE-2014-BLG-0319L",
     "ads_link": null,
@@ -1827,7 +1827,7 @@
     "pl_bmasse_err2": -98.52680617
   },
   {
-    "seq": 367,
+    "seq": 366,
     "name": "Gaia22dkvL b",
     "host_guess": "Gaia22dkvL",
     "ads_link": null,
@@ -1856,7 +1856,7 @@
     "pl_bmasse_err2": -16.52707716
   },
   {
-    "seq": 368,
+    "seq": 367,
     "name": "OGLE-2014-BLG-0221L b",
     "host_guess": "OGLE-2014-BLG-0221L",
     "ads_link": null,
@@ -1885,7 +1885,7 @@
     "pl_bmasse_err2": -607.05225737
   },
   {
-    "seq": 369,
+    "seq": 368,
     "name": "AT2021ueyL b",
     "host_guess": "AT2021ueyL",
     "ads_link": null,
@@ -1914,7 +1914,7 @@
     "pl_bmasse_err2": -158.9142035
   },
   {
-    "seq": 370,
+    "seq": 369,
     "name": "MOA-2022-BLG-033L b",
     "host_guess": "MOA-2022-BLG-033L",
     "ads_link": null,
@@ -1943,7 +1943,7 @@
     "pl_bmasse_err2": -6.25
   },
   {
-    "seq": 371,
+    "seq": 370,
     "name": "OGLE-2015-BLG-1609L b",
     "host_guess": "OGLE-2015-BLG-1609L",
     "ads_link": null,
@@ -1972,7 +1972,7 @@
     "pl_bmasse_err2": -54.03082919
   },
   {
-    "seq": 372,
+    "seq": 371,
     "name": "Gaia23braL b",
     "host_guess": "Gaia23braL",
     "ads_link": null,
@@ -1999,5 +1999,34 @@
     "pl_bmasse": 518.06030341,
     "pl_bmasse_err1": 133.48793094,
     "pl_bmasse_err2": -120.13913785
+  },
+  {
+    "seq": 372,
+    "name": "MOA-2020-BLG-108L b",
+    "host_guess": "MOA-2020-BLG-108L",
+    "ads_link": null,
+    "title": null,
+    "pub_year": 2026,
+    "is_host_only_row": false,
+    "is_ffp": false,
+    "type_note": null,
+    "mass_note": "NASA Exoplanet Archive (non-KMTNet discovery)",
+    "pl_bmassj": 10.67,
+    "st_mass": 0.58,
+    "pl_orbsmax": 3.69,
+    "sy_dist": 5130.0,
+    "disc_year": 2026,
+    "disc_facility": "MOA",
+    "disc_telescope": "MOA",
+    "ra": 269.7155833,
+    "dec": -26.9165083,
+    "releasedate": null,
+    "discoverymethod": "Microlensing",
+    "nasa_matched": true,
+    "pl_bmassj_err1": 4.75,
+    "pl_bmassj_err2": -5.41,
+    "pl_bmasse": 3391.22910269,
+    "pl_bmasse_err1": 1509.68493325,
+    "pl_bmasse_err2": -1719.45168187
   }
 ]
