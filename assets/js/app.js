@@ -285,7 +285,13 @@
     var q = state.q.trim().toLowerCase();
     var base = state.scope === "all" ? allEventsRows : rows;
     return base.filter(function (r) {
-      if (state.type !== "all" && r._type !== state.type) return false;
+      // "All types" means all planet types (Planet + Planet/BD) — free-floating
+      // candidates are a separate category, reachable only via their own filter/card.
+      if (state.type === "all") {
+        if (r._type === "ffp") return false;
+      } else if (r._type !== state.type) {
+        return false;
+      }
       if (state.massMax === "30") {
         // Same cutoff classify() already uses — anything not typed "planet" is above it
         // (or forced above it by the source note) regardless of a known numeric mass.
@@ -375,7 +381,7 @@
       );
     }).join("");
 
-    var scopeTotal = state.scope === "all" ? allEventsRows.length : rows.length;
+    var scopeTotal = state.scope === "all" ? allEventsNonFfp.length : nonFfpRows.length;
     countEl.textContent = filtered.length + " of " + scopeTotal + " entries";
     pagerInfo.textContent =
       (sorted.length === 0 ? 0 : start + 1) + "–" + Math.min(start + pageSize, sorted.length) + " / " + sorted.length + " · page " + state.page + "/" + pageCount;
