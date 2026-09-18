@@ -471,7 +471,16 @@ table.data tbody tr:last-child td { border-bottom: none; }
 
 .na { color: var(--text-dim); opacity: 0.6; }
 
+/* .val wraps just the headline number so centering in the table cell is based
+   on that number alone — .err-stack is pulled out of flow (absolutely
+   positioned off its right edge) so it never skews where the number sits. */
+.val { position: relative; display: inline-block; }
+
 .err-stack {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -479,7 +488,7 @@ table.data tbody tr:last-child td { border-bottom: none; }
   line-height: 1.05;
   color: var(--text-dim);
   margin-left: 3px;
-  vertical-align: middle;
+  white-space: nowrap;
   cursor: help;
 }
 

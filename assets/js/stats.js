@@ -102,11 +102,12 @@
     if (f === null) return unmeasurable ? '<span class="na">—</span>' : '<span class="na">TBD</span>';
     if (isLimit) f = "≲" + f;
     var parts = errParts(err1, err2, digits);
-    if (!parts) return f;
+    if (!parts) return '<span class="val">' + f + "</span>";
     return (
-      f +
+      '<span class="val">' + f +
       '<span class="err-stack" title="+' + escapeAttr(parts.hi) + " / " + escapeAttr(parts.lo) + '">' +
       "<span>+" + parts.hi + "</span><span>" + parts.lo + "</span>" +
+      "</span>" +
       "</span>"
     );
   }
