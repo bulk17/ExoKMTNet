@@ -98,11 +98,12 @@ body::before {
     radial-gradient(ellipse 60% 50% at 65% 100%, rgba(60, 150, 220, 0.2), transparent 60%),
     linear-gradient(180deg, rgba(5, 6, 15, 0.55) 0%, rgba(10, 13, 30, 0.68) 45%, rgba(18, 22, 44, 0.85) 100%),
     url("../images/milkyway-bg.jpg");
-  /* The photo stretches to fill the page width but keeps its native height
-     (400px, the sky crop's own height) — no vertical scaling — anchored to
-     the top. Below it, the gradient/star layers show through as the
+  /* The photo stretches to fill the page width and reaches down to just
+     above the stat-card row (measured ~444px on a typical 900px-tall
+     desktop viewport) — a mild vertical enlargement from its native
+     400px. Below it, the gradient/star layers show through as the
      original synthetic backdrop. */
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 400px;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 440px;
   background-position: 0 0, 0 0, 0 0, 0 0, center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
