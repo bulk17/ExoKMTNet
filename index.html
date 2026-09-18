@@ -43,7 +43,7 @@
     <div class="stat-grid">
       <div class="stat-card stat-card-clickable" id="totalCard" role="button" tabindex="0"><div class="num" id="statTotal">—</div><div class="label">Planets</div></div>
       <div class="stat-card stat-card-clickable" id="bdCard" role="button" tabindex="0"><div class="num" id="statBd">—</div><div class="label">Planet/BD</div></div>
-      <div class="stat-card stat-card-clickable" id="ffpCard" role="button" tabindex="0"><div class="num" id="statFfp">—</div><div class="label">Free-floating candidates</div></div>
+      <div class="stat-card stat-card-clickable" id="ffpCard" role="button" tabindex="0"><div class="num" id="statFfp">—</div><div class="label">Free-floating planet candidates</div></div>
       <div class="stat-card stat-card-clickable" id="allEventsCard" role="button" tabindex="0"><div class="num" id="statAllEvents">—</div><div class="label">All microlensing planets</div></div>
       <div class="stat-card"><div class="num" id="statUpdated">—</div><div class="label">List last updated</div></div>
     </div>
@@ -51,7 +51,7 @@
 
   <section class="chart-card" id="chart">
     <h2>Announcements per year</h2>
-    <p class="chart-note">Free-floating candidates are excluded from these counts — see the “Free-floating candidates” figure above.</p>
+    <p class="chart-note">Free-floating planet candidates are excluded from these counts — see the “Free-floating planet candidates” figure above.</p>
     <svg id="yearChart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
     <div class="legend">
       <span><i style="background:var(--planet)"></i>Planet</span>
@@ -60,7 +60,7 @@
   </section>
 
   <section id="table">
-    <p class="scope-note" id="scopeNote" hidden>Showing all microlensing planetary events, including non-KMTNet discoveries from the NASA Exoplanet Archive. Click “Planets” or “Free-floating candidates” above to return to the KMTNet-only catalog.</p>
+    <p class="scope-note" id="scopeNote" hidden>Showing all microlensing planetary events, including non-KMTNet discoveries from the NASA Exoplanet Archive. Click “Planets” or “Free-floating planet candidates” above to return to the KMTNet-only catalog.</p>
     <div class="controls">
       <input type="search" id="searchInput" placeholder="Search name, host, or paper title…" aria-label="Search" />
       <select id="typeSelect" aria-label="Filter by type">
@@ -117,7 +117,7 @@
       Objects with masses between 30 M_Jup and 60 M_Jup are labeled as being at the
       Planet/Brown Dwarf (BD) boundary.
     </p>
-    <h3>Free-floating candidates</h3>
+    <h3>Free-floating planet candidates</h3>
     <p>
       Free-floating planet (FFP) candidates are kept as a separate category and excluded from
       the "Planets" count and the "Announcements per year" chart. The
@@ -125,7 +125,7 @@
       requires it to orbit a star — an FFP has no bound host star by construction, so strictly
       speaking it does not meet that definition. These are therefore listed as planet
       candidates, not confirmed planets; their count is shown separately in the
-      "Free-floating candidates" figure above.
+      "Free-floating planet candidates" figure above.
     </p>
     <p>
       Discovery papers are linked via NASA ADS. Data last rebuilt: <span id="buildDate"></span>.
