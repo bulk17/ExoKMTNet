@@ -670,15 +670,17 @@ footer {
   color: #aab0d0;
   font-size: 12px;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 8px 16px;
-  flex-wrap: wrap;
 }
+footer span:first-child { grid-column: 2; text-align: center; }
+footer span:last-child { grid-column: 3; justify-self: end; text-align: right; }
 
 @media (max-width: 640px) {
   .drawer { width: 100%; }
   .controls .count { margin-left: 0; width: 100%; order: 5; }
-  footer { justify-content: center; text-align: center; }
+  footer { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  footer span:first-child, footer span:last-child { grid-column: auto; justify-self: auto; }
 }
