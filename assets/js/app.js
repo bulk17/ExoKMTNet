@@ -197,7 +197,7 @@
     var fmt = digits === undefined ? fmtAdaptive : function (v) { return fmtNum(v, digits); };
     var d = fmt(diskVal), b = fmt(bulgeVal);
     if (d === null || b === null) return '<span class="na">TBD</span>';
-    return '<span class="disk-bulge" title="disk / bulge solution">' + d + "/" + b + "</span>";
+    return '<span class="disk-bulge" title="Disk / Bulge solution">' + d + "/" + b + "</span>";
   }
 
   function numOrNA(v, digits, err1, err2, isLimit, unmeasurable) {
@@ -280,6 +280,7 @@
     thead.innerHTML = "";
     getColumns().forEach(function (col) {
       var th = document.createElement("th");
+      if (col.key === "name") th.classList.add("col-name");
       var labelSpan = document.createElement("span");
       labelSpan.className = "col-label";
       labelSpan.textContent = col.label;
@@ -298,16 +299,16 @@
         unitSpan.textContent = "(" + col.unit + ")";
         th.appendChild(unitSpan);
       }
-      if (col.key === "pl_bmassj") {
+      if (state.type === "ffp" && col.key === "pl_bmassj") {
         var dbSpan = document.createElement("span");
         dbSpan.className = "col-unit col-disk-bulge";
-        dbSpan.textContent = "disk/bulge";
+        dbSpan.textContent = "Disk/Bulge";
         th.appendChild(dbSpan);
       }
-      if (col.key === "sy_dist") {
+      if (state.type === "ffp" && col.key === "sy_dist") {
         var distDbSpan = document.createElement("span");
         distDbSpan.className = "col-unit col-disk-bulge";
-        distDbSpan.textContent = "(disk/bulge)";
+        distDbSpan.textContent = "(Disk/Bulge)";
         th.appendChild(distDbSpan);
       }
       th.addEventListener("click", function () {
@@ -341,7 +342,7 @@
       var rank = start + i + 1;
       return (
         '<tr data-id="' + r._id + '">' +
-        cols.map(function (c) { return "<td>" + cellHtml(r, c, rank) + "</td>"; }).join("") +
+        cols.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : "") + '">' + cellHtml(r, c, rank) + "</td>"; }).join("") +
         "</tr>"
       );
     }).join("");
@@ -460,7 +461,7 @@
       field("Telescope", row.disc_telescope) +
       field("Facility", row.disc_facility) +
       field(
-        row.pl_bmassj_disk != null ? "Mass (M_Jup, disk/bulge)" : "Mass (M_Jup)",
+        row.pl_bmassj_disk != null ? "Mass (M_Jup, Disk/Bulge)" : "Mass (M_Jup)",
         row.pl_bmassj_disk != null && row.pl_bmassj_bulge != null
           ? diskBulgeHtml(row.pl_bmassj_disk, row.pl_bmassj_bulge, undefined)
           : withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit)
@@ -469,7 +470,7 @@
       field("Semi-major axis (au)", withErr(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2)) +
       field("Host star mass (M_sun)", withErr(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2)) +
       field(
-        row.sy_dist_disk != null ? "Distance (pc, disk/bulge)" : "Distance (pc)",
+        row.sy_dist_disk != null ? "Distance (pc, Disk/Bulge)" : "Distance (pc)",
         row.sy_dist_disk != null && row.sy_dist_bulge != null
           ? diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0)
           : withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)

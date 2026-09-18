@@ -523,7 +523,7 @@
 
     yearThead.innerHTML = COLUMNS.map(function (col) {
       return (
-        '<th class="' + (col.unit ? "has-unit" : "") + '">' +
+        '<th class="' + (col.key === "name" ? "col-name" : "") + '">' +
         '<span class="col-label">' + escapeHtml(col.label) + "</span>" +
         (col.unit ? '<span class="col-unit">(' + escapeHtml(col.unit) + ")</span>" : "") +
         "</th>"
@@ -533,7 +533,7 @@
     yearTbody.innerHTML = yearRows.map(function (r, i) {
       return (
         '<tr data-id="' + r._id + '">' +
-        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
+        COLUMNS.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : "") + '">' + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
         "</tr>"
       );
     }).join("");
