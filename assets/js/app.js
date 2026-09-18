@@ -122,9 +122,13 @@
 
   // FFPs have no host star, so "a" (semi-major axis) and "M_star" never apply —
   // drop those columns entirely when the table is filtered to free-floating rows.
+  // FFPs have no host star, so "a", "M_star", and "M_E" never apply, and
+  // distance can't be pinned down (disk/bulge lens-distance degeneracy) —
+  // drop those columns entirely when filtered to free-floating rows.
+  var FFP_HIDDEN_COLUMNS = { pl_orbsmax: true, st_mass: true, pl_bmasse: true, sy_dist: true };
   function getColumns() {
     if (state.type === "ffp") {
-      return ALL_COLUMNS.filter(function (c) { return c.key !== "pl_orbsmax" && c.key !== "st_mass"; });
+      return ALL_COLUMNS.filter(function (c) { return !FFP_HIDDEN_COLUMNS[c.key]; });
     }
     return ALL_COLUMNS;
   }
@@ -175,16 +179,13 @@
         : '<span class="na">—</span>';
     }
     if (col.key === "pl_bmassj") {
-      if (row.pl_bmassj_disk != null && row.pl_bmassj_bulge != null) return diskBulgeHtml(row.pl_bmassj_disk, row.pl_bmassj_bulge, undefined);
+      if (row.pl_bmassj_disk_label) return diskBulgeLabelHtml(row.pl_bmassj_disk_label, row.pl_bmassj_bulge_label);
       return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit);
     }
     if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit);
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2, false, row.pl_orbsmax_unmeasurable);
     if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2, false, row.st_mass_unmeasurable);
-    if (col.key === "sy_dist") {
-      if (row.sy_dist_disk != null || row.sy_dist_bulge != null) return diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0);
-      return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2, false, row.sy_dist_unmeasurable);
-    }
+    if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2, false, row.sy_dist_unmeasurable);
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
     var v = row[col.key];
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
@@ -193,12 +194,11 @@
   // FFP disk-lens/bulge-lens solutions, shown as "disk/bulge" (the lens-distance
   // degeneracy for free-floating planets means the source paper reports one
   // value per assumed population, not a single measurement).
-  function diskBulgeHtml(diskVal, bulgeVal, digits) {
-    var fmt = digits === undefined ? fmtAdaptive : function (v) { return fmtNum(v, digits); };
-    var d = diskVal == null ? null : fmt(diskVal);
-    var b = bulgeVal == null ? null : fmt(bulgeVal);
-    if (d === null && b === null) return '<span class="na">TBD</span>';
-    return '<span class="disk-bulge" title="Disk / Bulge solution">' + (d === null ? "—" : d) + "/" + (b === null ? "—" : b) + "</span>";
+  // FFP mass can't be pinned down (disk-vs-bulge lens-distance degeneracy), so
+  // papers describe it qualitatively per population rather than as a number.
+  function diskBulgeLabelHtml(diskLabel, bulgeLabel) {
+    var d = diskLabel || "—", b = bulgeLabel || "—";
+    return '<span class="disk-bulge" title="Disk / Bulge solution">' + escapeHtml(d) + " / " + escapeHtml(b) + "</span>";
   }
 
   function numOrNA(v, digits, err1, err2, isLimit, unmeasurable) {
@@ -294,24 +294,22 @@
         arrow.textContent = state.sortDir === 1 ? "▲" : "▼";
         labelSpan.appendChild(arrow);
       }
-      if (col.unit) {
+      // In the FFP view, Mass shows a qualitative Disk/Bulge label instead of
+      // an M_J number, so the "(M_J)" unit no longer applies to that column.
+      var isFfpMassCol = state.type === "ffp" && col.key === "pl_bmassj";
+      if (col.unit && !isFfpMassCol) {
         th.classList.add("has-unit");
         var unitSpan = document.createElement("span");
         unitSpan.className = "col-unit";
         unitSpan.textContent = "(" + col.unit + ")";
         th.appendChild(unitSpan);
       }
-      if (state.type === "ffp" && col.key === "pl_bmassj") {
+      if (isFfpMassCol) {
+        th.classList.add("has-unit");
         var dbSpan = document.createElement("span");
         dbSpan.className = "col-unit col-disk-bulge";
         dbSpan.textContent = "Disk/Bulge";
         th.appendChild(dbSpan);
-      }
-      if (state.type === "ffp" && col.key === "sy_dist") {
-        var distDbSpan = document.createElement("span");
-        distDbSpan.className = "col-unit col-disk-bulge";
-        distDbSpan.textContent = "(Disk/Bulge)";
-        th.appendChild(distDbSpan);
       }
       th.addEventListener("click", function () {
         if (state.sortKey === col.key) {
@@ -393,12 +391,11 @@
     var header = [
       "name", "host_guess", "type", "pub_year",
       "pl_bmassj", "pl_bmassj_err1", "pl_bmassj_err2",
-      "pl_bmassj_disk", "pl_bmassj_bulge",
+      "pl_bmassj_disk", "pl_bmassj_bulge", "pl_bmassj_disk_label", "pl_bmassj_bulge_label",
       "pl_bmasse", "pl_bmasse_err1", "pl_bmasse_err2",
       "pl_orbsmax", "pl_orbsmax_err1", "pl_orbsmax_err2",
       "st_mass", "st_mass_err1", "st_mass_err2",
       "sy_dist", "sy_dist_err1", "sy_dist_err2",
-      "sy_dist_disk", "sy_dist_bulge",
       "disc_telescope", "ra", "dec", "ads_link",
     ];
     var lines = [header.join(",")];
@@ -406,12 +403,11 @@
       var vals = [
         r.name, r.host_guess, TYPE_LABEL[r._type], r.pub_year,
         r.pl_bmassj, r.pl_bmassj_err1, r.pl_bmassj_err2,
-        r.pl_bmassj_disk, r.pl_bmassj_bulge,
+        r.pl_bmassj_disk, r.pl_bmassj_bulge, r.pl_bmassj_disk_label, r.pl_bmassj_bulge_label,
         r.pl_bmasse, r.pl_bmasse_err1, r.pl_bmasse_err2,
         r.pl_orbsmax, r.pl_orbsmax_err1, r.pl_orbsmax_err2,
         r.st_mass, r.st_mass_err1, r.st_mass_err2,
         r.sy_dist, r.sy_dist_err1, r.sy_dist_err2,
-        r.sy_dist_disk, r.sy_dist_bulge,
         r.disc_telescope, r.ra, r.dec, r.ads_link,
       ];
       lines.push(vals.map(function (v) {
@@ -463,20 +459,15 @@
       field("Telescope", row.disc_telescope) +
       field("Facility", row.disc_facility) +
       field(
-        row.pl_bmassj_disk != null ? "Mass (M_Jup, Disk/Bulge)" : "Mass (M_Jup)",
-        row.pl_bmassj_disk != null && row.pl_bmassj_bulge != null
-          ? diskBulgeHtml(row.pl_bmassj_disk, row.pl_bmassj_bulge, undefined)
+        row.pl_bmassj_disk_label ? "Mass (Disk/Bulge)" : "Mass (M_Jup)",
+        row.pl_bmassj_disk_label
+          ? diskBulgeLabelHtml(row.pl_bmassj_disk_label, row.pl_bmassj_bulge_label)
           : withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit)
       ) +
       field("Mass (M_Earth)", withErr(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit)) +
       field("Semi-major axis (au)", withErr(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2)) +
       field("Host star mass (M_sun)", withErr(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2)) +
-      field(
-        row.sy_dist_disk != null || row.sy_dist_bulge != null ? "Distance (pc, Disk/Bulge)" : "Distance (pc)",
-        row.sy_dist_disk != null || row.sy_dist_bulge != null
-          ? diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0)
-          : withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)
-      ) +
+      field("Distance (pc)", withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)) +
       field("RA", row.ra != null ? fmtNum(row.ra, 5) : null) +
       field("Dec", row.dec != null ? fmtNum(row.dec, 5) : null) +
       field("Release date", row.releasedate) +
