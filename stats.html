@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Statistics — KMTNet Exoplanet Archive</title>
+<meta name="description" content="Distributions of KMTNet-discovered exoplanets: announcements per year, planet-to-host mass ratio, and distance from the Sun." />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-title">
+        <div class="brand-icons">
+          <a href="https://www.kasi.re.kr/" target="_blank" rel="noopener">
+            <img src="assets/images/kasi-logo.png" alt="KASI" class="brand-emblem" />
+          </a>
+          <a href="https://kmtnet.kasi.re.kr/kmtnet/" target="_blank" rel="noopener">
+            <img src="assets/images/kmtnet-emblem.png" alt="KMTNet emblem" class="brand-emblem" />
+          </a>
+        </div>
+        <span>KMTNet Exoplanet Archive</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html#table">Table</a>
+      <a href="stats.html">Statistics</a>
+      <a href="index.html#about">About</a>
+      <button class="theme-toggle" id="themeToggle" type="button">🌓 Theme</button>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <h1>Statistics</h1>
+    <p>
+      Distributions for the KMTNet-discovered planet sample. <a href="index.html#table">← Back to the catalog</a>.
+    </p>
+  </section>
+
+  <section id="chart">
+    <div class="chart-card">
+      <h2>Announcements per year</h2>
+      <p class="chart-note">Free-floating planet candidates are excluded from these counts — see the “Free-floating planet candidates” number on the <a href="index.html">catalog page</a>.</p>
+      <svg id="yearChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
+      <div class="legend">
+        <span><i style="background:var(--planet)"></i>Planet</span>
+        <span><i style="background:var(--bdplanet)"></i>Planet/BD</span>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h2>Planet-to-host mass ratio</h2>
+      <p class="chart-note">Planet mass divided by host star mass (x-axis: log&#8321;&#8320; of the ratio), for KMTNet planets and Planet/BD objects with both masses measured. Host-only rows and free-floating candidates are excluded.</p>
+      <svg id="massRatioChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of planet-to-host star mass ratio"></svg>
+    </div>
+
+    <div class="chart-card">
+      <h2>Distance from the Sun</h2>
+      <p class="chart-note">System distance from the Sun, 0–10 kpc. Host-only rows and free-floating candidates are excluded.</p>
+      <svg id="distanceChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of system distance from the Sun, 0 to 10 kiloparsecs"></svg>
+    </div>
+  </section>
+
+  <footer>KMTNet Exoplanet Archive · data sourced from KMTNet publications, exoplanet.eu, and the NASA Exoplanet Archive</footer>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <button class="close" id="drawerClose" aria-label="Close">✕</button>
+  <div id="drawerBody"></div>
+</aside>
+
+<div class="overlay" id="yearOverlay"></div>
+<div class="modal modal-wide" id="yearModal" role="dialog" aria-modal="true" aria-labelledby="yearModalTitle">
+  <button class="close" id="yearModalClose" aria-label="Close">✕</button>
+  <h2 id="yearModalTitle"></h2>
+  <p class="modal-subtitle" id="yearModalSubtitle"></p>
+  <div class="table-scroll">
+    <table class="data" id="yearTable">
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="assets/data/planets.js"></script>
+<script src="assets/js/stats.js"></script>
+</body>
+</html>

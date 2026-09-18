@@ -26,7 +26,7 @@
     </div>
     <nav>
       <a href="#table">Table</a>
-      <a href="#chart">Statistics</a>
+      <a href="stats.html">Statistics</a>
       <a href="#about">About</a>
       <button class="theme-toggle" id="themeToggle" type="button">🌓 Theme</button>
     </nav>
@@ -50,30 +50,6 @@
     <div class="stat-grid stat-grid-secondary">
       <div class="stat-card stat-card-clickable" id="binaryCard" role="button" tabindex="0"><div class="num" id="statBinary">—</div><div class="label">Planets in binary star systems</div></div>
       <div class="stat-card stat-card-clickable" id="multiCard" role="button" tabindex="0"><div class="num" id="statMulti">—</div><div class="label">Multi-planet systems</div></div>
-    </div>
-  </section>
-
-  <section id="chart">
-    <div class="chart-card">
-      <h2>Announcements per year</h2>
-      <p class="chart-note">Free-floating planet candidates are excluded from these counts — see the “Free-floating planet candidates” number above.</p>
-      <svg id="yearChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
-      <div class="legend">
-        <span><i style="background:var(--planet)"></i>Planet</span>
-        <span><i style="background:var(--bdplanet)"></i>Planet/BD</span>
-      </div>
-    </div>
-
-    <div class="chart-card">
-      <h2>Planet-to-host mass ratio</h2>
-      <p class="chart-note">Planet mass divided by host star mass (x-axis: log&#8321;&#8320; of the ratio), for KMTNet planets and Planet/BD objects with both masses measured. Host-only rows and free-floating candidates are excluded.</p>
-      <svg id="massRatioChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of planet-to-host star mass ratio"></svg>
-    </div>
-
-    <div class="chart-card">
-      <h2>Distance from the Sun</h2>
-      <p class="chart-note">System distance from the Sun, 0–10 kpc. Host-only rows and free-floating candidates are excluded.</p>
-      <svg id="distanceChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of system distance from the Sun, 0 to 10 kiloparsecs"></svg>
     </div>
   </section>
 
@@ -161,19 +137,6 @@
   <button class="close" id="drawerClose" aria-label="Close">✕</button>
   <div id="drawerBody"></div>
 </aside>
-
-<div class="overlay" id="yearOverlay"></div>
-<div class="modal modal-wide" id="yearModal" role="dialog" aria-modal="true" aria-labelledby="yearModalTitle">
-  <button class="close" id="yearModalClose" aria-label="Close">✕</button>
-  <h2 id="yearModalTitle"></h2>
-  <p class="modal-subtitle" id="yearModalSubtitle"></p>
-  <div class="table-scroll">
-    <table class="data" id="yearTable">
-      <thead><tr></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-</div>
 
 <script src="assets/data/planets.js"></script>
 <script src="assets/js/app.js"></script>
