@@ -383,8 +383,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.11012,
     "pl_bmassj_bulge": 0.55061,
-    "sy_dist_disk": 4440,
-    "sy_dist_bulge": 6900
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 14,
@@ -989,8 +988,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 1.9,
     "pl_bmassj_bulge": 20.0,
-    "sy_dist_disk": 4444,
-    "sy_dist_bulge": 7407
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 34,
@@ -1485,8 +1483,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.02423,
     "pl_bmassj_bulge": 0.24227,
-    "sy_dist_disk": 4444,
-    "sy_dist_bulge": 7407
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 51,
@@ -1862,8 +1859,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.00094,
     "pl_bmassj_bulge": 0.00629,
-    "sy_dist_disk": 4444,
-    "sy_dist_bulge": 7092
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 64,
@@ -1948,8 +1944,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.04538,
     "pl_bmassj_bulge": 0.2836,
-    "sy_dist_disk": 4444,
-    "sy_dist_bulge": 7092
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 67,
@@ -2209,8 +2204,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.0297,
     "pl_bmassj_bulge": 0.18563,
-    "sy_dist_disk": 4440,
-    "sy_dist_bulge": 7090
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 76,
@@ -6455,8 +6449,8 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.02517,
     "pl_bmassj_bulge": 0.15732,
-    "sy_dist_disk": 4500,
-    "sy_dist_bulge": 7090
+    "sy_dist_unmeasurable": false,
+    "sy_dist_disk": 4500
   },
   {
     "seq": 222,
@@ -7300,8 +7294,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.03151,
     "pl_bmassj_bulge": 0.19694,
-    "sy_dist_disk": 4444,
-    "sy_dist_bulge": 7092
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 251,
@@ -7609,8 +7602,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.02926,
     "pl_bmassj_bulge": 0.18249,
-    "sy_dist_disk": 4440,
-    "sy_dist_bulge": 7090
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 262,
@@ -7967,8 +7959,7 @@
     "nasa_matched": false,
     "pl_bmassj_disk": 0.05135,
     "pl_bmassj_bulge": 0.32093,
-    "sy_dist_disk": 4440,
-    "sy_dist_bulge": 7090
+    "sy_dist_unmeasurable": true
   },
   {
     "seq": 274,

@@ -182,7 +182,7 @@
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2, false, row.pl_orbsmax_unmeasurable);
     if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2, false, row.st_mass_unmeasurable);
     if (col.key === "sy_dist") {
-      if (row.sy_dist_disk != null && row.sy_dist_bulge != null) return diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0);
+      if (row.sy_dist_disk != null || row.sy_dist_bulge != null) return diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0);
       return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2, false, row.sy_dist_unmeasurable);
     }
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
@@ -195,9 +195,10 @@
   // value per assumed population, not a single measurement).
   function diskBulgeHtml(diskVal, bulgeVal, digits) {
     var fmt = digits === undefined ? fmtAdaptive : function (v) { return fmtNum(v, digits); };
-    var d = fmt(diskVal), b = fmt(bulgeVal);
-    if (d === null || b === null) return '<span class="na">TBD</span>';
-    return '<span class="disk-bulge" title="Disk / Bulge solution">' + d + "/" + b + "</span>";
+    var d = diskVal == null ? null : fmt(diskVal);
+    var b = bulgeVal == null ? null : fmt(bulgeVal);
+    if (d === null && b === null) return '<span class="na">TBD</span>';
+    return '<span class="disk-bulge" title="Disk / Bulge solution">' + (d === null ? "—" : d) + "/" + (b === null ? "—" : b) + "</span>";
   }
 
   function numOrNA(v, digits, err1, err2, isLimit, unmeasurable) {
@@ -471,8 +472,8 @@
       field("Semi-major axis (au)", withErr(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2)) +
       field("Host star mass (M_sun)", withErr(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2)) +
       field(
-        row.sy_dist_disk != null ? "Distance (pc, Disk/Bulge)" : "Distance (pc)",
-        row.sy_dist_disk != null && row.sy_dist_bulge != null
+        row.sy_dist_disk != null || row.sy_dist_bulge != null ? "Distance (pc, Disk/Bulge)" : "Distance (pc)",
+        row.sy_dist_disk != null || row.sy_dist_bulge != null
           ? diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0)
           : withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)
       ) +
