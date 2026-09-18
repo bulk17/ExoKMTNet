@@ -982,11 +982,15 @@
     "disc_year": null,
     "disc_facility": null,
     "disc_telescope": null,
-    "ra": null,
-    "dec": null,
+    "ra": 267.963875,
+    "dec": -30.458722,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 1.9,
+    "pl_bmassj_bulge": 20.0,
+    "sy_dist_disk": 4444,
+    "sy_dist_bulge": 7407
   },
   {
     "seq": 34,
@@ -1474,11 +1478,15 @@
     "disc_year": null,
     "disc_facility": null,
     "disc_telescope": null,
-    "ra": null,
-    "dec": null,
+    "ra": 269.86975,
+    "dec": -28.8405,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.02423,
+    "pl_bmassj_bulge": 0.24227,
+    "sy_dist_disk": 4444,
+    "sy_dist_bulge": 7407
   },
   {
     "seq": 51,
@@ -1847,11 +1855,15 @@
     "disc_year": null,
     "disc_facility": null,
     "disc_telescope": null,
-    "ra": null,
-    "dec": null,
+    "ra": 270.380208,
+    "dec": -29.1295,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.00094,
+    "pl_bmassj_bulge": 0.00629,
+    "sy_dist_disk": 4444,
+    "sy_dist_bulge": 7092
   },
   {
     "seq": 64,
@@ -1929,11 +1941,15 @@
     "disc_year": null,
     "disc_facility": null,
     "disc_telescope": null,
-    "ra": null,
-    "dec": null,
+    "ra": 263.742708,
+    "dec": -28.547561,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.04538,
+    "pl_bmassj_bulge": 0.2836,
+    "sy_dist_disk": 4444,
+    "sy_dist_bulge": 7092
   },
   {
     "seq": 67,
@@ -7261,8 +7277,8 @@
   },
   {
     "seq": 250,
-    "name": "KMT-2024-BLG-0816L b",
-    "host_guess": "KMT-2024-BLG-0816L",
+    "name": "KMT-2024-BLG-0816",
+    "host_guess": "KMT-2024-BLG-0816",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2025AcA....75..279P/abstract",
     "title": "KMT-2024-BLG-0816/OGLE-2024-BLG-0519 - A Microlensing Event with Candidate Free-Floating Planet Lens and Blended Light",
     "pub_year": 2025,
@@ -7277,11 +7293,15 @@
     "disc_year": null,
     "disc_facility": null,
     "disc_telescope": null,
-    "ra": null,
-    "dec": null,
+    "ra": 269.650604,
+    "dec": -29.390647,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.03151,
+    "pl_bmassj_bulge": 0.19694,
+    "sy_dist_disk": 4444,
+    "sy_dist_bulge": 7092
   },
   {
     "seq": 251,
