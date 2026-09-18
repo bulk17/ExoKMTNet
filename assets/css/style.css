@@ -434,6 +434,9 @@ table.data thead th .col-unit {
 }
 
 table.data thead th.has-unit { text-align: center; }
+table.data thead th .col-disk-bulge { font-style: italic; }
+
+.disk-bulge { cursor: help; }
 
 table.data tbody td {
   padding: 8px 10px;

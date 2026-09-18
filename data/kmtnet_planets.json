@@ -380,7 +380,11 @@
     "dec": null,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.11012,
+    "pl_bmassj_bulge": 0.55061,
+    "sy_dist_disk": 4440,
+    "sy_dist_bulge": 6900
   },
   {
     "seq": 14,
@@ -2186,7 +2190,11 @@
     "dec": null,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.0297,
+    "pl_bmassj_bulge": 0.18563,
+    "sy_dist_disk": 4440,
+    "sy_dist_bulge": 7090
   },
   {
     "seq": 76,
@@ -6408,8 +6416,8 @@
   },
   {
     "seq": 221,
-    "name": "KMT-2022-BLG-2669",
-    "host_guess": "KMT-2022-BLG-2669",
+    "name": "KMT-2023-BLG-2669",
+    "host_guess": "KMT-2023-BLG-2669",
     "ads_link": "https://ui.adsabs.harvard.edu/abs/2024AJ....168..152J/abstract",
     "title": "KMT-2023-BLG-2669: Ninth Free-floating Planet Candidate with θ E Measurements",
     "pub_year": 2024,
@@ -6428,7 +6436,11 @@
     "dec": null,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.02517,
+    "pl_bmassj_bulge": 0.15732,
+    "sy_dist_disk": 4500,
+    "sy_dist_bulge": 7090
   },
   {
     "seq": 222,
@@ -7574,7 +7586,11 @@
     "dec": null,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.02926,
+    "pl_bmassj_bulge": 0.18249,
+    "sy_dist_disk": 4440,
+    "sy_dist_bulge": 7090
   },
   {
     "seq": 262,
@@ -7928,7 +7944,11 @@
     "dec": null,
     "releasedate": null,
     "discoverymethod": null,
-    "nasa_matched": false
+    "nasa_matched": false,
+    "pl_bmassj_disk": 0.05135,
+    "pl_bmassj_bulge": 0.32093,
+    "sy_dist_disk": 4440,
+    "sy_dist_bulge": 7090
   },
   {
     "seq": 274,

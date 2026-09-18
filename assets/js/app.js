@@ -165,14 +165,30 @@
         ? '<a href="' + escapeAttr(row.ads_link) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">ADS ↗</a>'
         : '<span class="na">—</span>';
     }
-    if (col.key === "pl_bmassj") return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit);
+    if (col.key === "pl_bmassj") {
+      if (row.pl_bmassj_disk != null && row.pl_bmassj_bulge != null) return diskBulgeHtml(row.pl_bmassj_disk, row.pl_bmassj_bulge, undefined);
+      return numOrNA(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit);
+    }
     if (col.key === "pl_bmasse") return numOrNA(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit);
     if (col.key === "pl_orbsmax") return numOrNA(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2, false, row.pl_orbsmax_unmeasurable);
     if (col.key === "st_mass") return numOrNA(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2, false, row.st_mass_unmeasurable);
-    if (col.key === "sy_dist") return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2, false, row.sy_dist_unmeasurable);
+    if (col.key === "sy_dist") {
+      if (row.sy_dist_disk != null && row.sy_dist_bulge != null) return diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0);
+      return numOrNA(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2, false, row.sy_dist_unmeasurable);
+    }
     if (col.key === "ra" || col.key === "dec") return row[col.key] != null ? fmtNum(row[col.key], 4) : '<span class="na">TBD</span>';
     var v = row[col.key];
     return v === null || v === undefined || v === "" ? '<span class="na">—</span>' : escapeHtml(String(v));
+  }
+
+  // FFP disk-lens/bulge-lens solutions, shown as "disk/bulge" (the lens-distance
+  // degeneracy for free-floating planets means the source paper reports one
+  // value per assumed population, not a single measurement).
+  function diskBulgeHtml(diskVal, bulgeVal, digits) {
+    var fmt = digits === undefined ? fmtAdaptive : function (v) { return fmtNum(v, digits); };
+    var d = fmt(diskVal), b = fmt(bulgeVal);
+    if (d === null || b === null) return '<span class="na">TBD</span>';
+    return '<span class="disk-bulge" title="disk / bulge solution">' + d + "/" + b + "</span>";
   }
 
   function numOrNA(v, digits, err1, err2, isLimit, unmeasurable) {
@@ -273,6 +289,12 @@
         unitSpan.textContent = "(" + col.unit + ")";
         th.appendChild(unitSpan);
       }
+      if (col.key === "pl_bmassj") {
+        var dbSpan = document.createElement("span");
+        dbSpan.className = "col-unit col-disk-bulge";
+        dbSpan.textContent = "disk/bulge";
+        th.appendChild(dbSpan);
+      }
       th.addEventListener("click", function () {
         if (state.sortKey === col.key) {
           state.sortDir *= -1;
@@ -352,10 +374,12 @@
     var header = [
       "name", "host_guess", "type", "pub_year",
       "pl_bmassj", "pl_bmassj_err1", "pl_bmassj_err2",
+      "pl_bmassj_disk", "pl_bmassj_bulge",
       "pl_bmasse", "pl_bmasse_err1", "pl_bmasse_err2",
       "pl_orbsmax", "pl_orbsmax_err1", "pl_orbsmax_err2",
       "st_mass", "st_mass_err1", "st_mass_err2",
       "sy_dist", "sy_dist_err1", "sy_dist_err2",
+      "sy_dist_disk", "sy_dist_bulge",
       "disc_telescope", "ra", "dec", "ads_link",
     ];
     var lines = [header.join(",")];
@@ -363,10 +387,12 @@
       var vals = [
         r.name, r.host_guess, TYPE_LABEL[r._type], r.pub_year,
         r.pl_bmassj, r.pl_bmassj_err1, r.pl_bmassj_err2,
+        r.pl_bmassj_disk, r.pl_bmassj_bulge,
         r.pl_bmasse, r.pl_bmasse_err1, r.pl_bmasse_err2,
         r.pl_orbsmax, r.pl_orbsmax_err1, r.pl_orbsmax_err2,
         r.st_mass, r.st_mass_err1, r.st_mass_err2,
         r.sy_dist, r.sy_dist_err1, r.sy_dist_err2,
+        r.sy_dist_disk, r.sy_dist_bulge,
         r.disc_telescope, r.ra, r.dec, r.ads_link,
       ];
       lines.push(vals.map(function (v) {
@@ -417,11 +443,21 @@
       field("Discovery method", row.discoverymethod || "Microlensing") +
       field("Telescope", row.disc_telescope) +
       field("Facility", row.disc_facility) +
-      field("Mass (M_Jup)", withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit)) +
+      field(
+        row.pl_bmassj_disk != null ? "Mass (M_Jup, disk/bulge)" : "Mass (M_Jup)",
+        row.pl_bmassj_disk != null && row.pl_bmassj_bulge != null
+          ? diskBulgeHtml(row.pl_bmassj_disk, row.pl_bmassj_bulge, undefined)
+          : withErr(row.pl_bmassj, undefined, row.pl_bmassj_err1, row.pl_bmassj_err2, row.pl_bmassj_upper_limit)
+      ) +
       field("Mass (M_Earth)", withErr(row.pl_bmasse, 1, row.pl_bmasse_err1, row.pl_bmasse_err2, row.pl_bmassj_upper_limit)) +
       field("Semi-major axis (au)", withErr(row.pl_orbsmax, undefined, row.pl_orbsmax_err1, row.pl_orbsmax_err2)) +
       field("Host star mass (M_sun)", withErr(row.st_mass, undefined, row.st_mass_err1, row.st_mass_err2)) +
-      field("Distance (pc)", withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)) +
+      field(
+        row.sy_dist_disk != null ? "Distance (pc, disk/bulge)" : "Distance (pc)",
+        row.sy_dist_disk != null && row.sy_dist_bulge != null
+          ? diskBulgeHtml(row.sy_dist_disk, row.sy_dist_bulge, 0)
+          : withErr(row.sy_dist, 0, row.sy_dist_err1, row.sy_dist_err2)
+      ) +
       field("RA", row.ra != null ? fmtNum(row.ra, 5) : null) +
       field("Dec", row.dec != null ? fmtNum(row.dec, 5) : null) +
       field("Release date", row.releasedate) +
