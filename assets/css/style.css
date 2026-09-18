@@ -669,11 +669,16 @@ footer {
   margin-top: 24px;
   color: #aab0d0;
   font-size: 12px;
-  text-align: center;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 640px) {
   .drawer { width: 100%; }
   .controls .count { margin-left: 0; width: 100%; order: 5; }
+  footer { justify-content: center; text-align: center; }
 }
