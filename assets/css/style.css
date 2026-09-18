@@ -244,7 +244,10 @@ a { color: var(--link); }
 }
 
 .stat-grid-secondary {
-  grid-template-columns: repeat(auto-fill, 220px);
+  /* Explicit 5 columns, matching the row above's card count, so the 2
+     cards placed here end up exactly as wide as the ones above (with 3
+     unfilled columns keeping the same per-column width, not shown). */
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
   margin-top: 10px;
 }
 
