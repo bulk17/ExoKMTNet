@@ -428,7 +428,7 @@
     });
     if (!points.length) return;
 
-    var W = 1100, H = 420, padL = 56, padB = 38, padT = 16, padR = 16;
+    var W = 1100, H = 280, padL = 56, padB = 38, padT = 16, padR = 16;
     var innerW = W - padL - padR;
     var innerH = H - padT - padB;
 
