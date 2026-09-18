@@ -176,6 +176,133 @@
     });
   })();
 
+  // ---------------- Chart: reusable histogram (mass ratio, distance) ----------------
+  function buildHistogram(values, binWidth, minEdge, maxEdge) {
+    var binCount = Math.max(1, Math.round((maxEdge - minEdge) / binWidth));
+    var bins = [];
+    for (var i = 0; i < binCount; i++) {
+      bins.push({ x0: minEdge + i * binWidth, x1: minEdge + (i + 1) * binWidth, count: 0 });
+    }
+    values.forEach(function (v) {
+      var idx = Math.floor((v - minEdge) / binWidth);
+      if (idx < 0) idx = 0;
+      if (idx >= bins.length) idx = bins.length - 1;
+      bins[idx].count++;
+    });
+    return bins;
+  }
+
+  function renderHistogram(svgId, bins, tickLabelFn, hoverLabelFn) {
+    var svg = document.getElementById(svgId);
+    if (!svg || !bins.length) return;
+
+    var W = 1100, H = 154, padL = 32, padB = 22, padT = 16, padR = 8;
+    var innerW = W - padL - padR;
+    var innerH = H - padT - padB;
+    var maxVal = Math.max.apply(null, bins.map(function (b) { return b.count; }));
+    if (maxVal <= 0) maxVal = 1;
+    var barW = innerW / bins.length;
+
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.innerHTML = "";
+
+    var svgns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs) {
+      var e = document.createElementNS(svgns, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    svg.appendChild(el("line", {
+      class: "axis-line", x1: padL, y1: H - padB, x2: W - padR, y2: H - padB,
+    }));
+
+    var tickEvery = Math.max(1, Math.ceil(bins.length / 12));
+
+    bins.forEach(function (b, i) {
+      var x = padL + i * barW;
+      var h = (b.count / maxVal) * innerH;
+      var yTop = H - padB - h;
+
+      var group = el("g", { class: "hist-group" });
+      group.style.cursor = "default";
+      var titleEl = document.createElementNS(svgns, "title");
+      titleEl.textContent = hoverLabelFn(b);
+      group.appendChild(titleEl);
+
+      group.appendChild(el("rect", {
+        class: "bar-hit", x: x, y: padT, width: barW, height: innerH,
+      }));
+
+      if (h > 0) {
+        group.appendChild(el("rect", {
+          class: "bar",
+          x: x + barW * 0.08,
+          y: yTop,
+          width: Math.max(barW * 0.84, 1),
+          height: h,
+          rx: 1.5,
+        }));
+        if (barW > 20) {
+          var countLabel = el("text", { class: "bar-label", x: x + barW / 2, y: yTop - 4, "text-anchor": "middle" });
+          countLabel.textContent = String(b.count);
+          svg.appendChild(countLabel);
+        }
+      }
+
+      svg.appendChild(group);
+
+      if (i % tickEvery === 0 || i === bins.length - 1) {
+        var t = el("text", { x: x, y: H - 6, "text-anchor": "middle" });
+        t.textContent = tickLabelFn(b);
+        svg.appendChild(t);
+      }
+    });
+  }
+
+  // Planet-to-host mass ratio: log10(pl_bmassj[M_Jup] * M_Jup-in-M_sun / st_mass[M_sun])
+  (function renderMassRatioChart() {
+    var M_JUP_IN_MSUN = 0.0009543;
+    var logRatios = [];
+    nonFfpRows.forEach(function (r) {
+      if (r.is_host_only_row) return;
+      if (r.pl_bmassj == null || r.st_mass == null || r.st_mass <= 0) return;
+      var q = (r.pl_bmassj * M_JUP_IN_MSUN) / r.st_mass;
+      if (q > 0) logRatios.push(Math.log10(q));
+    });
+    if (!logRatios.length) return;
+    var binWidth = 0.25;
+    var minEdge = Math.floor(Math.min.apply(null, logRatios) / binWidth) * binWidth;
+    var maxEdge = Math.ceil(Math.max.apply(null, logRatios) / binWidth) * binWidth;
+    if (maxEdge <= minEdge) maxEdge = minEdge + binWidth;
+    var bins = buildHistogram(logRatios, binWidth, minEdge, maxEdge);
+    renderHistogram(
+      "massRatioChart",
+      bins,
+      function (b) { return b.x0.toFixed(2); },
+      function (b) { return "log₁₀(q) " + b.x0.toFixed(2) + " to " + b.x1.toFixed(2) + ": " + b.count; }
+    );
+  })();
+
+  // System distance from the Sun, clipped to 0–10 kpc
+  (function renderDistanceChart() {
+    var kpcVals = [];
+    nonFfpRows.forEach(function (r) {
+      if (r.is_host_only_row) return;
+      if (r.sy_dist == null) return;
+      var kpc = r.sy_dist / 1000;
+      if (kpc >= 0 && kpc <= 10) kpcVals.push(kpc);
+    });
+    if (!kpcVals.length) return;
+    var bins = buildHistogram(kpcVals, 0.5, 0, 10);
+    renderHistogram(
+      "distanceChart",
+      bins,
+      function (b) { return b.x0.toFixed(1); },
+      function (b) { return b.x0.toFixed(1) + "–" + b.x1.toFixed(1) + " kpc: " + b.count; }
+    );
+  })();
+
   // ---------------- Table state ----------------
   var state = {
     q: "",

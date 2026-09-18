@@ -53,13 +53,27 @@
     </div>
   </section>
 
-  <section class="chart-card" id="chart">
-    <h2>Announcements per year</h2>
-    <p class="chart-note">Free-floating planet candidates are excluded from these counts — see the “Free-floating planet candidates” number above.</p>
-    <svg id="yearChart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
-    <div class="legend">
-      <span><i style="background:var(--planet)"></i>Planet</span>
-      <span><i style="background:var(--bdplanet)"></i>Planet/BD</span>
+  <section id="chart">
+    <div class="chart-card">
+      <h2>Announcements per year</h2>
+      <p class="chart-note">Free-floating planet candidates are excluded from these counts — see the “Free-floating planet candidates” number above.</p>
+      <svg id="yearChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
+      <div class="legend">
+        <span><i style="background:var(--planet)"></i>Planet</span>
+        <span><i style="background:var(--bdplanet)"></i>Planet/BD</span>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h2>Planet-to-host mass ratio</h2>
+      <p class="chart-note">Planet mass divided by host star mass (x-axis: log&#8321;&#8320; of the ratio), for KMTNet planets and Planet/BD objects with both masses measured. Host-only rows and free-floating candidates are excluded.</p>
+      <svg id="massRatioChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of planet-to-host star mass ratio"></svg>
+    </div>
+
+    <div class="chart-card">
+      <h2>Distance from the Sun</h2>
+      <p class="chart-note">System distance from the Sun, 0–10 kpc. Host-only rows and free-floating candidates are excluded.</p>
+      <svg id="distanceChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of system distance from the Sun, 0 to 10 kiloparsecs"></svg>
     </div>
   </section>
 
