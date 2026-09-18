@@ -121,11 +121,11 @@
   ];
 
   // FFPs have no host star, so "a" (semi-major axis) and "M_star" never apply —
-  // drop those columns entirely when the table is filtered to free-floating rows.
-  // FFPs have no host star, so "a", "M_star", and "M_E" never apply, and
-  // distance can't be pinned down (disk/bulge lens-distance degeneracy) —
-  // drop those columns entirely when filtered to free-floating rows.
-  var FFP_HIDDEN_COLUMNS = { pl_orbsmax: true, st_mass: true, pl_bmasse: true, sy_dist: true };
+  // FFPs have no host star, so "a", "M_star", and "M_E" never apply — drop
+  // those columns entirely when filtered to free-floating rows. Distance is
+  // kept: unmeasured for most FFP rows (shown as "—"), but a few (e.g. the
+  // parallax-measured KMT-2024-BLG-0792) do have a real value.
+  var FFP_HIDDEN_COLUMNS = { pl_orbsmax: true, st_mass: true, pl_bmasse: true };
   function getColumns() {
     if (state.type === "ffp") {
       return ALL_COLUMNS.filter(function (c) { return !FFP_HIDDEN_COLUMNS[c.key]; });
