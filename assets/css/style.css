@@ -66,7 +66,10 @@ html { background: #05060f; }
 
 body {
   margin: 0;
-  background: #05060f;
+  /* No background-color here: body's own opaque fill would paint in front of
+     the fixed body::before/::after backdrop layers (they're negative
+     z-index descendants of a non-stacking-context body), hiding them
+     entirely. html's background is the fallback behind everything. */
   color: var(--text);
   font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 0 max(16px, env(safe-area-inset-left)) 48px max(16px, env(safe-area-inset-right));
@@ -75,12 +78,10 @@ body {
 
 /* ---------- Fixed deep-space backdrop ---------- */
 /* Behind the whole page (not just the hero), so every panel reads as a
-   glass card floating over the sky. To swap in one of KMTNet's own
-   night-sky photos, add it as the first layer of body::before's
-   background-image, e.g.:
-     background-image: linear-gradient(...), url("images/kmtnet-milkyway.jpg");
-     background-size: cover; background-position: center;
-   and it will sit under the same dark gradient + stars for legibility. */
+   glass card floating over the sky. The last background-image layer is a
+   real KMTNet night-sky photo (Milky Way over a KMTNet dome, cropped to
+   sky only); the color glows and dark veil above it stay translucent so
+   the photo shows through while keeping text legible. */
 body::before,
 body::after {
   content: "";
@@ -95,8 +96,11 @@ body::before {
     radial-gradient(ellipse 55% 45% at 12% 10%, rgba(130, 110, 255, 0.32), transparent 60%),
     radial-gradient(ellipse 45% 35% at 90% 5%, rgba(224, 138, 44, 0.22), transparent 60%),
     radial-gradient(ellipse 60% 50% at 65% 100%, rgba(60, 150, 220, 0.2), transparent 60%),
-    linear-gradient(180deg, #05060f 0%, #0a0d1e 45%, #12162c 100%);
-  background-size: 100% 100%;
+    linear-gradient(180deg, rgba(5, 6, 15, 0.55) 0%, rgba(10, 13, 30, 0.68) 45%, rgba(18, 22, 44, 0.85) 100%),
+    url("../images/milkyway-bg.jpg");
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover;
+  background-position: 0 0, 0 0, 0 0, 0 0, center 25%;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
