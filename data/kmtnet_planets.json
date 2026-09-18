@@ -7068,7 +7068,8 @@
     "pl_bmassj_err1": 0.08023197,
     "pl_bmassj_err2": -0.0276879,
     "pl_bmasse_err1": 25.5,
-    "pl_bmasse_err2": -8.8
+    "pl_bmasse_err2": -8.8,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 244,
@@ -7813,7 +7814,8 @@
     "pl_bmassj_err1": 0.15,
     "pl_bmassj_err2": -0.16,
     "pl_bmasse_err1": 47.67426105,
-    "pl_bmasse_err2": -50.85254512
+    "pl_bmasse_err2": -50.85254512,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 270,
