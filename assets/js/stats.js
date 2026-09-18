@@ -410,6 +410,99 @@
     );
   })();
 
+  // ---------------- Chart: planet mass vs. orbital period (log-log scatter) ----------------
+  // Orbital period isn't directly measured for most microlensing planets, so it's
+  // derived via Kepler's third law from the semi-major axis and host star mass,
+  // assuming a circular orbit: P[yr] = sqrt(a[au]^3 / M_star[M_sun]).
+  (function renderMassPeriodChart() {
+    var svg = document.getElementById("massPeriodChart");
+    if (!svg) return;
+
+    var points = [];
+    nonFfpRows.forEach(function (r) {
+      if (r.is_host_only_row) return;
+      if (r.pl_orbsmax == null || r.st_mass == null || r.st_mass <= 0) return;
+      if (r.pl_bmassj == null || r.pl_bmassj <= 0) return;
+      var period = Math.sqrt(Math.pow(r.pl_orbsmax, 3) / r.st_mass);
+      if (period > 0) points.push({ period: period, mass: r.pl_bmassj, row: r });
+    });
+    if (!points.length) return;
+
+    var W = 1100, H = 420, padL = 56, padB = 38, padT = 16, padR = 16;
+    var innerW = W - padL - padR;
+    var innerH = H - padT - padB;
+
+    var xVals = points.map(function (p) { return p.period; });
+    var yVals = points.map(function (p) { return p.mass; });
+    var xMinExp = Math.floor(Math.log10(Math.min.apply(null, xVals)));
+    var xMaxExp = Math.ceil(Math.log10(Math.max.apply(null, xVals)));
+    var yMinExp = Math.floor(Math.log10(Math.min.apply(null, yVals)));
+    var yMaxExp = Math.ceil(Math.log10(Math.max.apply(null, yVals)));
+    if (xMaxExp <= xMinExp) xMaxExp = xMinExp + 1;
+    if (yMaxExp <= yMinExp) yMaxExp = yMinExp + 1;
+
+    function xPix(v) { return padL + (Math.log10(v) - xMinExp) / (xMaxExp - xMinExp) * innerW; }
+    function yPix(v) { return padT + innerH - (Math.log10(v) - yMinExp) / (yMaxExp - yMinExp) * innerH; }
+    function fmtTick(exp) {
+      var v = Math.pow(10, exp);
+      return v >= 1 ? v.toLocaleString() : String(v);
+    }
+
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.innerHTML = "";
+
+    var svgns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs) {
+      var e = document.createElementNS(svgns, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    for (var xe = xMinExp; xe <= xMaxExp; xe++) {
+      var gx = xPix(Math.pow(10, xe));
+      svg.appendChild(el("line", { class: "grid-line", x1: gx, y1: padT, x2: gx, y2: H - padB }));
+      var xt = el("text", { x: gx, y: H - padB + 14, "text-anchor": "middle" });
+      xt.textContent = fmtTick(xe);
+      svg.appendChild(xt);
+    }
+    for (var ye = yMinExp; ye <= yMaxExp; ye++) {
+      var gy = yPix(Math.pow(10, ye));
+      svg.appendChild(el("line", { class: "grid-line", x1: padL, y1: gy, x2: W - padR, y2: gy }));
+      var yt = el("text", { x: padL - 8, y: gy + 3, "text-anchor": "end" });
+      yt.textContent = fmtTick(ye);
+      svg.appendChild(yt);
+    }
+
+    svg.appendChild(el("line", { class: "axis-line", x1: padL, y1: H - padB, x2: W - padR, y2: H - padB }));
+    svg.appendChild(el("line", { class: "axis-line", x1: padL, y1: padT, x2: padL, y2: H - padB }));
+
+    var xTitle = el("text", { class: "axis-title", x: padL + innerW / 2, y: H - 4, "text-anchor": "middle" });
+    xTitle.textContent = "Orbital period (yr)";
+    svg.appendChild(xTitle);
+
+    var yMid = padT + innerH / 2;
+    var yTitle = el("text", {
+      class: "axis-title", x: 14, y: yMid, "text-anchor": "middle",
+      transform: "rotate(-90 14 " + yMid + ")",
+    });
+    yTitle.textContent = "Planet mass (M_Jup)";
+    svg.appendChild(yTitle);
+
+    points.forEach(function (p) {
+      var cx = xPix(p.period), cy = yPix(p.mass);
+      var group = el("g", { class: "scatter-group" });
+      group.addEventListener("click", function () { openDrawer(p.row); });
+      var titleEl = document.createElementNS(svgns, "title");
+      titleEl.textContent = p.row.name + " — " + p.mass.toFixed(2) + " M_Jup, P ≈ " + p.period.toFixed(3) + " yr";
+      group.appendChild(titleEl);
+      group.appendChild(el("circle", {
+        class: "point" + (p.row._type === "bdplanet" ? " bd" : ""),
+        cx: cx, cy: cy, r: 4,
+      }));
+      svg.appendChild(group);
+    });
+  })();
+
   // ---------------- Year-bar popup ----------------
   var yearOverlay = document.getElementById("yearOverlay");
   var yearModal = document.getElementById("yearModal");
