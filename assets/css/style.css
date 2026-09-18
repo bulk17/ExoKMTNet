@@ -239,11 +239,14 @@ a { color: var(--link); }
 
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 150px);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
 }
 
-.stat-grid-secondary { margin-top: 10px; }
+.stat-grid-secondary {
+  grid-template-columns: repeat(auto-fill, 220px);
+  margin-top: 10px;
+}
 
 .stat-card {
   background: var(--bg-elev);
