@@ -243,8 +243,6 @@ a { color: var(--link); }
   gap: 10px;
 }
 
-.stat-grid-secondary { margin-top: 10px; }
-
 .stat-card {
   background: var(--bg-elev);
   border: 1px solid var(--border);

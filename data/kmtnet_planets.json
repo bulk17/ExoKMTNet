@@ -7038,7 +7038,8 @@
     "pl_bmassj_err1": 39.81,
     "pl_bmassj_err2": -13.62,
     "pl_bmasse_err1": 12652.74888267,
-    "pl_bmasse_err2": -4328.82290334
+    "pl_bmasse_err2": -4328.82290334,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 243,
@@ -7069,7 +7070,8 @@
     "pl_bmassj_err2": -0.0276879,
     "pl_bmasse_err1": 25.5,
     "pl_bmasse_err2": -8.8,
-    "binary_host_status": "confirmed"
+    "binary_host_status": "confirmed",
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 244,
