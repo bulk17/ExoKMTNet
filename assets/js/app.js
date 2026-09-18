@@ -105,7 +105,7 @@
     pageSize: 50,
   };
 
-  var COLUMNS = [
+  var ALL_COLUMNS = [
     { key: "seq", label: "#", numeric: true },
     { key: "name", label: "Planet Name" },
     { key: "_type", label: "Type" },
@@ -113,12 +113,21 @@
     { key: "pl_bmasse", label: "Mass", unit: "M_E", numeric: true },
     { key: "pl_orbsmax", label: "a", unit: "au", numeric: true },
     { key: "st_mass", label: "M_star", unit: "M_sun", numeric: true },
-    { key: "sy_dist", label: "Dist", unit: "pc", numeric: true },
+    { key: "sy_dist", label: "Distance", unit: "pc", numeric: true },
     { key: "ra", label: "RA" },
     { key: "dec", label: "Dec" },
     { key: "pub_year", label: "Year", numeric: true },
     { key: "ads_link", label: "Publication" },
   ];
+
+  // FFPs have no host star, so "a" (semi-major axis) and "M_star" never apply —
+  // drop those columns entirely when the table is filtered to free-floating rows.
+  function getColumns() {
+    if (state.type === "ffp") {
+      return ALL_COLUMNS.filter(function (c) { return c.key !== "pl_orbsmax" && c.key !== "st_mass"; });
+    }
+    return ALL_COLUMNS;
+  }
 
   var tbody = document.querySelector("#dataTable tbody");
   var thead = document.querySelector("#dataTable thead tr");
@@ -269,7 +278,7 @@
 
   function renderHead() {
     thead.innerHTML = "";
-    COLUMNS.forEach(function (col) {
+    getColumns().forEach(function (col) {
       var th = document.createElement("th");
       var labelSpan = document.createElement("span");
       labelSpan.className = "col-label";
@@ -294,6 +303,12 @@
         dbSpan.className = "col-unit col-disk-bulge";
         dbSpan.textContent = "disk/bulge";
         th.appendChild(dbSpan);
+      }
+      if (col.key === "sy_dist") {
+        var distDbSpan = document.createElement("span");
+        distDbSpan.className = "col-unit col-disk-bulge";
+        distDbSpan.textContent = "(disk/bulge)";
+        th.appendChild(distDbSpan);
       }
       th.addEventListener("click", function () {
         if (state.sortKey === col.key) {
@@ -321,11 +336,12 @@
     currentPageRows = pageRows;
 
     renderHead();
+    var cols = getColumns();
     tbody.innerHTML = pageRows.map(function (r, i) {
       var rank = start + i + 1;
       return (
         '<tr data-id="' + r._id + '">' +
-        COLUMNS.map(function (c) { return "<td>" + cellHtml(r, c, rank) + "</td>"; }).join("") +
+        cols.map(function (c) { return "<td>" + cellHtml(r, c, rank) + "</td>"; }).join("") +
         "</tr>"
       );
     }).join("");

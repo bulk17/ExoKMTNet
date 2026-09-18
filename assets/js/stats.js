@@ -61,7 +61,7 @@
     { key: "pl_bmasse", label: "Mass", unit: "M_E", numeric: true },
     { key: "pl_orbsmax", label: "a", unit: "au", numeric: true },
     { key: "st_mass", label: "M_star", unit: "M_sun", numeric: true },
-    { key: "sy_dist", label: "Dist", unit: "pc", numeric: true },
+    { key: "sy_dist", label: "Distance", unit: "pc", numeric: true },
     { key: "ra", label: "RA" },
     { key: "dec", label: "Dec" },
     { key: "pub_year", label: "Year", numeric: true },
