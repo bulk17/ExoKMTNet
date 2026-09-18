@@ -98,8 +98,12 @@ body::before {
     radial-gradient(ellipse 60% 50% at 65% 100%, rgba(60, 150, 220, 0.2), transparent 60%),
     linear-gradient(180deg, rgba(5, 6, 15, 0.55) 0%, rgba(10, 13, 30, 0.68) 45%, rgba(18, 22, 44, 0.85) 100%),
     url("../images/milkyway-bg.jpg");
-  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, cover;
-  background-position: 0 0, 0 0, 0 0, 0 0, center 25%;
+  /* The photo scales to viewport width with height auto (not "cover"),
+     since "cover" against a fixed full-viewport-height box would force a
+     ~2.25x upscale of the short sky crop on typical screens, softening it
+     visibly. Width-matching keeps the enlargement much closer to 1x. */
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% auto;
+  background-position: 0 0, 0 0, 0 0, 0 0, center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
