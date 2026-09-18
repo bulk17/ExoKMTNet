@@ -406,7 +406,8 @@
       "distanceChart",
       bins,
       function (b) { return b.x0.toFixed(1); },
-      function (b) { return b.x0.toFixed(1) + "–" + b.x1.toFixed(1) + " kpc: " + b.count; }
+      function (b) { return b.x0.toFixed(1) + "–" + b.x1.toFixed(1) + " kpc: " + b.count; },
+      { contiguous: true }
     );
   })();
 
