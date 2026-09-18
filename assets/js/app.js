@@ -73,11 +73,19 @@
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
   var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
+  var binaryCount = rows.filter(function (r) { return r.binary_host_status === "confirmed"; }).length;
+  var multiHosts = {};
+  rows.forEach(function (r) {
+    if (r.multi_planet_status === "confirmed") multiHosts[r.host_guess] = true;
+  });
+  var multiCount = Object.keys(multiHosts).length;
 
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
   setText("statBd", bdCount);
   setText("statAllEvents", allEventsNonFfp.length);
+  setText("statBinary", binaryCount);
+  setText("statMulti", multiCount);
 
   if (window.KMTNET_LIST_UPDATED) {
     var parts = window.KMTNET_LIST_UPDATED.split("-");
@@ -174,6 +182,7 @@
     type: "all",
     massMax: "30",
     scope: "kmtnet", // "kmtnet" (default catalog) or "all" (+ non-KMTNet NASA Exoplanet Archive events)
+    special: null, // null, "binary" (confirmed binary-star hosts), or "multi" (confirmed multi-planet systems)
     sortKey: "seq",
     sortDir: -1,
     page: 1,
@@ -299,6 +308,8 @@
       } else if (state.massMax === "13") {
         if (r._type !== "planet" || r.pl_bmassj == null || r.pl_bmassj > 13) return false;
       }
+      if (state.special === "binary" && r.binary_host_status !== "confirmed") return false;
+      if (state.special === "multi" && r.multi_planet_status !== "confirmed") return false;
       if (!q) return true;
       return (
         (r.name && r.name.toLowerCase().indexOf(q) !== -1) ||
@@ -521,15 +532,18 @@
   var ffpCard = document.getElementById("ffpCard");
   var totalCard = document.getElementById("totalCard");
   var bdCard = document.getElementById("bdCard");
+  var binaryCard = document.getElementById("binaryCard");
+  var multiCard = document.getElementById("multiCard");
   var tableSection = document.getElementById("table");
 
-  function applyTypeFilter(type, massMax, scope) {
+  function applyTypeFilter(type, massMax, scope, special) {
     massMax = massMax || "all";
     scope = scope || "kmtnet";
     state.q = "";
     state.type = type;
     state.massMax = massMax;
     state.scope = scope;
+    state.special = special || null;
     state.page = 1;
     searchInput.value = "";
     typeSelect.value = type;
@@ -552,6 +566,8 @@
   onCardActivate(ffpCard, function () { applyTypeFilter("ffp", "all"); });
   onCardActivate(totalCard, function () { applyTypeFilter("all", "30"); });
   onCardActivate(bdCard, function () { applyTypeFilter("bdplanet", "all"); });
+  onCardActivate(binaryCard, function () { applyTypeFilter("all", "all", "kmtnet", "binary"); });
+  onCardActivate(multiCard, function () { applyTypeFilter("all", "all", "kmtnet", "multi"); });
 
   // ---------------- Year-bar popup ----------------
   var yearOverlay = document.getElementById("yearOverlay");

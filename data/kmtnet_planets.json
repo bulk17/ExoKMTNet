@@ -236,7 +236,8 @@
     "pl_bmassj_err1": 3.19,
     "pl_bmassj_err2": -2.43,
     "pl_bmasse_err1": 1010.0,
-    "pl_bmasse_err2": -772.0
+    "pl_bmasse_err2": -772.0,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 9,
@@ -1213,7 +1214,8 @@
     "pl_bmassj_err1": 3.4,
     "pl_bmassj_err2": -1.1,
     "pl_bmasse_err1": 1100.0,
-    "pl_bmasse_err2": -350.0
+    "pl_bmasse_err2": -350.0,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 42,
@@ -1242,7 +1244,8 @@
     "pl_bmassj_err1": 5.1,
     "pl_bmassj_err2": -1.7,
     "pl_bmasse_err1": 1600.0,
-    "pl_bmasse_err2": -540.0
+    "pl_bmasse_err2": -540.0,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 43,
@@ -1329,7 +1332,8 @@
     "pl_bmassj_err1": 3.04,
     "pl_bmassj_err2": -2.0,
     "pl_bmasse_err1": 966.0,
-    "pl_bmasse_err2": -636.0
+    "pl_bmasse_err2": -636.0,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 46,
@@ -1529,7 +1533,8 @@
     "pl_bmassj_err1": 0.76,
     "pl_bmassj_err2": -0.35,
     "pl_bmasse_err1": 240.0,
-    "pl_bmasse_err2": -110.0
+    "pl_bmasse_err2": -110.0,
+    "multi_planet_status": "candidate"
   },
   {
     "seq": 53,
@@ -1555,7 +1560,8 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": false,
     "pl_bmasse": 88.99,
-    "eu_matched": true
+    "eu_matched": true,
+    "multi_planet_status": "candidate"
   },
   {
     "seq": 54,
@@ -1700,7 +1706,8 @@
     "pl_bmassj_err1": 0.00284745,
     "pl_bmassj_err2": -0.00277194,
     "pl_bmasse_err1": 0.905,
-    "pl_bmasse_err2": -0.881
+    "pl_bmasse_err2": -0.881,
+    "multi_planet_status": "candidate"
   },
   {
     "seq": 59,
@@ -2067,7 +2074,8 @@
     "pl_bmassj_err1": 1.13,
     "pl_bmassj_err2": -1.16,
     "pl_bmasse_err1": 359.14609991,
-    "pl_bmasse_err2": -368.68095212
+    "pl_bmasse_err2": -368.68095212,
+    "binary_host_status": "candidate"
   },
   {
     "seq": 72,
@@ -2443,7 +2451,8 @@
     "st_mass_err1": 0.25,
     "st_mass_err2": -0.26,
     "sy_dist_err1": 900.0,
-    "sy_dist_err2": -1100.0
+    "sy_dist_err2": -1100.0,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 85,
@@ -2472,7 +2481,8 @@
     "pl_bmassj_err1": 0.51,
     "pl_bmassj_err2": -0.23,
     "pl_bmasse_err1": 162.09248757,
-    "pl_bmasse_err2": -73.10053361
+    "pl_bmasse_err2": -73.10053361,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 86,
@@ -2501,7 +2511,8 @@
     "pl_bmassj_err1": 0.00084952,
     "pl_bmassj_err2": -0.00050342,
     "pl_bmasse_err1": 0.27,
-    "pl_bmasse_err2": -0.16
+    "pl_bmasse_err2": -0.16,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 87,
@@ -2530,7 +2541,8 @@
     "pl_bmassj_err1": 4.0,
     "pl_bmassj_err2": -3.1,
     "pl_bmasse_err1": 1271.313628,
-    "pl_bmasse_err2": -985.2680617
+    "pl_bmasse_err2": -985.2680617,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 88,
@@ -2820,7 +2832,8 @@
     "pl_bmassj_err1": 1.83,
     "pl_bmassj_err2": -1.17,
     "pl_bmasse_err1": 581.62598481,
-    "pl_bmasse_err2": -371.85923619
+    "pl_bmasse_err2": -371.85923619,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 98,
@@ -2849,7 +2862,8 @@
     "pl_bmassj_err1": 5.46,
     "pl_bmassj_err2": -3.5,
     "pl_bmasse_err1": 1735.34310222,
-    "pl_bmasse_err2": -1112.3994245
+    "pl_bmasse_err2": -1112.3994245,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 99,
@@ -2933,7 +2947,8 @@
     "pl_bmassj_err1": 0.31,
     "pl_bmassj_err2": -0.12,
     "pl_bmasse_err1": 98.52680617,
-    "pl_bmasse_err2": -38.13940884
+    "pl_bmasse_err2": -38.13940884,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 102,
@@ -2962,7 +2977,8 @@
     "pl_bmassj_err1": 0.35,
     "pl_bmassj_err2": -0.13,
     "pl_bmasse_err1": 111.23994245,
-    "pl_bmasse_err2": -41.31769291
+    "pl_bmasse_err2": -41.31769291,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 103,
@@ -3165,7 +3181,8 @@
     "pl_bmassj_err1": 0.12,
     "pl_bmassj_err2": -0.11,
     "pl_bmasse_err1": 38.13940884,
-    "pl_bmasse_err2": -34.96112477
+    "pl_bmasse_err2": -34.96112477,
+    "multi_planet_status": "candidate"
   },
   {
     "seq": 110,
@@ -3191,7 +3208,8 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": false,
     "pl_bmasse": 222.48,
-    "eu_matched": true
+    "eu_matched": true,
+    "multi_planet_status": "candidate"
   },
   {
     "seq": 111,
@@ -3679,7 +3697,8 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": false,
     "pl_bmasse": 699.22,
-    "eu_matched": true
+    "eu_matched": true,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 128,
@@ -5919,7 +5938,8 @@
     "discoverymethod": "Microlensing",
     "nasa_matched": false,
     "pl_bmasse": 1385.73,
-    "eu_matched": true
+    "eu_matched": true,
+    "binary_host_status": "confirmed"
   },
   {
     "seq": 205,
@@ -7380,7 +7400,8 @@
     "pl_bmassj_err1": 0.3,
     "pl_bmassj_err2": -0.21,
     "pl_bmasse_err1": 95.3485221,
-    "pl_bmasse_err2": -66.74396547
+    "pl_bmasse_err2": -66.74396547,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 256,
@@ -7409,7 +7430,8 @@
     "pl_bmassj_err2": -2.0,
     "pl_bmasse": 1271.313628,
     "pl_bmasse_err1": 394.10722468,
-    "pl_bmasse_err2": -635.656814
+    "pl_bmasse_err2": -635.656814,
+    "multi_planet_status": "confirmed"
   },
   {
     "seq": 257,
