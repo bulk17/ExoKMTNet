@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Statistics — KMTNet Exoplanet Archive</title>
 <meta name="description" content="Distributions of KMTNet-discovered exoplanets: announcements per year, planet-to-host mass ratio, and distance from the Sun." />
-<link rel="stylesheet" href="assets/css/style.css?v=20260919d" />
+<link rel="stylesheet" href="assets/css/style.css?v=20260919e" />
 </head>
 <body>
 <div class="wrap">
@@ -59,23 +59,22 @@
 
     <div class="chart-card">
       <h2>Planet-to-host mass ratio</h2>
-      <p class="chart-note">Planet mass divided by host star mass (x-axis: log&#8321;&#8320; of the ratio), for KMTNet planets and Planet/BD objects with both masses measured. Host-only rows and free-floating candidates are excluded.</p>
+      <p class="chart-note">Planet mass divided by host star mass (x-axis: log&#8321;&#8320; of the ratio), for KMTNet planets with both masses measured. Host-only rows, Planet/BD boundary objects and free-floating candidates are excluded.</p>
       <svg id="massRatioChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of planet-to-host star mass ratio"></svg>
     </div>
 
     <div class="chart-card">
       <h2>Distance from the Sun</h2>
-      <p class="chart-note">System distance from the Sun, 0–10 kpc. Host-only rows and free-floating candidates are excluded.</p>
+      <p class="chart-note">System distance from the Sun, 0–10 kpc. Host-only rows, Planet/BD boundary objects and free-floating candidates are excluded.</p>
       <svg id="distanceChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of system distance from the Sun, 0 to 10 kiloparsecs"></svg>
     </div>
 
     <div class="chart-card">
       <h2>Planet mass vs. orbital period</h2>
-      <p class="chart-note">Both axes are log-scaled. Host-only rows and free-floating candidates are excluded. Click a point to open that planet's detail.</p>
+      <p class="chart-note">Both axes are log-scaled. Host-only rows, Planet/BD boundary objects and free-floating candidates are excluded. Click a point to open that planet's detail.</p>
       <svg id="massPeriodChart" class="data-chart" viewBox="0 0 1100 280" role="img" aria-label="Scatter plot of planet mass versus orbital period, log-log scale"></svg>
       <div class="legend">
         <span><i style="background:var(--planet)"></i>Planet</span>
-        <span><i style="background:var(--bdplanet)"></i>Planet/BD</span>
       </div>
     </div>
   </section>
@@ -103,6 +102,6 @@
 </div>
 
 <script src="assets/data/planets.js?v=20260918"></script>
-<script src="assets/js/stats.js?v=20260919g"></script>
+<script src="assets/js/stats.js?v=20260919h"></script>
 </body>
 </html>

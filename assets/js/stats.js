@@ -25,7 +25,10 @@
     });
   });
 
-  var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
+  // Every distribution chart on this page (mass ratio, distance, mass vs.
+  // period) is scoped to KMTNet's Planet type only — Planet/BD boundary
+  // objects (> 30 M_Jup) are excluded, same as everywhere else on the site.
+  var planetRows = rows.filter(function (r) { return r._type === "planet"; });
 
   // Non-KMTNet microlensing planets (NASA Exoplanet Archive), used only by the
   // cumulative "all microlensing planets" chart below — kept out of `rows` so
@@ -495,7 +498,7 @@
   (function renderMassRatioChart() {
     var M_JUP_IN_MSUN = 0.0009543;
     var logRatios = [];
-    nonFfpRows.forEach(function (r) {
+    planetRows.forEach(function (r) {
       if (r.is_host_only_row) return;
       if (r.pl_bmassj == null || r.st_mass == null || r.st_mass <= 0) return;
       var q = (r.pl_bmassj * M_JUP_IN_MSUN) / r.st_mass;
@@ -519,7 +522,7 @@
   // System distance from the Sun, clipped to 0–10 kpc
   (function renderDistanceChart() {
     var kpcVals = [];
-    nonFfpRows.forEach(function (r) {
+    planetRows.forEach(function (r) {
       if (r.is_host_only_row) return;
       if (r.sy_dist == null) return;
       var kpc = r.sy_dist / 1000;
@@ -545,7 +548,7 @@
     if (!svg) return;
 
     var points = [];
-    nonFfpRows.forEach(function (r) {
+    planetRows.forEach(function (r) {
       if (r.is_host_only_row) return;
       if (r.pl_orbsmax == null || r.st_mass == null || r.st_mass <= 0) return;
       if (r.pl_bmassj == null || r.pl_bmassj <= 0) return;
@@ -621,10 +624,7 @@
       var titleEl = document.createElementNS(svgns, "title");
       titleEl.textContent = p.row.name + " — " + p.mass.toFixed(2) + " M_Jup, P ≈ " + p.period.toFixed(3) + " yr";
       group.appendChild(titleEl);
-      group.appendChild(el("circle", {
-        class: "point" + (p.row._type === "bdplanet" ? " bd" : ""),
-        cx: cx, cy: cy, r: 4,
-      }));
+      group.appendChild(el("circle", { class: "point", cx: cx, cy: cy, r: 4 }));
       svg.appendChild(group);
     });
   })();

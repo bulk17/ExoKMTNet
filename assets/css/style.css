@@ -327,7 +327,6 @@ a { color: var(--link); }
 .data-chart .grid-line { stroke: var(--border); stroke-width: 1; opacity: 0.6; }
 .data-chart .axis-title { fill: var(--text-dim); font-size: 10.5px; font-weight: 600; letter-spacing: 0.02em; }
 .data-chart .point { fill: var(--planet); fill-opacity: 0.8; stroke: var(--bg-elev); stroke-width: 0.5; r: 4; transition: r 120ms ease, fill-opacity 120ms ease; }
-.data-chart .point.bd { fill: var(--bdplanet); }
 .data-chart .scatter-group { cursor: pointer; }
 .data-chart .scatter-group:hover .point { r: 6; fill-opacity: 1; }
 
