@@ -83,16 +83,21 @@
     if (r.multi_planet_status === "confirmed") multiHosts[r.host_guess] = true;
   });
   var multiCount = Object.keys(multiHosts).length;
-  // Count distinct discovery papers behind the "Planets" total specifically
-  // (Planet/BD- and FFP-only papers don't count) by title rather than ADS
-  // link — a couple of papers are catalogued under both their arXiv preprint
-  // and published-journal links, which would otherwise double-count the
-  // same paper.
-  var paperTitles = {};
+  // Count distinct discovery papers by title rather than ADS link — a couple
+  // of papers are catalogued under both their arXiv preprint and published-
+  // journal links, which would otherwise double-count the same paper. Split
+  // into papers that reported at least one true Planet vs. papers that only
+  // ever reported Planet/BD or FFP objects.
+  var paperHasPlanet = {};
   rows.forEach(function (r) {
-    if (r._type === "planet" && r.title) paperTitles[r.title] = true;
+    if (!r.title) return;
+    if (!(r.title in paperHasPlanet)) paperHasPlanet[r.title] = false;
+    if (r._type === "planet") paperHasPlanet[r.title] = true;
   });
-  var paperCount = Object.keys(paperTitles).length;
+  var planetPaperCount = 0, otherPaperCount = 0;
+  Object.keys(paperHasPlanet).forEach(function (t) {
+    if (paperHasPlanet[t]) planetPaperCount++; else otherPaperCount++;
+  });
 
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
@@ -101,7 +106,7 @@
   setText("statNonKmt", otherPlanetCount);
   setText("statBinary", binaryCount);
   setText("statMulti", multiCount);
-  setText("statPapers", paperCount);
+  setText("statPapers", planetPaperCount + " / " + otherPaperCount);
 
   if (window.KMTNET_LIST_UPDATED) {
     var parts = window.KMTNET_LIST_UPDATED.split("-");
