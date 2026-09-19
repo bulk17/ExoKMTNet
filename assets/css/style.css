@@ -281,10 +281,11 @@ a { color: var(--link); }
   color: var(--text);
 }
 
-.stat-card .num-note {
-  font-size: 12px;
-  font-weight: 400;
+.stat-card .num-title {
+  font-size: 14px;
+  font-weight: 600;
   color: var(--text-dim);
+  margin-bottom: 1px;
 }
 
 .stat-card .label {
