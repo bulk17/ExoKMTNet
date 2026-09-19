@@ -317,7 +317,6 @@ a { color: var(--link); }
 
 .data-chart { width: 100%; height: auto; display: block; }
 .data-chart .bar { fill: var(--planet); }
-#yearChart .bar.bd { fill: var(--bdplanet); }
 .data-chart text { fill: var(--text-dim); font-size: 9.5px; font-family: var(--font-mono); }
 .data-chart .bar-label { fill: var(--text); font-size: 9.5px; font-weight: 600; pointer-events: none; }
 .data-chart .axis-line { stroke: var(--border); stroke-width: 1; }

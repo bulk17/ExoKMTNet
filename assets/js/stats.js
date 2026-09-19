@@ -204,17 +204,17 @@
     if (e.key === "Escape") { closeDrawer(); closeYearModal(); }
   });
 
-  // ---------------- Chart: discoveries per year (free-floating candidates excluded) ----------------
+  // ---------------- Chart: discoveries per year (Planet/BD and free-floating candidates excluded) ----------------
   (function renderChart() {
     var svg = document.getElementById("yearChart");
     if (!svg) return;
     var byYear = {};
-    nonFfpRows.forEach(function (r) {
+    rows.forEach(function (r) {
+      if (r._type !== "planet") return;
       var y = r.pub_year;
       if (!y) return;
-      byYear[y] = byYear[y] || { total: 0, bd: 0 };
+      byYear[y] = byYear[y] || { total: 0 };
       byYear[y].total++;
-      if (r._type === "bdplanet") byYear[y].bd++;
     });
     var yearsSorted = Object.keys(byYear).map(Number).sort(function (a, b) { return a - b; });
     if (!yearsSorted.length) return;
@@ -241,8 +241,7 @@
     yearsSorted.forEach(function (y, i) {
       var d = byYear[y];
       var x = padL + i * barW;
-      var planetH = ((d.total - d.bd) / maxVal) * innerH;
-      var bdH = (d.bd / maxVal) * innerH;
+      var barH = (d.total / maxVal) * innerH;
       var yBase = H - padB;
 
       var group = el("g", { class: "year-group" });
@@ -257,22 +256,17 @@
         x: x, y: padT, width: barW, height: innerH,
       }));
 
-      var segs = [
-        { h: planetH, cls: "bar" },
-        { h: bdH, cls: "bar bd" },
-      ];
-      segs.forEach(function (s) {
-        if (s.h <= 0) return;
-        yBase -= s.h;
+      if (barH > 0) {
+        yBase -= barH;
         group.appendChild(el("rect", {
-          class: s.cls,
+          class: "bar",
           x: x + barW * 0.12,
           y: yBase,
           width: Math.max(barW * 0.76, 1),
-          height: s.h,
+          height: barH,
           rx: 1.5,
         }));
-      });
+      }
 
       svg.appendChild(group);
 
@@ -645,12 +639,11 @@
   var yearTbody = document.querySelector("#yearTable tbody");
 
   function openYearModal(year) {
-    var yearRows = rows.filter(function (r) { return r.pub_year === year && r._type !== "ffp"; });
+    var yearRows = rows.filter(function (r) { return r.pub_year === year && r._type === "planet"; });
     yearRows.sort(function (a, b) { return b.seq - a.seq; });
-    var bdCount = yearRows.filter(function (r) { return r._type === "bdplanet"; }).length;
 
     yearModalTitle.textContent = "Planets Announced in " + year;
-    yearModalSubtitle.textContent = yearRows.length + " " + (yearRows.length === 1 ? "entry" : "entries") + " (Planet/BD: " + bdCount + "개)";
+    yearModalSubtitle.textContent = yearRows.length + " " + (yearRows.length === 1 ? "entry" : "entries");
 
     yearThead.innerHTML = COLUMNS.map(function (col) {
       return (
