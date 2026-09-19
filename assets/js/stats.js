@@ -403,6 +403,33 @@
       label.textContent = p.yearlyPct + "%";
       svg.appendChild(label);
     });
+
+    var csvLink = document.getElementById("cumulativeCsvLink");
+    if (csvLink) {
+      csvLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        var header = ["year", "cumulative_total", "kmtnet_count", "total_count", "kmtnet_annual_share_percent"];
+        var lines = [header.join(",")];
+        points.forEach(function (p) {
+          lines.push([
+            p.year,
+            p.cumTotal,
+            p.kmtYear,
+            p.totalYear,
+            p.yearlyPct === null ? "" : p.yearlyPct,
+          ].join(","));
+        });
+        var blob = new Blob([lines.join("\n")], { type: "text/csv" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "kmtnet_cumulative_and_share_" + points[0].year + "-" + points[points.length - 1].year + ".csv";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      });
+    }
   })();
 
   // ---------------- Chart: reusable histogram (mass ratio, distance) ----------------

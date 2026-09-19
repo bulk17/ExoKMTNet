@@ -349,6 +349,8 @@ a { color: var(--link); }
 }
 .legend span { display: inline-flex; align-items: center; gap: 6px; }
 .legend i { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.legend .csv-link { margin-left: auto; text-decoration: none; }
+.legend .csv-link:hover { text-decoration: underline; }
 
 /* ---------- Controls ---------- */
 .controls {
