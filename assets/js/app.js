@@ -83,12 +83,14 @@
     if (r.multi_planet_status === "confirmed") multiHosts[r.host_guess] = true;
   });
   var multiCount = Object.keys(multiHosts).length;
-  // Count distinct discovery papers by title rather than ADS link — a couple of
-  // papers are catalogued under both their arXiv preprint and published-journal
-  // links, which would otherwise double-count the same paper.
+  // Count distinct discovery papers behind the "Planets" total specifically
+  // (Planet/BD- and FFP-only papers don't count) by title rather than ADS
+  // link — a couple of papers are catalogued under both their arXiv preprint
+  // and published-journal links, which would otherwise double-count the
+  // same paper.
   var paperTitles = {};
   rows.forEach(function (r) {
-    if (r.title) paperTitles[r.title] = true;
+    if (r._type === "planet" && r.title) paperTitles[r.title] = true;
   });
   var paperCount = Object.keys(paperTitles).length;
 
