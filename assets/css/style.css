@@ -262,6 +262,10 @@ a { color: var(--link); }
 
 .stat-grid-secondary {
   margin-top: 10px;
+  /* Discovery papers has an extra title line, so it's naturally taller than
+     the rest — let each card size to its own content instead of grid's
+     default row-stretch, which would otherwise pull every card up to match. */
+  align-items: start;
 }
 
 .stat-card {
