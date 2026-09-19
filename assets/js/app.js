@@ -69,7 +69,11 @@
   }
 
   var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
-  var allEventsNonFfp = allEventsRows.filter(function (r) { return r._type !== "ffp"; });
+  // "All microlensing planets" counts true planets only (<= 30 M_Jup) — KMTNet's own
+  // Planet/BD boundary objects stay in the underlying data (see the "Planet/BD" card)
+  // but are excluded from this combined-catalog total, same as a >30 M_Jup NASA entry
+  // would be.
+  var allEventsNonFfp = allEventsRows.filter(function (r) { return r._type === "planet"; });
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
   var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
@@ -538,7 +542,7 @@
   var allEventsCard = document.getElementById("allEventsCard");
   var scopeNote = document.getElementById("scopeNote");
 
-  onCardActivate(allEventsCard, function () { applyTypeFilter("all", "all", "all"); });
+  onCardActivate(allEventsCard, function () { applyTypeFilter("all", "30", "all"); });
 
   render();
 })();
