@@ -27,15 +27,14 @@
     });
   });
 
-  // Non-KMTNet microlensing planets (NASA Exoplanet Archive), shown only in the
-  // "All microlensing events" popup — kept out of `rows` so the main table,
-  // stats and year chart stay scoped to the KMTNet catalog.
+  // Non-KMTNet microlensing planets (NASA Exoplanet Archive), shown only via
+  // the "All microlensing planets" and "Non-KMT planet" scopes — kept out of
+  // `rows` so the main table, stats and year chart stay scoped to KMTNet.
   var OTHER_RAW = window.OTHER_MICROLENSING_EVENTS || [];
-  var allEventsRows = rows.concat(
-    OTHER_RAW.map(function (r, i) {
-      return Object.assign({}, r, { _id: "other-" + i, _type: classify(r) });
-    })
-  );
+  var otherRows = OTHER_RAW.map(function (r, i) {
+    return Object.assign({}, r, { _id: "other-" + i, _type: classify(r) });
+  });
+  var allEventsRows = rows.concat(otherRows);
 
   // ---------------- Theme ----------------
   var themeToggle = document.getElementById("themeToggle");
@@ -77,6 +76,7 @@
   var planetCount = rows.filter(function (r) { return r._type === "planet"; }).length;
   var ffpCount = rows.filter(function (r) { return r._type === "ffp"; }).length;
   var bdCount = rows.filter(function (r) { return r._type === "bdplanet"; }).length;
+  var otherPlanetCount = otherRows.filter(function (r) { return r._type === "planet"; }).length;
   var binaryCount = rows.filter(function (r) { return r.binary_host_status === "confirmed"; }).length;
   var multiHosts = {};
   rows.forEach(function (r) {
@@ -88,6 +88,7 @@
   setText("statFfp", ffpCount);
   setText("statBd", bdCount);
   setText("statAllEvents", allEventsNonFfp.length);
+  setText("statNonKmt", otherPlanetCount);
   setText("statBinary", binaryCount);
   setText("statMulti", multiCount);
 
@@ -239,7 +240,7 @@
 
   function getFiltered() {
     var q = state.q.trim().toLowerCase();
-    var base = state.scope === "all" ? allEventsRows : rows;
+    var base = state.scope === "all" ? allEventsRows : state.scope === "other" ? otherRows : rows;
     return base.filter(function (r) {
       // "All types" means all planet types (Planet + Planet/BD) — free-floating
       // candidates are a separate category, reachable only via their own filter/card.
@@ -361,6 +362,8 @@
     var scopeTotal;
     if (state.scope === "all") {
       scopeTotal = allEventsNonFfp.length;
+    } else if (state.scope === "other") {
+      scopeTotal = otherPlanetCount;
     } else if (state.type === "bdplanet") {
       scopeTotal = bdCount;
     } else if (state.type === "ffp") {
@@ -532,7 +535,12 @@
     searchInput.value = "";
     typeSelect.value = type;
     massSelect.value = massMax;
-    scopeNote.hidden = scope !== "all";
+    scopeNote.hidden = scope === "kmtnet";
+    if (scope === "other") {
+      scopeNote.textContent = "Showing non-KMTNet microlensing planets from the NASA Exoplanet Archive only. Click “Planets” above to return to the KMTNet-only catalog.";
+    } else if (scope === "all") {
+      scopeNote.textContent = "Showing all microlensing planetary events, including non-KMTNet discoveries from the NASA Exoplanet Archive. Click “Planets” or “Free-floating planet candidates” above to return to the KMTNet-only catalog.";
+    }
     render();
     tableSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -558,9 +566,11 @@
   // KMTNet-only catalog and the full combined list, the same way the
   // Total-entries/FFP cards switch its type+mass filters.
   var allEventsCard = document.getElementById("allEventsCard");
+  var nonKmtCard = document.getElementById("nonKmtCard");
   var scopeNote = document.getElementById("scopeNote");
 
   onCardActivate(allEventsCard, function () { applyTypeFilter("all", "30", "all"); });
+  onCardActivate(nonKmtCard, function () { applyTypeFilter("planet", "30", "other"); });
 
   render();
 })();
