@@ -83,6 +83,14 @@
     if (r.multi_planet_status === "confirmed") multiHosts[r.host_guess] = true;
   });
   var multiCount = Object.keys(multiHosts).length;
+  // Count distinct discovery papers by title rather than ADS link — a couple of
+  // papers are catalogued under both their arXiv preprint and published-journal
+  // links, which would otherwise double-count the same paper.
+  var paperTitles = {};
+  rows.forEach(function (r) {
+    if (r.title) paperTitles[r.title] = true;
+  });
+  var paperCount = Object.keys(paperTitles).length;
 
   setText("statTotal", planetCount);
   setText("statFfp", ffpCount);
@@ -91,6 +99,7 @@
   setText("statNonKmt", otherPlanetCount);
   setText("statBinary", binaryCount);
   setText("statMulti", multiCount);
+  setText("statPapers", paperCount);
 
   if (window.KMTNET_LIST_UPDATED) {
     var parts = window.KMTNET_LIST_UPDATED.split("-");
