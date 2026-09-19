@@ -287,12 +287,16 @@
   })();
 
   // ---------------- Chart: cumulative total & KMTNet-weighted cumulative ----------------
-  // Both lines share ONE linear axis (plain counts). The dashed line is the
-  // cumulative total scaled by that year's own KMTNet fraction (KMTNet's count
-  // that year / that year's total count) — i.e. F = C * D/B, matching the
+  // Both lines share ONE linear axis (plain counts). The dashed line is plotted
+  // at the cumulative total scaled by that year's own KMTNet fraction (KMTNet's
+  // count that year / that year's total count) — i.e. F = C * D/B, matching the
   // Summary!F column (=[.D]/[.B]*[.C]) in the reference workbook. Since D/B is
   // always <= 1, F <= C for every single year by construction: the dashed line
-  // can never rise above the cumulative total line it's derived from.
+  // can never rise above the cumulative total line it's derived from. Its point
+  // labels show that same D/B fraction as a plain percentage (rounded, no
+  // decimals) rather than the F value itself, since the percentage is what's
+  // actually meaningful to read off — only the point's vertical position uses F.
+  // Shown from 2016, KMTNet's first confirmed planet.
   (function renderCumulativeChart() {
     var svg = document.getElementById("cumulativeChart");
     if (!svg) return;
@@ -324,8 +328,12 @@
         kmtYear: k,
         totalYear: t,
         kmtWeighted: t > 0 ? Math.round(cumTotal * (k / t)) : 0,
+        yearlyPct: t > 0 ? Math.round((k / t) * 100) : null,
       });
     }
+
+    var KMT_SHARE_START_YEAR = 2016; // KMTNet's first confirmed planet
+    var kmtPoints = points.filter(function (p) { return p.year >= KMT_SHARE_START_YEAR; });
 
     var W = 1100, H = 220, padL = 34, padR = 14, padT = 28, padB = 22;
     var innerW = W - padL - padR;
@@ -383,25 +391,23 @@
       svg.appendChild(label);
     });
 
-    var kmtPath = points.map(function (p, i) {
-      return (i === 0 ? "M" : "L") + xPix(i) + " " + yPix(p.kmtWeighted);
+    var kmtPath = kmtPoints.map(function (p, i) {
+      return (i === 0 ? "M" : "L") + xPix(points.indexOf(p)) + " " + yPix(p.kmtWeighted);
     }).join(" ");
     svg.appendChild(el("path", { class: "line pct-line", d: kmtPath }));
 
-    points.forEach(function (p, i) {
+    kmtPoints.forEach(function (p) {
+      var idx = points.indexOf(p);
       var group = el("g", { class: "line-point-group" });
       var titleEl = document.createElementNS(svgns, "title");
-      titleEl.textContent = p.year + ": " + p.kmtWeighted + " (cumulative total " + p.cumTotal +
-        " × that year's KMTNet share " + p.kmtYear + "/" + p.totalYear + ")";
+      titleEl.textContent = p.year + ": KMTNet " + p.kmtYear + " of " + p.totalYear + " (" + p.yearlyPct + "%)";
       group.appendChild(titleEl);
-      group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(i), cy: yPix(p.kmtWeighted), r: 3 }));
+      group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(idx), cy: yPix(p.kmtWeighted), r: 3 }));
       svg.appendChild(group);
 
-      if (p.kmtWeighted > 0) {
-        var label = el("text", { class: "bar-label pct-label", x: xPix(i), y: yPix(p.kmtWeighted) + 15, "text-anchor": "middle" });
-        label.textContent = String(p.kmtWeighted);
-        svg.appendChild(label);
-      }
+      var label = el("text", { class: "bar-label pct-label", x: xPix(idx), y: yPix(p.kmtWeighted) + 15, "text-anchor": "middle" });
+      label.textContent = p.yearlyPct + "%";
+      svg.appendChild(label);
     });
   })();
 
