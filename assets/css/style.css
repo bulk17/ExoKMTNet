@@ -253,15 +253,14 @@ a { color: var(--link); }
 
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  /* Fixed at 5 columns (the original card count) rather than auto-fit, so a
+     row showing fewer cards keeps the same per-card width as a full row —
+     the extra columns just stay empty instead of the cards stretching wider. */
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
   gap: 10px;
 }
 
 .stat-grid-secondary {
-  /* Explicit 5 columns, matching the row above's card count, so the 2
-     cards placed here end up exactly as wide as the ones above (with 3
-     unfilled columns keeping the same per-column width, not shown). */
-  grid-template-columns: repeat(5, minmax(120px, 1fr));
   margin-top: 10px;
 }
 
@@ -697,6 +696,10 @@ footer span:first-child { grid-column: 2; text-align: center; }
 footer span:last-child { grid-column: 3; justify-self: end; text-align: right; }
 
 @media (max-width: 640px) {
+  /* The fixed 5-column stat grid (kept for desktop so a partial row's cards
+     stay the same width as a full row) is too wide to fit a phone screen —
+     fall back to letting cards wrap to fit instead. */
+  .stat-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
   .drawer { width: 100%; }
   .controls .count { margin-left: 0; width: 100%; order: 5; }
   footer { display: flex; flex-direction: column; align-items: center; text-align: center; }
