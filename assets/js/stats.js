@@ -286,19 +286,17 @@
     });
   })();
 
-  // ---------------- Chart: cumulative total & KMTNet's yearly share ----------------
-  // Both lines share ONE linear axis (plain counts) instead of a dual left/right
-  // scale — a percentage is just a number from 0-100, so plotting it as a raw
-  // value on the same count axis as the cumulative total keeps it honestly
-  // below the total it's a share of, instead of two independently-scaled axes
-  // making the share line *look* like it tops out higher than the total. The
-  // KMTNet share is each year's own KMTNet-count/total-count ratio (bounded
-  // 0-100% by construction), shown from 2016 (KMTNet's first confirmed planet).
+  // ---------------- Chart: cumulative total & KMTNet-weighted cumulative ----------------
+  // Both lines share ONE linear axis (plain counts). The dashed line is the
+  // cumulative total scaled by that year's own KMTNet fraction (KMTNet's count
+  // that year / that year's total count) — i.e. F = C * D/B, matching the
+  // Summary!F column (=[.D]/[.B]*[.C]) in the reference workbook. Since D/B is
+  // always <= 1, F <= C for every single year by construction: the dashed line
+  // can never rise above the cumulative total line it's derived from.
   (function renderCumulativeChart() {
     var svg = document.getElementById("cumulativeChart");
     if (!svg) return;
 
-    var KMT_SHARE_START_YEAR = 2016;
     var kmtByYear = {}, otherByYear = {};
     rows.forEach(function (r) {
       if (r._type === "planet" && r.pub_year) kmtByYear[r.pub_year] = (kmtByYear[r.pub_year] || 0) + 1;
@@ -325,7 +323,7 @@
         cumTotal: cumTotal,
         kmtYear: k,
         totalYear: t,
-        yearlyPct: (y >= KMT_SHARE_START_YEAR && t > 0) ? Math.round((k / t) * 100) : null,
+        kmtWeighted: t > 0 ? Math.round(cumTotal * (k / t)) : 0,
       });
     }
 
@@ -352,16 +350,7 @@
       return e;
     }
 
-    // A single reference line at 100 — the hard ceiling a percentage can never
-    // cross — so it's visible at a glance that the share line stays under it.
-    var y100 = yPix(100);
-    svg.appendChild(el("line", { class: "grid-line pct-ceiling", x1: padL, y1: y100, x2: W - padR, y2: y100 }));
-    var y100Label = el("text", { class: "pct-label", x: padL - 6, y: y100 + 3, "text-anchor": "end" });
-    y100Label.textContent = "100%";
-    svg.appendChild(y100Label);
-
     [0, axisMax].forEach(function (v) {
-      if (v === 100) return;
       var gy = yPix(v);
       var lt = el("text", { x: padL - 6, y: gy + 3, "text-anchor": "end" });
       lt.textContent = String(Math.round(v));
@@ -394,27 +383,26 @@
       svg.appendChild(label);
     });
 
-    var pctPoints = points.filter(function (p) { return p.yearlyPct !== null; });
-    if (pctPoints.length) {
-      var pctPath = pctPoints.map(function (p, i) {
-        return (i === 0 ? "M" : "L") + xPix(points.indexOf(p)) + " " + yPix(p.yearlyPct);
-      }).join(" ");
-      svg.appendChild(el("path", { class: "line pct-line", d: pctPath }));
+    var kmtPath = points.map(function (p, i) {
+      return (i === 0 ? "M" : "L") + xPix(i) + " " + yPix(p.kmtWeighted);
+    }).join(" ");
+    svg.appendChild(el("path", { class: "line pct-line", d: kmtPath }));
 
-      pctPoints.forEach(function (p) {
-        var idx = points.indexOf(p);
-        var group = el("g", { class: "line-point-group" });
-        var titleEl = document.createElementNS(svgns, "title");
-        titleEl.textContent = p.year + ": KMTNet " + p.kmtYear + " of " + p.totalYear + " (" + p.yearlyPct + "%)";
-        group.appendChild(titleEl);
-        group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(idx), cy: yPix(p.yearlyPct), r: 3 }));
-        svg.appendChild(group);
+    points.forEach(function (p, i) {
+      var group = el("g", { class: "line-point-group" });
+      var titleEl = document.createElementNS(svgns, "title");
+      titleEl.textContent = p.year + ": " + p.kmtWeighted + " (cumulative total " + p.cumTotal +
+        " × that year's KMTNet share " + p.kmtYear + "/" + p.totalYear + ")";
+      group.appendChild(titleEl);
+      group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(i), cy: yPix(p.kmtWeighted), r: 3 }));
+      svg.appendChild(group);
 
-        var label = el("text", { class: "bar-label pct-label", x: xPix(idx), y: yPix(p.yearlyPct) + 15, "text-anchor": "middle" });
-        label.textContent = p.yearlyPct + "%";
+      if (p.kmtWeighted > 0) {
+        var label = el("text", { class: "bar-label pct-label", x: xPix(i), y: yPix(p.kmtWeighted) + 15, "text-anchor": "middle" });
+        label.textContent = String(p.kmtWeighted);
         svg.appendChild(label);
-      });
-    }
+      }
+    });
   })();
 
   // ---------------- Chart: reusable histogram (mass ratio, distance) ----------------
