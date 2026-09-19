@@ -335,7 +335,7 @@
     var KMT_SHARE_START_YEAR = 2015;
     var kmtPoints = points.filter(function (p) { return p.year >= KMT_SHARE_START_YEAR; });
 
-    var W = 1100, H = 220, padL = 34, padR = 14, padT = 28, padB = 22;
+    var W = 1100, H = 230, padL = 20, padR = 14, padT = 28, padB = 34;
     var innerW = W - padL - padR;
     var innerH = H - padT - padB;
     var n = points.length;
@@ -358,12 +358,9 @@
       return e;
     }
 
-    [0, axisMax].forEach(function (v) {
-      var gy = yPix(v);
-      var lt = el("text", { x: padL - 6, y: gy + 3, "text-anchor": "end" });
-      lt.textContent = String(Math.round(v));
-      svg.appendChild(lt);
-    });
+    var zeroLabel = el("text", { x: padL - 6, y: yPix(0) + 3, "text-anchor": "end" });
+    zeroLabel.textContent = "0";
+    svg.appendChild(zeroLabel);
 
     svg.appendChild(el("line", { class: "axis-line", x1: padL, y1: H - padB, x2: W - padR, y2: H - padB }));
 
@@ -405,7 +402,7 @@
       group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(idx), cy: yPix(p.kmtWeighted), r: 3 }));
       svg.appendChild(group);
 
-      var label = el("text", { class: "bar-label pct-label", x: xPix(idx), y: yPix(p.kmtWeighted) + 15, "text-anchor": "middle" });
+      var label = el("text", { class: "bar-label pct-label", x: xPix(idx), y: yPix(p.kmtWeighted) + 13, "text-anchor": "middle" });
       label.textContent = p.yearlyPct + "%";
       svg.appendChild(label);
     });
