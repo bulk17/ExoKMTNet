@@ -243,17 +243,21 @@
     return base.filter(function (r) {
       // "All types" means all planet types (Planet + Planet/BD) — free-floating
       // candidates are a separate category, reachable only via their own filter/card.
+      // The mass cutoff only ever narrows *within* the "planet" bucket (all-types view,
+      // or the explicit Planet type) — it never re-excludes an explicitly selected type
+      // like Planet/BD or Free-floating.
       if (state.type === "all") {
         if (r._type === "ffp") return false;
-      } else if (r._type !== state.type) {
-        return false;
-      }
-      if (state.massMax === "30") {
-        // Same cutoff classify() already uses — anything not typed "planet" is above it
-        // (or forced above it by the source note) regardless of a known numeric mass.
-        if (r._type !== "planet") return false;
-      } else if (state.massMax === "13") {
-        if (r._type !== "planet" || r.pl_bmassj == null || r.pl_bmassj > 13) return false;
+        if (state.massMax === "30") {
+          if (r._type !== "planet") return false;
+        } else if (state.massMax === "13") {
+          if (r._type !== "planet" || r.pl_bmassj == null || r.pl_bmassj > 13) return false;
+        }
+      } else {
+        if (r._type !== state.type) return false;
+        if (state.type === "planet" && state.massMax === "13") {
+          if (r.pl_bmassj == null || r.pl_bmassj > 13) return false;
+        }
       }
       if (state.special === "binary" && r.binary_host_status !== "confirmed") return false;
       if (state.special === "multi" && r.multi_planet_status !== "confirmed") return false;
@@ -351,7 +355,21 @@
       );
     }).join("");
 
-    var scopeTotal = state.scope === "all" ? allEventsNonFfp.length : nonFfpRows.length;
+    // The "of N" denominator matches whatever type the current view is scoped to,
+    // so e.g. the Planet/BD view reads "25 of 25", not "25 of 292" (which would wrongly
+    // imply most Planet/BD rows are hidden rather than simply being a different type).
+    var scopeTotal;
+    if (state.scope === "all") {
+      scopeTotal = allEventsNonFfp.length;
+    } else if (state.type === "bdplanet") {
+      scopeTotal = bdCount;
+    } else if (state.type === "ffp") {
+      scopeTotal = ffpCount;
+    } else if (state.type === "planet" || state.massMax !== "all") {
+      scopeTotal = planetCount;
+    } else {
+      scopeTotal = nonFfpRows.length;
+    }
     countEl.textContent = filtered.length + " of " + scopeTotal + " entries";
     pagerInfo.textContent =
       (sorted.length === 0 ? 0 : start + 1) + "–" + Math.min(start + pageSize, sorted.length) + " / " + sorted.length + " · page " + state.page + "/" + pageCount;
@@ -529,9 +547,9 @@
     });
   }
 
-  onCardActivate(ffpCard, function () { applyTypeFilter("ffp", "all"); });
+  onCardActivate(ffpCard, function () { applyTypeFilter("ffp", "30"); });
   onCardActivate(totalCard, function () { applyTypeFilter("all", "30"); });
-  onCardActivate(bdCard, function () { applyTypeFilter("bdplanet", "all"); });
+  onCardActivate(bdCard, function () { applyTypeFilter("bdplanet", "30"); });
   onCardActivate(binaryCard, function () { applyTypeFilter("all", "all", "kmtnet", "binary"); });
   onCardActivate(multiCard, function () { applyTypeFilter("all", "all", "kmtnet", "multi"); });
 
