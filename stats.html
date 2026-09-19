@@ -51,12 +51,11 @@
     </div>
 
     <div class="chart-card">
-      <h2>Cumulative microlensing planets &amp; KMTNet's weighted cumulative</h2>
-      <p class="chart-note">Cumulative count of all microlensing planets — KMTNet plus non-KMTNet discoveries from the NASA Exoplanet Archive, Planet/BD boundary objects and free-floating candidates excluded. From 2016, KMTNet's first confirmed planet, the dashed line is plotted at that same cumulative total scaled by each year's own KMTNet share (that year's KMTNet count &divide; that year's total count) — since that share is always &le; 1, the dashed line can never rise above the solid cumulative-total line it's derived from — labeled with the share itself, as a percentage rounded to the nearest whole number.</p>
-      <svg id="cumulativeChart" class="data-chart" viewBox="0 0 1100 220" role="img" aria-label="Line chart of cumulative microlensing planet discoveries and KMTNet's yearly discovery share since 2016"></svg>
+      <h2>Cumulative microlensing planets &amp; KMTNet's annual share</h2>
+      <svg id="cumulativeChart" class="data-chart" viewBox="0 0 1100 220" role="img" aria-label="Line chart of cumulative microlensing planet discoveries and KMTNet's yearly discovery share since 2015"></svg>
       <div class="legend">
         <span><i style="background:var(--planet)"></i>Cumulative total (all microlensing planets)</span>
-        <span><i style="background:var(--accent)"></i>KMTNet share that year, from 2016 (%)</span>
+        <span><i style="background:var(--accent)"></i>KMTNet annual share (%)</span>
       </div>
     </div>
 
@@ -106,6 +105,6 @@
 </div>
 
 <script src="assets/data/planets.js?v=20260918"></script>
-<script src="assets/js/stats.js?v=20260919d"></script>
+<script src="assets/js/stats.js?v=20260919e"></script>
 </body>
 </html>

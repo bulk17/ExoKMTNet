@@ -296,7 +296,7 @@
   // labels show that same D/B fraction as a plain percentage (rounded, no
   // decimals) rather than the F value itself, since the percentage is what's
   // actually meaningful to read off — only the point's vertical position uses F.
-  // Shown from 2016, KMTNet's first confirmed planet.
+  // Shown from 2015, the year before KMTNet's first confirmed planet.
   (function renderCumulativeChart() {
     var svg = document.getElementById("cumulativeChart");
     if (!svg) return;
@@ -332,7 +332,7 @@
       });
     }
 
-    var KMT_SHARE_START_YEAR = 2016; // KMTNet's first confirmed planet
+    var KMT_SHARE_START_YEAR = 2015;
     var kmtPoints = points.filter(function (p) { return p.year >= KMT_SHARE_START_YEAR; });
 
     var W = 1100, H = 220, padL = 34, padR = 14, padT = 28, padB = 22;
