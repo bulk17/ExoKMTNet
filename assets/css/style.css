@@ -262,12 +262,16 @@ a { color: var(--link); }
 
 .stat-grid-secondary {
   margin-top: 10px;
+}
+
+#papersCard {
   /* Discovery papers has an extra title line, so it's naturally taller than
-     the rest — let each card size to its own content instead of grid's
-     default row-stretch, which would otherwise pull every card up to match.
-     Bottom-aligned so the extra height grows upward, keeping every card's
-     bottom edge (and the row's overall bottom) lined up. */
-  align-items: end;
+     the rest. A negative top margin removes that extra height from the
+     grid row's own auto-sizing (so the row and its other four cards stay
+     exactly as before) while visually pushing the card upward, overlapping
+     into the row above, instead of growing the row itself. */
+  margin-top: -22px;
+  position: relative;
 }
 
 .stat-card {
@@ -713,6 +717,10 @@ footer span:last-child { grid-column: 3; justify-self: end; text-align: right; }
      stay the same width as a full row) is too wide to fit a phone screen —
      fall back to letting cards wrap to fit instead. */
   .stat-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  /* On the wrapped mobile layout, Discovery papers sits directly under
+     another card instead of an empty column, so the desktop overlap trick
+     would just clip into it — drop the negative margin here. */
+  #papersCard { margin-top: 0; }
   .drawer { width: 100%; }
   .controls .count { margin-left: 0; width: 100%; order: 5; }
   footer { display: flex; flex-direction: column; align-items: center; text-align: center; }
