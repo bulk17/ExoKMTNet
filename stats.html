@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Statistics — KMTNet Exoplanet Archive</title>
 <meta name="description" content="Distributions of KMTNet-discovered exoplanets: announcements per year, planet-to-host mass ratio, and distance from the Sun." />
-<link rel="stylesheet" href="assets/css/style.css?v=20260919" />
+<link rel="stylesheet" href="assets/css/style.css?v=20260919b" />
 </head>
 <body>
 <div class="wrap">
@@ -52,8 +52,8 @@
 
     <div class="chart-card">
       <h2>Cumulative microlensing planets &amp; KMTNet's share</h2>
-      <p class="chart-note">Cumulative count (left axis) of all microlensing planets — KMTNet plus non-KMTNet discoveries from the NASA Exoplanet Archive, Planet/BD boundary objects and free-floating candidates excluded. From 2016, KMTNet's first confirmed planet, the right axis shows what share of that year's discoveries were KMTNet's.</p>
-      <svg id="cumulativeChart" class="data-chart" viewBox="0 0 1100 190" role="img" aria-label="Line chart of cumulative microlensing planet discoveries and KMTNet's yearly discovery share since 2016"></svg>
+      <p class="chart-note">Cumulative count of all microlensing planets — KMTNet plus non-KMTNet discoveries from the NASA Exoplanet Archive, Planet/BD boundary objects and free-floating candidates excluded. From 2016, KMTNet's first confirmed planet, the dashed line shows what share of that year's discoveries were KMTNet's (rounded to the nearest percent) — plotted on the same count axis, so it's never higher than the year's own total, and the dotted line at 100 marks the highest a percentage can ever reach.</p>
+      <svg id="cumulativeChart" class="data-chart" viewBox="0 0 1100 220" role="img" aria-label="Line chart of cumulative microlensing planet discoveries and KMTNet's yearly discovery share since 2016"></svg>
       <div class="legend">
         <span><i style="background:var(--planet)"></i>Cumulative total (all microlensing planets)</span>
         <span><i style="background:var(--accent)"></i>KMTNet share that year, from 2016 (%)</span>
@@ -106,6 +106,6 @@
 </div>
 
 <script src="assets/data/planets.js?v=20260918"></script>
-<script src="assets/js/stats.js?v=20260919"></script>
+<script src="assets/js/stats.js?v=20260919b"></script>
 </body>
 </html>

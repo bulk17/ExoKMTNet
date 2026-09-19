@@ -339,6 +339,8 @@ a { color: var(--link); }
 .data-chart .cum-point { fill: var(--planet); }
 .data-chart .pct-point { fill: var(--accent); }
 .data-chart .line-point-group:hover .line-point { r: 5; }
+.data-chart .pct-ceiling { stroke-dasharray: 3 3; opacity: 0.5; }
+.data-chart .pct-label { fill: var(--accent); }
 
 .legend {
   display: flex;

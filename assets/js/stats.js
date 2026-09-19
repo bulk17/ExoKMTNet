@@ -287,11 +287,13 @@
   })();
 
   // ---------------- Chart: cumulative total & KMTNet's yearly share ----------------
-  // Left axis: cumulative count of all microlensing planets (KMTNet + non-KMTNet
-  // NASA Exoplanet Archive entries), Planet type only. Right axis: what fraction
-  // of that year's discoveries were KMTNet's, shown from 2016 (KMTNet's first
-  // confirmed planet) onward — a per-year share, so it is bounded 0-100% by
-  // construction, unlike a cumulative-weighted ratio.
+  // Both lines share ONE linear axis (plain counts) instead of a dual left/right
+  // scale — a percentage is just a number from 0-100, so plotting it as a raw
+  // value on the same count axis as the cumulative total keeps it honestly
+  // below the total it's a share of, instead of two independently-scaled axes
+  // making the share line *look* like it tops out higher than the total. The
+  // KMTNet share is each year's own KMTNet-count/total-count ratio (bounded
+  // 0-100% by construction), shown from 2016 (KMTNet's first confirmed planet).
   (function renderCumulativeChart() {
     var svg = document.getElementById("cumulativeChart");
     if (!svg) return;
@@ -323,23 +325,22 @@
         cumTotal: cumTotal,
         kmtYear: k,
         totalYear: t,
-        yearlyPct: (y >= KMT_SHARE_START_YEAR && t > 0) ? (k / t * 100) : null,
+        yearlyPct: (y >= KMT_SHARE_START_YEAR && t > 0) ? Math.round((k / t) * 100) : null,
       });
     }
 
-    var W = 1100, H = 190, padL = 38, padR = 40, padT = 18, padB = 22;
+    var W = 1100, H = 220, padL = 34, padR = 14, padT = 28, padB = 22;
     var innerW = W - padL - padR;
     var innerH = H - padT - padB;
     var n = points.length;
     var stepX = n > 1 ? innerW / (n - 1) : 0;
 
     var maxCum = Math.max.apply(null, points.map(function (p) { return p.cumTotal; }));
-    var cumAxisMax = Math.ceil(maxCum / 50) * 50;
-    if (cumAxisMax <= maxCum) cumAxisMax += 50;
+    var axisMax = Math.max(100, Math.ceil(maxCum / 50) * 50);
+    if (axisMax <= maxCum) axisMax += 50;
 
     function xPix(i) { return padL + i * stepX; }
-    function yPixCum(v) { return padT + innerH - (v / cumAxisMax) * innerH; }
-    function yPixPct(v) { return padT + innerH - (v / 100) * innerH; }
+    function yPix(v) { return padT + innerH - (v / axisMax) * innerH; }
 
     svg.setAttribute("viewBox", "0 0 " + W + " " + H);
     svg.innerHTML = "";
@@ -351,19 +352,17 @@
       return e;
     }
 
-    // Gridlines on the 0-100% scale — the left axis is labeled at 0 / half / max,
-    // which land exactly on the 0% / 50% / 100% lines since both axes share the
-    // same underlying normalized (0-1) vertical scale.
-    [0, 25, 50, 75, 100].forEach(function (pct) {
-      var gy = yPixPct(pct);
-      svg.appendChild(el("line", { class: "grid-line", x1: padL, y1: gy, x2: W - padR, y2: gy }));
-      var rt = el("text", { x: W - padR + 6, y: gy + 3, "text-anchor": "start" });
-      rt.textContent = pct + "%";
-      svg.appendChild(rt);
-    });
+    // A single reference line at 100 — the hard ceiling a percentage can never
+    // cross — so it's visible at a glance that the share line stays under it.
+    var y100 = yPix(100);
+    svg.appendChild(el("line", { class: "grid-line pct-ceiling", x1: padL, y1: y100, x2: W - padR, y2: y100 }));
+    var y100Label = el("text", { class: "pct-label", x: padL - 6, y: y100 + 3, "text-anchor": "end" });
+    y100Label.textContent = "100%";
+    svg.appendChild(y100Label);
 
-    [0, cumAxisMax / 2, cumAxisMax].forEach(function (v) {
-      var gy = yPixCum(v);
+    [0, axisMax].forEach(function (v) {
+      if (v === 100) return;
+      var gy = yPix(v);
       var lt = el("text", { x: padL - 6, y: gy + 3, "text-anchor": "end" });
       lt.textContent = String(Math.round(v));
       svg.appendChild(lt);
@@ -371,16 +370,14 @@
 
     svg.appendChild(el("line", { class: "axis-line", x1: padL, y1: H - padB, x2: W - padR, y2: H - padB }));
 
-    var tickEvery = n > 18 ? 2 : 1;
     points.forEach(function (p, i) {
-      if (i % tickEvery !== 0 && i !== n - 1) return;
       var xt = el("text", { x: xPix(i), y: H - 6, "text-anchor": "middle" });
       xt.textContent = String(p.year);
       svg.appendChild(xt);
     });
 
     var cumPath = points.map(function (p, i) {
-      return (i === 0 ? "M" : "L") + xPix(i) + " " + yPixCum(p.cumTotal);
+      return (i === 0 ? "M" : "L") + xPix(i) + " " + yPix(p.cumTotal);
     }).join(" ");
     svg.appendChild(el("path", { class: "line cum-line", d: cumPath }));
 
@@ -389,14 +386,18 @@
       var titleEl = document.createElementNS(svgns, "title");
       titleEl.textContent = p.year + ": " + p.cumTotal + " cumulative planets";
       group.appendChild(titleEl);
-      group.appendChild(el("circle", { class: "line-point cum-point", cx: xPix(i), cy: yPixCum(p.cumTotal), r: 3 }));
+      group.appendChild(el("circle", { class: "line-point cum-point", cx: xPix(i), cy: yPix(p.cumTotal), r: 3 }));
       svg.appendChild(group);
+
+      var label = el("text", { class: "bar-label", x: xPix(i), y: yPix(p.cumTotal) - 7, "text-anchor": "middle" });
+      label.textContent = String(p.cumTotal);
+      svg.appendChild(label);
     });
 
     var pctPoints = points.filter(function (p) { return p.yearlyPct !== null; });
     if (pctPoints.length) {
       var pctPath = pctPoints.map(function (p, i) {
-        return (i === 0 ? "M" : "L") + xPix(points.indexOf(p)) + " " + yPixPct(p.yearlyPct);
+        return (i === 0 ? "M" : "L") + xPix(points.indexOf(p)) + " " + yPix(p.yearlyPct);
       }).join(" ");
       svg.appendChild(el("path", { class: "line pct-line", d: pctPath }));
 
@@ -404,27 +405,16 @@
         var idx = points.indexOf(p);
         var group = el("g", { class: "line-point-group" });
         var titleEl = document.createElementNS(svgns, "title");
-        titleEl.textContent = p.year + ": KMTNet " + p.kmtYear + " of " + p.totalYear + " (" + p.yearlyPct.toFixed(1) + "%)";
+        titleEl.textContent = p.year + ": KMTNet " + p.kmtYear + " of " + p.totalYear + " (" + p.yearlyPct + "%)";
         group.appendChild(titleEl);
-        group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(idx), cy: yPixPct(p.yearlyPct), r: 3 }));
+        group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(idx), cy: yPix(p.yearlyPct), r: 3 }));
         svg.appendChild(group);
+
+        var label = el("text", { class: "bar-label pct-label", x: xPix(idx), y: yPix(p.yearlyPct) + 15, "text-anchor": "middle" });
+        label.textContent = p.yearlyPct + "%";
+        svg.appendChild(label);
       });
     }
-
-    var leftMid = padT + innerH / 2;
-    var leftTitle = el("text", {
-      class: "axis-title", x: 10, y: leftMid, "text-anchor": "middle",
-      transform: "rotate(-90 10 " + leftMid + ")",
-    });
-    leftTitle.textContent = "Cumulative planets";
-    svg.appendChild(leftTitle);
-
-    var rightTitle = el("text", {
-      class: "axis-title", x: W - 8, y: leftMid, "text-anchor": "middle",
-      transform: "rotate(-90 " + (W - 8) + " " + leftMid + ")",
-    });
-    rightTitle.textContent = "KMTNet share (%)";
-    svg.appendChild(rightTitle);
   })();
 
   // ---------------- Chart: reusable histogram (mass ratio, distance) ----------------
