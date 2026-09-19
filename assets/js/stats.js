@@ -27,6 +27,14 @@
 
   var nonFfpRows = rows.filter(function (r) { return r._type !== "ffp"; });
 
+  // Non-KMTNet microlensing planets (NASA Exoplanet Archive), used only by the
+  // cumulative "all microlensing planets" chart below — kept out of `rows` so
+  // every other chart on this page stays scoped to the KMTNet catalog.
+  var OTHER_RAW = window.OTHER_MICROLENSING_EVENTS || [];
+  var otherRows = OTHER_RAW.map(function (r, i) {
+    return Object.assign({}, r, { _id: "other-" + i, _type: classify(r) });
+  });
+
   // ---------------- Theme ----------------
   var themeToggle = document.getElementById("themeToggle");
   function applyTheme(t) {
@@ -276,6 +284,147 @@
       t.textContent = String(y);
       svg.appendChild(t);
     });
+  })();
+
+  // ---------------- Chart: cumulative total & KMTNet's yearly share ----------------
+  // Left axis: cumulative count of all microlensing planets (KMTNet + non-KMTNet
+  // NASA Exoplanet Archive entries), Planet type only. Right axis: what fraction
+  // of that year's discoveries were KMTNet's, shown from 2016 (KMTNet's first
+  // confirmed planet) onward — a per-year share, so it is bounded 0-100% by
+  // construction, unlike a cumulative-weighted ratio.
+  (function renderCumulativeChart() {
+    var svg = document.getElementById("cumulativeChart");
+    if (!svg) return;
+
+    var KMT_SHARE_START_YEAR = 2016;
+    var kmtByYear = {}, otherByYear = {};
+    rows.forEach(function (r) {
+      if (r._type === "planet" && r.pub_year) kmtByYear[r.pub_year] = (kmtByYear[r.pub_year] || 0) + 1;
+    });
+    otherRows.forEach(function (r) {
+      if (r._type === "planet" && r.pub_year) otherByYear[r.pub_year] = (otherByYear[r.pub_year] || 0) + 1;
+    });
+
+    var allYears = Object.keys(kmtByYear).concat(Object.keys(otherByYear)).map(Number);
+    if (!allYears.length) return;
+    var minYear = Math.min.apply(null, allYears);
+    var maxYear = Math.max.apply(null, allYears);
+
+    var cumTotal = 0, cumKmt = 0;
+    var points = [];
+    for (var y = minYear; y <= maxYear; y++) {
+      var k = kmtByYear[y] || 0;
+      var o = otherByYear[y] || 0;
+      var t = k + o;
+      cumTotal += t;
+      cumKmt += k;
+      points.push({
+        year: y,
+        cumTotal: cumTotal,
+        kmtYear: k,
+        totalYear: t,
+        yearlyPct: (y >= KMT_SHARE_START_YEAR && t > 0) ? (k / t * 100) : null,
+      });
+    }
+
+    var W = 1100, H = 190, padL = 38, padR = 40, padT = 18, padB = 22;
+    var innerW = W - padL - padR;
+    var innerH = H - padT - padB;
+    var n = points.length;
+    var stepX = n > 1 ? innerW / (n - 1) : 0;
+
+    var maxCum = Math.max.apply(null, points.map(function (p) { return p.cumTotal; }));
+    var cumAxisMax = Math.ceil(maxCum / 50) * 50;
+    if (cumAxisMax <= maxCum) cumAxisMax += 50;
+
+    function xPix(i) { return padL + i * stepX; }
+    function yPixCum(v) { return padT + innerH - (v / cumAxisMax) * innerH; }
+    function yPixPct(v) { return padT + innerH - (v / 100) * innerH; }
+
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.innerHTML = "";
+
+    var svgns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs) {
+      var e = document.createElementNS(svgns, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    // Gridlines on the 0-100% scale — the left axis is labeled at 0 / half / max,
+    // which land exactly on the 0% / 50% / 100% lines since both axes share the
+    // same underlying normalized (0-1) vertical scale.
+    [0, 25, 50, 75, 100].forEach(function (pct) {
+      var gy = yPixPct(pct);
+      svg.appendChild(el("line", { class: "grid-line", x1: padL, y1: gy, x2: W - padR, y2: gy }));
+      var rt = el("text", { x: W - padR + 6, y: gy + 3, "text-anchor": "start" });
+      rt.textContent = pct + "%";
+      svg.appendChild(rt);
+    });
+
+    [0, cumAxisMax / 2, cumAxisMax].forEach(function (v) {
+      var gy = yPixCum(v);
+      var lt = el("text", { x: padL - 6, y: gy + 3, "text-anchor": "end" });
+      lt.textContent = String(Math.round(v));
+      svg.appendChild(lt);
+    });
+
+    svg.appendChild(el("line", { class: "axis-line", x1: padL, y1: H - padB, x2: W - padR, y2: H - padB }));
+
+    var tickEvery = n > 18 ? 2 : 1;
+    points.forEach(function (p, i) {
+      if (i % tickEvery !== 0 && i !== n - 1) return;
+      var xt = el("text", { x: xPix(i), y: H - 6, "text-anchor": "middle" });
+      xt.textContent = String(p.year);
+      svg.appendChild(xt);
+    });
+
+    var cumPath = points.map(function (p, i) {
+      return (i === 0 ? "M" : "L") + xPix(i) + " " + yPixCum(p.cumTotal);
+    }).join(" ");
+    svg.appendChild(el("path", { class: "line cum-line", d: cumPath }));
+
+    points.forEach(function (p, i) {
+      var group = el("g", { class: "line-point-group" });
+      var titleEl = document.createElementNS(svgns, "title");
+      titleEl.textContent = p.year + ": " + p.cumTotal + " cumulative planets";
+      group.appendChild(titleEl);
+      group.appendChild(el("circle", { class: "line-point cum-point", cx: xPix(i), cy: yPixCum(p.cumTotal), r: 3 }));
+      svg.appendChild(group);
+    });
+
+    var pctPoints = points.filter(function (p) { return p.yearlyPct !== null; });
+    if (pctPoints.length) {
+      var pctPath = pctPoints.map(function (p, i) {
+        return (i === 0 ? "M" : "L") + xPix(points.indexOf(p)) + " " + yPixPct(p.yearlyPct);
+      }).join(" ");
+      svg.appendChild(el("path", { class: "line pct-line", d: pctPath }));
+
+      pctPoints.forEach(function (p) {
+        var idx = points.indexOf(p);
+        var group = el("g", { class: "line-point-group" });
+        var titleEl = document.createElementNS(svgns, "title");
+        titleEl.textContent = p.year + ": KMTNet " + p.kmtYear + " of " + p.totalYear + " (" + p.yearlyPct.toFixed(1) + "%)";
+        group.appendChild(titleEl);
+        group.appendChild(el("circle", { class: "line-point pct-point", cx: xPix(idx), cy: yPixPct(p.yearlyPct), r: 3 }));
+        svg.appendChild(group);
+      });
+    }
+
+    var leftMid = padT + innerH / 2;
+    var leftTitle = el("text", {
+      class: "axis-title", x: 10, y: leftMid, "text-anchor": "middle",
+      transform: "rotate(-90 10 " + leftMid + ")",
+    });
+    leftTitle.textContent = "Cumulative planets";
+    svg.appendChild(leftTitle);
+
+    var rightTitle = el("text", {
+      class: "axis-title", x: W - 8, y: leftMid, "text-anchor": "middle",
+      transform: "rotate(-90 " + (W - 8) + " " + leftMid + ")",
+    });
+    rightTitle.textContent = "KMTNet share (%)";
+    svg.appendChild(rightTitle);
   })();
 
   // ---------------- Chart: reusable histogram (mass ratio, distance) ----------------

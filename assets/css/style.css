@@ -332,6 +332,14 @@ a { color: var(--link); }
 .data-chart .scatter-group { cursor: pointer; }
 .data-chart .scatter-group:hover .point { r: 6; fill-opacity: 1; }
 
+.data-chart .line { stroke-width: 2; fill: none; }
+.data-chart .cum-line { stroke: var(--planet); }
+.data-chart .pct-line { stroke: var(--accent); stroke-dasharray: 4 2; }
+.data-chart .line-point { stroke: var(--bg-elev); stroke-width: 1; transition: r 120ms ease; }
+.data-chart .cum-point { fill: var(--planet); }
+.data-chart .pct-point { fill: var(--accent); }
+.data-chart .line-point-group:hover .line-point { r: 5; }
+
 .legend {
   display: flex;
   gap: 16px;
