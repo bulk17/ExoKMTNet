@@ -43,7 +43,10 @@
           <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener">NASA Exoplanet Archive</a>.
         </p>
       </div>
-      <img src="assets/images/lensy-mascot.svg" alt="" class="hero-mascot" />
+      <div class="hero-mascot-wrap">
+        <div class="mascot-bubble">Hello, I&rsquo;m Kensy</div>
+        <img src="assets/images/kensy-mascot.svg" alt="Kensy, the KMTNet mascot" class="hero-mascot" />
+      </div>
     </div>
     <div class="stat-grid">
       <div class="stat-card stat-card-clickable" id="totalCard" role="button" tabindex="0"><div class="num" id="statTotal">—</div><div class="label">Planets</div></div>
@@ -145,8 +148,26 @@
   <div id="drawerBody"></div>
 </aside>
 
+<button type="button" class="mascot-fab" id="mascotFab" aria-label="Back to top">
+  <img src="assets/images/kensy-mascot.svg" alt="" />
+</button>
+
 <script src="assets/data/planets.js?v=20260918"></script>
 <script src="assets/js/app.js?v=20260919f"></script>
 <script>document.getElementById("buildDate").textContent = new Date(document.lastModified).toISOString().slice(0,10);</script>
+<script>
+(function () {
+  var fab = document.getElementById("mascotFab");
+  if (!fab) return;
+  function onScroll() {
+    fab.classList.toggle("show", window.scrollY > 400);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  fab.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+</script>
 </body>
 </html>
