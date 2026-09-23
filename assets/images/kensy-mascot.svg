@@ -56,10 +56,13 @@
   <circle cx="240" cy="326" r="61" fill="#ffffff"/>
   <circle cx="240" cy="326" r="43" fill="url(#irisGrad)"/>
 
-  <!-- microlensing flash -->
-  <polygon points="240,292 247,313 268,320 247,327 240,348 233,327 212,320 233,313"
-           fill="#ffffff"/>
-  <circle cx="240" cy="320" r="1.5" fill="#ffffff"/>
+  <!-- microlensing flash - three sparkles, one for each KMTNet telescope -->
+  <polygon points="230,300.2 232.9,309.1 241.8,312 232.9,314.9 230,323.8 227.1,314.9 218.2,312 227.1,309.1" fill="#ffffff"/>
+  <polygon points="252,294.2 254.9,303.1 263.8,306 254.9,308.9 252,317.8 249.1,308.9 240.2,306 249.1,303.1" fill="#ffffff"/>
+  <polygon points="234,326.2 236.9,335.1 245.8,338 236.9,340.9 234,349.8 231.1,340.9 222.2,338 231.1,335.1" fill="#ffffff"/>
+  <circle cx="230" cy="312" r="1" fill="#ffffff"/>
+  <circle cx="252" cy="306" r="1" fill="#ffffff"/>
+  <circle cx="234" cy="338" r="1" fill="#ffffff"/>
 
   <!-- the hidden planet, revealed by the lensing flash -->
   <ellipse cx="256" cy="330" rx="12" ry="4" fill="none" stroke="#14161f" stroke-width="2" transform="rotate(-20 256 330)"/>
