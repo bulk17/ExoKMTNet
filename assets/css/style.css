@@ -66,10 +66,13 @@ html { background: #05060f; }
 
 body {
   margin: 0;
-  /* No background-color here: body's own opaque fill would paint in front of
-     the fixed body::before/::after backdrop layers (they're negative
-     z-index descendants of a non-stacking-context body), hiding them
-     entirely. html's background is the fallback behind everything. */
+  /* Explicitly transparent (not just omitted) so a host page that stamps its
+     own default body background (e.g. an embedding preview) can't paint in
+     front of the fixed body::before/::after backdrop layers below - they're
+     negative z-index descendants of a non-stacking-context body, so any
+     opaque body fill hides them entirely. html's background is the
+     fallback behind everything. */
+  background: transparent;
   color: var(--text);
   font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 0 max(16px, env(safe-area-inset-left)) 48px max(16px, env(safe-area-inset-right));
