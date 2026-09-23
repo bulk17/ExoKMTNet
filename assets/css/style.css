@@ -233,6 +233,27 @@ a { color: var(--link); }
   padding: 28px 4px 24px;
 }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hero-copy { flex: 1 1 auto; min-width: 0; }
+
+.hero-mascot {
+  height: 140px;
+  width: auto;
+  flex: none;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 720px) {
+  .hero-top { flex-direction: column; align-items: flex-start; }
+  .hero-mascot { height: 100px; align-self: center; }
+}
+
 .hero h1 {
   font-size: clamp(24px, 4vw, 34px);
   margin: 0 0 8px;
