@@ -296,6 +296,20 @@ a { color: var(--link); }
   .mascot-bubble::after { left: 50%; margin-left: -7px; }
 }
 
+/* A little hop whenever the theme switches - Kensy reacting to the light change. */
+@keyframes mascotHop {
+  0% { transform: translateY(0) rotate(0deg) scale(1); }
+  30% { transform: translateY(-10px) rotate(-8deg) scale(1.05); }
+  55% { transform: translateY(2px) rotate(6deg) scale(0.97); }
+  100% { transform: translateY(0) rotate(0deg) scale(1); }
+}
+
+.mascot-hop { animation: mascotHop 0.5s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-hop { animation: none; }
+}
+
 /* ---------- Floating mascot (back-to-top) ---------- */
 .mascot-fab {
   position: fixed;
@@ -588,6 +602,26 @@ table.data tbody td.col-name { text-align: left; }
 table.data tbody tr { cursor: pointer; }
 table.data tbody tr:hover { background: var(--row-hover); }
 table.data tbody tr:last-child td { border-bottom: none; }
+
+table.data tbody tr:has(.empty-state) { cursor: default; }
+table.data tbody tr:has(.empty-state):hover { background: none; }
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 36px 16px;
+  white-space: normal;
+}
+
+.empty-state img { height: 72px; width: auto; }
+
+.empty-state p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 14px;
+}
 
 .name-cell strong { font-family: var(--font-mono); font-weight: 600; }
 .name-cell .host { display: block; font-size: 11px; color: var(--text-dim); }
