@@ -264,7 +264,7 @@ a { color: var(--link); }
      Kensy's head - so a message that wraps to two lines grows further up
      instead of down into the character. */
   position: absolute;
-  bottom: 96px;
+  bottom: 99px;
   right: -10px;
   max-width: min(280px, 60vw);
   background: var(--bg-elev);
@@ -298,7 +298,7 @@ a { color: var(--link); }
   .hero-top { flex-direction: column; align-items: flex-start; }
   .hero-mascot-wrap { align-self: center; }
   .hero-mascot { height: 100px; }
-  .mascot-bubble { left: 50%; right: auto; bottom: 68px; transform: translateX(-50%); }
+  .mascot-bubble { left: 50%; right: auto; bottom: 71px; transform: translateX(-50%); }
   .mascot-bubble::after { left: 50%; right: auto; margin-left: -7px; }
 }
 
