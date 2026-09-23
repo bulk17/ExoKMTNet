@@ -503,6 +503,7 @@
 
   function openDrawer(row) {
     var html =
+      '<div class="drawer-kensy"><img src="assets/images/kensy-mascot.svg" alt="" />Kensy found this one</div>' +
       "<h2>" + escapeHtml(row.name) + "</h2>" +
       '<span class="pill ' + row._type + '">' + TYPE_LABEL[row._type] + "</span>" +
       (row.title ? '<p class="title-text">' + escapeHtml(row.title) + "</p>" : "") +
