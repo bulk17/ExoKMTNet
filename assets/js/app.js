@@ -58,6 +58,11 @@
       }
       applyTheme(next);
       try { localStorage.setItem("kmtnet-theme", next); } catch (e) {}
+      document.querySelectorAll(".hero-mascot, .mascot-fab img").forEach(function (el) {
+        el.classList.remove("mascot-hop");
+        void el.offsetWidth; // restart the animation if it's already mid-hop
+        el.classList.add("mascot-hop");
+      });
     });
   }
 
@@ -362,14 +367,23 @@
 
     renderHead();
     var cols = getColumns();
-    tbody.innerHTML = pageRows.map(function (r, i) {
-      var rank = start + i + 1;
-      return (
-        '<tr data-id="' + r._id + '">' +
-        cols.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : "") + '">' + cellHtml(r, c, rank) + "</td>"; }).join("") +
-        "</tr>"
-      );
-    }).join("");
+    if (pageRows.length === 0) {
+      tbody.innerHTML =
+        '<tr><td colspan="' + cols.length + '">' +
+        '<div class="empty-state">' +
+        '<img src="assets/images/kensy-mascot.svg" alt="" />' +
+        "<p>Kensy couldn&rsquo;t find any planets matching that.</p>" +
+        "</div></td></tr>";
+    } else {
+      tbody.innerHTML = pageRows.map(function (r, i) {
+        var rank = start + i + 1;
+        return (
+          '<tr data-id="' + r._id + '">' +
+          cols.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : "") + '">' + cellHtml(r, c, rank) + "</td>"; }).join("") +
+          "</tr>"
+        );
+      }).join("");
+    }
 
     // The "of N" denominator matches whatever type the current view is scoped to,
     // so e.g. the Planet/BD view reads "25 of 25", not "25 of 292" (which would wrongly
@@ -489,6 +503,7 @@
 
   function openDrawer(row) {
     var html =
+      '<div class="drawer-kensy"><img src="assets/images/kensy-mascot.svg" alt="" />Kensy found this one</div>' +
       "<h2>" + escapeHtml(row.name) + "</h2>" +
       '<span class="pill ' + row._type + '">' + TYPE_LABEL[row._type] + "</span>" +
       (row.title ? '<p class="title-text">' + escapeHtml(row.title) + "</p>" : "") +

@@ -33,13 +33,21 @@
   </div>
 
   <section class="hero">
-    <h1>Microlensing Exoplanets discovered by KMTNet</h1>
-    <p>
-      A catalog of planets and free-floating planet
-      candidates discovered in KMTNet (Korea Microlensing Telescope Network) survey data,
-      cross-referenced with the
-      <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener">NASA Exoplanet Archive</a>.
-    </p>
+    <div class="hero-top">
+      <div class="hero-copy">
+        <h1>Microlensing Exoplanets discovered by KMTNet</h1>
+        <p>
+          A catalog of planets and free-floating planet
+          candidates discovered in KMTNet (Korea Microlensing Telescope Network) survey data,
+          cross-referenced with the
+          <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noopener">NASA Exoplanet Archive</a>.
+        </p>
+      </div>
+      <div class="hero-mascot-wrap">
+        <div class="mascot-bubble">Hello, I&rsquo;m Kensy</div>
+        <img src="assets/images/kensy-mascot.svg" alt="Kensy, the KMTNet mascot" class="hero-mascot" />
+      </div>
+    </div>
     <div class="stat-grid">
       <div class="stat-card stat-card-clickable" id="totalCard" role="button" tabindex="0"><div class="num" id="statTotal">—</div><div class="label">Planets</div></div>
       <div class="stat-card stat-card-clickable" id="ffpCard" role="button" tabindex="0"><div class="num" id="statFfp">—</div><div class="label">Free-floating planet candidates</div></div>
@@ -140,8 +148,57 @@
   <div id="drawerBody"></div>
 </aside>
 
+<button type="button" class="mascot-fab" id="mascotFab" aria-label="Back to top">
+  <img src="assets/images/kensy-mascot.svg" alt="" />
+</button>
+
 <script src="assets/data/planets.js?v=20260918"></script>
 <script src="assets/js/app.js?v=20260919f"></script>
 <script>document.getElementById("buildDate").textContent = new Date(document.lastModified).toISOString().slice(0,10);</script>
+<script>
+(function () {
+  var fab = document.getElementById("mascotFab");
+  if (!fab) return;
+
+  var mouseX = null, mouseY = null;
+  window.addEventListener("mousemove", function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }, { passive: true });
+
+  function positionNearCursor() {
+    var w = fab.offsetWidth || 56, h = fab.offsetHeight || 56;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var x, y;
+    if (mouseX == null) {
+      // no mouse seen yet (touch device, or hasn't moved) - fall back to a corner
+      x = vw - w - 20;
+      y = vh - h - 20;
+    } else {
+      x = mouseX + 18;
+      y = mouseY + 18;
+      if (x + w > vw - 8) x = mouseX - w - 18;
+      if (y + h > vh - 8) y = mouseY - h - 18;
+      x = Math.max(8, Math.min(x, vw - w - 8));
+      y = Math.max(8, Math.min(y, vh - h - 8));
+    }
+    fab.style.left = x + "px";
+    fab.style.top = y + "px";
+  }
+
+  var wasShown = false;
+  function onScroll() {
+    var shown = window.scrollY > 400;
+    if (shown && !wasShown) positionNearCursor();
+    fab.classList.toggle("show", shown);
+    wasShown = shown;
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  fab.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+})();
+</script>
 </body>
 </html>

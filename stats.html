@@ -33,10 +33,18 @@
   </div>
 
   <section class="hero">
-    <h1>Statistics</h1>
-    <p>
-      Distributions for the KMTNet-discovered planets. <a href="index.html#table">← Back to the catalog</a>.
-    </p>
+    <div class="hero-top">
+      <div class="hero-copy">
+        <h1>Statistics</h1>
+        <p>
+          Distributions for the KMTNet-discovered planets. <a href="index.html#table">← Back to the catalog</a>.
+        </p>
+      </div>
+      <div class="hero-mascot-wrap">
+        <div class="mascot-bubble">Let&rsquo;s look at the numbers!</div>
+        <img src="assets/images/kensy-mascot.svg" alt="Kensy, the KMTNet mascot" class="hero-mascot" />
+      </div>
+    </div>
   </section>
 
   <section id="chart">
@@ -96,7 +104,56 @@
   </div>
 </div>
 
+<button type="button" class="mascot-fab" id="mascotFab" aria-label="Back to top">
+  <img src="assets/images/kensy-mascot.svg" alt="" />
+</button>
+
 <script src="assets/data/planets.js?v=20260918"></script>
 <script src="assets/js/stats.js?v=20260919i"></script>
+<script>
+(function () {
+  var fab = document.getElementById("mascotFab");
+  if (!fab) return;
+
+  var mouseX = null, mouseY = null;
+  window.addEventListener("mousemove", function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }, { passive: true });
+
+  function positionNearCursor() {
+    var w = fab.offsetWidth || 56, h = fab.offsetHeight || 56;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var x, y;
+    if (mouseX == null) {
+      // no mouse seen yet (touch device, or hasn't moved) - fall back to a corner
+      x = vw - w - 20;
+      y = vh - h - 20;
+    } else {
+      x = mouseX + 18;
+      y = mouseY + 18;
+      if (x + w > vw - 8) x = mouseX - w - 18;
+      if (y + h > vh - 8) y = mouseY - h - 18;
+      x = Math.max(8, Math.min(x, vw - w - 8));
+      y = Math.max(8, Math.min(y, vh - h - 8));
+    }
+    fab.style.left = x + "px";
+    fab.style.top = y + "px";
+  }
+
+  var wasShown = false;
+  function onScroll() {
+    var shown = window.scrollY > 400;
+    if (shown && !wasShown) positionNearCursor();
+    fab.classList.toggle("show", shown);
+    wasShown = shown;
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  fab.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+})();
+</script>
 </body>
 </html>
