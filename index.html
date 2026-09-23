@@ -159,8 +159,39 @@
 (function () {
   var fab = document.getElementById("mascotFab");
   if (!fab) return;
+
+  var mouseX = null, mouseY = null;
+  window.addEventListener("mousemove", function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }, { passive: true });
+
+  function positionNearCursor() {
+    var w = fab.offsetWidth || 56, h = fab.offsetHeight || 56;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var x, y;
+    if (mouseX == null) {
+      // no mouse seen yet (touch device, or hasn't moved) - fall back to a corner
+      x = vw - w - 20;
+      y = vh - h - 20;
+    } else {
+      x = mouseX + 18;
+      y = mouseY + 18;
+      if (x + w > vw - 8) x = mouseX - w - 18;
+      if (y + h > vh - 8) y = mouseY - h - 18;
+      x = Math.max(8, Math.min(x, vw - w - 8));
+      y = Math.max(8, Math.min(y, vh - h - 8));
+    }
+    fab.style.left = x + "px";
+    fab.style.top = y + "px";
+  }
+
+  var wasShown = false;
   function onScroll() {
-    fab.classList.toggle("show", window.scrollY > 400);
+    var shown = window.scrollY > 400;
+    if (shown && !wasShown) positionNearCursor();
+    fab.classList.toggle("show", shown);
+    wasShown = shown;
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
