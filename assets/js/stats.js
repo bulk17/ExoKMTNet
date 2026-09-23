@@ -60,6 +60,11 @@
       }
       applyTheme(next);
       try { localStorage.setItem("kmtnet-theme", next); } catch (e) {}
+      document.querySelectorAll(".hero-mascot, .mascot-fab img").forEach(function (el) {
+        el.classList.remove("mascot-hop");
+        void el.offsetWidth; // restart the animation if it's already mid-hop
+        el.classList.add("mascot-hop");
+      });
     });
   }
 
