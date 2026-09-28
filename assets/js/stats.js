@@ -115,6 +115,12 @@
     { key: "ads_link", label: "Publication" },
   ];
 
+  // See app.js - columns whose value can carry a "+hi/-lo" error stack need a
+  // reserved minimum column width (col-err in style.css), since the stack is
+  // positioned out of flow and a narrow year's table can otherwise size the
+  // column too tight to fit it.
+  var ERR_COLS = { pl_bmassj: true, pl_bmasse: true, pl_orbsmax: true, st_mass: true, sy_dist: true };
+
   function fmtNum(v, digits) {
     if (v === null || v === undefined || v === "" || isNaN(v)) return null;
     var n = Number(v);
@@ -713,7 +719,7 @@
 
     yearThead.innerHTML = COLUMNS.map(function (col) {
       return (
-        '<th class="' + (col.key === "name" ? "col-name" : "") + '">' +
+        '<th class="' + (col.key === "name" ? "col-name" : ERR_COLS[col.key] ? "col-err" : "") + '">' +
         '<span class="col-label">' + escapeHtml(col.label) + "</span>" +
         (col.unit ? '<span class="col-unit">(' + escapeHtml(col.unit) + ")</span>" : "") +
         "</th>"
@@ -723,7 +729,7 @@
     yearTbody.innerHTML = yearRows.map(function (r, i) {
       return (
         '<tr data-id="' + r._id + '">' +
-        COLUMNS.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : "") + '">' + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
+        COLUMNS.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : ERR_COLS[c.key] ? "col-err" : "") + '">' + cellHtml(r, c, i + 1) + "</td>"; }).join("") +
         "</tr>"
       );
     }).join("");
