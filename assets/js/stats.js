@@ -38,6 +38,37 @@
     return Object.assign({}, r, { _id: "other-" + i, _type: classify(r) });
   });
 
+  // ---------------- Mass categories (Earth masses, pl_bmasse) ----------------
+  var MASS_BUCKETS = [
+    { key: "earth", label: "Earth-mass", range: "1–10 M⊕", test: function (m) { return m > 1 && m < 10; } },
+    { key: "neptune", label: "Neptune-mass", range: "10–30 M⊕", test: function (m) { return m > 10 && m <= 30; } },
+    { key: "subsat", label: "sub-Saturn/Saturn-mass", range: "30–100 M⊕", test: function (m) { return m > 30 && m <= 100; } },
+    { key: "giant", label: "Giant planets", range: "> 100 M⊕", test: null },
+  ];
+
+  function massBucketOf(m) {
+    for (var i = 0; i < MASS_BUCKETS.length; i++) {
+      if (MASS_BUCKETS[i].test && MASS_BUCKETS[i].test(m)) return MASS_BUCKETS[i].key;
+    }
+    return "giant";
+  }
+
+  function massSummaryHtml(rowsForSummary) {
+    var withMass = rowsForSummary.filter(function (r) { return r.pl_bmasse != null && !isNaN(r.pl_bmasse); });
+    return MASS_BUCKETS.map(function (b) {
+      var count = withMass.filter(function (r) { return massBucketOf(r.pl_bmasse) === b.key; }).length;
+      return (
+        '<div class="stat-card"><div class="num">' + count + "</div>" +
+        '<div class="label">' + b.label + " (" + b.range + ")</div></div>"
+      );
+    }).join("");
+  }
+
+  (function renderMassSummary() {
+    var el = document.getElementById("massSummary");
+    if (el) el.innerHTML = massSummaryHtml(planetRows);
+  })();
+
   // ---------------- Theme ----------------
   var themeToggle = document.getElementById("themeToggle");
   function applyTheme(t) {
@@ -670,6 +701,7 @@
   var yearModalSubtitle = document.getElementById("yearModalSubtitle");
   var yearThead = document.querySelector("#yearTable thead tr");
   var yearTbody = document.querySelector("#yearTable tbody");
+  var yearMassSummary = document.getElementById("yearMassSummary");
 
   function openYearModal(year) {
     var yearRows = rows.filter(function (r) { return r.pub_year === year && r._type === "planet"; });
@@ -677,6 +709,7 @@
 
     yearModalTitle.textContent = "Planets Announced in " + year;
     yearModalSubtitle.textContent = yearRows.length + " " + (yearRows.length === 1 ? "entry" : "entries");
+    if (yearMassSummary) yearMassSummary.innerHTML = massSummaryHtml(yearRows);
 
     yearThead.innerHTML = COLUMNS.map(function (col) {
       return (

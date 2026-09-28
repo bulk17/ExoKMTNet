@@ -457,6 +457,23 @@ a { color: var(--link); }
   margin: 0 0 10px;
 }
 
+.mass-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mass-grid-compact {
+  margin: 0 0 16px;
+}
+
+.mass-grid .stat-card { box-shadow: none; }
+
+@media (max-width: 720px) {
+  .mass-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+}
+
 .data-chart { width: 100%; height: auto; display: block; }
 .data-chart .bar { fill: var(--planet); }
 .data-chart text { fill: var(--text-dim); font-size: 9.5px; font-family: var(--font-mono); }
