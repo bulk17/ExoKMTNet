@@ -20,6 +20,10 @@
   --row-hover: rgba(0, 0, 0, 0.04);
   --shadow: 0 1px 3px rgba(20, 22, 31, 0.1), 0 8px 24px rgba(20, 22, 31, 0.08);
   --glass-blur: blur(14px);
+  /* Opaque (no blur) - a sticky element repainting backdrop-filter on every
+     scroll tick is a well-known source of scroll jank, so the table's sticky
+     header uses this instead of --bg-elev-2 + blur. */
+  --sticky-header-bg: var(--bg-elev-2);
   --radius: 10px;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
@@ -40,6 +44,7 @@
     --ffp: #b79cf0;
     --row-hover: rgba(255, 255, 255, 0.06);
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
+    --sticky-header-bg: rgba(18, 20, 30, 0.92);
   }
 }
 
@@ -58,6 +63,7 @@
   --ffp: #b79cf0;
   --row-hover: rgba(255, 255, 255, 0.06);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
+  --sticky-header-bg: rgba(18, 20, 30, 0.92);
 }
 
 * { box-sizing: border-box; }
@@ -583,7 +589,10 @@ table.data {
 table.data thead th {
   position: sticky;
   top: 0;
-  background: var(--bg-elev-2);
+  /* Opaque, no backdrop-filter: a blurred sticky element has to repaint the
+     blur every scroll frame, which is what made scrolling the year-bar
+     popup's table feel sluggish. */
+  background: var(--sticky-header-bg);
   text-align: center;
   padding: 9px 10px;
   border-bottom: 1px solid var(--border);
@@ -592,8 +601,6 @@ table.data thead th {
   user-select: none;
   font-weight: 600;
   color: var(--text-dim);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 table.data thead th.col-name { text-align: left; }
