@@ -39,11 +39,14 @@
   });
 
   // ---------------- Mass categories (Earth masses, pl_bmasse) ----------------
+  // M<sub>⊕</sub> - the Earth symbol reads as a subscript unit under "M",
+  // matching M_J/M_E elsewhere on the site rather than sitting on the baseline.
+  var M_EARTH = "M<sub>⊕</sub>";
   var MASS_BUCKETS = [
-    { key: "earth", label: "Earth-mass", range: "1 ≤ M < 10 M⊕", test: function (m) { return m >= 1 && m < 10; } },
-    { key: "neptune", label: "Neptune-mass", range: "10 < M ≤ 30 M⊕", test: function (m) { return m > 10 && m <= 30; } },
-    { key: "subsat", label: "sub-Saturn/Saturn-mass", range: "30 < M ≤ 100 M⊕", test: function (m) { return m > 30 && m <= 100; } },
-    { key: "giant", label: "Giant planets", range: "M > 100 M⊕", test: null },
+    { key: "earth", label: "Earth-mass", range: "1 ≤ M < 10 " + M_EARTH, test: function (m) { return m >= 1 && m < 10; } },
+    { key: "neptune", label: "Neptune-mass", range: "10 < M ≤ 30 " + M_EARTH, test: function (m) { return m > 10 && m <= 30; } },
+    { key: "subsat", label: "sub-Saturn/Saturn-mass", range: "30 < M ≤ 100 " + M_EARTH, test: function (m) { return m > 30 && m <= 100; } },
+    { key: "giant", label: "Giant planets", range: "M > 100 " + M_EARTH, test: null },
   ];
 
   function massBucketOf(m) {
