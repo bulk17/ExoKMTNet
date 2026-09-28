@@ -688,6 +688,16 @@ table.data tbody tr:has(.empty-state):hover { background: none; }
   cursor: help;
 }
 
+/* Columns that can carry an .err-stack (see above) need a reserved minimum
+   width: the stack is positioned out of flow, so a table's own auto-sizing
+   never accounts for it, and a small subset of rows (e.g. one year's worth
+   in the year-bar popup) can size the column too tight to fit it, spilling
+   into the next column. */
+table.data th.col-err,
+table.data td.col-err {
+  min-width: 108px;
+}
+
 .pager {
   display: flex;
   align-items: center;

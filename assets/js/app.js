@@ -145,6 +145,13 @@
     { key: "ads_link", label: "Publication" },
   ];
 
+  // Columns whose value can carry a "+hi/-lo" error stack (see .err-stack in
+  // style.css) - it's absolutely positioned out of flow so the table's own
+  // auto-sizing never accounts for it, and a narrow instance of this table
+  // (e.g. a year with few rows) can size the column too tight to fit it,
+  // overlapping the next column. col-err reserves enough width regardless.
+  var ERR_COLS = { pl_bmassj: true, pl_bmasse: true, pl_orbsmax: true, st_mass: true, sy_dist: true };
+
   // FFPs have no host star, so "a" (semi-major axis) and "M_star" never apply —
   // FFPs have no host star, so "a", "M_star", and "M_E" never apply — drop
   // those columns entirely when filtered to free-floating rows. Distance is
@@ -312,6 +319,7 @@
     getColumns().forEach(function (col) {
       var th = document.createElement("th");
       if (col.key === "name") th.classList.add("col-name");
+      if (ERR_COLS[col.key]) th.classList.add("col-err");
       var labelSpan = document.createElement("span");
       labelSpan.className = "col-label";
       labelSpan.textContent = col.label;
@@ -379,7 +387,7 @@
         var rank = start + i + 1;
         return (
           '<tr data-id="' + r._id + '">' +
-          cols.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : "") + '">' + cellHtml(r, c, rank) + "</td>"; }).join("") +
+          cols.map(function (c) { return '<td class="' + (c.key === "name" ? "col-name" : ERR_COLS[c.key] ? "col-err" : "") + '">' + cellHtml(r, c, rank) + "</td>"; }).join("") +
           "</tr>"
         );
       }).join("");
