@@ -49,6 +49,12 @@
 
   <section id="chart">
     <div class="chart-card">
+      <h2>Planet mass categories</h2>
+      <p class="chart-note">All KMTNet planets, by mass in Earth masses (M&#8853;).</p>
+      <div class="mass-grid" id="massSummary"></div>
+    </div>
+
+    <div class="chart-card">
       <h2>Announcements per year</h2>
       <svg id="yearChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Bar chart of KMTNet planet announcements per year"></svg>
     </div>
@@ -96,6 +102,7 @@
   <button class="close" id="yearModalClose" aria-label="Close">✕</button>
   <h2 id="yearModalTitle"></h2>
   <p class="modal-subtitle" id="yearModalSubtitle"></p>
+  <div class="mass-grid mass-grid-compact" id="yearMassSummary"></div>
   <div class="table-scroll">
     <table class="data" id="yearTable">
       <thead><tr></tr></thead>
@@ -109,7 +116,7 @@
 </button>
 
 <script src="assets/data/planets.js?v=20260918"></script>
-<script src="assets/js/stats.js?v=20260923b"></script>
+<script src="assets/js/stats.js?v=20260928a"></script>
 <script>
 (function () {
   var fab = document.getElementById("mascotFab");
