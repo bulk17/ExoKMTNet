@@ -40,7 +40,7 @@
 
   // ---------------- Mass categories (Earth masses, pl_bmasse) ----------------
   var MASS_BUCKETS = [
-    { key: "earth", label: "Earth-mass", range: "1 < M < 10 M⊕", test: function (m) { return m > 1 && m < 10; } },
+    { key: "earth", label: "Earth-mass", range: "1 ≤ M < 10 M⊕", test: function (m) { return m >= 1 && m < 10; } },
     { key: "neptune", label: "Neptune-mass", range: "10 < M ≤ 30 M⊕", test: function (m) { return m > 10 && m <= 30; } },
     { key: "subsat", label: "sub-Saturn/Saturn-mass", range: "30 < M ≤ 100 M⊕", test: function (m) { return m > 30 && m <= 100; } },
     { key: "giant", label: "Giant planets", range: "M > 100 M⊕", test: null },
