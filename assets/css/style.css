@@ -267,6 +267,16 @@ a { color: var(--link); }
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
 }
 
+.hero-mascot-link {
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.hero-mascot-link:hover,
+.hero-mascot-link:focus-visible {
+  transform: translateY(-3px);
+}
+
 .mascot-bubble {
   /* Anchored from the right (the mascot sits near the page's right edge), so
      a longer message grows leftward into free space instead of overflowing
