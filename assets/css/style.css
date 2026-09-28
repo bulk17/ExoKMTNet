@@ -823,7 +823,18 @@ table.data td.col-err {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 .modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
-.modal.modal-wide { width: min(1120px, calc(100vw - 32px)); }
+
+.modal.modal-wide {
+  width: min(1120px, calc(100vw - 32px));
+  /* User-resizable (drag the bottom-right corner) so a year with many wide
+     columns can be widened enough to see without the inner table scrolling. */
+  resize: both;
+  overflow: auto;
+  min-width: 420px;
+  min-height: 260px;
+  max-width: 96vw;
+  max-height: 92vh;
+}
 
 .modal h2 {
   font-family: var(--font-mono);
