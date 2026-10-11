@@ -968,6 +968,19 @@ table.data td.col-err {
   text-decoration: underline;
 }
 
+.file-remove-btn {
+  background: none;
+  border: none;
+  padding: 2px 6px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 4px;
+}
+
+.file-remove-btn:hover { color: var(--text); background: var(--bg-elev-2); }
+
 .modal-image {
   width: min(900px, calc(100vw - 32px));
 }

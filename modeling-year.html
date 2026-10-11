@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modeling — KMTNet Exoplanet Archive</title>
 <meta name="description" content="KMTNet modeler upload and file list for a single year." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261011f" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011g" />
 </head>
 <body>
 <div class="wrap">
@@ -166,10 +166,10 @@
     var table = document.createElement("table");
     table.className = "data";
     var thead = document.createElement("thead");
-    thead.innerHTML = "<tr><th>File</th><th>Size</th><th>Uploaded</th></tr>";
+    thead.innerHTML = "<tr><th>File</th><th>Size</th><th>Uploaded</th><th></th></tr>";
     table.appendChild(thead);
     var tbody = document.createElement("tbody");
-    files.forEach(function (f) {
+    files.forEach(function (f, i) {
       var tr = document.createElement("tr");
       var tdName = document.createElement("td");
       if (f.dataUrl) {
@@ -186,9 +186,18 @@
       tdSize.textContent = formatSize(f.size);
       var tdTime = document.createElement("td");
       tdTime.textContent = formatTime(f.uploadedAt);
+      var tdRemove = document.createElement("td");
+      var removeBtn = document.createElement("button");
+      removeBtn.type = "button";
+      removeBtn.className = "file-remove-btn";
+      removeBtn.setAttribute("aria-label", "Remove " + f.name);
+      removeBtn.textContent = "✕";
+      removeBtn.addEventListener("click", function () { removeFile(i); });
+      tdRemove.appendChild(removeBtn);
       tr.appendChild(tdName);
       tr.appendChild(tdSize);
       tr.appendChild(tdTime);
+      tr.appendChild(tdRemove);
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
@@ -196,6 +205,13 @@
     scroll.className = "table-scroll";
     scroll.appendChild(table);
     fileList.appendChild(scroll);
+  }
+
+  function removeFile(index) {
+    var files = loadFiles();
+    files.splice(index, 1);
+    saveFiles(files);
+    renderFiles();
   }
 
   function addFile(file, dataUrl) {
