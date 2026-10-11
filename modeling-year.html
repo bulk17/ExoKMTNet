@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modeling — KMTNet Exoplanet Archive</title>
 <meta name="description" content="KMTNet modeler upload and file list for a single year." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261011l" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011m" />
 </head>
 <body>
 <div class="wrap">
@@ -194,10 +194,7 @@
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
-    var scroll = document.createElement("div");
-    scroll.className = "table-scroll";
-    scroll.appendChild(table);
-    fileList.appendChild(scroll);
+    fileList.appendChild(table);
   }
 
   function removeFile(index) {

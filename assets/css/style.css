@@ -990,7 +990,6 @@ table.file-table th {
   border-bottom: 1px solid var(--border);
   font-weight: 600;
   color: var(--text-dim);
-  background: var(--sticky-header-bg);
 }
 
 table.file-table td {
