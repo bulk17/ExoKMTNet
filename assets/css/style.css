@@ -222,8 +222,6 @@ a { color: var(--link); }
   font-size: 13.5px;
 }
 
-.topbar nav a:hover { background: var(--bg-elev-2); }
-
 .theme-toggle {
   border: 1px solid var(--border);
   background: var(--bg-elev-2);
