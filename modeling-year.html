@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modeling — KMTNet Exoplanet Archive</title>
+<meta name="description" content="KMTNet modeler upload and file list for a single year." />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011e" />
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-title">
+        <div class="brand-icons">
+          <a href="https://www.kasi.re.kr/" target="_blank" rel="noopener">
+            <img src="assets/images/kasi-logo.png" alt="KASI" class="brand-emblem" />
+          </a>
+          <a href="https://kmtnet.kasi.re.kr/kmtnet/" target="_blank" rel="noopener">
+            <img src="assets/images/kmtnet-emblem.png" alt="KMTNet emblem" class="brand-emblem" />
+          </a>
+        </div>
+        <a href="index.html"><span>KMTNet Exoplanet Archive</span></a>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="stats.html">Statistics</a>
+      <a href="index.html#about">About</a>
+      <a href="modeling.html">Modeling</a>
+      <button class="theme-toggle" id="themeToggle" type="button">🌓 Theme</button>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="hero-top">
+      <div class="hero-copy">
+        <h1 id="yearTitle">Modeling</h1>
+        <p><a href="modeling.html">← Back to years</a></p>
+      </div>
+      <div class="hero-mascot-wrap">
+        <div class="mascot-bubble">Add a<br />file!</div>
+        <img src="assets/images/kensy-mascot.svg" alt="Kensy, the KMTNet mascot" class="hero-mascot" />
+      </div>
+    </div>
+  </section>
+
+  <section id="modeling-upload">
+    <div class="about">
+      <h3>Upload</h3>
+      <form class="upload-form" id="uploadForm">
+        <input type="file" id="uploadFileInput" required />
+        <button type="submit" class="btn">Upload</button>
+      </form>
+      <p class="upload-status" id="uploadStatus" hidden></p>
+    </div>
+
+    <div class="about" id="fileListCard">
+      <h3>Uploaded files</h3>
+      <div id="fileList"></div>
+    </div>
+  </section>
+
+  <footer><span>KMTNet Exoplanet Archive</span><span>Copyright &copy; Korea Astronomy and Space Science Institute. All Rights Reserved.</span></footer>
+</div>
+
+<button type="button" class="mascot-fab" id="mascotFab" aria-label="Back to top">
+  <img src="assets/images/kensy-mascot.svg" alt="" />
+</button>
+
+<script>
+(function () {
+  var minYear = 2016, maxYear = 2026;
+  var params = new URLSearchParams(window.location.search);
+  var year = parseInt(params.get("year"), 10);
+  if (!year || year < minYear || year > maxYear) year = new Date().getFullYear();
+
+  document.getElementById("yearTitle").textContent = "Modeling — " + year;
+  document.title = "Modeling " + year + " — KMTNet Exoplanet Archive";
+
+  // This page is a client-side preview: uploaded files are remembered only
+  // in this browser's localStorage (name/size/time, not the file's actual
+  // content), not sent anywhere. Once the modeling server is deployed, the
+  // year links on modeling.html point there instead of here — see that
+  // file's MODELING_BASE_URL comment, and modeling-server/README.md in the
+  // private bulk17/ExoKMTNet-modeling repo for the real upload/listing.
+  var STORAGE_KEY = "kmtnet-modeling-files-" + year;
+
+  var form = document.getElementById("uploadForm");
+  var fileInput = document.getElementById("uploadFileInput");
+  var status = document.getElementById("uploadStatus");
+  var fileList = document.getElementById("fileList");
+
+  function loadFiles() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveFiles(files) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(files));
+    } catch (e) {}
+  }
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+  }
+
+  function formatTime(iso) {
+    var d = new Date(iso);
+    return d.toLocaleString();
+  }
+
+  function renderFiles() {
+    var files = loadFiles();
+    fileList.innerHTML = "";
+    if (!files.length) {
+      var empty = document.createElement("p");
+      empty.className = "upload-status";
+      empty.style.marginTop = "0";
+      empty.textContent = "No files uploaded yet.";
+      fileList.appendChild(empty);
+      return;
+    }
+    var table = document.createElement("table");
+    table.className = "data";
+    var thead = document.createElement("thead");
+    thead.innerHTML = "<tr><th>File</th><th>Size</th><th>Uploaded</th></tr>";
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    files.forEach(function (f) {
+      var tr = document.createElement("tr");
+      var tdName = document.createElement("td");
+      tdName.textContent = f.name;
+      var tdSize = document.createElement("td");
+      tdSize.textContent = formatSize(f.size);
+      var tdTime = document.createElement("td");
+      tdTime.textContent = formatTime(f.uploadedAt);
+      tr.appendChild(tdName);
+      tr.appendChild(tdSize);
+      tr.appendChild(tdTime);
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    var scroll = document.createElement("div");
+    scroll.className = "table-scroll";
+    scroll.appendChild(table);
+    fileList.appendChild(scroll);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!fileInput.files.length) {
+      status.hidden = false;
+      status.textContent = "Choose a file first.";
+      return;
+    }
+    var file = fileInput.files[0];
+    var files = loadFiles();
+    files.unshift({ name: file.name, size: file.size, uploadedAt: new Date().toISOString() });
+    saveFiles(files);
+    renderFiles();
+    form.reset();
+    status.hidden = false;
+    status.textContent = "Preview only — \"" + file.name + "\" is remembered just in this browser, not uploaded to a real server yet.";
+  });
+
+  renderFiles();
+})();
+</script>
+<script>
+(function () {
+  var themeToggle = document.getElementById("themeToggle");
+  function applyTheme(t) {
+    if (t) document.documentElement.setAttribute("data-theme", t);
+    else document.documentElement.removeAttribute("data-theme");
+  }
+  try {
+    var savedTheme = localStorage.getItem("kmtnet-theme");
+    if (savedTheme) applyTheme(savedTheme);
+  } catch (e) {}
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var cur = document.documentElement.getAttribute("data-theme");
+      var next;
+      if (!cur) {
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        next = prefersDark ? "light" : "dark";
+      } else {
+        next = cur === "dark" ? "light" : "dark";
+      }
+      applyTheme(next);
+      try { localStorage.setItem("kmtnet-theme", next); } catch (e) {}
+    });
+  }
+})();
+</script>
+<script>
+(function () {
+  var fab = document.getElementById("mascotFab");
+  if (!fab) return;
+
+  var mouseX = null, mouseY = null;
+  window.addEventListener("mousemove", function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  }, { passive: true });
+
+  function positionNearCursor() {
+    var w = fab.offsetWidth || 56, h = fab.offsetHeight || 56;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var x, y;
+    if (mouseX == null) {
+      x = vw - w - 20;
+      y = vh - h - 20;
+    } else {
+      x = mouseX + 18;
+      y = mouseY + 18;
+      if (x + w > vw - 8) x = mouseX - w - 18;
+      if (y + h > vh - 8) y = mouseY - h - 18;
+      x = Math.max(8, Math.min(x, vw - w - 8));
+      y = Math.max(8, Math.min(y, vh - h - 8));
+    }
+    fab.style.left = x + "px";
+    fab.style.top = y + "px";
+  }
+
+  var wasShown = false;
+  function onScroll() {
+    var shown = window.scrollY > 400;
+    if (shown && !wasShown) positionNearCursor();
+    fab.classList.toggle("show", shown);
+    wasShown = shown;
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  fab.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+})();
+</script>
+</body>
+</html>
