@@ -28,13 +28,7 @@
       <a href="index.html">Home</a>
       <a href="stats.html">Statistics</a>
       <a href="index.html#about">About</a>
-      <div class="nav-item-dropdown">
-        <a href="#" id="modelingLink" aria-haspopup="true" aria-expanded="false">Modeling</a>
-        <!-- 연도 링크는 아래 script에서 채워집니다. 모델링 서버 배포 후 실제 주소로 연결하려면
-             그 script의 MODELING_BASE_URL 값을 채워주세요 (배포 코드/안내: private 저장소
-             bulk17/ExoKMTNet-modeling 참고). -->
-        <div class="nav-dropdown-menu" id="modelingMenu" hidden></div>
-      </div>
+      <a href="modeling.html">Modeling</a>
       <button class="theme-toggle" id="themeToggle" type="button">🌓 Theme</button>
     </nav>
   </div>
@@ -126,51 +120,6 @@
 
 <script src="assets/data/planets.js?v=20260918"></script>
 <script src="assets/js/stats.js?v=20260928e"></script>
-<script>
-(function () {
-  var link = document.getElementById("modelingLink");
-  var menu = document.getElementById("modelingMenu");
-  if (!link || !menu) return;
-
-  // 모델링 서버가 배포되면 이 값을 실제 서버 주소로 채워주세요 (끝에 슬래시 포함).
-  // 예: "https://lens03.example.org/modeling/"
-  var MODELING_BASE_URL = "";
-
-  var minYear = 2016, maxYear = 2026;
-  for (var y = maxYear; y >= minYear; y--) {
-    var a = document.createElement("a");
-    a.textContent = y;
-    if (MODELING_BASE_URL) {
-      a.href = MODELING_BASE_URL + "year.php?year=" + y;
-      a.target = "_blank";
-      a.rel = "noopener";
-    } else {
-      a.href = "#";
-    }
-    menu.appendChild(a);
-  }
-
-  function closeMenu() {
-    menu.hidden = true;
-    link.setAttribute("aria-expanded", "false");
-  }
-  function openMenu() {
-    menu.hidden = false;
-    link.setAttribute("aria-expanded", "true");
-  }
-
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (menu.hidden) openMenu(); else closeMenu();
-  });
-  document.addEventListener("click", function (e) {
-    if (!menu.hidden && e.target !== link && !menu.contains(e.target)) closeMenu();
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMenu();
-  });
-})();
-</script>
 <script>
 (function () {
   var fab = document.getElementById("mascotFab");
