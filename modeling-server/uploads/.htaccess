@@ -1,0 +1,9 @@
+# 업로드된 파일은 download.php(로그인 필요)를 통해서만 내려받도록,
+# 이 폴더로의 직접 접근은 모두 차단합니다.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>
