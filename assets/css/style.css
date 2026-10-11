@@ -978,6 +978,26 @@ table.data td.col-err {
   border-radius: 4px;
 }
 
+.file-note-input {
+  width: 100%;
+  min-width: 140px;
+  box-sizing: border-box;
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+}
+
+.file-note-input:hover,
+.file-note-input:focus {
+  border-color: var(--border);
+  background: var(--bg-elev-2);
+  outline: none;
+}
+
 .file-remove-btn:hover { color: var(--text); background: var(--bg-elev-2); }
 
 .modal-image {

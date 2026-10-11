@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modeling — KMTNet Exoplanet Archive</title>
 <meta name="description" content="KMTNet modeler upload and file list for a single year." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261011h" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011i" />
 </head>
 <body>
 <div class="wrap">
@@ -87,7 +87,7 @@
   document.title = "Modeling " + year + " — KMTNet Exoplanet Archive";
 
   // This page is a client-side preview: uploaded files are remembered only
-  // in this browser's localStorage (name/size/time, and — for small images
+  // in this browser's localStorage (name/note, and — for small images
   // only — the image data itself, so it can be previewed), not sent
   // anywhere. Once the modeling server is deployed, the year links on
   // modeling.html point there instead of here — see that file's
@@ -123,17 +123,6 @@
     }
   }
 
-  function formatSize(bytes) {
-    if (bytes < 1024) return bytes + " B";
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
-    return (bytes / (1024 * 1024)).toFixed(1) + " MB";
-  }
-
-  function formatTime(iso) {
-    var d = new Date(iso);
-    return d.toLocaleString();
-  }
-
   function openPreview(name, dataUrl) {
     previewModalTitle.textContent = name;
     previewModalImg.src = dataUrl;
@@ -166,7 +155,7 @@
     var table = document.createElement("table");
     table.className = "data";
     var thead = document.createElement("thead");
-    thead.innerHTML = "<tr><th>File</th><th>Size</th><th>Uploaded</th><th></th></tr>";
+    thead.innerHTML = "<tr><th>File</th><th>Note</th><th></th></tr>";
     table.appendChild(thead);
     var tbody = document.createElement("tbody");
     files.forEach(function (f, i) {
@@ -182,10 +171,14 @@
       } else {
         tdName.textContent = f.name;
       }
-      var tdSize = document.createElement("td");
-      tdSize.textContent = formatSize(f.size);
-      var tdTime = document.createElement("td");
-      tdTime.textContent = formatTime(f.uploadedAt);
+      var tdNote = document.createElement("td");
+      var noteInput = document.createElement("input");
+      noteInput.type = "text";
+      noteInput.className = "file-note-input";
+      noteInput.placeholder = "Add a note…";
+      noteInput.value = f.note || "";
+      noteInput.addEventListener("change", function () { updateNote(i, noteInput.value); });
+      tdNote.appendChild(noteInput);
       var tdRemove = document.createElement("td");
       var removeBtn = document.createElement("button");
       removeBtn.type = "button";
@@ -195,8 +188,7 @@
       removeBtn.addEventListener("click", function () { removeFile(i); });
       tdRemove.appendChild(removeBtn);
       tr.appendChild(tdName);
-      tr.appendChild(tdSize);
-      tr.appendChild(tdTime);
+      tr.appendChild(tdNote);
       tr.appendChild(tdRemove);
       tbody.appendChild(tr);
     });
@@ -214,9 +206,16 @@
     renderFiles();
   }
 
+  function updateNote(index, note) {
+    var files = loadFiles();
+    if (!files[index]) return;
+    files[index].note = note;
+    saveFiles(files);
+  }
+
   function addFile(file, dataUrl) {
     var files = loadFiles();
-    files.unshift({ name: file.name, size: file.size, uploadedAt: new Date().toISOString(), dataUrl: dataUrl || null });
+    files.unshift({ name: file.name, note: "", dataUrl: dataUrl || null });
     var saved = saveFiles(files);
     if (!saved && dataUrl) {
       // Likely over localStorage's quota with the image data included — drop
