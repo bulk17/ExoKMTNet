@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modeling — KMTNet Exoplanet Archive</title>
 <meta name="description" content="KMTNet modeler upload and file list for a single year." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261011k" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011l" />
 </head>
 <body>
 <div class="wrap">
@@ -155,7 +155,7 @@
     var table = document.createElement("table");
     table.className = "file-table";
     var thead = document.createElement("thead");
-    thead.innerHTML = "<tr><th>File</th><th>Note</th><th></th></tr>";
+    thead.innerHTML = "<tr><th>File</th><th class=\"note-col\">Note</th><th></th></tr>";
     table.appendChild(thead);
     var tbody = document.createElement("tbody");
     files.forEach(function (f, i) {
@@ -172,6 +172,7 @@
         tdName.textContent = f.name;
       }
       var tdNote = document.createElement("td");
+      tdNote.className = "note-cell";
       var noteInput = document.createElement("input");
       noteInput.type = "text";
       noteInput.className = "file-note-input";
