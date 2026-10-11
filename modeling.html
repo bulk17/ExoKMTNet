@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modeling — KMTNet Exoplanet Archive</title>
 <meta name="description" content="KMTNet modeler login and per-year modeling result uploads." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261011d" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011e" />
 </head>
 <body>
 <div class="wrap">
@@ -56,6 +56,18 @@
   <footer><span>KMTNet Exoplanet Archive</span><span>Copyright &copy; Korea Astronomy and Space Science Institute. All Rights Reserved.</span></footer>
 </div>
 
+<div class="overlay" id="uploadOverlay"></div>
+<div class="modal" id="uploadModal" role="dialog" aria-modal="true" aria-labelledby="uploadModalTitle">
+  <button class="close" id="uploadModalClose" aria-label="Close">✕</button>
+  <h2 id="uploadModalTitle">Upload — <span id="uploadModalYear"></span></h2>
+  <p class="modal-subtitle">KMTNet modeler upload</p>
+  <form class="upload-form" id="uploadForm">
+    <input type="file" id="uploadFileInput" required />
+    <button type="submit" class="btn">Upload</button>
+  </form>
+  <p class="upload-status" id="uploadStatus" hidden></p>
+</div>
+
 <button type="button" class="mascot-fab" id="mascotFab" aria-label="Back to top">
   <img src="assets/images/kensy-mascot.svg" alt="" />
 </button>
@@ -66,9 +78,43 @@
   if (!grid) return;
 
   // 모델링 서버가 배포되면 이 값을 실제 서버 주소로 채워주세요 (끝에 슬래시 포함).
+  // 값이 채워지면 연도 클릭 시 아래 미리보기 업로드 창 대신 실제 서버의
+  // year.php?year=YYYY 로 바로 이동합니다 (실제 로그인/업로드 처리).
   // 예: "https://lens03.example.org/modeling/"
   // 배포 코드/안내: private 저장소 bulk17/ExoKMTNet-modeling 참고.
   var MODELING_BASE_URL = "";
+
+  var overlay = document.getElementById("uploadOverlay");
+  var modal = document.getElementById("uploadModal");
+  var modalYear = document.getElementById("uploadModalYear");
+  var modalClose = document.getElementById("uploadModalClose");
+  var form = document.getElementById("uploadForm");
+  var fileInput = document.getElementById("uploadFileInput");
+  var status = document.getElementById("uploadStatus");
+
+  function openModal(year) {
+    modalYear.textContent = year;
+    status.hidden = true;
+    form.reset();
+    overlay.classList.add("open");
+    modal.classList.add("open");
+  }
+  function closeModal() {
+    overlay.classList.remove("open");
+    modal.classList.remove("open");
+  }
+  overlay.addEventListener("click", closeModal);
+  modalClose.addEventListener("click", closeModal);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeModal();
+  });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    status.hidden = false;
+    status.textContent = fileInput.files.length
+      ? "Preview only — the modeling server isn't connected yet, so \"" + fileInput.files[0].name + "\" was not actually uploaded."
+      : "Choose a file first.";
+  });
 
   var minYear = 2016, maxYear = 2026;
   for (var y = maxYear; y >= minYear; y--) {
@@ -81,6 +127,12 @@
       a.rel = "noopener";
     } else {
       a.href = "#";
+      (function (year) {
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          openModal(year);
+        });
+      })(y);
     }
     grid.appendChild(a);
   }
