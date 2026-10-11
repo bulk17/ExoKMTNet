@@ -999,10 +999,15 @@ table.file-table td {
   color: var(--text);
 }
 
+table.file-table td:first-child,
+table.file-table th:first-child {
+  min-width: 200px;
+}
+
 table.file-table tbody tr:last-child td { border-bottom: none; }
 
 .file-note-input {
-  width: 240px;
+  width: 420px;
   max-width: 100%;
   box-sizing: border-box;
   padding: 4px 6px;
