@@ -912,11 +912,10 @@ table.data td.col-err {
 
 /* ---------- Modeling page ---------- */
 .year-list-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   gap: 7px;
   margin-top: 24px;
-  max-width: 220px;
 }
 
 .year-card {
