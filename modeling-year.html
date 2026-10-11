@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modeling — KMTNet Exoplanet Archive</title>
 <meta name="description" content="KMTNet modeler upload and file list for a single year." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261011e" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261011f" />
 </head>
 <body>
 <div class="wrap">
@@ -65,6 +65,13 @@
   <footer><span>KMTNet Exoplanet Archive</span><span>Copyright &copy; Korea Astronomy and Space Science Institute. All Rights Reserved.</span></footer>
 </div>
 
+<div class="overlay" id="previewOverlay"></div>
+<div class="modal modal-image" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="previewModalTitle">
+  <button class="close" id="previewModalClose" aria-label="Close">✕</button>
+  <h2 id="previewModalTitle"></h2>
+  <img id="previewModalImg" alt="" />
+</div>
+
 <button type="button" class="mascot-fab" id="mascotFab" aria-label="Back to top">
   <img src="assets/images/kensy-mascot.svg" alt="" />
 </button>
@@ -80,17 +87,24 @@
   document.title = "Modeling " + year + " — KMTNet Exoplanet Archive";
 
   // This page is a client-side preview: uploaded files are remembered only
-  // in this browser's localStorage (name/size/time, not the file's actual
-  // content), not sent anywhere. Once the modeling server is deployed, the
-  // year links on modeling.html point there instead of here — see that
-  // file's MODELING_BASE_URL comment, and modeling-server/README.md in the
+  // in this browser's localStorage (name/size/time, and — for small images
+  // only — the image data itself, so it can be previewed), not sent
+  // anywhere. Once the modeling server is deployed, the year links on
+  // modeling.html point there instead of here — see that file's
+  // MODELING_BASE_URL comment, and modeling-server/README.md in the
   // private bulk17/ExoKMTNet-modeling repo for the real upload/listing.
   var STORAGE_KEY = "kmtnet-modeling-files-" + year;
+  var MAX_PREVIEW_BYTES = 2 * 1024 * 1024; // images over this size aren't stored, just listed
 
   var form = document.getElementById("uploadForm");
   var fileInput = document.getElementById("uploadFileInput");
   var status = document.getElementById("uploadStatus");
   var fileList = document.getElementById("fileList");
+  var previewOverlay = document.getElementById("previewOverlay");
+  var previewModal = document.getElementById("previewModal");
+  var previewModalClose = document.getElementById("previewModalClose");
+  var previewModalTitle = document.getElementById("previewModalTitle");
+  var previewModalImg = document.getElementById("previewModalImg");
 
   function loadFiles() {
     try {
@@ -103,7 +117,10 @@
   function saveFiles(files) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(files));
-    } catch (e) {}
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 
   function formatSize(bytes) {
@@ -116,6 +133,24 @@
     var d = new Date(iso);
     return d.toLocaleString();
   }
+
+  function openPreview(name, dataUrl) {
+    previewModalTitle.textContent = name;
+    previewModalImg.src = dataUrl;
+    previewModalImg.alt = name;
+    previewOverlay.classList.add("open");
+    previewModal.classList.add("open");
+  }
+  function closePreview() {
+    previewOverlay.classList.remove("open");
+    previewModal.classList.remove("open");
+    previewModalImg.src = "";
+  }
+  previewOverlay.addEventListener("click", closePreview);
+  previewModalClose.addEventListener("click", closePreview);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closePreview();
+  });
 
   function renderFiles() {
     var files = loadFiles();
@@ -137,7 +172,16 @@
     files.forEach(function (f) {
       var tr = document.createElement("tr");
       var tdName = document.createElement("td");
-      tdName.textContent = f.name;
+      if (f.dataUrl) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "file-name-btn";
+        btn.textContent = f.name;
+        btn.addEventListener("click", function () { openPreview(f.name, f.dataUrl); });
+        tdName.appendChild(btn);
+      } else {
+        tdName.textContent = f.name;
+      }
       var tdSize = document.createElement("td");
       tdSize.textContent = formatSize(f.size);
       var tdTime = document.createElement("td");
@@ -154,6 +198,20 @@
     fileList.appendChild(scroll);
   }
 
+  function addFile(file, dataUrl) {
+    var files = loadFiles();
+    files.unshift({ name: file.name, size: file.size, uploadedAt: new Date().toISOString(), dataUrl: dataUrl || null });
+    var saved = saveFiles(files);
+    if (!saved && dataUrl) {
+      // Likely over localStorage's quota with the image data included — drop
+      // the image and keep just the metadata so the upload still "succeeds".
+      files[0].dataUrl = null;
+      saved = saveFiles(files);
+      return saved ? "no-preview-quota" : "failed";
+    }
+    return saved ? "ok" : "failed";
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!fileInput.files.length) {
@@ -162,13 +220,33 @@
       return;
     }
     var file = fileInput.files[0];
-    var files = loadFiles();
-    files.unshift({ name: file.name, size: file.size, uploadedAt: new Date().toISOString() });
-    saveFiles(files);
-    renderFiles();
-    form.reset();
-    status.hidden = false;
-    status.textContent = "Preview only — \"" + file.name + "\" is remembered just in this browser, not uploaded to a real server yet.";
+    var isImage = file.type.indexOf("image/") === 0;
+
+    function finish(result) {
+      renderFiles();
+      form.reset();
+      status.hidden = false;
+      if (result === "failed") {
+        status.textContent = "Couldn't save \"" + file.name + "\" — this browser's local storage is full. Try clearing some old preview uploads.";
+        return;
+      }
+      var note = "Preview only — \"" + file.name + "\" is remembered just in this browser, not uploaded to a real server yet.";
+      if (isImage && result === "no-preview-quota") {
+        note += " Too large to keep an image preview for, so only the name is listed.";
+      } else if (!isImage) {
+        note += " Not an image, so no preview is shown — just the filename.";
+      }
+      status.textContent = note;
+    }
+
+    if (isImage && file.size <= MAX_PREVIEW_BYTES) {
+      var reader = new FileReader();
+      reader.onload = function () { finish(addFile(file, reader.result)); };
+      reader.onerror = function () { finish(addFile(file, null)); };
+      reader.readAsDataURL(file);
+    } else {
+      finish(addFile(file, null));
+    }
   });
 
   renderFiles();
