@@ -222,7 +222,7 @@ a { color: var(--link); }
   font-size: 13.5px;
 }
 
-.topbar nav a:hover { background: var(--bg-elev-2); color: #ffffff; }
+.topbar nav a:hover { background: var(--bg-elev-2); color: var(--text); }
 
 .theme-toggle {
   border: 1px solid var(--border);
