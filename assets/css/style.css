@@ -1005,7 +1005,8 @@ table.file-table th.note-col {
 
 table.file-table td:first-child,
 table.file-table th:first-child {
-  min-width: 200px;
+  min-width: 110px;
+  padding-right: 4px;
 }
 
 table.file-table tbody tr:last-child td { border-bottom: none; }
