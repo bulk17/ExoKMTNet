@@ -978,9 +978,32 @@ table.data td.col-err {
   border-radius: 4px;
 }
 
+table.file-table {
+  border-collapse: collapse;
+  width: auto;
+  font-size: 13px;
+}
+
+table.file-table th {
+  text-align: left;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--sticky-header-bg);
+}
+
+table.file-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+table.file-table tbody tr:last-child td { border-bottom: none; }
+
 .file-note-input {
-  width: 100%;
-  min-width: 140px;
+  width: 240px;
+  max-width: 100%;
   box-sizing: border-box;
   padding: 4px 6px;
   border: 1px solid transparent;
