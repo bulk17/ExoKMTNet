@@ -8491,7 +8491,7 @@
     "dec": -25.2295,
     "releasedate": null,
     "discoverymethod": "Microlensing",
-    "nasa_matched": false,
+    "nasa_matched": true,
     "eu_matched": true
   },
   {
@@ -8517,7 +8517,7 @@
     "dec": -26.272669444444443,
     "releasedate": null,
     "discoverymethod": "Microlensing",
-    "nasa_matched": false,
+    "nasa_matched": true,
     "eu_matched": true
   },
   {
@@ -8543,7 +8543,7 @@
     "dec": -30.27761111111111,
     "releasedate": null,
     "discoverymethod": "Microlensing",
-    "nasa_matched": false,
+    "nasa_matched": true,
     "eu_matched": true
   },
   {
