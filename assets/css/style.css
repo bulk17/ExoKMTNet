@@ -222,6 +222,15 @@ a { color: var(--link); }
   font-size: 13.5px;
 }
 
+.topbar nav .nav-disabled {
+  display: inline-block;
+  color: #b9bfdd;
+  opacity: 0.4;
+  padding: 6px 7px;
+  font-size: 13.5px;
+  cursor: default;
+}
+
 .theme-toggle {
   border: 1px solid var(--border);
   background: var(--bg-elev-2);
