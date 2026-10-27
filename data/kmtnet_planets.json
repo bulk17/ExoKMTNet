@@ -7292,7 +7292,7 @@
     "is_host_only_row": false,
     "is_ffp": true,
     "type_note": null,
-    "mass_note": null,
+    "mass_note": "저널(Acta Astronomica 75) 공식 발행 연도는 2025이지만, 실제 출간/공개는 2026년에 이루어짐 — pub_year는 ADS/저널 공식 연도(2025)를 그대로 유지, 이 메모로 실제 출간 시점을 기록함.",
     "pl_bmassj": null,
     "st_mass": null,
     "pl_orbsmax": null,
