@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Statistics — KMTNet Exoplanet Archive</title>
 <meta name="description" content="Distributions of KMTNet-discovered exoplanets: announcements per year, planet-to-host mass ratio, and distance from the Sun." />
-<link rel="stylesheet" href="assets/css/style.css?v=20261105e" />
+<link rel="stylesheet" href="assets/css/style.css?v=20261105f" />
 </head>
 <body>
 <div class="wrap">
@@ -81,13 +81,6 @@
     </div>
 
     <div class="chart-card">
-      <h2>Planet-to-host mass ratio by year</h2>
-      <p class="chart-note">Same distribution as above, stacked by the year each planet's discovery paper was published.</p>
-      <svg id="massRatioByYearChart" class="data-chart" viewBox="0 0 1100 180" role="img" aria-label="Stacked histogram of planet-to-host star mass ratio, segmented by publication year"></svg>
-      <div class="legend" id="massRatioByYearLegend"></div>
-    </div>
-
-    <div class="chart-card">
       <h2>Distance from the Sun</h2>
       <p class="chart-note">System distance from the Sun, 0–10 kpc.</p>
       <svg id="distanceChart" class="data-chart" viewBox="0 0 1100 154" role="img" aria-label="Histogram of system distance from the Sun, 0 to 10 kiloparsecs"></svg>
@@ -128,7 +121,7 @@
 </button>
 
 <script src="assets/data/planets.js?v=20261105b"></script>
-<script src="assets/js/stats.js?v=20261105d"></script>
+<script src="assets/js/stats.js?v=20261105e"></script>
 <script>
 (function () {
   var fab = document.getElementById("mascotFab");

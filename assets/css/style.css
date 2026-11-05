@@ -26,11 +26,6 @@
   --sticky-header-bg: var(--bg-elev-2);
   --radius: 10px;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  /* Viridis ramp for the mass-ratio-by-year chart, oldest (dark purple) to
-     most recent (yellow), per year slot — matches the reference figure. */
-  --yr0: #440154; --yr1: #482173; --yr2: #433e85; --yr3: #38588c;
-  --yr4: #2d708e; --yr5: #25858e; --yr6: #1e9b8a; --yr7: #2ab07f;
-  --yr8: #52c569; --yr9: #86d549; --yr10: #c2df23; --yr11: #fde725;
 }
 
 :root:not([data-theme="light"]) {
@@ -50,11 +45,6 @@
     --row-hover: rgba(255, 255, 255, 0.06);
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
     --sticky-header-bg: rgba(18, 20, 30, 0.92);
-    /* Same viridis ramp, darkest two steps lifted so they still read
-       against the dark starfield background. */
-    --yr0: #9302b5; --yr1: #59298f; --yr2: #433e85; --yr3: #38588c;
-    --yr4: #2d708e; --yr5: #268892; --yr6: #1e9b8a; --yr7: #2ab07f;
-    --yr8: #52c569; --yr9: #86d549; --yr10: #c2df23; --yr11: #fde725;
   }
 }
 
@@ -74,9 +64,6 @@
   --row-hover: rgba(255, 255, 255, 0.06);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
   --sticky-header-bg: rgba(18, 20, 30, 0.92);
-  --yr0: #9302b5; --yr1: #59298f; --yr2: #433e85; --yr3: #38588c;
-  --yr4: #2d708e; --yr5: #268892; --yr6: #1e9b8a; --yr7: #2ab07f;
-  --yr8: #52c569; --yr9: #86d549; --yr10: #c2df23; --yr11: #fde725;
 }
 
 * { box-sizing: border-box; }
@@ -510,14 +497,6 @@ a { color: var(--link); }
 .data-chart .year-group:hover .bar-hit,
 .data-chart .hist-group:hover .bar-hit { fill: color-mix(in srgb, var(--text) 8%, transparent); }
 
-.data-chart .yr-bar-0 { fill: var(--yr0); } .data-chart .yr-bar-1 { fill: var(--yr1); }
-.data-chart .yr-bar-2 { fill: var(--yr2); } .data-chart .yr-bar-3 { fill: var(--yr3); }
-.data-chart .yr-bar-4 { fill: var(--yr4); } .data-chart .yr-bar-5 { fill: var(--yr5); }
-.data-chart .yr-bar-6 { fill: var(--yr6); } .data-chart .yr-bar-7 { fill: var(--yr7); }
-.data-chart .yr-bar-8 { fill: var(--yr8); } .data-chart .yr-bar-9 { fill: var(--yr9); }
-.data-chart .yr-bar-10 { fill: var(--yr10); } .data-chart .yr-bar-11 { fill: var(--yr11); }
-.data-chart .yr-seg { stroke: var(--bg-elev); stroke-width: 0.5; }
-.data-chart .yr-seg:hover { fill-opacity: 0.75; }
 .data-chart .cutoff-line { stroke: var(--text-dim); stroke-width: 1; stroke-dasharray: 3 2; }
 .data-chart .cutoff-label { fill: var(--text); font-size: 21px; font-weight: 700; }
 
