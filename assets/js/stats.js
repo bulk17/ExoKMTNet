@@ -701,7 +701,7 @@
         class: "cutoff-line", x1: cutX, y1: padT, x2: cutX, y2: H - padB,
       }));
       var labelEl = el("text", { class: "cutoff-label", x: cutX - 8, y: padT - 10, "text-anchor": "end" });
-      labelEl.textContent = "log₁₀(q) ≤ " + cutoff + ": " + belowCount;
+      labelEl.textContent = "log(q) ≤ " + cutoff + ": " + belowCount;
       svg.appendChild(labelEl);
     }
 
