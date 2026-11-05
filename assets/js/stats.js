@@ -641,7 +641,7 @@
 
     var svg = document.getElementById("massRatioByYearChart");
     if (!svg) return;
-    var W = 1100, H = 180, padL = 32, padB = 22, padT = 16, padR = 8;
+    var W = 1100, H = 180, padL = 32, padB = 22, padT = 30, padR = 8;
     var innerW = W - padL - padR;
     var innerH = H - padT - padB;
     var barW = innerW / binCount;
@@ -700,7 +700,7 @@
       svg.appendChild(el("line", {
         class: "cutoff-line", x1: cutX, y1: padT, x2: cutX, y2: H - padB,
       }));
-      var labelEl = el("text", { class: "cutoff-label", x: cutX - 6, y: padT + 10, "text-anchor": "end" });
+      var labelEl = el("text", { class: "cutoff-label", x: cutX - 8, y: padT - 10, "text-anchor": "end" });
       labelEl.textContent = "log₁₀(q) ≤ " + cutoff + ": " + belowCount;
       svg.appendChild(labelEl);
     }
