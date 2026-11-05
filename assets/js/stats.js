@@ -592,6 +592,113 @@
     );
   })();
 
+  // Same mass-ratio distribution, stacked by the planet's pub_year (the same
+  // "Year" used everywhere else on the site — see renderMassRatioChart above
+  // for the q formula).
+  (function renderMassRatioByYearChart() {
+    var M_JUP_IN_MSUN = 0.0009543;
+    var rowsWithQ = [];
+    planetRows.forEach(function (r) {
+      if (r.is_host_only_row) return;
+      if (r.pl_bmassj == null || r.st_mass == null || r.st_mass <= 0) return;
+      if (r.pub_year == null) return;
+      var q = (r.pl_bmassj * M_JUP_IN_MSUN) / r.st_mass;
+      if (q > 0) rowsWithQ.push({ logq: Math.log10(q), year: r.pub_year });
+    });
+    if (!rowsWithQ.length) return;
+
+    var binWidth = 0.25;
+    var allLogq = rowsWithQ.map(function (d) { return d.logq; });
+    var minEdge = Math.floor(Math.min.apply(null, allLogq) / binWidth) * binWidth;
+    var maxEdge = Math.ceil(Math.max.apply(null, allLogq) / binWidth) * binWidth;
+    if (maxEdge <= minEdge) maxEdge = minEdge + binWidth;
+    var binCount = Math.max(1, Math.round((maxEdge - minEdge) / binWidth));
+
+    var years = [];
+    rowsWithQ.forEach(function (d) { if (years.indexOf(d.year) === -1) years.push(d.year); });
+    years.sort(function (a, b) { return a - b; });
+    // Chart has 12 ordered color slots (yr0..yr11); extra years beyond that
+    // fold into the last (darkest/most-recent) slot rather than repeating a
+    // used color.
+    function colorIndex(i) { return Math.min(i, 11); }
+
+    // counts[yearIndex][binIndex]
+    var counts = years.map(function () { return new Array(binCount).fill(0); });
+    rowsWithQ.forEach(function (d) {
+      var bi = Math.floor((d.logq - minEdge) / binWidth);
+      if (bi < 0) bi = 0;
+      if (bi >= binCount) bi = binCount - 1;
+      var yi = years.indexOf(d.year);
+      counts[yi][bi]++;
+    });
+
+    var totals = new Array(binCount).fill(0);
+    for (var yi0 = 0; yi0 < years.length; yi0++) {
+      for (var bi0 = 0; bi0 < binCount; bi0++) totals[bi0] += counts[yi0][bi0];
+    }
+    var maxTotal = Math.max.apply(null, totals);
+    if (maxTotal <= 0) return;
+
+    var svg = document.getElementById("massRatioByYearChart");
+    if (!svg) return;
+    var W = 1100, H = 180, padL = 32, padB = 22, padT = 16, padR = 8;
+    var innerW = W - padL - padR;
+    var innerH = H - padT - padB;
+    var barW = innerW / binCount;
+    var tickEvery = Math.max(1, Math.ceil(binCount / 12));
+
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.innerHTML = "";
+    var svgns = "http://www.w3.org/2000/svg";
+    function el(tag, attrs) {
+      var e = document.createElementNS(svgns, tag);
+      for (var k in attrs) e.setAttribute(k, attrs[k]);
+      return e;
+    }
+
+    svg.appendChild(el("line", {
+      class: "axis-line", x1: padL, y1: H - padB, x2: W - padR, y2: H - padB,
+    }));
+
+    for (var bi = 0; bi < binCount; bi++) {
+      var x = padL + bi * barW;
+      var x0 = minEdge + bi * binWidth, x1 = x0 + binWidth;
+      var cumBottom = H - padB;
+
+      for (var yi = 0; yi < years.length; yi++) {
+        var c = counts[yi][bi];
+        if (!c) continue;
+        var segH = (c / maxTotal) * innerH;
+        var y = cumBottom - segH;
+
+        var group = el("g", { class: "yr-seg-group" });
+        var titleEl = document.createElementNS(svgns, "title");
+        titleEl.textContent = years[yi] + " · log₁₀(q) " + x0.toFixed(2) + " to " + x1.toFixed(2) + ": " + c;
+        group.appendChild(titleEl);
+        group.appendChild(el("rect", {
+          class: "yr-seg yr-bar-" + colorIndex(yi),
+          x: x, y: y, width: Math.max(barW - 1, 1), height: segH,
+        }));
+        svg.appendChild(group);
+
+        cumBottom = y;
+      }
+
+      if (bi % tickEvery === 0 || bi === binCount - 1) {
+        var t = el("text", { x: x, y: H - 6, "text-anchor": "middle" });
+        t.textContent = x0.toFixed(2);
+        svg.appendChild(t);
+      }
+    }
+
+    var legend = document.getElementById("massRatioByYearLegend");
+    if (legend) {
+      legend.innerHTML = years.map(function (y, i) {
+        return '<span><i style="background:var(--yr' + colorIndex(i) + ')"></i>' + y + '</span>';
+      }).join("");
+    }
+  })();
+
   // System distance from the Sun, clipped to 0–10 kpc
   (function renderDistanceChart() {
     var kpcVals = [];

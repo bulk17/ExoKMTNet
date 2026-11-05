@@ -26,6 +26,11 @@
   --sticky-header-bg: var(--bg-elev-2);
   --radius: 10px;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  /* Sequential blue ramp for the mass-ratio-by-year chart, oldest (lightest)
+     to most recent (most saturated) — one hue, light→dark, per year slot. */
+  --yr0: #b0cff2; --yr1: #9bc2ef; --yr2: #87b6eb; --yr3: #72a9e8;
+  --yr4: #5d9ce5; --yr5: #4890e1; --yr6: #3483de; --yr7: #2377d7;
+  --yr8: #206bc2; --yr9: #1c60ad; --yr10: #195498; --yr11: #154984;
 }
 
 :root:not([data-theme="light"]) {
@@ -45,6 +50,9 @@
     --row-hover: rgba(255, 255, 255, 0.06);
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
     --sticky-header-bg: rgba(18, 20, 30, 0.92);
+    --yr0: #1f61ad; --yr1: #2169bb; --yr2: #2472ca; --yr3: #2a7bd8;
+    --yr4: #3a86dc; --yr5: #4a8fdf; --yr6: #5999e2; --yr7: #69a3e5;
+    --yr8: #79ade7; --yr9: #89b6ea; --yr10: #99c0ed; --yr11: #a8caf0;
   }
 }
 
@@ -64,6 +72,9 @@
   --row-hover: rgba(255, 255, 255, 0.06);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 28px rgba(0, 0, 0, 0.35);
   --sticky-header-bg: rgba(18, 20, 30, 0.92);
+  --yr0: #1f61ad; --yr1: #2169bb; --yr2: #2472ca; --yr3: #2a7bd8;
+  --yr4: #3a86dc; --yr5: #4a8fdf; --yr6: #5999e2; --yr7: #69a3e5;
+  --yr8: #79ade7; --yr9: #89b6ea; --yr10: #99c0ed; --yr11: #a8caf0;
 }
 
 * { box-sizing: border-box; }
@@ -496,6 +507,14 @@ a { color: var(--link); }
 .data-chart .bar-hit { fill: transparent; }
 .data-chart .year-group:hover .bar-hit,
 .data-chart .hist-group:hover .bar-hit { fill: color-mix(in srgb, var(--text) 8%, transparent); }
+
+.data-chart .yr-bar-0 { fill: var(--yr0); } .data-chart .yr-bar-1 { fill: var(--yr1); }
+.data-chart .yr-bar-2 { fill: var(--yr2); } .data-chart .yr-bar-3 { fill: var(--yr3); }
+.data-chart .yr-bar-4 { fill: var(--yr4); } .data-chart .yr-bar-5 { fill: var(--yr5); }
+.data-chart .yr-bar-6 { fill: var(--yr6); } .data-chart .yr-bar-7 { fill: var(--yr7); }
+.data-chart .yr-bar-8 { fill: var(--yr8); } .data-chart .yr-bar-9 { fill: var(--yr9); }
+.data-chart .yr-bar-10 { fill: var(--yr10); } .data-chart .yr-bar-11 { fill: var(--yr11); }
+.data-chart .yr-seg:hover { fill-opacity: 0.75; }
 
 .data-chart .grid-line { stroke: var(--border); stroke-width: 1; opacity: 0.6; }
 .data-chart .axis-title { fill: var(--text-dim); font-size: 10.5px; font-weight: 600; letter-spacing: 0.02em; }
