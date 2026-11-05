@@ -691,6 +691,20 @@
       }
     }
 
+    // Mark the log(q) ≤ -4 cutoff commonly used to flag very low mass-ratio
+    // (planetary-regime) companions, with a count of planets at/below it.
+    var cutoff = -4;
+    if (cutoff >= minEdge && cutoff <= maxEdge) {
+      var belowCount = rowsWithQ.filter(function (d) { return d.logq <= cutoff; }).length;
+      var cutX = padL + ((cutoff - minEdge) / binWidth) * barW;
+      svg.appendChild(el("line", {
+        class: "cutoff-line", x1: cutX, y1: padT, x2: cutX, y2: H - padB,
+      }));
+      var labelEl = el("text", { class: "cutoff-label", x: cutX - 6, y: padT + 10, "text-anchor": "end" });
+      labelEl.textContent = "log₁₀(q) ≤ " + cutoff + ": " + belowCount;
+      svg.appendChild(labelEl);
+    }
+
     var legend = document.getElementById("massRatioByYearLegend");
     if (legend) {
       legend.innerHTML = years.map(function (y, i) {

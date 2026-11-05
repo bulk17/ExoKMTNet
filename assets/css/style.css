@@ -518,6 +518,8 @@ a { color: var(--link); }
 .data-chart .yr-bar-10 { fill: var(--yr10); } .data-chart .yr-bar-11 { fill: var(--yr11); }
 .data-chart .yr-seg { stroke: var(--bg-elev); stroke-width: 0.5; }
 .data-chart .yr-seg:hover { fill-opacity: 0.75; }
+.data-chart .cutoff-line { stroke: var(--text-dim); stroke-width: 1; stroke-dasharray: 3 2; }
+.data-chart .cutoff-label { fill: var(--text); font-size: 10.5px; font-weight: 700; }
 
 .data-chart .grid-line { stroke: var(--border); stroke-width: 1; opacity: 0.6; }
 .data-chart .axis-title { fill: var(--text-dim); font-size: 10.5px; font-weight: 600; letter-spacing: 0.02em; }
